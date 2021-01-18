@@ -51,6 +51,10 @@
       <Project>{E2028777-8C1B-489E-9EFD-477CD3082EA7}</Project>
       <Name>Entap.Basic.Forms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj">
+      <Project>{C7D33057-ED52-4168-A347-BCC7D5785A44}</Project>
+      <Name>Entap.Basic.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms">

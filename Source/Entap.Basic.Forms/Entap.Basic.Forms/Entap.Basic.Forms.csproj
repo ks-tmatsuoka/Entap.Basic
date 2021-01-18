@@ -13,4 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj" />
+  </ItemGroup>
 </Project>
