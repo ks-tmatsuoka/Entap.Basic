@@ -46,5 +46,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
+      <Project>{E2028777-8C1B-489E-9EFD-477CD3082EA7}</Project>
+      <Name>Entap.Basic.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
