@@ -29,10 +29,9 @@ namespace Entap.Basic.Forms
             [CallerLineNumber] int sourceLineNumber = 0)
             : base(arg =>
             {
-                if (IsValidParameter(arg))
-                    processManager.Invoke(
-                        ProcessManager.GetProcessName(memberName, sourceFilePath, sourceLineNumber),
-                        () => execute((T)arg));
+                processManager.Invoke(
+                    ProcessManager.GetProcessName(memberName, sourceFilePath, sourceLineNumber),
+                    () => execute((T)arg));
             })
         {
         }
@@ -55,11 +54,10 @@ namespace Entap.Basic.Forms
             [CallerLineNumber] int sourceLineNumber = 0)
             : base(arg =>
             {
-                if (IsValidParameter(arg))
-                    processManager.Invoke(
-                        ProcessManager.GetProcessName(memberName, sourceFilePath, sourceLineNumber),
-                        () => execute((T)arg));
-            }, arg => IsValidParameter(arg) && canExecute((T)arg))
+                processManager.Invoke(
+                    ProcessManager.GetProcessName(memberName, sourceFilePath, sourceLineNumber),
+                    () => execute((T)arg));
+            }, arg => canExecute((T)arg))
         {
         }
         #endregion
