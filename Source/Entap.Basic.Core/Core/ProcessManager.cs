@@ -132,7 +132,7 @@ namespace Entap.Basic.Core
         /// <param name="sourceFilePath">実行元ファイルパス</param>
         /// <param name="sourceLineNumber">行数</param>
         /// <returns>プロセス名</returns>
-        internal static string GetProcessName(string memberName, string sourceFilePath, int sourceLineNumber)
+        public static string GetProcessName(string memberName, string sourceFilePath, int sourceLineNumber)
             => $"{sourceFilePath} L:{sourceLineNumber} {memberName}";
     }
 }
