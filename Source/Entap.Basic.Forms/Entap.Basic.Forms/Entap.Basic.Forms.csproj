@@ -20,4 +20,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PageManager\" />
+    <Folder Include="Behaviors\" />
+  </ItemGroup>
 </Project>
