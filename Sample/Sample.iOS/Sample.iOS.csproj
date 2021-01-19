@@ -131,6 +131,18 @@
       <Project>{5EA9CAF2-2F0E-4C00-B710-3D7152CDA2AF}</Project>
       <Name>Sample</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core.csproj">
+      <Project>{C7D33057-ED52-4168-A347-BCC7D5785A44}</Project>
+      <Name>Entap.Basic.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
+      <Project>{E2028777-8C1B-489E-9EFD-477CD3082EA7}</Project>
+      <Name>Entap.Basic.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms.iOS\Entap.Basic.Forms.iOS.csproj">
+      <Project>{429CC795-4485-41D2-8D56-04DAD63245AF}</Project>
+      <Name>Entap.Basic.Forms.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
