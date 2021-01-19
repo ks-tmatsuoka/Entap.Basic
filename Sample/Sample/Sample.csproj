@@ -18,4 +18,9 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Views\Pages\" />
+    <Folder Include="Views\Pages\PageManager\" />
+  </ItemGroup>
 </Project>

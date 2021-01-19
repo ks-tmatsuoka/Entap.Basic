@@ -1,4 +1,5 @@
 ﻿using System;
+using Entap.Basic.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,8 @@ namespace Sample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            Core.Init(this);
+            PageManager.Navigation.SetNavigationMainPage<MainPage>(new MainPageViewModel());
         }
 
         protected override void OnStart()
