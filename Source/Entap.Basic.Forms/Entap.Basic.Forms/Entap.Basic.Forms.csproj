@@ -23,5 +23,7 @@
   <ItemGroup>
     <Folder Include="PageManager\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="PageManager\Behaviors\" />
+    <Folder Include="PageManager\PageNavigation\" />
   </ItemGroup>
 </Project>
