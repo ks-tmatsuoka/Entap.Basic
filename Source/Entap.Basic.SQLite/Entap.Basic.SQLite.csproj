@@ -19,5 +19,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="sqlite-net-sqlcipher" Version="1.7.335" />
   </ItemGroup>
 </Project>
