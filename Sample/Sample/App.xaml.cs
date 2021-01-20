@@ -1,5 +1,6 @@
 ﻿using System;
 using Entap.Basic.Forms;
+using Entap.Basic.SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +13,7 @@ namespace Sample
             InitializeComponent();
 
             Core.Init(this);
+            SQLiteConnectionManager.Init(new SQLiteConnectionService());
             PageManager.Navigation.SetNavigationMainPage<MainPage>(new MainPageViewModel());
         }
 
