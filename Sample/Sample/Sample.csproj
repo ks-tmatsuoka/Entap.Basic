@@ -22,7 +22,8 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="Views\Pages\" />
-    <Folder Include="Views\Pages\PageManager\" />
     <Folder Include="SQLite\" />
+    <Folder Include="PageManager\" />
+    <Folder Include="PageManager\Pages\" />
   </ItemGroup>
 </Project>
