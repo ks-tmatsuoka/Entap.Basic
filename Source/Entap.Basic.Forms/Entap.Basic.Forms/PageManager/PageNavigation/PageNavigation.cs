@@ -360,6 +360,7 @@ namespace Entap.Basic.Forms
                 }
                 catch (Exception ex)
                 {
+                    System.Diagnostics.Debug.WriteLine($"PopModalAsync : {ex.Message} _ {GetCurrentPage().GetType()}");
                     throw ex;
                 }
 
