@@ -88,7 +88,7 @@ namespace Entap.Basic.SQLite
         /// <typeparam name="U">keySelector によって返されるキーの型</typeparam>
         /// <param name="keySelector">アイテムからキーを抽出する関数</param>
         /// <returns>任意のキーでソートしたアイテム</returns>
-        public IEnumerable<T> OrderBy<U>(Func<T, U> keySelector)
+        public IOrderedEnumerable<T> OrderBy<U>(Func<T, U> keySelector)
             => Connection.Table<T>().OrderBy(keySelector);
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Entap.Basic.SQLite
         /// <typeparam name="U">keySelector によって返されるキーの型</typeparam>
         /// <param name="keySelector">アイテムからキーを抽出する関数</param>
         /// <returns>任意のキーでソートしたアイテム</returns>
-        public IEnumerable<T> OrderByDescending<U>(Func<T, U> keySelector)
+        public IOrderedEnumerable<T> OrderByDescending<U>(Func<T, U> keySelector)
             => Connection.Table<T>().OrderByDescending(keySelector);
 
         /// <summary>
