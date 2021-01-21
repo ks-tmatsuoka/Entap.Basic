@@ -58,12 +58,14 @@ namespace Entap.Basic.SQLite
         /// </summary>
         public int Count(Func<T, bool> predicate) => Connection.Table<T>().Count(predicate);
 
+        #nullable enable
         /// <summary>
         /// 指定したIDのアイテムを取得する
         /// </summary>
         /// <param name="appId">Id</param>
-        /// <returns>指定したIdのアイテム</returns>
-        public T Get(int appId) => Connection.Get<T>(appId);
+        /// <returns>指定したIdのアイテム（アイテムが存在しない場合はNull）</returns>
+        public T? Get(int appId) => Connection.Find<T>(appId);
+        #nullable disable
 
         /// <summary>
         /// 全てのアイテムを返す
