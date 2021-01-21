@@ -225,5 +225,14 @@ namespace Entap.Basic.SQLite
             var rowsAffected = Connection.DropTable<T>();
             return rowsAffected > 0;
         }
+
+        /// <summary>
+        /// 指定したクエリを実行する
+        /// </summary>
+        /// <param name="query">SQLクエリ</param>
+        /// <param name="args">'?'を置換する引数</param>
+        /// <returns>実行結果</returns>
+        public List<T> ExecuteQuery(string query, params object[] args)
+            => Connection.Query<T>(query, args);
     }
 }
