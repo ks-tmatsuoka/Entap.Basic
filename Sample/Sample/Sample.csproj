@@ -25,5 +25,6 @@
     <Folder Include="SQLite\" />
     <Folder Include="PageManager\" />
     <Folder Include="PageManager\Pages\" />
+    <Folder Include="SQLite\Pages\" />
   </ItemGroup>
 </Project>

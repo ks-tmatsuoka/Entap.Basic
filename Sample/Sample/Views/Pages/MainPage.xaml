@@ -12,6 +12,11 @@
                 Text="PageManager"
                 Command="{Binding PageManagerCommand}"
             />
+
+            <Button
+                Text="SQLite"
+                Command="{Binding SQLiteCommand}"
+            />
         </StackLayout>
     </ScrollView>
 </ContentPage>

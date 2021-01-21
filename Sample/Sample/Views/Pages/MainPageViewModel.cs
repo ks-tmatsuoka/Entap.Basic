@@ -12,5 +12,8 @@ namespace Sample
 
         public ProcessCommand PageManagerCommand =>
             new ProcessCommand(() => PageManager.Navigation.PushAsync<MyTabbedPage>(new MyTabbedPageViewModel()));
+
+        public ProcessCommand SQLiteCommand =>
+            new ProcessCommand(() => PageManager.Navigation.PushAsync<SQLitePage>(new SQLitePageViewModel()));
     }
 }
