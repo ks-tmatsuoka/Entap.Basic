@@ -63,9 +63,9 @@ namespace Entap.Basic.SQLite
         /// <summary>
         /// 指定したIDのアイテムを取得する
         /// </summary>
-        /// <param name="appId">Id</param>
+        /// <param name="id">Id</param>
         /// <returns>指定したIdのアイテム（アイテムが存在しない場合はNull）</returns>
-        public T? Get(int appId) => Connection.Find<T>(appId);
+        public T? Get(int id) => Connection.Find<T>(id);
         #nullable disable
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Entap.Basic.SQLite
         /// <param name="item">アイテム</param>
         /// <returns>AppIdでソートしたアイテム</returns>
         public IEnumerable<T> OrderBy()
-            => Connection.Table<T>().OrderBy(o => o.AppId);
+            => Connection.Table<T>().OrderBy(o => o.Id);
 
         /// <summary>
         /// 任意のキーの昇順でソートしたアイテムを取得する
@@ -107,7 +107,7 @@ namespace Entap.Basic.SQLite
         /// <param name="item">アイテム</param>
         /// <returns>AppIdでソートしたアイテム</returns>
         public IEnumerable<T> OrderByDescending()
-            => Connection.Table<T>().OrderByDescending(o => o.AppId);
+            => Connection.Table<T>().OrderByDescending(o => o.Id);
 
         /// <summary>
         /// 任意のキーの降順でソートしたアイテムを取得する
@@ -135,7 +135,7 @@ namespace Entap.Basic.SQLite
         /// <returns>保存に成功時は true。それ以外の場合は false</returns>
         public bool Save(T item)
         {
-            if (item.AppId != 0)
+            if (item.Id != 0)
                 return Update(item);
             else
                 return Insert(item);
@@ -181,11 +181,11 @@ namespace Entap.Basic.SQLite
         /// <summary>
         /// 指定したIdのアイテムを削除する
         /// </summary>
-        /// <param name="appId">Id</param>
+        /// <param name="id">Id</param>
         /// <returns>削除に成功時は true。それ以外の場合は false</returns>
-        public bool Delete(int appId)
+        public bool Delete(int id)
         {
-            var rowsAffected = Connection.Delete(appId);
+            var rowsAffected = Connection.Delete(id);
             return rowsAffected > 0;
         }
 

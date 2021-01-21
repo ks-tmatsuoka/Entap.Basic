@@ -13,7 +13,7 @@ namespace Entap.Basic.SQLite
         /// Id
         /// </summary>
         [PrimaryKey, AutoIncrement]
-        public int AppId { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// 作成日時

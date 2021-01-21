@@ -38,11 +38,11 @@
                             Margin="16, 0"
                             VerticalOptions="FillAndExpand"
                             VerticalTextAlignment="Center"
-                            Text="{Binding AppId}"
+                            Text="{Binding Id}"
                         >
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="{Binding AppId, StringFormat='Id：{0}'}"/>
+                                    <Span Text="{Binding Id, StringFormat='Id：{0}'}"/>
                                     <Span Text="{Binding UpdatedAt, StringFormat=' 更新日時：{0:yyyy/MM/dd HH:mm:ss}'}"/>
                                 </FormattedString>
                             </Label.FormattedText>
