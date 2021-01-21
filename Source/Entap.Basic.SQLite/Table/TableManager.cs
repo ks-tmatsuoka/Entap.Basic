@@ -92,6 +92,16 @@ namespace Entap.Basic.SQLite
             => Connection.Table<T>().OrderBy(keySelector);
 
         /// <summary>
+        /// 任意のキーの昇順でソートしたアイテムを取得する
+        /// </summary>
+        /// <typeparam name="U">keySelector によって返されるキーの型</typeparam>
+        /// <param name="keySelector">アイテムからキーを抽出する関数</param>
+        /// <param name="comparer">キーを比較する IComparer<T></param>
+        /// <returns>任意のキーでソートしたアイテム</returns>
+        public IOrderedEnumerable<T> OrderBy<U>(Func<T, U> keySelector, IComparer<U> comparer)
+            => Connection.Table<T>().OrderBy(keySelector, comparer);
+
+        /// <summary>
         /// Idの降順でソートしたアイテムを取得する
         /// </summary>
         /// <param name="item">アイテム</param>
@@ -107,6 +117,16 @@ namespace Entap.Basic.SQLite
         /// <returns>任意のキーでソートしたアイテム</returns>
         public IOrderedEnumerable<T> OrderByDescending<U>(Func<T, U> keySelector)
             => Connection.Table<T>().OrderByDescending(keySelector);
+
+        /// <summary>
+        /// 任意のキーの降順でソートしたアイテムを取得する
+        /// </summary>
+        /// <typeparam name="U">keySelector によって返されるキーの型</typeparam>
+        /// <param name="keySelector">アイテムからキーを抽出する関数</param>
+        /// <param name="comparer">キーを比較する IComparer<T></param>
+        /// <returns>任意のキーでソートしたアイテム</returns>
+        public IOrderedEnumerable<T> OrderByDescending<U>(Func<T, U> keySelector, IComparer<U> comparer)
+            => Connection.Table<T>().OrderByDescending(keySelector, comparer);
 
         /// <summary>
         /// 指定したアイテムを保存する
