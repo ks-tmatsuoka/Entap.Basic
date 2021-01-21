@@ -12,6 +12,10 @@
             Command="{Binding InsertAllCommand}"
         />
         <ToolbarItem
+            Text="一括更新"
+            Command="{Binding UpdateAllCommand}"
+        />
+        <ToolbarItem
             Text="全削除"
             Command="{Binding DeleteAllCommand}"
         />

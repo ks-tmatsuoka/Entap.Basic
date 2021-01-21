@@ -33,6 +33,11 @@ namespace Sample
             TableManager<HogeTable>.Current.InsertAll(items);
         });
 
+        public Command UpdateAllCommand => new Command(() =>
+        {
+            TableManager<HogeTable>.Current.UpdateAll(Items);
+        });
+
         public Command DeleteAllCommand => new Command(() =>
         {
             TableManager<HogeTable>.Current.DeleteAll();

@@ -186,6 +186,24 @@ namespace Entap.Basic.SQLite
         }
 
         /// <summary>
+        /// 指定した複数のアイテムを一括更新する
+        /// </summary>
+        /// <param name="items">複数のアイテム</param>
+        /// <param name="runInTransaction">トランザクションとして実行する場合は true。それ以外の場合は false</param>
+        /// <returns>全てのアイテムの更新に成功時は true。それ以外の場合は false</returns>
+        public bool UpdateAll(IEnumerable<T> items, bool runInTransaction = true)
+        {
+            var date = DateTime.Now;
+            var datedItems = items.Select((arg) =>
+            {
+                arg.UpdatedAt = date;
+                return arg;
+            });
+            var rowsAffected = Connection.UpdateAll(datedItems, runInTransaction);
+            return rowsAffected == items.Count();
+        }
+
+        /// <summary>
         /// アイテムを一括削除する
         /// </summary>
         /// <returns>一括削除に成功時は true。それ以外の場合は false</returns>
