@@ -4,6 +4,10 @@ using System.Linq;
 using SQLite;
 namespace Entap.Basic.SQLite
 {
+    /// <summary>
+    /// テーブルの同期制御処理
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class TableManager<T> where T : ITableBase, new ()
     {
         public static TableManager<T> Current => LazyTableManagerInitializer.Value;
@@ -52,7 +56,7 @@ namespace Entap.Basic.SQLite
         /// <summary>
         /// 条件を満たすアイテム数を返す
         /// </summary>
-        public int County(Func<T, bool> predicate) => Connection.Table<T>().Count(predicate);
+        public int Count(Func<T, bool> predicate) => Connection.Table<T>().Count(predicate);
 
         /// <summary>
         /// 指定したIDのアイテムを取得する
