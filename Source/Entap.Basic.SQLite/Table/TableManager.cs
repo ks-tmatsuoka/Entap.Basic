@@ -214,5 +214,15 @@ namespace Entap.Basic.SQLite
             var rowsAffected = Connection.DeleteAll<T>();
             return rowsAffected > 0;
         }
+
+        /// <summary>
+        /// テーブルを削除する
+        /// </summary>
+        /// <returns>テーブルの削除に成功時は true。それ以外の場合は false</returns>
+        public bool DropTable()
+        {
+            var rowsAffected = Connection.DropTable<T>();
+            return rowsAffected > 0;
+        }
     }
 }
