@@ -11,10 +11,11 @@ namespace Entap.Basic.SQLite
     public class TableManager<T> where T : ITableBase, new ()
     {
         public static TableManager<T> Current => LazyTableManagerInitializer.Value;
-        static readonly Lazy<TableManager<T>> LazyTableManagerInitializer = new Lazy<TableManager<T>>(() => new TableManager<T>());
+        static readonly Lazy<TableManager<T>> LazyTableManagerInitializer = new Lazy<TableManager<T>>(() => new TableManager<T>(SQLiteConnectionManager.Connection));
 
-        public TableManager()
+        public TableManager(SQLiteConnection connection)
         {
+            Connection = connection;
             Connection.CreateTable<T>();
             Connection.TableChanged += OnTableChanged;
         }
@@ -28,7 +29,7 @@ namespace Entap.Basic.SQLite
         /// <summary>
         /// データベースへの同期接続
         /// </summary>
-        public SQLiteConnection Connection => SQLiteConnectionManager.Connection;
+        public SQLiteConnection Connection { get; private set; }
 
         /// <summary>
         /// テーブルの変更イベント
