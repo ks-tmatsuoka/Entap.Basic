@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.iOS", "Source\E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Android", "Source\Entap.Basic\Entap.Basic\Entap.Basic.Android\Entap.Basic.Android.csproj", "{273418FD-D731-4C69-ABAB-D5ED34B64603}"
 EndProject
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.NuGet", "Source\Entap.Basic\Entap.Basic\Entap.Basic.NuGet\Entap.Basic.NuGet.nuproj", "{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -193,6 +195,18 @@ Global
 		{273418FD-D731-4C69-ABAB-D5ED34B64603}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{273418FD-D731-4C69-ABAB-D5ED34B64603}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{273418FD-D731-4C69-ABAB-D5ED34B64603}.Release|iPhone.Build.0 = Release|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -217,5 +231,6 @@ Global
 		{06D910B3-77D1-4C53-A60B-5CBB19CB2BFD} = {BB2E3BB8-3011-4E9D-8F04-808BB3F9C8F7}
 		{9917E7A8-1BB8-4BE9-9376-9CB844E17E6F} = {BB2E3BB8-3011-4E9D-8F04-808BB3F9C8F7}
 		{273418FD-D731-4C69-ABAB-D5ED34B64603} = {BB2E3BB8-3011-4E9D-8F04-808BB3F9C8F7}
+		{258C3A61-64EE-4FDB-80BC-73E85AD82EE3} = {BB2E3BB8-3011-4E9D-8F04-808BB3F9C8F7}
 	EndGlobalSection
 EndGlobal
