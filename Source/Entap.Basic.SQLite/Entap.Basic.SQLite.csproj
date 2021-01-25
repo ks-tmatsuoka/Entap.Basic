@@ -24,5 +24,6 @@
   <ItemGroup>
     <Folder Include="ConnectionService\" />
     <Folder Include="Table\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>
