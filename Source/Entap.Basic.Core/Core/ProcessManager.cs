@@ -66,7 +66,7 @@ namespace Entap.Basic.Core
         /// </summary>
         /// <param name="processName">プロセス名</param>
         /// <param name="funcTask">非同期処理</param>
-        public async void Invoke(string processName, Func<Task> funcTask)
+        public async Task Invoke(string processName, Func<Task> funcTask)
         {
             bool started = false;
             try
@@ -89,9 +89,9 @@ namespace Entap.Basic.Core
         /// <param name="memberName">メンバー名</param>
         /// <param name="sourceFilePath">実行元ファイルパス</param>
         /// <param name="sourceLineNumber">行数</param>
-        public void Invoke(Func<Task> funcTask, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
+        public Task Invoke(Func<Task> funcTask, [CallerMemberName] string memberName = "", [CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
         {
-            Invoke(
+            return Invoke(
                 GetProcessName(memberName, sourceFilePath, sourceLineNumber),
                 funcTask);
         }
