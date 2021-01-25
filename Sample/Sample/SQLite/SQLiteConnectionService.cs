@@ -23,13 +23,5 @@ namespace Sample
             var options = new SQLiteConnectionString(DatabasePath, OpenFlags, true, key: EncryptionKey);
             return new SQLiteAsyncConnection(options);
         }
-
-        public SQLiteConnection GetConnection()
-        {
-            var options = new SQLiteConnectionString(DatabasePath, OpenFlags, true, key: EncryptionKey);
-            var connection = new SQLiteConnection(options);
-            connection.BusyTimeout = TimeOutSpan;
-            return connection;
-        }
     }
 }

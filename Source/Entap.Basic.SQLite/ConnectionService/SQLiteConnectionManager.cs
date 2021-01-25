@@ -21,9 +21,7 @@ namespace Entap.Basic.SQLite
         /// <summary>
         /// データベースへの同期接続
         /// </summary>
-        public static SQLiteConnection Connection => _connectionLazyInitializer.Value;
-        static Lazy<SQLiteConnection> _connectionLazyInitializer =
-            new Lazy<SQLiteConnection>(() => _connectionService.GetConnection());
+        public static SQLiteConnection Connection => AsyncConnection.GetConnection();
 
         /// <summary>
         /// データベースへの非同期接続

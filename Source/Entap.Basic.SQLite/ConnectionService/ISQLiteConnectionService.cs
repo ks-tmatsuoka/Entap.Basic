@@ -8,7 +8,6 @@ namespace Entap.Basic.SQLite
     /// </summary>
     public interface ISQLiteConnectionService
     {
-        SQLiteConnection GetConnection();
         SQLiteAsyncConnection GetAsyncConnection();
     }
 }
