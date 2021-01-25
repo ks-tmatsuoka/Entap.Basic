@@ -35,11 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic", "Entap.Basic"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic", "Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj", "{06D910B3-77D1-4C53-A60B-5CBB19CB2BFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.iOS", "Source\Entap.Basic\Entap.Basic\Entap.Basic.iOS\Entap.Basic.iOS.csproj", "{9917E7A8-1BB8-4BE9-9376-9CB844E17E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.iOS", "Source\Entap.Basic\Entap.Basic.iOS\Entap.Basic.iOS.csproj", "{9917E7A8-1BB8-4BE9-9376-9CB844E17E6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Android", "Source\Entap.Basic\Entap.Basic\Entap.Basic.Android\Entap.Basic.Android.csproj", "{273418FD-D731-4C69-ABAB-D5ED34B64603}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Android", "Source\Entap.Basic\Entap.Basic.Android\Entap.Basic.Android.csproj", "{273418FD-D731-4C69-ABAB-D5ED34B64603}"
 EndProject
-Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.NuGet", "Source\Entap.Basic\Entap.Basic\Entap.Basic.NuGet\Entap.Basic.NuGet.nuproj", "{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}"
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.NuGet", "Source\Entap.Basic\Entap.Basic.NuGet\Entap.Basic.NuGet.nuproj", "{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
