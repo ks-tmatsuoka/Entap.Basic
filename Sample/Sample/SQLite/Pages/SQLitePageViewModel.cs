@@ -12,35 +12,40 @@ namespace Sample
     {
         public SQLitePageViewModel()
         {
-            TableManager<HogeTable>.Current.TableChanged += OnHogeTableChanged;
+            SQLiteConnectionManager.Connection.TableChanged += OnHogeTableChanged;
+            //SQLiteConnectionManager.Connection.Any<HogeTable>();
             LoadItems();
         }
 
         public override void OnDestroy()
         {
             base.OnDestroy();
-            TableManager<HogeTable>.Current.TableChanged -= OnHogeTableChanged;
+            SQLiteConnectionManager.Connection.TableChanged -= OnHogeTableChanged;
         }
 
         private void OnHogeTableChanged(object sender, SQLite.NotifyTableChangedEventArgs e)
         {
+            if (e.Table.TableName != typeof(HogeTable).Name) return;
             LoadItems();
         }
 
         public Command InsertAllCommand => new Command(() =>
         {
             var items = Enumerable.Range(0, 10).Select((arg) => new HogeTable());
-            TableManager<HogeTable>.Current.InsertAll(items);
+            var result = SQLiteConnectionManager.Connection.ExInsertAll<HogeTable>(items);
+            System.Diagnostics.Debug.WriteLine($"InsertAll : {result}");
         });
 
         public Command UpdateAllCommand => new Command(() =>
         {
-            TableManager<HogeTable>.Current.UpdateAll(Items);
+            var result = SQLiteConnectionManager.Connection.ExUpdateAll<HogeTable>(Items);
+            System.Diagnostics.Debug.WriteLine($"UpdateAll : {result}");
         });
 
         public Command DeleteAllCommand => new Command(() =>
         {
-            TableManager<HogeTable>.Current.DeleteAll();
+            var result = SQLiteConnectionManager.Connection.ExDeleteAll<HogeTable>();
+            System.Diagnostics.Debug.WriteLine($"DeleteAll : {result}");
         });
 
         public ObservableCollection<HogeTable> Items
@@ -52,7 +57,8 @@ namespace Sample
 
         public Command AddCommand => new Command(() =>
         {
-            TableManager<HogeTable>.Current.Insert(new HogeTable());
+            var result = SQLiteConnectionManager.Connection.Insert(new HogeTable());
+            System.Diagnostics.Debug.WriteLine($"Insert : {result}");
         });
 
 
@@ -62,18 +68,20 @@ namespace Sample
             switch (menu)
             {
                 case "更新":
-                    TableManager<HogeTable>.Current.Update(arg);
+                    var result = SQLiteConnectionManager.Connection.Update(arg);
+                    System.Diagnostics.Debug.WriteLine($"Update : {result}");
                     break;
                 case "削除":
-                    TableManager<HogeTable>.Current.Delete(arg);
+                    result = SQLiteConnectionManager.Connection.Delete(arg);
+                    System.Diagnostics.Debug.WriteLine($"Delete : {result}");
                     break;
             }
         });
 
         void LoadItems()
         {
-            //Items = new ObservableCollection<HogeTable>(TableManager<HogeTable>.Current.GetAll());
-            Items = new ObservableCollection<HogeTable>(TableManager<HogeTable>.Current.OrderBy((arg) => arg.UpdatedAt));
+            Items = new ObservableCollection<HogeTable>(SQLiteConnectionManager.Connection.ExOrderByDescending<HogeTable>());
+            //Items = new ObservableCollection<HogeTable>(SQLiteConnectionManager.Connection.OrderBy<HogeTable, DateTime>((arg) => arg.UpdatedAt));
         }
     }
 }
