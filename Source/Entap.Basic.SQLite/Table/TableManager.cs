@@ -79,8 +79,8 @@ namespace Entap.Basic.SQLite
         /// </summary>
         /// <param name="item">アイテム</param>
         /// <returns>AppIdでソートしたアイテム</returns>
-        public IEnumerable<T> OrderBy()
-            => Connection.Table<T>().OrderBy(o => o.Id);
+        public IOrderedEnumerable<T> OrderBy()
+            => OrderBy(o => o.Id);
 
         /// <summary>
         /// 任意のキーの昇順でソートしたアイテムを取得する
@@ -106,8 +106,8 @@ namespace Entap.Basic.SQLite
         /// </summary>
         /// <param name="item">アイテム</param>
         /// <returns>AppIdでソートしたアイテム</returns>
-        public IEnumerable<T> OrderByDescending()
-            => Connection.Table<T>().OrderByDescending(o => o.Id);
+        public IOrderedEnumerable<T> OrderByDescending()
+            => OrderByDescending(o => o.Id);
 
         /// <summary>
         /// 任意のキーの降順でソートしたアイテムを取得する
