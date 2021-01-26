@@ -17,6 +17,11 @@
                 Text="SQLite"
                 Command="{Binding SQLiteCommand}"
             />
+            <Button
+                Text="Guide"
+                Command="{Binding GuideCommand}"
+            />
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

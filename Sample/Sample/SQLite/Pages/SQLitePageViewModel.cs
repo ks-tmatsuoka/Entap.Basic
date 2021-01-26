@@ -13,7 +13,6 @@ namespace Sample
         public SQLitePageViewModel()
         {
             SQLiteConnectionManager.Connection.TableChanged += OnHogeTableChanged;
-            //SQLiteConnectionManager.Connection.Any<HogeTable>();
             LoadItems();
         }
 
@@ -68,11 +67,11 @@ namespace Sample
             switch (menu)
             {
                 case "更新":
-                    var result = SQLiteConnectionManager.Connection.Update(arg);
+                    var result = SQLiteConnectionManager.Connection.ExUpdate(arg);
                     System.Diagnostics.Debug.WriteLine($"Update : {result}");
                     break;
                 case "削除":
-                    result = SQLiteConnectionManager.Connection.Delete(arg);
+                    result = SQLiteConnectionManager.Connection.ExDelete<HogeTable>(arg.Id);
                     System.Diagnostics.Debug.WriteLine($"Delete : {result}");
                     break;
             }
