@@ -25,5 +25,6 @@
     <Folder Include="Behaviors\" />
     <Folder Include="PageManager\Behaviors\" />
     <Folder Include="PageManager\PageNavigation\" />
+    <Folder Include="Extentions\" />
   </ItemGroup>
 </Project>
