@@ -9,8 +9,11 @@ namespace Entap.Basic.Forms
     /// </summary>
     public class PageViewModelBase : BindableBase
     {
-        public PageViewModelBase()
+        IPageLifeCycle _pageLifeCycle;
+        public PageViewModelBase(IPageLifeCycle pageLifeCycle = null)
         {
+            _pageLifeCycle = pageLifeCycle;
+            _pageLifeCycle?.OnCreate();
         }
 
         #region PageNavigationStatus制御
@@ -21,6 +24,7 @@ namespace Entap.Basic.Forms
         public virtual void OnEntry()
         {
             System.Diagnostics.Debug.WriteLine($"{this} : {nameof(OnEntry)}");
+            _pageLifeCycle?.OnEntry();
         }
 
         /// <summary>
@@ -29,6 +33,7 @@ namespace Entap.Basic.Forms
         public virtual void OnExit()
         {
             System.Diagnostics.Debug.WriteLine($"{this} : {nameof(OnExit)}");
+            _pageLifeCycle?.OnExit();
         }
 
         /// <summary>
@@ -37,6 +42,7 @@ namespace Entap.Basic.Forms
         public virtual void OnDestroy()
         {
             System.Diagnostics.Debug.WriteLine($"{this} : {nameof(OnDestroy)}");
+            _pageLifeCycle?.OnDestroy();
             HasDestryoed = true;
         }
 
