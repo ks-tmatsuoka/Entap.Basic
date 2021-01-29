@@ -3,8 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Entap.Basic.Launch.Terms"
-    x:Class="Entap.Basic.Launch.Terms.ConfirmTermsPage"
-    x:DataType="local:ConfirmTermsPageViewModel">
+    x:Class="Entap.Basic.Launch.Terms.TermsPage"
+    x:DataType="local:TermsPageViewModel">
     <ContentPage.Content>
     </ContentPage.Content>
 </ContentPage>

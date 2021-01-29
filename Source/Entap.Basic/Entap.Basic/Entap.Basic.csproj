@@ -24,5 +24,6 @@
   <ItemGroup>
     <Folder Include="Launch\Terms\" />
     <Folder Include="Launch\Terms\C001\" />
+    <Folder Include="Launch\Terms\C002\" />
   </ItemGroup>
 </Project>
