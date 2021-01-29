@@ -21,4 +21,8 @@
     <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj" />
     <ProjectReference Include="..\..\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Launch\Terms\" />
+    <Folder Include="Launch\Terms\C001\" />
+  </ItemGroup>
 </Project>
