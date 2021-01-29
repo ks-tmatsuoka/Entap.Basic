@@ -88,6 +88,8 @@ namespace Entap.Basic.Forms
                 var navigationPage = (NavigationPage)page;
                 return navigationPage.CurrentPage;
             }
+            else if (page is TabbedPage tabbedPage)
+                return tabbedPage.CurrentPage;
             return page;
         }
 
