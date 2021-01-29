@@ -12,7 +12,7 @@ namespace Entap.Basic.Launch.Guide
     {
         IEnumerable<GuideContent> _guideContents;
         IGuideUseCase _guideUseCase;
-        public GuidePageViewModel(IEnumerable<GuideContent> contents, IGuideUseCase guideUseCase)
+        public GuidePageViewModel(IEnumerable<GuideContent> contents, IGuideUseCase guideUseCase, IPageLifeCycle pageLifeCycle = null) : base(pageLifeCycle)
         {
             _guideContents = contents;
             _guideUseCase = guideUseCase;
