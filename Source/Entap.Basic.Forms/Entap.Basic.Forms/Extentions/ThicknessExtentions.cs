@@ -27,18 +27,18 @@ namespace Entap.Basic.Forms
             var safeAreaInsets = currentPage.On<iOS>().SafeAreaInsets();
             if (safeAreaInsets.IsEmpty) return null;
 
-            var result = new Thickness();
+            var result = new Thickness(thickness.Left, thickness.Top, thickness.Right, thickness.Bottom);
             if (positionFlags.HasFlag(ThicknessPositionFlags.Left))
-                result.Left = thickness.Left + safeAreaInsets.Left;
+                result.Left += safeAreaInsets.Left;
 
             if (positionFlags.HasFlag(ThicknessPositionFlags.Top))
-                result.Top = thickness.Top + safeAreaInsets.Top;
+                result.Top += safeAreaInsets.Top;
 
             if (positionFlags.HasFlag(ThicknessPositionFlags.Right))
-                result.Right = thickness.Right + safeAreaInsets.Right;
+                result.Right += safeAreaInsets.Right;
 
             if (positionFlags.HasFlag(ThicknessPositionFlags.Bottom))
-                result.Bottom = thickness.Bottom + safeAreaInsets.Bottom;
+                result.Bottom += safeAreaInsets.Bottom;
 
             return result;
         }
