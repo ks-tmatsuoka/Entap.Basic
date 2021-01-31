@@ -5,6 +5,21 @@
     xmlns:local="clr-namespace:Entap.Basic.Launch.Terms"
     x:Class="Entap.Basic.Launch.Terms.ConfirmTermsPage"
     x:DataType="local:ConfirmTermsPageViewModel">
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout>
+        <Button
+            Text="利用規約"
+            Command="{Binding ConfirmTermsCommand}"
+        />
+        <Button
+            Text="プライバシーポリシー"
+            Command="{Binding ConfirmPrivacyPolicyCommand}"
+        />
+        <CheckBox
+            IsChecked="{Binding IsChecked}"
+        />
+        <Button
+            Text="同意して始める"
+            Command="{Binding AcceptCommand}"
+        />
+    </StackLayout>
 </ContentPage>
