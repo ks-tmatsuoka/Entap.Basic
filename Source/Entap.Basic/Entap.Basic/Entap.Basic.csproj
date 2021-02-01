@@ -23,7 +23,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Launch\Terms\" />
-    <Folder Include="Launch\Terms\C001\" />
-    <Folder Include="Launch\Terms\C002\" />
+    <Folder Include="Launch\Terms\c001\" />
+    <Folder Include="Launch\Terms\c002\" />
+    <Folder Include="Launch\Auth\" />
+    <Folder Include="Launch\Auth\LoginPortal\" />
+    <Folder Include="Launch\Auth\LoginPortal\d001\" />
   </ItemGroup>
 </Project>
