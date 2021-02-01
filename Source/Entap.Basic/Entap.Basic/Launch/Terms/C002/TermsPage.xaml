@@ -5,6 +5,11 @@
     xmlns:local="clr-namespace:Entap.Basic.Launch.Terms"
     x:Class="Entap.Basic.Launch.Terms.TermsPage"
     x:DataType="local:TermsPageViewModel">
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout>
+        <Button
+            VerticalOptions="EndAndExpand"
+            Text="閉じる"
+            Command="{Binding CloseCommand}"
+        />
+    </StackLayout>
 </ContentPage>
