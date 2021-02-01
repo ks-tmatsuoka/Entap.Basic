@@ -15,27 +15,18 @@ namespace Entap.Basic.Launch.Terms
 
             AcceptCommand = new Command(() =>
             {
-                ProcessManager.Current.Invoke(() =>
-                {
-                    _confirmTermsUseCase.AcceptTerms();
-                });
+                _confirmTermsUseCase.AcceptTerms();
             }, () => IsChecked);
         }
 
         public Command ConfirmTermsCommand => new Command(() =>
         {
-            ProcessManager.Current.Invoke(() =>
-            {
-                _confirmTermsUseCase.ConfirmTerms();
-            });
+            _confirmTermsUseCase.ConfirmTerms();
         });
 
         public Command ConfirmPrivacyPolicyCommand => new Command(() =>
         {
-            ProcessManager.Current.Invoke(() =>
-            {
-                _confirmTermsUseCase.ConfirmPrivacyPolicy();
-            });
+            _confirmTermsUseCase.ConfirmPrivacyPolicy();
         });
 
         public bool IsChecked
