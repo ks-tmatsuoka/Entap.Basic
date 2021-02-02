@@ -28,5 +28,7 @@
     <Folder Include="Launch\Auth\" />
     <Folder Include="Launch\Auth\LoginPortal\" />
     <Folder Include="Launch\Auth\LoginPortal\d001\" />
+    <Folder Include="Launch\Splash\" />
+    <Folder Include="Launch\Splash\a002\" />
   </ItemGroup>
 </Project>
