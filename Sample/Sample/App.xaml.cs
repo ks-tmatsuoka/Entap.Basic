@@ -1,5 +1,6 @@
 ﻿using System;
 using Entap.Basic.Forms;
+using Entap.Basic.Launch.Splash;
 using Entap.Basic.SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,7 +15,7 @@ namespace Sample
 
             Core.Init(this);
             SQLiteConnectionManager.Init(new SQLiteConnectionService());
-            PageManager.Navigation.SetNavigationMainPage<MainPage>(new MainPageViewModel());
+            PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel(new SplashUseCase()));
         }
 
         protected override void OnStart()
