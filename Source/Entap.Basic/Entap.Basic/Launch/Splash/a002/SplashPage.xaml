@@ -6,5 +6,8 @@
     x:Class="Entap.Basic.Launch.Splash.SplashPage"
     x:DataType="local:SplashPageViewModel">
     <ContentPage.Content>
+        <ActivityIndicator
+            IsRunning="{Binding IsLoading}"
+        />
     </ContentPage.Content>
 </ContentPage>
