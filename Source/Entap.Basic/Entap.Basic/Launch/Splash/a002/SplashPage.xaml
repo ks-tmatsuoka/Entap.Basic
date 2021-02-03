@@ -3,11 +3,14 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Entap.Basic.Launch.Splash"
+    xmlns:controls="clr-namespace:Entap.Basic.Controls"
     x:Class="Entap.Basic.Launch.Splash.SplashPage"
-    x:DataType="local:SplashPageViewModel">
+    x:DataType="local:SplashPageViewModel"
+>
     <ContentPage.Content>
-        <ActivityIndicator
-            IsRunning="{Binding IsLoading}"
+        <controls:SplashTemplatedView
+            ControlTemplate="{StaticResource SplashViewTemplate}"
+            IsLoading="{Binding IsLoading}"
         />
     </ContentPage.Content>
 </ContentPage>
