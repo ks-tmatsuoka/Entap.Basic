@@ -30,5 +30,6 @@
     <Folder Include="Launch\Auth\LoginPortal\d001\" />
     <Folder Include="Launch\Splash\" />
     <Folder Include="Launch\Splash\a002\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>
