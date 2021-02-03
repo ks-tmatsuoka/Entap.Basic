@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Entap.Basic.Launch.Terms"
     x:Class="Entap.Basic.Launch.Terms.ConfirmTermsPage"
-    x:DataType="local:ConfirmTermsPageViewModel">
+    x:DataType="local:ConfirmTermsPageViewModel"
+    Style="{StaticResource PageStyle}"
+>
     <StackLayout>
         <Button
             Text="利用規約"

@@ -5,6 +5,7 @@
     xmlns:local="clr-namespace:Entap.Basic.Launch.Auth"
     x:Class="Entap.Basic.Launch.Auth.LoginPortalPage"
     x:DataType="local:LoginPortalPageViewModel"
+    Style="{StaticResource PageStyle}"
 >
     <ContentPage.Content>
     </ContentPage.Content>
