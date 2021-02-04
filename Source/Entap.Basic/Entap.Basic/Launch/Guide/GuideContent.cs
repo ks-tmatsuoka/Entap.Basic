@@ -11,6 +11,11 @@ namespace Entap.Basic.Launch.Guide
         }
 
         /// <summary>
+        /// コンテンツの種類
+        /// </summary>
+        public GuideContentType ContentType { get; set; }
+
+        /// <summary>
         /// タイトル
         /// </summary>
         public string Title { get; set; }
@@ -21,9 +26,9 @@ namespace Entap.Basic.Launch.Guide
         public string Description { get; set; }
 
         /// <summary>
-        /// 画像
+        /// コンテンツソース
         /// </summary>
-        public string Image { get; set; }
+        public string Source { get; set; }
 
         /// <summary>
         /// スライド遷移文字
