@@ -26,6 +26,11 @@ namespace Entap.Basic.Launch.Guide
         public string Description { get; set; }
 
         /// <summary>
+        /// 説明をセンタリングするか
+        /// </summary>
+        public bool IsDescriptionCentering { get; set; }
+
+        /// <summary>
         /// コンテンツソース
         /// </summary>
         public string Source { get; set; }
