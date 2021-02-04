@@ -131,6 +131,26 @@
       <Project>{DA04402E-148F-4276-A0A4-8B7BABC10BC1}</Project>
       <Name>SHIRO.CO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj">
+      <Project>{06D910B3-77D1-4C53-A60B-5CBB19CB2BFD}</Project>
+      <Name>Entap.Basic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core.csproj">
+      <Project>{C7D33057-ED52-4168-A347-BCC7D5785A44}</Project>
+      <Name>Entap.Basic.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
+      <Project>{E2028777-8C1B-489E-9EFD-477CD3082EA7}</Project>
+      <Name>Entap.Basic.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms.iOS\Entap.Basic.Forms.iOS.csproj">
+      <Project>{429CC795-4485-41D2-8D56-04DAD63245AF}</Project>
+      <Name>Entap.Basic.Forms.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic.iOS\Entap.Basic.iOS.csproj">
+      <Project>{9917E7A8-1BB8-4BE9-9376-9CB844E17E6F}</Project>
+      <Name>Entap.Basic.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
