@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:guide="clr-namespace:Entap.Basic.Launch.Guide"
+    xmlns:controls="clr-namespace:Entap.Basic.Controls"
+    x:Class="Entap.Basic.Launch.Guide.GuideResourceDictionary"
+>
+    <Style x:Key="GuideTitleStyle" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <Style x:Key="GuideDescriptionStyle" TargetType="Label">
+        <Setter Property="Margin" Value="16, 24, 16, 40"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Style.Triggers>
+            <DataTrigger
+                TargetType="Label"
+                Binding="{Binding IsDescriptionCentering}"
+                Value="True"
+            >
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate x:Key="ImageTemplate" x:DataType="guide:GuideContent">
+        <Grid
+            Padding="24, 0, 24, 24"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="327*"/>
+                <RowDefinition Height="24*"/>
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="1"
+                Style="{StaticResource GuideTitleStyle}"
+                Text="{Binding Title}"
+            >
+            </Label>
+            <Label
+                Grid.Row="3"
+                Style="{StaticResource GuideDescriptionStyle}"
+                Text="{Binding Description}"
+            />
+            <Image
+                Grid.Row="5"
+                Source="{Binding Source}"
+            />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="EmptyTemplate" x:DataType="guide:GuideContent">
+        <Grid
+            Padding="24, 0, 24, 24"
+        >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="327*"/>
+                <RowDefinition Height="24*"/>
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="1"
+                Style="{StaticResource GuideTitleStyle}"
+                Text="{Binding Title}"
+            />
+            <Label
+                Grid.Row="3"
+                Style="{StaticResource GuideDescriptionStyle}"
+                Text="{Binding Description}"
+            />
+            <Label
+                Grid.Row="5"
+                Text="GuideDataTemplateSelectorとAnimationTemplateを定義してください。"
+            />
+        </Grid>
+    </DataTemplate>
+    <controls:GuideDataTemplateSelector
+        x:Key="GuideDataTemplateSelector"
+        ImageDataTemplate="{StaticResource ImageTemplate}"
+        AnimationTemplate="{StaticResource EmptyTemplate}"
+    />
+</ResourceDictionary>

@@ -5,12 +5,12 @@
     xmlns:basic="clr-namespace:Entap.Basic"
     xmlns:local="clr-namespace:Entap.Basic.Launch.Guide"
     xmlns:bforms="clr-namespace:Entap.Basic.Forms;assembly=Entap.Basic.Forms"
+    xmlns:controls="clr-namespace:Entap.Basic.Controls"
     x:Class="Entap.Basic.Launch.Guide.GuidePage"
     x:DataType="local:GuidePageViewModel"
     Style="{StaticResource PageStyle}"
 >
-    <Grid
-    >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -23,21 +23,8 @@
             IndicatorView="indicatorView"
             Position="{Binding Position}"
             HorizontalScrollBarVisibility="Never"
-
-        >
-            <CarouselView.ItemTemplate>
-                <DataTemplate x:DataType="local:GuideContent">
-                    <StackLayout>
-                        <Label
-                            Text="{Binding Title}"
-                        />
-                        <Label
-                            Text="{Binding Description}"
-                        />
-                    </StackLayout>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+            ItemTemplate="{StaticResource GuideDataTemplateSelector}"
+        />
 
         <StackLayout
             BackgroundColor="Red"
