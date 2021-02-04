@@ -24,9 +24,10 @@ namespace Sample
         {
             var contents = new List<GuideContent>()
             {
-                new GuideContent { Title = "title 1", Description = "description 1", Next = "つぎへ" },
-                new GuideContent { Title = "title 2", Description = "description 2", Next = "つぎへ" },
-                new GuideContent { Title = "title 3", Description = "description 3", Next = "はじめる" }
+                new GuideContent { Title = "SHIRO.COへようこそ", Description = $"SHIRO.COアプリを使って{Environment.NewLine}より快適なお買い物をお楽しみください。", IsDescriptionCentering = true, Next = "次へ", Source = "image_guide01.png"},
+                new GuideContent { Title = "SHIRO.お得なクーポンをもらおう", Description = "会員登録をすると、さらにお得なクーポンが配信されます。", Next = "次へ", Source = "image_guide02.png" },
+                new GuideContent { Title = "ギャラリーに展示しよう", Description = "毎月、SHIROアプリ内で共有された写真の中からカフェギャラリーに展示される写真が選ばれます。", Next = "はじめる", Source = "image_guide03.png" },
+                new GuideContent { ContentType = GuideContentType.Animation, Title = "サンプル", Description = "アニメーション", Next = "はじめる", Source = "splash.json" },
             };
             await PageManager.Navigation.PushAsync<GuidePage>(new GuidePageViewModel(contents, new MyGuideUseCase()));
         });
