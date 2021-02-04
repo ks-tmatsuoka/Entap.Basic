@@ -15,7 +15,7 @@ namespace Sample
 
             Core.Init(this);
             SQLiteConnectionManager.Init(new SQLiteConnectionService());
-            PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel(new SplashUseCase()));
+            PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel(new Sample.SplashUseCase()));
         }
 
         protected override void OnStart()
