@@ -4,46 +4,48 @@
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     x:Class="Sample.App">
     <Application.Resources>
-        <Style x:Key="PageStyle" TargetType="ContentPage">
-            <Setter Property="BackgroundImageSource" Value="image_page_background.png"/>
-        </Style>
+        <ResourceDictionary>
+            <Style x:Key="PageStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundImageSource" Value="image_page_background.png"/>
+            </Style>
 
-        <ControlTemplate x:Key="SplashViewTemplate">
-            <!--Lottie-->
-            <lottie:AnimationView
-                WidthRequest="250"
-                HeightRequest="250"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand"
-                Animation="splash.json"
-                Loop="True"
-                AutoPlay="True"
-                IsPlaying="{Binding IsLoading}"
-            >
-                <lottie:AnimationView.Margin>
-                    <OnPlatform x:TypeArguments="Thickness">
-                        <OnPlatform.Platforms>
-                            <On Platform="iOS" Value="0" />
-                            <!--StatusBarHeight-->
-                            <On Platform="Android" Value="0, 24, 0, 0" />
-                        </OnPlatform.Platforms>
-                    </OnPlatform>
-                </lottie:AnimationView.Margin>
-            </lottie:AnimationView>
+            <ControlTemplate x:Key="SplashViewTemplate">
+                <!--Lottie-->
+                <lottie:AnimationView
+                    WidthRequest="250"
+                    HeightRequest="250"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Animation="splash.json"
+                    Loop="True"
+                    AutoPlay="True"
+                    IsPlaying="{Binding IsLoading}"
+                >
+                    <lottie:AnimationView.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <OnPlatform.Platforms>
+                                <On Platform="iOS" Value="0" />
+                                <!--StatusBarHeight-->
+                                <On Platform="Android" Value="0, 24, 0, 0" />
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </lottie:AnimationView.Margin>
+                </lottie:AnimationView>
 
-            <!--Logo + Indicator-->
-            <!--<StackLayout
-                VerticalOptions="Center"
-            >
-                <Image
-                    Source="logo.png"
-                />
-                <ActivityIndicator
-                    WidthRequest="50"
-                    HeightRequest="50"
-                    IsRunning="{TemplateBinding IsLoading}"
-                />
-            </StackLayout>-->
-        </ControlTemplate>
+                <!--Logo + Indicator-->
+                <!--<StackLayout
+                    VerticalOptions="Center"
+                >
+                    <Image
+                        Source="logo.png"
+                    />
+                    <ActivityIndicator
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        IsRunning="{TemplateBinding IsLoading}"
+                    />
+                </StackLayout>-->
+            </ControlTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
