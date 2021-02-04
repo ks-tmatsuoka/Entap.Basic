@@ -152,6 +152,15 @@
     <BundleResource Include="Resources\image_page_background.png" />
     <BundleResource Include="Resources\image_page_background%403x.png" />
     <BundleResource Include="Resources\image_page_background%402x.png" />
+    <BundleResource Include="Resources\image_guide03%403x.png" />
+    <BundleResource Include="Resources\image_guide03%402x.png" />
+    <BundleResource Include="Resources\image_guide03.png" />
+    <BundleResource Include="Resources\image_guide02%403x.png" />
+    <BundleResource Include="Resources\image_guide02%402x.png" />
+    <BundleResource Include="Resources\image_guide02.png" />
+    <BundleResource Include="Resources\image_guide01%403x.png" />
+    <BundleResource Include="Resources\image_guide01%402x.png" />
+    <BundleResource Include="Resources\image_guide01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
