@@ -1,8 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:guide="clr-namespace:Entap.Basic.Launch.Guide;assembly=Entap.Basic"
              x:Class="SHIRO.CO.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <guide:GuideResourceDictionary/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
 
+        <Style x:Key="PageStyle" TargetType="ContentPage">
+            <Setter Property="BackgroundImageSource" Value="image_page_background.png"/>
+        </Style>
+
+            <ControlTemplate x:Key="SplashViewTemplate">
+                <StackLayout
+                    VerticalOptions="Center"
+                >
+                    <Image
+                        Source="logo.png"
+                    />
+                    <ActivityIndicator
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        IsRunning="{TemplateBinding IsLoading}"
+                    />
+                </StackLayout>
+            </ControlTemplate>
     </Application.Resources>
 </Application>
