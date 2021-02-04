@@ -6,6 +6,7 @@
     xmlns:controls="clr-namespace:Entap.Basic.Controls"
     x:Class="Entap.Basic.Launch.Splash.SplashPage"
     x:DataType="local:SplashPageViewModel"
+    Style="{StaticResource PageStyle}"
 >
     <ContentPage.Content>
         <controls:SplashTemplatedView
