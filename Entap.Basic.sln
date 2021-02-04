@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Android", "Sour
 EndProject
 Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.NuGet", "Source\Entap.Basic\Entap.Basic.NuGet\Entap.Basic.NuGet.nuproj", "{258C3A61-64EE-4FDB-80BC-73E85AD82EE3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{7119A77A-D182-42A6-ABA1-4F5C4702833C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
