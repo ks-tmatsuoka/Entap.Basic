@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-    x:Class="Sample.App">
+    xmlns:guide="clr-namespace:Entap.Basic.Launch.Guide;assembly=Entap.Basic"
+    xmlns:controls="clr-namespace:Entap.Basic.Controls;assembly=Entap.Basic"
+    x:Class="Sample.App"
+>
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <guide:GuideResourceDictionary/>
+            </ResourceDictionary.MergedDictionaries>
+
             <Style x:Key="PageStyle" TargetType="ContentPage">
                 <Setter Property="BackgroundImageSource" Value="image_page_background.png"/>
             </Style>
@@ -46,6 +54,43 @@
                     />
                 </StackLayout>-->
             </ControlTemplate>
+
+            <DataTemplate x:Key="AnimationTemplate" x:DataType="guide:GuideContent">
+                <Grid
+                    Padding="24, 0, 24, 24"
+                >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="98*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="24*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="327*"/>
+                        <RowDefinition Height="24*"/>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="1"
+                        Style="{StaticResource GuideTitleStyle}"
+                        Text="{Binding Title}"
+                    />
+                    <Label
+                        Grid.Row="3"
+                        Style="{StaticResource GuideDescriptionStyle}"
+                        Text="{Binding Description}"
+                    />
+                    <lottie:AnimationView
+                        Grid.Row="5"
+                        Animation="{Binding Source}"
+                        Loop="True"
+                        AutoPlay="True"
+                    />
+                </Grid>
+            </DataTemplate>
+            <controls:GuideDataTemplateSelector
+                x:Key="GuideDataTemplateSelector"
+                ImageDataTemplate="{StaticResource ImageTemplate}"
+                AnimationTemplate="{StaticResource AnimationTemplate}"
+            />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
