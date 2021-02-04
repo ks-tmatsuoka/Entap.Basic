@@ -3,6 +3,9 @@ using Xamarin.Forms;
 
 namespace SHIRO.CO
 {
+    /// <summary>
+    /// 色の定義
+    /// </summary>
     public class Colors
     {
         // BG
