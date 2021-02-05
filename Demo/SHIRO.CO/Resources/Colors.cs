@@ -37,6 +37,11 @@ namespace SHIRO.CO
         public static readonly Color TextMain = Color.FromHex(Theme);
         public static readonly Color TextAccent = Color.FromHex(Accent);
 
+        public static readonly Color Checked = Color.FromHex(Accent);
+
+        public static readonly Color Active = Color.FromHex(Accent);
+        public static readonly Color Inactive = Color.FromHex(Gray);
+
         const string Black = "#4A4A4A";
         const string BlackLight = "#848384";
         const string GrayDark = "#BABABA";
