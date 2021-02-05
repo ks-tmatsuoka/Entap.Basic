@@ -79,7 +79,10 @@ namespace Entap.Basic.Forms
                 return GetCurrentPage(lastNavigationPage);
 
             var lastModalPage = currentNavigation.ModalStack?.Where((arg) => arg.Id == lastItem).LastOrDefault();
-            return GetCurrentPage(lastModalPage);
+            if (lastModalPage != null)
+                return GetCurrentPage(lastModalPage);
+
+            return GetCurrentPage(Core.Application.MainPage);
         }
         Page GetCurrentPage(Page page)
         {
