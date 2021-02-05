@@ -3,6 +3,43 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Entap.Basic.Controls.TitledContentView">
-    <ContentView.Content>
-    </ContentView.Content>
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="TitledContentViewTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="8"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="4"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Style="{StaticResource TitledConentViewTitleLabelStyle}"
+                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="{TemplateBinding Title}"
+                    />
+                    <Label
+                        Style="{StaticResource TitledConentViewRequiredLabelStyle}"
+                        Grid.Row="0" Grid.Column="1"
+                        IsVisible="{TemplateBinding IsRequired}"
+                    />
+                    <ContentPresenter
+                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                    />
+                    <Label
+                        Style="{StaticResource TitledConentViewMessageLabelStyle}"
+                        Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="{TemplateBinding Message}"
+                    />
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentView.Resources>
 </ContentView>
