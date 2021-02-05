@@ -27,7 +27,7 @@ namespace Entap.Basic.Launch.Guide
         {
             System.Diagnostics.Debug.WriteLine("GuideUseCase.OnComplete");
             // ToDo 遷移先ページ変更
-            ProcessManager.Current.Invoke(async () => await PageManager.Navigation.PushNavigationModalAsync<ConfirmTermsPage>(new ConfirmTermsPageViewModel(new ConfirmTermsUseCase())));
+            ProcessManager.Current.Invoke(async () => await PageManager.Navigation.SetMainPage<ConfirmTermsPage>(new ConfirmTermsPageViewModel(new ConfirmTermsUseCase())));
         }
     }
 }
