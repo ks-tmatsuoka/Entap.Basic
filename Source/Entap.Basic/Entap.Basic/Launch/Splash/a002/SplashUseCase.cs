@@ -15,13 +15,14 @@ namespace Entap.Basic.Launch.Splash
         public async Task LoadAsync()
         {
             await Task.Delay(3000);
+            // ToDo
             var contents = new List<GuideContent>()
             {
                 new GuideContent { Title = "title 1", Description = "description 1", Next = "つぎへ" },
                 new GuideContent { Title = "title 2", Description = "description 2", Next = "つぎへ" },
                 new GuideContent { Title = "title 3", Description = "description 3", Next = "はじめる" }
             };
-            await PageManager.Navigation.SetNavigationMainPage<GuidePage>(new GuidePageViewModel(contents, new GuideUseCase()));
+            await PageManager.Navigation.SetMainPage<GuidePage>(new GuidePageViewModel(contents, new GuideUseCase()));
         }
     }
 }
