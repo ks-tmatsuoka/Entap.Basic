@@ -9,10 +9,12 @@
 >
     <StackLayout>
         <Button
+            Style="{StaticResource NeutralButtonStyle}"
             Text="利用規約"
             Command="{Binding ConfirmTermsCommand}"
         />
         <Button
+            Style="{StaticResource NeutralButtonStyle}"
             Text="プライバシーポリシー"
             Command="{Binding ConfirmPrivacyPolicyCommand}"
         />
@@ -20,6 +22,7 @@
             IsChecked="{Binding IsChecked}"
         />
         <Button
+            Style="{StaticResource PositiveButtonStyle}"
             Text="同意して始める"
             Command="{Binding AcceptCommand}"
         />
