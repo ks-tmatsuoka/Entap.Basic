@@ -7,6 +7,10 @@
     x:DataType="local:LoginPortalPageViewModel"
     Style="{StaticResource PageStyle}"
 >
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout>
+        <Button
+            Text="あとで登録する"
+            Command="{Binding SkipCommand}"
+        />
+    </StackLayout>
 </ContentPage>
