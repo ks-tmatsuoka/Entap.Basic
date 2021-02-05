@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Entap.Basic.Forms;
 using Xamarin.Forms;
 
-namespace Entap.Basic.Launch.Auth
+namespace Entap.Basic.Launch.LoginPortal
 {
     public class LoginPortalPageViewModel : PageViewModelBase
     {

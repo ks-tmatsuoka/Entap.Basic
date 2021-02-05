@@ -2,8 +2,8 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Entap.Basic.Launch.Auth"
-    x:Class="Entap.Basic.Launch.Auth.LoginPortalPage"
+    xmlns:local="clr-namespace:Entap.Basic.Launch.LoginPortal"
+    x:Class="Entap.Basic.Launch.LoginPortal.LoginPortalPage"
     x:DataType="local:LoginPortalPageViewModel"
     Style="{StaticResource PageStyle}"
 >

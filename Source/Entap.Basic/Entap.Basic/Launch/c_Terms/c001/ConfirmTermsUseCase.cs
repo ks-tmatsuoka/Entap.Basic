@@ -1,6 +1,7 @@
 ﻿using System;
 using Entap.Basic.Core;
 using Entap.Basic.Forms;
+using Entap.Basic.Launch.LoginPortal;
 
 namespace Entap.Basic.Launch.Terms
 {
@@ -33,7 +34,7 @@ namespace Entap.Basic.Launch.Terms
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                await PageManager.Navigation.PushModalAsync<TermsPage>(new TermsPageViewModel(new TermsUseCase()));
+                await PageManager.Navigation.PushModalAsync<LoginPortalPage>(new TermsPageViewModel(new TermsUseCase()));
             });
         }
     }

@@ -22,16 +22,16 @@
     <ProjectReference Include="..\..\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Launch\Terms\" />
-    <Folder Include="Launch\Terms\c001\" />
-    <Folder Include="Launch\Terms\c002\" />
-    <Folder Include="Launch\Auth\" />
-    <Folder Include="Launch\Auth\LoginPortal\" />
-    <Folder Include="Launch\Auth\LoginPortal\d001\" />
-    <Folder Include="Launch\Splash\" />
-    <Folder Include="Launch\Splash\a002\" />
+    <Folder Include="Launch\c_Terms\" />
+    <Folder Include="Launch\c_Terms\c001\" />
+    <Folder Include="Launch\c_Terms\c002\" />
+    <Folder Include="Launch\d_LoginPortal\" />
+    <Folder Include="Launch\a_Splash\" />
+    <Folder Include="Launch\a_Splash\a002\" />
     <Folder Include="Controls\" />
     <Folder Include="Resources\" />
     <Folder Include="Resources\ResourceDictionaries\" />
+    <Folder Include="Launch\d_LoginPortal\d001\" />
+    <Folder Include="Launch\e_Auth\" />
   </ItemGroup>
 </Project>

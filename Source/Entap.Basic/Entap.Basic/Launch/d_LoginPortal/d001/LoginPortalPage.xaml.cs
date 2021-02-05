@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace Entap.Basic.Launch.Auth
+namespace Entap.Basic.Launch.LoginPortal
 {
     public partial class LoginPortalPage : ContentPage
     {
