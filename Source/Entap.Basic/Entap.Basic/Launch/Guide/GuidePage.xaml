@@ -27,7 +27,7 @@
         />
 
         <StackLayout
-            BackgroundColor="Red"
+            Style="{StaticResource GuideFooterStyle}"
             Grid.Row="1"
         >
             <StackLayout.Behaviors>
@@ -39,6 +39,7 @@
                 x:Name="indicatorView"
             />
             <Button
+                Style="{StaticResource PositiveButtonStyle}"
                 Text="{Binding Path=CurrentItem.Next, Source={x:Reference carouselView}}"
                 Command="{Binding NextCommand}"
             />
