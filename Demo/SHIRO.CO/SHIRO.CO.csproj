@@ -26,5 +26,6 @@
   <ItemGroup>
     <Folder Include="Basic.UseCases\" />
     <Folder Include="Resources\" />
+    <Folder Include="Resources\ResourceDictionaries\" />
   </ItemGroup>
 </Project>

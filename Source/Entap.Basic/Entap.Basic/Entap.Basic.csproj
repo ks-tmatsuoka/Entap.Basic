@@ -31,5 +31,7 @@
     <Folder Include="Launch\Splash\" />
     <Folder Include="Launch\Splash\a002\" />
     <Folder Include="Controls\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\ResourceDictionaries\" />
   </ItemGroup>
 </Project>

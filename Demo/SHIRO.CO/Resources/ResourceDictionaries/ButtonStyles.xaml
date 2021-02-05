@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:SHIRO.CO"
+>
+    <Style
+        x:Key="ButtonStyleBase"
+        TargetType="Button"
+    >
+        <Setter Property="HeightRequest" Value="44"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontSize" Value="{x:Static local:FontSizes.Large}"/>
+        <Setter Property="ios:VisualElement.IsLegacyColorModeEnabled" Value="False"/>
+        <Setter Property="android:VisualElement.IsLegacyColorModeEnabled" Value="False"/>
+    </Style>
+
+    <Style
+        x:Key="BorderedButtonStyleBase"
+        TargetType="Button"
+        BasedOn="{StaticResource ButtonStyleBase}"
+    >
+        <Setter Property="BackgroundColor" Value="{x:Static local:Colors.ButtonNeutral}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextDefault}"/>
+        <Setter Property="BorderWidth" Value="2"/>
+        <Setter Property="BorderColor" Value="{x:Static local:Colors.ButtonBorderSub}"/>
+        <Style.Triggers>
+            <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                <Setter Property="BackgroundColor" Value="{x:Static local:Colors.ButtonDisabled}" />
+                <Setter Property="BorderWidth" Value="0"/>
+                <Setter Property="TextColor" Value="{x:Static local:Colors.TextWhite}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="PositiveButtonStyle"
+        TargetType="Button"
+        BasedOn="{StaticResource ButtonStyleBase}"
+    >
+        <Setter Property="BackgroundColor" Value="{x:Static local:Colors.ButtonPositive}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextWhite}"/>
+        <Style.Triggers>
+            <Trigger TargetType="Button" Property="IsEnabled" Value="False">
+                <Setter Property="BackgroundColor" Value="{x:Static local:Colors.ButtonDisabled}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="NeutralButtonStyle"
+        TargetType="Button"
+        BasedOn="{StaticResource BorderedButtonStyleBase}"
+    >
+        <Setter Property="BackgroundColor" Value="{x:Static local:Colors.ButtonNeutral}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextDefault}"/>
+    </Style>
+
+    <Style
+        x:Key="NegativeButtonStyle"
+        TargetType="Button"
+        BasedOn="{StaticResource BorderedButtonStyleBase}"
+    >
+        <Setter Property="BackgroundColor" Value="{x:Static local:Colors.ButtonNegative}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextCaution}"/>
+    </Style>
+
+    <Style
+        x:Key="DisabledButtonStyle"
+        TargetType="Button"
+        BasedOn="{StaticResource ButtonStyleBase}"
+    >
+        <Setter Property="BackgroundColor" Value="{x:Static local:Colors.ButtonDisabled}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextWhite}"/>
+    </Style>
+
+    <Style
+        x:Key="LinkButtonStyle"
+        TargetType="Button"
+        BasedOn="{StaticResource ButtonStyleBase}"
+    >
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="FontAttributes" Value="None"/>
+        <Setter Property="FontSize" Value="{x:Static local:FontSizes.Medium}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextLink}"/>
+    </Style>
+
+
+</ResourceDictionary>
