@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SHIRO.CO"
+>
+    <Style TargetType="StackLayout" ApplyToDerivedTypes="True">
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <Style TargetType="Grid" ApplyToDerivedTypes="True">
+        <Setter Property="RowSpacing" Value="0"/>
+        <Setter Property="ColumnSpacing" Value="0"/>
+    </Style>
+
+    <Style TargetType="Button" ApplyToDerivedTypes="True">
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <Style TargetType="Label" ApplyToDerivedTypes="True">
+        <Setter Property="FontSize" Value="{x:Static local:FontSizes.Medium}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextDefault}"/>
+    </Style>
+
+    <Style TargetType="CheckBox" ApplyToDerivedTypes="True">
+        <Setter Property="Color" Value="{x:Static local:Colors.Checked}"/>
+    </Style>
+
+    <Style TargetType="IndicatorView" ApplyToDerivedTypes="True">
+        <Setter Property="IndicatorColor" Value="{x:Static local:Colors.Inactive}"/>
+        <Setter Property="SelectedIndicatorColor" Value="{x:Static local:Colors.Active}"/>
+    </Style>
+</ResourceDictionary>
