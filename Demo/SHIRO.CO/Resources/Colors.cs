@@ -25,7 +25,7 @@ namespace SHIRO.CO
         public static readonly Color ButtonDisabled = Color.FromHex(Gray);
         // Button Border
         public static readonly Color ButtonBorderTheme = Color.FromHex(Theme);
-        public static readonly Color ButtonBorderGray = Color.FromHex(Gray);
+        public static readonly Color ButtonBorderSub = Color.FromHex(Gray);
 
         // Text
         public static readonly Color TextDefault = Color.FromHex(Black);
