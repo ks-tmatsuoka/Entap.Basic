@@ -34,7 +34,7 @@ namespace Entap.Basic.Controls
             typeof(bool),
             typeof(TitledContentView),
             false,
-            defaultBindingMode: BindingMode.TwoWay,
+            defaultBindingMode: BindingMode.Default,
             propertyChanged: (bindable, oldValue, newValue) =>
             ((TitledContentView)bindable).IsRequired = (bool)newValue);
 
@@ -80,18 +80,27 @@ namespace Entap.Basic.Controls
         #endregion
 
         #region Message BindableProperty
+
+        // HACK : MessageがNullの場合にLabelが非表示になるのを回避
+        // フォントによりサイズが異なるため、サイズ指定はせずに空白文字を設定
+        const string MessagePlaceholder = " ";
+
         public static readonly BindableProperty MessageProperty = BindableProperty.Create(
             nameof(Message),
             typeof(string),
             typeof(TitledContentView),
-            null,
+            MessagePlaceholder,
             defaultBindingMode: BindingMode.TwoWay,
             propertyChanged: (bindable, oldValue, newValue) =>
             ((TitledContentView)bindable).Message = (string)newValue);
 
         public string Message
         {
-            get { return (string)GetValue(MessageProperty); }
+            get
+            {
+                var message = (string)GetValue(MessageProperty);
+                return  string.IsNullOrEmpty(message) ? MessagePlaceholder : message;
+            }
             set { SetValue(MessageProperty, value); }
         }
         #endregion
