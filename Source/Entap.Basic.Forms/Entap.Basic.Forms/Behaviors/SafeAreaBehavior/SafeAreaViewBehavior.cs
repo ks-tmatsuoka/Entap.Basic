@@ -49,6 +49,7 @@ namespace Entap.Basic.Forms
 
         void SetSafeMargin()
         {
+            if (AssociatedObject is null) return;
             if (defaultMargin is null)
                 defaultMargin = AssociatedObject.Margin;
 

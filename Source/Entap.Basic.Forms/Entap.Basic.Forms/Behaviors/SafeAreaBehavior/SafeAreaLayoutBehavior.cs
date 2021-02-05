@@ -49,6 +49,7 @@ namespace Entap.Basic.Forms
 
         void SetSafePadding()
         {
+            if (AssociatedObject is null) return;
             if (defaultPadding is null)
                 defaultPadding = AssociatedObject.Padding;
 
