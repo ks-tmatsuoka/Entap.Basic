@@ -33,5 +33,7 @@
     <Folder Include="Resources\ResourceDictionaries\" />
     <Folder Include="Launch\d_LoginPortal\d001\" />
     <Folder Include="Launch\e_Auth\" />
+    <Folder Include="Launch\e_Auth\SignUp\" />
+    <Folder Include="Launch\e_Auth\SignUp\e001\" />
   </ItemGroup>
 </Project>
