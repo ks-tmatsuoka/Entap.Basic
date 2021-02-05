@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SHIRO.CO"
              xmlns:guide="clr-namespace:Entap.Basic.Launch.Guide;assembly=Entap.Basic"
              x:Class="SHIRO.CO.App">
     <Application.Resources>
@@ -16,19 +17,28 @@
             <Setter Property="BackgroundImageSource" Value="image_page_background.png"/>
         </Style>
 
-            <ControlTemplate x:Key="SplashViewTemplate">
-                <StackLayout
-                    VerticalOptions="Center"
-                >
-                    <Image
-                        Source="logo.png"
-                    />
-                    <ActivityIndicator
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        IsRunning="{TemplateBinding IsLoading}"
-                    />
-                </StackLayout>
-            </ControlTemplate>
+        <ControlTemplate x:Key="SplashViewTemplate">
+            <StackLayout
+                VerticalOptions="Center"
+            >
+                <Image
+                    Source="logo.png"
+                />
+                <ActivityIndicator
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    IsRunning="{TemplateBinding IsLoading}"
+                />
+            </StackLayout>
+        </ControlTemplate>
+
+        <Style
+            x:Key="GuideFooterStyle"
+            TargetType="StackLayout"
+        >
+            <Setter Property="BackgroundColor" Value="{x:Static local:Colors.BarFooter}"/>
+            <Setter Property="Padding" Value="24, 12, 24, 16"/>
+            <Setter Property="Spacing" Value="12"/>
+        </Style>
     </Application.Resources>
 </Application>
