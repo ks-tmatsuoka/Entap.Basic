@@ -28,13 +28,17 @@ namespace Entap.Basic.Launch.Terms
 
         public void AcceptTerms()
         {
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await PageManager.Navigation.SetMainPage<LoginPortalPage>(new LoginPortalPageViewModel(new LoginPortalUseCase()));
+            });
         }
 
         void PushTermsPage()
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                await PageManager.Navigation.PushModalAsync<LoginPortalPage>(new TermsPageViewModel(new TermsUseCase()));
+                await PageManager.Navigation.PushModalAsync<TermsPage>(new TermsPageViewModel(new TermsUseCase()));
             });
         }
     }
