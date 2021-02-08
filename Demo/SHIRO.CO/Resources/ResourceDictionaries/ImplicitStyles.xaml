@@ -16,6 +16,7 @@
 
     <Style TargetType="Button" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
     </Style>
 
     <Style TargetType="Label" ApplyToDerivedTypes="True">

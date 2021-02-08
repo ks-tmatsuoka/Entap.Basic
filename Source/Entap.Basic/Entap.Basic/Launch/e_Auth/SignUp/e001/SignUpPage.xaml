@@ -6,6 +6,7 @@
     xmlns:controls="clr-namespace:Entap.Basic.Controls"
     x:Class="Entap.Basic.Launch.Auth.SignUpPage"
     x:DataType="local:SignUpPageViewModel"
+    Title="新規登録"
 >
     <StackLayout
         Padding="24"
@@ -17,7 +18,7 @@
             IsError="{Binding IsMailAddressError}"
             ErrorMessage="{Binding MailAddressErrorMessage}"
         />
-        <controls:TitledEntry
+        <controls:TitledPasswordEntry
             Margin="0, 8, 0, 0"
             Title="パスワード"
             Text="{Binding Password}"
