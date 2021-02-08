@@ -23,6 +23,12 @@
         <Setter Property="TextColor" Value="{x:Static local:Colors.TextDefault}"/>
     </Style>
 
+    <Style TargetType="Entry" ApplyToDerivedTypes="True">
+        <Setter Property="FontSize" Value="{x:Static local:FontSizes.Medium}"/>
+        <Setter Property="TextColor" Value="{x:Static local:Colors.TextDefault}"/>
+        <Setter Property="PlaceholderColor" Value="{x:Static local:Colors.TextLight}"/>
+    </Style>
+
     <Style TargetType="CheckBox" ApplyToDerivedTypes="True">
         <Setter Property="Color" Value="{x:Static local:Colors.Checked}"/>
     </Style>
