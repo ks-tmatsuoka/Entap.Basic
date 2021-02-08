@@ -10,11 +10,6 @@ namespace Entap.Basic.Controls
         public TitledEntry()
         {
             InitializeComponent();
-
-            entry.PropertyChanged += (sender, e) =>
-            {
-                System.Diagnostics.Debug.WriteLine($"{e.PropertyName} {entry.IsFocused}");
-            };
         }
 
         #region Text BindableProperty
