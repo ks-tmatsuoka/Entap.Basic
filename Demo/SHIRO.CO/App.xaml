@@ -4,11 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SHIRO.CO"
     xmlns:guide="clr-namespace:Entap.Basic.Launch.Guide;assembly=Entap.Basic"
+    xmlns:resources="clr-namespace:Entap.Basic.Resources;assembly=Entap.Basic"
     x:Class="SHIRO.CO.App">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <guide:GuideResourceDictionary/>
+                <resources:TitledEntryResources/>
                 <ResourceDictionary Source="/Resources/ResourceDictionaries/ImplicitStyles.xaml"/>
                 <ResourceDictionary Source="/Resources/ResourceDictionaries/ButtonStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>

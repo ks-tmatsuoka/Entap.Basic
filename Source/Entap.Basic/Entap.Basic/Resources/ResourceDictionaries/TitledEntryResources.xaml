@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Entap.Basic.Resources.TitledEntryResources"
+>
+    <Style x:Key="TitledEntryTitleLabelStyle" TargetType="Label">
+    </Style>
+
+    <Style x:Key="TitledEntryEntryStyle" TargetType="Entry">
+    </Style>
+
+    <Style x:Key="TitledEntryMessageLabelStyle" TargetType="Label">
+    </Style>
+
+</ResourceDictionary>

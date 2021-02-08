@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<controls:TitledContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Entap.Basic.Controls"    
+    x:Class="Entap.Basic.Controls.TitledEntry"
+	ControlTemplate="{StaticResource TitledContentViewTemplate}"
+	x:Name="this"
+>
+	<!--ToDo : 色指定-->
+	<Frame
+		Style="{StaticResource TitledEntryFrameStyle}"
+		BorderColor="#D8D8D8"
+	>
+		<Frame.Triggers>
+			<!--!IsFocused && IsError-->
+			<DataTrigger
+				TargetType="Frame"
+				Binding="{Binding IsError, Source={x:Reference this}, Mode=TwoWay}"
+				Value="True"
+			>
+				<Setter Property="BorderColor" Value="#FF4C4C"/>
+			</DataTrigger>
+
+			<!--IsFocused && !IsError-->
+			<MultiTrigger TargetType="Frame">
+				<MultiTrigger.Conditions>
+					<BindingCondition
+						Binding="{Binding IsFocused, Source={x:Reference entry}, Mode=TwoWay}"
+						Value="True" />
+					<BindingCondition
+						Binding="{Binding IsError, Source={x:Reference this}, Mode=TwoWay}"
+						Value="False" />
+				</MultiTrigger.Conditions>
+				<Setter Property="BorderColor" Value="#40B5FF"/>
+			</MultiTrigger>
+
+			<!--IsFocused && IsError-->
+			<MultiTrigger TargetType="Frame">
+				<MultiTrigger.Conditions>
+					<BindingCondition
+						Binding="{Binding IsFocused, Source={x:Reference entry}, Mode=TwoWay}"
+						Value="True" />
+					<BindingCondition
+						Binding="{Binding IsError, Source={x:Reference this}, Mode=TwoWay}"
+						Value="True" />
+				</MultiTrigger.Conditions>
+				<Setter Property="BorderColor" Value="#FF4C4C"/>
+			</MultiTrigger>
+		</Frame.Triggers>
+
+	    <Entry
+			x:Name="entry"
+	        Style="{StaticResource TitledEntryEntryStyle}"
+	        Text="{Binding Text, Source={x:Reference this}}"
+			Placeholder="{Binding Placeholder, Source={x:Reference this}}"
+	    />
+	</Frame>
+</controls:TitledContentView>
