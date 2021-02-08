@@ -38,17 +38,7 @@
                         Style="{StaticResource TitledConentViewMessageLabelStyle}"
                         Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                         Text="{TemplateBinding DefaultMessage}"
-                    >
-                        <Label.Triggers>
-                            <DataTrigger
-                                TargetType="Label"
-                                Binding="{TemplateBinding HasError}"
-                                Value="True"
-                            >
-                                <Setter Property="Text" Value="{TemplateBinding ErrorMessage}"/>
-                            </DataTrigger>
-                        </Label.Triggers>
-                    </Label>
+                    />
 
                 </Grid>
             </ControlTemplate>

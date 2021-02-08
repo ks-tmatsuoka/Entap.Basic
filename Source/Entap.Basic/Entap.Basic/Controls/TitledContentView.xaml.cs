@@ -62,20 +62,20 @@ namespace Entap.Basic.Controls
         }
         #endregion
 
-        #region HasErrors BindableProperty
-        public static readonly BindableProperty HasErrorsProperty = BindableProperty.Create(
-            nameof(HasErrors),
+        #region IsError BindableProperty
+        public static readonly BindableProperty IsErrorProperty = BindableProperty.Create(
+            nameof(IsError),
             typeof(bool),
             typeof(TitledContentView),
             false,
             defaultBindingMode: BindingMode.TwoWay,
             propertyChanged: (bindable, oldValue, newValue) =>
-            ((TitledContentView)bindable).HasErrors = (bool)newValue);
+            ((TitledContentView)bindable).IsError = (bool)newValue);
 
-        public bool HasErrors
+        public bool IsError
         {
-            get { return (bool)GetValue(HasErrorsProperty); }
-            set { SetValue(HasErrorsProperty, value); }
+            get { return (bool)GetValue(IsErrorProperty); }
+            set { SetValue(IsErrorProperty, value); }
         }
         #endregion
 
