@@ -17,6 +17,7 @@
             Text="{Binding MailAddress}"
             IsError="{Binding IsMailAddressError}"
             ErrorMessage="{Binding MailAddressErrorMessage}"
+            Keyboard="Email"
         />
         <controls:TitledPasswordEntry
             Margin="0, 8, 0, 0"
