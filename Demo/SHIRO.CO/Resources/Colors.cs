@@ -37,6 +37,11 @@ namespace SHIRO.CO
         public static readonly Color TextMain = Color.FromHex(Theme);
         public static readonly Color TextAccent = Color.FromHex(Accent);
 
+        // Input
+        public static readonly Color InputBorder = Color.FromHex(Gray);
+        public static readonly Color InputBorderCaution = Color.FromHex(Caution);
+        public static readonly Color InputBorderFocus = Color.FromHex(Accent);
+
         public static readonly Color Checked = Color.FromHex(Accent);
 
         public static readonly Color Active = Color.FromHex(Accent);
