@@ -71,5 +71,13 @@
       <Version>4.5.0.356</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_eye_off.png" />
+    <BundleResource Include="Resources\icon_eye_off%402x.png" />
+    <BundleResource Include="Resources\icon_eye_off%403x.png" />
+    <BundleResource Include="Resources\icon_eye_on.png" />
+    <BundleResource Include="Resources\icon_eye_on%402x.png" />
+    <BundleResource Include="Resources\icon_eye_on%403x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
