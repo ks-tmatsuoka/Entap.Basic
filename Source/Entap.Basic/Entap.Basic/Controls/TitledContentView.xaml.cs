@@ -62,46 +62,66 @@ namespace Entap.Basic.Controls
         }
         #endregion
 
-        #region Text BindableProperty
-        public static readonly BindableProperty TextProperty = BindableProperty.Create(
-            nameof(Text),
-            typeof(string),
+        #region HasErrors BindableProperty
+        public static readonly BindableProperty HasErrorsProperty = BindableProperty.Create(
+            nameof(HasErrors),
+            typeof(bool),
             typeof(TitledContentView),
-            null,
+            false,
             defaultBindingMode: BindingMode.TwoWay,
             propertyChanged: (bindable, oldValue, newValue) =>
-            ((TitledContentView)bindable).Text = (string)newValue);
+            ((TitledContentView)bindable).HasErrors = (bool)newValue);
 
-        public string Text
+        public bool HasErrors
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get { return (bool)GetValue(HasErrorsProperty); }
+            set { SetValue(HasErrorsProperty, value); }
         }
         #endregion
-
-        #region Message BindableProperty
 
         // HACK : MessageがNullの場合にLabelが非表示になるのを回避
         // フォントによりサイズが異なるため、サイズ指定はせずに空白文字を設定
         const string MessagePlaceholder = " ";
 
-        public static readonly BindableProperty MessageProperty = BindableProperty.Create(
-            nameof(Message),
+        #region DefaultMessage BindableProperty
+        public static readonly BindableProperty DefaultMessageProperty = BindableProperty.Create(
+            nameof(DefaultMessage),
+            typeof(string),
+            typeof(TitledContentView),
+            MessagePlaceholder,
+            defaultBindingMode: BindingMode.Default,
+            propertyChanged: (bindable, oldValue, newValue) =>
+            ((TitledContentView)bindable).DefaultMessage = (string)newValue);
+
+        public string DefaultMessage
+        {
+            get
+            {
+                var message = (string)GetValue(DefaultMessageProperty);
+                return string.IsNullOrEmpty(message) ? MessagePlaceholder : message;
+            }
+            set { SetValue(DefaultMessageProperty, value); }
+        }
+        #endregion
+
+        #region ErrorMessage BindableProperty
+        public static readonly BindableProperty ErrorMessageProperty = BindableProperty.Create(
+            nameof(ErrorMessage),
             typeof(string),
             typeof(TitledContentView),
             MessagePlaceholder,
             defaultBindingMode: BindingMode.TwoWay,
             propertyChanged: (bindable, oldValue, newValue) =>
-            ((TitledContentView)bindable).Message = (string)newValue);
+            ((TitledContentView)bindable).ErrorMessage = (string)newValue);
 
-        public string Message
+        public string ErrorMessage
         {
             get
             {
-                var message = (string)GetValue(MessageProperty);
-                return  string.IsNullOrEmpty(message) ? MessagePlaceholder : message;
+                var message = (string)GetValue(ErrorMessageProperty);
+                return string.IsNullOrEmpty(message) ? MessagePlaceholder : message;
             }
-            set { SetValue(MessageProperty, value); }
+            set { SetValue(ErrorMessageProperty, value); }
         }
         #endregion
     }

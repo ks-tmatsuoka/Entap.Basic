@@ -2,7 +2,8 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Entap.Basic.Controls.TitledContentView">
+    x:Class="Entap.Basic.Controls.TitledContentView"
+>
     <ContentView.Resources>
         <ResourceDictionary>
             <ControlTemplate x:Key="TitledContentViewTemplate">
@@ -36,8 +37,19 @@
                     <Label
                         Style="{StaticResource TitledConentViewMessageLabelStyle}"
                         Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
-                        Text="{TemplateBinding Message}"
-                    />
+                        Text="{TemplateBinding DefaultMessage}"
+                    >
+                        <Label.Triggers>
+                            <DataTrigger
+                                TargetType="Label"
+                                Binding="{TemplateBinding HasError}"
+                                Value="True"
+                            >
+                                <Setter Property="Text" Value="{TemplateBinding ErrorMessage}"/>
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+
                 </Grid>
             </ControlTemplate>
         </ResourceDictionary>
