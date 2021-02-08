@@ -3,8 +3,36 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Entap.Basic.Launch.Auth"
+    xmlns:controls="clr-namespace:Entap.Basic.Controls"
     x:Class="Entap.Basic.Launch.Auth.SignUpPage"
-    x:DataType="local:SignUpPageViewModel">
-    <ContentPage.Content>
-    </ContentPage.Content>
+    x:DataType="local:SignUpPageViewModel"
+>
+    <StackLayout
+        Padding="24"
+    >
+        <controls:TitledEntry
+            Title="メールアドレス"
+            Placeholder="入力してください"
+            Text="{Binding MailAddress}"
+            IsError="{Binding IsMailAddressError}"
+            ErrorMessage="{Binding MailAddressErrorMessage}"
+        />
+        <controls:TitledEntry
+            Margin="0, 8, 0, 0"
+            Title="パスワード"
+            Text="{Binding Password}"
+            Placeholder="入力してください"
+            IsError="{Binding IsPasswordError}"
+            DefaultMessage="半角英数字8文字以上"
+            ErrorMessage="{Binding PasswordErrorMessage}"
+        />
+
+        <Button
+            Margin="0, 24, 0, 0"
+            Style="{StaticResource PositiveButtonStyle}"
+            Text="新規登録"
+            Command="{Binding SignUpCommand}"
+        />
+    </StackLayout>
+
 </ContentPage>
