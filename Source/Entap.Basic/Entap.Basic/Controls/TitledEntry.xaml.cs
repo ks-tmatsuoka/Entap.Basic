@@ -12,6 +12,7 @@ namespace Entap.Basic.Controls
             InitializeComponent();
 
             entry.Focused += OnEntryFocused;
+            entry.Unfocused += OnEntryFocused;
         }
 
         void OnEntryFocused(object sender, FocusEventArgs e)

@@ -55,42 +55,42 @@
             <Setter Property="CornerRadius" Value="0"/>
             <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorder}"/>
             <Style.Triggers>
-			    <!--!IsFocused && IsError-->
-			    <DataTrigger
+			    <!--IsError-->
+				<DataTrigger
 				    TargetType="Frame"
-				    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
+				    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}}"
 				    Value="True"
 			    >
 				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderCaution}"/>
 			    </DataTrigger>
 
-			    <!--IsFocused && !IsError-->
+                <!--!IsError && IsEntryFocused-->
 			    <MultiTrigger TargetType="Frame">
 				    <MultiTrigger.Conditions>
 					    <BindingCondition
-						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
-						    Value="True" />
-					    <BindingCondition
-						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}, AncestorLevel=1}, Mode=TwoWay}"
+						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}}"
 						    Value="False" />
+					    <BindingCondition
+						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}}"
+						    Value="True" />
 				    </MultiTrigger.Conditions>
 				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderFocus}"/>
 			    </MultiTrigger>
 
-			    <!--IsFocused && IsError-->
+                <!--!IsError && !IsEntryFocused-->
 			    <MultiTrigger TargetType="Frame">
 				    <MultiTrigger.Conditions>
 					    <BindingCondition
-						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
-						    Value="True" />
+						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}}"
+						    Value="False" />
 					    <BindingCondition
-						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
-						    Value="True" />
+						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}}"
+						    Value="False" />
 				    </MultiTrigger.Conditions>
-				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderCaution}"/>
+				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorder}"/>
 			    </MultiTrigger>
-            </Style.Triggers>
 
+            </Style.Triggers>
         </Style>
 
         <Style x:Key="TitledPasswordEntryFrameStyle" TargetType="Frame"
