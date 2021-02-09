@@ -9,8 +9,17 @@ namespace Entap.Basic.Controls
         public TitledPasswordEntry()
         {
             InitializeComponent();
+
+            passwordEntry.Focused += OnEntryFocused;
+            passwordEntry.Unfocused += OnEntryFocused;
             visibleButton.Clicked += OnVisibleButtonClicked;
         }
+
+        void OnEntryFocused(object sender, FocusEventArgs e)
+        {
+            OnPropertyChanged(nameof(IsEntryFocused));
+        }
+        public new bool IsEntryFocused => passwordEntry?.IsFocused ?? false;
 
         void OnVisibleButtonClicked(object sender, EventArgs e)
         {

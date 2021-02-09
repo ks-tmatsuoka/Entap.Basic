@@ -89,13 +89,48 @@
 				    </MultiTrigger.Conditions>
 				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorder}"/>
 			    </MultiTrigger>
-
             </Style.Triggers>
         </Style>
 
         <Style x:Key="TitledPasswordEntryFrameStyle" TargetType="Frame"
                BasedOn="{StaticResource TitledEntryFrameStyle}">
             <Setter Property="Padding" Value="16, 8, 8, 8"/>
+            <Style.Triggers>
+			    <!--IsError-->
+				<DataTrigger
+				    TargetType="Frame"
+				    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledPasswordEntry}}}"
+				    Value="True"
+			    >
+				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderCaution}"/>
+			    </DataTrigger>
+
+                <!--!IsError && IsEntryFocused-->
+			    <MultiTrigger TargetType="Frame">
+				    <MultiTrigger.Conditions>
+					    <BindingCondition
+						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledPasswordEntry}}}"
+						    Value="False" />
+					    <BindingCondition
+						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledPasswordEntry}}}"
+						    Value="True" />
+				    </MultiTrigger.Conditions>
+				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderFocus}"/>
+			    </MultiTrigger>
+
+                <!--!IsError && !IsEntryFocused-->
+			    <MultiTrigger TargetType="Frame">
+				    <MultiTrigger.Conditions>
+					    <BindingCondition
+						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledPasswordEntry}}}"
+						    Value="False" />
+					    <BindingCondition
+						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledPasswordEntry}}}"
+						    Value="False" />
+				    </MultiTrigger.Conditions>
+				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorder}"/>
+			    </MultiTrigger>
+            </Style.Triggers>
         </Style>
 
         <ControlTemplate x:Key="SplashViewTemplate">
