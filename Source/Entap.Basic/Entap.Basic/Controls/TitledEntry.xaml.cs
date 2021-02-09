@@ -10,7 +10,15 @@ namespace Entap.Basic.Controls
         public TitledEntry()
         {
             InitializeComponent();
+
+            entry.Focused += OnEntryFocused;
         }
+
+        void OnEntryFocused(object sender, FocusEventArgs e)
+        {
+            OnPropertyChanged(nameof(IsEntryFocused));
+        }
+        public bool IsEntryFocused => entry.IsFocused;
 
         #region Text BindableProperty
         public static readonly BindableProperty TextProperty = BindableProperty.Create(

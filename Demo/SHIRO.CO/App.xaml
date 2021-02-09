@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SHIRO.CO"
+    xmlns:controls="clr-namespace:Entap.Basic.Controls;assembly=Entap.Basic"
     xmlns:guide="clr-namespace:Entap.Basic.Launch.Guide;assembly=Entap.Basic"
     xmlns:resources="clr-namespace:Entap.Basic.Resources;assembly=Entap.Basic"
     x:Class="SHIRO.CO.App">
@@ -53,6 +54,43 @@
             <Setter Property="HasShadow" Value="False"/>
             <Setter Property="CornerRadius" Value="0"/>
             <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorder}"/>
+            <Style.Triggers>
+			    <!--!IsFocused && IsError-->
+			    <DataTrigger
+				    TargetType="Frame"
+				    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
+				    Value="True"
+			    >
+				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderCaution}"/>
+			    </DataTrigger>
+
+			    <!--IsFocused && !IsError-->
+			    <MultiTrigger TargetType="Frame">
+				    <MultiTrigger.Conditions>
+					    <BindingCondition
+						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
+						    Value="True" />
+					    <BindingCondition
+						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}, AncestorLevel=1}, Mode=TwoWay}"
+						    Value="False" />
+				    </MultiTrigger.Conditions>
+				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderFocus}"/>
+			    </MultiTrigger>
+
+			    <!--IsFocused && IsError-->
+			    <MultiTrigger TargetType="Frame">
+				    <MultiTrigger.Conditions>
+					    <BindingCondition
+						    Binding="{Binding IsEntryFocused, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
+						    Value="True" />
+					    <BindingCondition
+						    Binding="{Binding IsError, Source={RelativeSource AncestorType={x:Type controls:TitledEntry}}, Mode=TwoWay}"
+						    Value="True" />
+				    </MultiTrigger.Conditions>
+				    <Setter Property="BorderColor" Value="{x:Static local:Colors.InputBorderCaution}"/>
+			    </MultiTrigger>
+            </Style.Triggers>
+
         </Style>
 
         <Style x:Key="TitledPasswordEntryFrameStyle" TargetType="Frame"
