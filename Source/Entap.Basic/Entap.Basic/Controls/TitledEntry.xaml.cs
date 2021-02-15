@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using Entap.Basic.Forms.PlatformConfiguration.iOSSpecific;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace Entap.Basic.Controls
 {
@@ -13,6 +15,16 @@ namespace Entap.Basic.Controls
 
             entry.Focused += OnEntryFocused;
             entry.Unfocused += OnEntryFocused;
+        }
+
+        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (propertyName == Entap.Basic.Forms.PlatformConfiguration.iOSSpecific.Entry.TextContentTypeProperty.PropertyName)
+            {
+                var textContentType = Forms.PlatformConfiguration.iOSSpecific.Entry.GetTextContentType(this);
+                entry.On<iOS>().SetUITextContentType(textContentType);
+            }
         }
 
         void OnEntryFocused(object sender, FocusEventArgs e)
