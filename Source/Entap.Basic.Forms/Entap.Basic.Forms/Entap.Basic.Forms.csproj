@@ -27,5 +27,9 @@
     <Folder Include="PageManager\PageNavigation\" />
     <Folder Include="Behaviors\SafeAreaBehavior\" />
     <Folder Include="Extentions\" />
+    <Folder Include="Effects\" />
+    <Folder Include="Effects\PlatformSpecifics\" />
+    <Folder Include="Effects\PlatformSpecifics\iOS\" />
+    <Folder Include="Effects\PlatformSpecifics\iOS\TextContentType\" />
   </ItemGroup>
 </Project>
