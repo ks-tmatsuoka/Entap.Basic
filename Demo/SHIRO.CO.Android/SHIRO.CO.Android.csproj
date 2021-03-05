@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <LangVersion>9.0</LangVersion>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>./KeyStore/shiro.co.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>zt98aI1jNrV4</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>shiro.co</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>zt98aI1jNrV4</AndroidSigningKeyPass>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +49,11 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <LangVersion>9.0</LangVersion>
+    <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>./KeyStore/shiro.co.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>zt98aI1jNrV4</AndroidSigningStorePass>
+    <AndroidSigningKeyAlias>shiro.co</AndroidSigningKeyAlias>
+    <AndroidSigningKeyPass>zt98aI1jNrV4</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
