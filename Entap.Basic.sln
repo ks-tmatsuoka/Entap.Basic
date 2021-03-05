@@ -57,6 +57,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Firebase.Auth.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Firebase.Auth.iOS", "Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.iOS\Entap.Basic.Firebase.Auth.iOS.csproj", "{2E5E913A-CE85-4147-A436-24B437BD2B8B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Auth", "Entap.Basic.Auth", "{743E951F-A399-45C2-8976-148673188467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth", "Source\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj", "{9024D057-52B3-43F0-975E-8DFE890C8FC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -295,6 +299,18 @@ Global
 		{2E5E913A-CE85-4147-A436-24B437BD2B8B}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{2E5E913A-CE85-4147-A436-24B437BD2B8B}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{2E5E913A-CE85-4147-A436-24B437BD2B8B}.Release|iPhone.Build.0 = Release|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -327,5 +343,7 @@ Global
 		{85670688-FB1F-4692-956D-1FDAAF85C72F} = {9219269E-C10E-495E-8722-82D9E767582D}
 		{3B0EA754-ED6D-42EC-8586-CBC1EE5180BC} = {9219269E-C10E-495E-8722-82D9E767582D}
 		{2E5E913A-CE85-4147-A436-24B437BD2B8B} = {9219269E-C10E-495E-8722-82D9E767582D}
+		{743E951F-A399-45C2-8976-148673188467} = {13B9C6C5-8037-422D-BF76-4080DF067731}
+		{9024D057-52B3-43F0-975E-8DFE890C8FC4} = {743E951F-A399-45C2-8976-148673188467}
 	EndGlobalSection
 EndGlobal
