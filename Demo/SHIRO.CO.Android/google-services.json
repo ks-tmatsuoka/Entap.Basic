@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "716130417723",
+    "firebase_url": "https://launchtestproject.firebaseio.com",
+    "project_id": "launchtestproject",
+    "storage_bucket": "launchtestproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716130417723:android:a69ea7599b63653dc2701e",
+        "android_client_info": {
+          "package_name": "jp.co.entap.launchdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716130417723-hi0fq1rieo9kairfn60e5i8charkf53q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jp.co.entap.launchdev",
+            "certificate_hash": "20a4541bd335838db36ae41f570394028873c5b1"
+          }
+        },
+        {
+          "client_id": "716130417723-uarteucnusists702fjsi1lp6he4kbij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jp.co.entap.launchdev",
+            "certificate_hash": "5c207b9efa02e0dd49722730cbb57bbd73b96070"
+          }
+        },
+        {
+          "client_id": "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcUvL2SPkT7p0nXZ0EQQWGhKZPXiYMuHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "716130417723-20qc2kr1i8glo00ljcuabhfr1918lld9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jp.co.entap.SHIRO.CO"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716130417723:android:043c9fa76460b01ec2701e",
+        "android_client_info": {
+          "package_name": "jp.co.entap.shiro.co"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716130417723-hrgdc3ik5qalt1ih17k0v7mbd4oa9e25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jp.co.entap.shiro.co",
+            "certificate_hash": "af1c1692703bdb7be407530d164275767263494d"
+          }
+        },
+        {
+          "client_id": "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcUvL2SPkT7p0nXZ0EQQWGhKZPXiYMuHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "716130417723-20qc2kr1i8glo00ljcuabhfr1918lld9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jp.co.entap.SHIRO.CO"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
