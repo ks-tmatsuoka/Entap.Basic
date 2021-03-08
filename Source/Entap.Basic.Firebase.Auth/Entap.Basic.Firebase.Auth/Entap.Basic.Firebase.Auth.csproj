@@ -10,4 +10,10 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Modules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
+  </ItemGroup>
 </Project>
