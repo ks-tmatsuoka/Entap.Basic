@@ -7,8 +7,18 @@ namespace Entap.Basic.Launch.LoginPortal
         {
         }
 
-        public void SkipAuth()
+        public virtual void SkipAuth()
         {
         }
+
+        #region IPageLifeCycle
+        public virtual void OnCreate() { }
+
+        public virtual void OnDestroy() { }
+
+        public virtual void OnEntry() { }
+
+        public virtual void OnExit() { }
+        #endregion
     }
 }
