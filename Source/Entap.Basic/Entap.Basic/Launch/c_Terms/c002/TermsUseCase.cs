@@ -10,12 +10,22 @@ namespace Entap.Basic.Launch.Terms
         {
         }
 
-        public void Close()
+        public virtual void Close()
         {
             ProcessManager.Current.Invoke(async () =>
             {
                 await PageManager.Navigation.PopModalAsync();
             });
         }
+
+        #region IPageLifeCycle
+        public virtual void OnCreate() { }
+
+        public virtual void OnDestroy() { }
+
+        public virtual void OnEntry() { }
+
+        public virtual void OnExit() { }
+        #endregion
     }
 }
