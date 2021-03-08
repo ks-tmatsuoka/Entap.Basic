@@ -7,13 +7,13 @@ using Entap.Basic.Launch.Splash;
 
 namespace SHIRO.CO
 {
-    public class SplashUseCase : ISplashUseCase
+    public class SplashUseCase : Entap.Basic.Launch.Splash.SplashUseCase
     {
         public SplashUseCase()
         {
         }
 
-        public async Task LoadAsync()
+        public override async Task LoadAsync()
         {
             await Task.Delay(3000);
             var contents = new List<GuideContent>()

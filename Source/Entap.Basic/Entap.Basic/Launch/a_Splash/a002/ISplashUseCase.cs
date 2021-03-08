@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Entap.Basic.Forms;
 
 namespace Entap.Basic.Launch.Splash
 {
-    public interface ISplashUseCase
+    public interface ISplashUseCase : IPageLifeCycle
     {
         /// <summary>
         /// ロード処理
