@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Entap.Basic.Core;
+using Entap.Basic.Forms;
 
 namespace Entap.Basic.Launch.Auth
 {
@@ -12,14 +15,14 @@ namespace Entap.Basic.Launch.Auth
         {
         }
 
-        public string ValidateMailAddress(string mailAddress)
+        public virtual string ValidateMailAddress(string mailAddress)
         {
             if (string.IsNullOrEmpty(mailAddress)) return null;
             if (!Regex.IsMatch(mailAddress, RegexMailAddress)) return "形式不正";
             return null;
         }
 
-        public string ValidatePassword(string password)
+        public virtual string ValidatePassword(string password)
         {
             if (string.IsNullOrEmpty(password)) return null;
             if (password.Length < 8) return "桁数不足";
@@ -28,9 +31,19 @@ namespace Entap.Basic.Launch.Auth
             return null;
         }
 
-        public void SignUp(string mailAddress, string passwrod)
+        public virtual void SignUp(string mailAddress, string passwrod)
         {
 
         }
+
+        #region IPageLifeCycle
+        public virtual void OnCreate() { }
+
+        public virtual void OnDestroy() { }
+
+        public virtual void OnEntry() { }
+
+        public virtual void OnExit() { }
+        #endregion
     }
 }

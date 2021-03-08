@@ -1,7 +1,9 @@
 ﻿using System;
+using Entap.Basic.Forms;
+
 namespace Entap.Basic.Launch.Auth
 {
-    public interface ISignUpUseCase
+    public interface ISignUpUseCase : IPageLifeCycle
     {
         string ValidateMailAddress(string mailAddress);
         string ValidatePassword(string password);
