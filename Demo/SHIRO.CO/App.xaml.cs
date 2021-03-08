@@ -1,6 +1,7 @@
 ﻿using System;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Splash;
+using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,8 @@ namespace SHIRO.CO
             InitializeComponent();
 
             Core.Init(this);
-            PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel(new SplashUseCase()));
+            ConfigureServices();
+            PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel());
         }
 
         protected override void OnStart()
@@ -26,6 +28,17 @@ namespace SHIRO.CO
 
         protected override void OnResume()
         {
+        }
+
+        void ConfigureServices()
+        {
+            ConfigureEntapBasicServices();
+        }
+
+        void ConfigureEntapBasicServices()
+        {
+            var serviceCollection = Entap.Basic.Startup.ServiceCollection;
+            serviceCollection.AddTransient<ISplashUseCase, SplashUseCase>();
         }
     }
 }
