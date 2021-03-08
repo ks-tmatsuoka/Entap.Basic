@@ -12,7 +12,7 @@ namespace Entap.Basic.Launch.Splash
         {
         }
 
-        public async Task LoadAsync()
+        public virtual async Task LoadAsync()
         {
             await Task.Delay(3000);
             // ToDo
