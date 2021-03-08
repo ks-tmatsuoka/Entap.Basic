@@ -13,21 +13,31 @@ namespace Entap.Basic.Launch.Guide
         {
         }
 
-        public void OnNext(int currentPosision)
+        public virtual void OnNext(int currentPosision)
         {
             System.Diagnostics.Debug.WriteLine($"GuideUseCase.OnNext : {currentPosision}");
         }
 
-        public void OnBack(int currentPosision)
+        public virtual void OnBack(int currentPosision)
         {
             System.Diagnostics.Debug.WriteLine($"GuideUseCase.OnBack : {currentPosision}");
         }
 
-        public void OnComplete()
+        public virtual void OnComplete()
         {
             System.Diagnostics.Debug.WriteLine("GuideUseCase.OnComplete");
             // ToDo 遷移先ページ変更
             ProcessManager.Current.Invoke(async () => await PageManager.Navigation.SetMainPage<ConfirmTermsPage>(new ConfirmTermsPageViewModel(new ConfirmTermsUseCase())));
         }
+
+        #region IPageLifeCycle
+        public virtual void OnCreate() { }
+
+        public virtual void OnDestroy() { }
+
+        public virtual void OnEntry() { }
+
+        public virtual void OnExit() { }
+        #endregion
     }
 }
