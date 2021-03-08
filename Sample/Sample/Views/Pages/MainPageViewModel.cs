@@ -29,7 +29,7 @@ namespace Sample
                 new GuideContent { Title = "ギャラリーに展示しよう", Description = "毎月、SHIROアプリ内で共有された写真の中からカフェギャラリーに展示される写真が選ばれます。", Next = "はじめる", Source = "image_guide03.png" },
                 new GuideContent { ContentType = GuideContentType.Animation, Title = "サンプル", Description = "アニメーション", Next = "はじめる", Source = "splash.json" },
             };
-            await PageManager.Navigation.PushAsync<GuidePage>(new GuidePageViewModel(contents, new MyGuideUseCase()));
+            await PageManager.Navigation.PushAsync<GuidePage>(new GuidePageViewModel(contents));
         });
     }
 }

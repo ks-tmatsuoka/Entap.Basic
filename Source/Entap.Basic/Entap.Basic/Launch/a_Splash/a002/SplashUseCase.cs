@@ -22,7 +22,7 @@ namespace Entap.Basic.Launch.Splash
                 new GuideContent { Title = "title 2", Description = "description 2", Next = "つぎへ" },
                 new GuideContent { Title = "title 3", Description = "description 3", Next = "はじめる" }
             };
-            await PageManager.Navigation.SetMainPage<GuidePage>(new GuidePageViewModel(contents, new GuideUseCase()));
+            await PageManager.Navigation.SetMainPage<GuidePage>(new GuidePageViewModel(contents));
         }
 
         #region IPageLifeCycle

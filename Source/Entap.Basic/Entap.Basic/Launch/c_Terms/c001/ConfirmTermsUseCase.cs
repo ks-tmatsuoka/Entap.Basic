@@ -30,7 +30,7 @@ namespace Entap.Basic.Launch.Terms
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                await PageManager.Navigation.SetMainPage<LoginPortalPage>(new LoginPortalPageViewModel(new LoginPortalUseCase()));
+                await PageManager.Navigation.SetMainPage<LoginPortalPage>(new LoginPortalPageViewModel());
             });
         }
 
@@ -38,7 +38,7 @@ namespace Entap.Basic.Launch.Terms
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                await PageManager.Navigation.PushModalAsync<TermsPage>(new TermsPageViewModel(new TermsUseCase()));
+                await PageManager.Navigation.PushModalAsync<TermsPage>(new TermsPageViewModel());
             });
         }
 

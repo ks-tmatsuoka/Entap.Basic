@@ -28,5 +28,15 @@ namespace Sample
             System.Diagnostics.Debug.WriteLine("GuideUseCase.OnComplete");
             ProcessManager.Current.Invoke(async () => await PageManager.Navigation.SetNavigationMainPage<MainPage>(new MainPageViewModel()));
         }
+
+        #region IPageLifeCycle
+        public virtual void OnCreate() { }
+
+        public virtual void OnDestroy() { }
+
+        public virtual void OnEntry() { }
+
+        public virtual void OnExit() { }
+        #endregion
     }
 }
