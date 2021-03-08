@@ -42,6 +42,7 @@ namespace Entap.Basic.Launch.Auth
                 var token = await _passwordAuthService.SignUpAsync(mailAddress, passwrod);
                 if (token is null) return;
 
+                // ToDo ページ遷移
             });
         }
 
