@@ -159,6 +159,14 @@
       <Project>{9917E7A8-1BB8-4BE9-9376-9CB844E17E6F}</Project>
       <Name>Entap.Basic.iOS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj">
+      <Project>{85670688-FB1F-4692-956D-1FDAAF85C72F}</Project>
+      <Name>Entap.Basic.Firebase.Auth</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.iOS\Entap.Basic.Firebase.Auth.iOS.csproj">
+      <Project>{2E5E913A-CE85-4147-A436-24B437BD2B8B}</Project>
+      <Name>Entap.Basic.Firebase.Auth.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image_guide01.png" />

@@ -24,6 +24,7 @@ namespace SHIRO.CO.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             Entap.Basic.iOS.Platform.Init();
+            Entap.Basic.Firebase.Auth.iOS.Platform.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
