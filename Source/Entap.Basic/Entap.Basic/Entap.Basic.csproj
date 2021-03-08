@@ -16,6 +16,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj" />
