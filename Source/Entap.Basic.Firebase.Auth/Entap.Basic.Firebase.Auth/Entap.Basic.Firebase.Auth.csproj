@@ -16,4 +16,7 @@
   <ItemGroup>
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
+  </ItemGroup>
 </Project>
