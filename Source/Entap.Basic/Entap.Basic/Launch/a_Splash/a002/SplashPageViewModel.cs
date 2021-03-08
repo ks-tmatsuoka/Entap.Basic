@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Entap.Basic.Forms;
+using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Splash
 {
     public class SplashPageViewModel : PageViewModelBase
     {
-        ISplashUseCase _splashUseCase;
-        public SplashPageViewModel(ISplashUseCase splashUseCase)
+        readonly ISplashUseCase _splashUseCase;
+        public SplashPageViewModel()
         {
-            _splashUseCase = splashUseCase;
+            _splashUseCase = Startup.ServiceProvider.GetService<ISplashUseCase>() ?? new SplashUseCase();
+            SetPageLifeCycle(_splashUseCase);
+
             IsLoading = true;
             Task.Run(async () =>
             {

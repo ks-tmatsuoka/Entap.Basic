@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Entap.Basic.Forms;
+using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.LoginPortal
 {
     public class LoginPortalPageViewModel : PageViewModelBase
     {
-        ILoginPortalUseCase _loginPortalUseCase;
-        public LoginPortalPageViewModel(ILoginPortalUseCase loginPortalUseCase)
+        readonly ILoginPortalUseCase _loginPortalUseCase;
+        public LoginPortalPageViewModel()
         {
-            _loginPortalUseCase = loginPortalUseCase;
+            _loginPortalUseCase = Startup.ServiceProvider.GetService<ILoginPortalUseCase>() ?? new LoginPortalUseCase();
+            SetPageLifeCycle(_loginPortalUseCase);
         }
 
         public Command SkipCommand => new Command(() => _loginPortalUseCase.SkipAuth());

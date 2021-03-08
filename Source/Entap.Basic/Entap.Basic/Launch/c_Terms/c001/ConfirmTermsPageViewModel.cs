@@ -2,16 +2,18 @@
 using System.Threading.Tasks;
 using Entap.Basic.Core;
 using Entap.Basic.Forms;
+using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Terms
 {
     public class ConfirmTermsPageViewModel : PageViewModelBase
     {
-        IConfirmTermsUseCase _confirmTermsUseCase;
-        public ConfirmTermsPageViewModel(IConfirmTermsUseCase confirmTermsUseCase)
+        readonly IConfirmTermsUseCase _confirmTermsUseCase;
+        public ConfirmTermsPageViewModel()
         {
-            _confirmTermsUseCase = confirmTermsUseCase;
+            _confirmTermsUseCase = Startup.ServiceProvider.GetService<IConfirmTermsUseCase>() ?? new ConfirmTermsUseCase();
+            SetPageLifeCycle(_confirmTermsUseCase);
 
             AcceptCommand = new Command(() =>
             {

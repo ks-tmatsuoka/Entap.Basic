@@ -2,16 +2,18 @@
 using System.Threading.Tasks;
 using Entap.Basic.Core;
 using Entap.Basic.Forms;
+using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Terms
 {
     public class TermsPageViewModel : PageViewModelBase
     {
-        ITermsUseCase _termsUseCase;
-        public TermsPageViewModel(ITermsUseCase termsUseCase)
+        readonly ITermsUseCase _termsUseCase;
+        public TermsPageViewModel()
         {
-            _termsUseCase = termsUseCase;
+            _termsUseCase = Startup.ServiceProvider.GetService<ITermsUseCase>() ?? new TermsUseCase();
+            SetPageLifeCycle(_termsUseCase);
         }
 
         public Command CloseCommand => new Command(() =>
