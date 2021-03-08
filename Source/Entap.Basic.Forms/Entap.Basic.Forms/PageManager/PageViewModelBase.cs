@@ -10,7 +10,15 @@ namespace Entap.Basic.Forms
     public class PageViewModelBase : BindableBase
     {
         IPageLifeCycle _pageLifeCycle;
-        public PageViewModelBase(IPageLifeCycle pageLifeCycle = null)
+        public PageViewModelBase()
+        {
+        }
+
+        /// <summary>
+        /// IPageLifeCycleのセット
+        /// </summary>
+        /// <param name="pageLifeCycle">PageLifeCycle</param>
+        public void SetPageLifeCycle(IPageLifeCycle pageLifeCycle)
         {
             _pageLifeCycle = pageLifeCycle;
             _pageLifeCycle?.OnCreate();

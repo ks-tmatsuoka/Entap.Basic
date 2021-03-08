@@ -8,7 +8,7 @@ namespace Entap.Basic.Launch.LoginPortal
     public class LoginPortalPageViewModel : PageViewModelBase
     {
         ILoginPortalUseCase _loginPortalUseCase;
-        public LoginPortalPageViewModel(ILoginPortalUseCase loginPortalUseCase, IPageLifeCycle pageLifeCycle = null) : base(pageLifeCycle)
+        public LoginPortalPageViewModel(ILoginPortalUseCase loginPortalUseCase)
         {
             _loginPortalUseCase = loginPortalUseCase;
         }

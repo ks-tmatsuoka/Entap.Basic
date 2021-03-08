@@ -8,7 +8,7 @@ namespace Entap.Basic.Launch.Auth
     public class SignUpPageViewModel : PageViewModelBase
     {
         readonly ISignUpUseCase _signUpUseCase;
-        public SignUpPageViewModel(ISignUpUseCase signUpUseCase, IPageLifeCycle pageLifeCycle = null) : base(pageLifeCycle)
+        public SignUpPageViewModel(ISignUpUseCase signUpUseCase)
         {
             _signUpUseCase = signUpUseCase;
             SignUpCommand = new Command(

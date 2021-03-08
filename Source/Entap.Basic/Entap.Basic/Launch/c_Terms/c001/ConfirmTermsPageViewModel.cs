@@ -9,7 +9,7 @@ namespace Entap.Basic.Launch.Terms
     public class ConfirmTermsPageViewModel : PageViewModelBase
     {
         IConfirmTermsUseCase _confirmTermsUseCase;
-        public ConfirmTermsPageViewModel(IConfirmTermsUseCase confirmTermsUseCase, IPageLifeCycle pageLifeCycle = null) : base(pageLifeCycle)
+        public ConfirmTermsPageViewModel(IConfirmTermsUseCase confirmTermsUseCase)
         {
             _confirmTermsUseCase = confirmTermsUseCase;
 

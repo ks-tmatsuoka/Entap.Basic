@@ -8,7 +8,7 @@ namespace Entap.Basic.Launch.Splash
     public class SplashPageViewModel : PageViewModelBase
     {
         ISplashUseCase _splashUseCase;
-        public SplashPageViewModel(ISplashUseCase splashUseCase, IPageLifeCycle pageLifeCycle = null) : base(pageLifeCycle)
+        public SplashPageViewModel(ISplashUseCase splashUseCase)
         {
             _splashUseCase = splashUseCase;
             IsLoading = true;

@@ -9,7 +9,7 @@ namespace Entap.Basic.Launch.Terms
     public class TermsPageViewModel : PageViewModelBase
     {
         ITermsUseCase _termsUseCase;
-        public TermsPageViewModel(ITermsUseCase termsUseCase, IPageLifeCycle pageLifeCycle = null) : base(pageLifeCycle)
+        public TermsPageViewModel(ITermsUseCase termsUseCase)
         {
             _termsUseCase = termsUseCase;
         }
