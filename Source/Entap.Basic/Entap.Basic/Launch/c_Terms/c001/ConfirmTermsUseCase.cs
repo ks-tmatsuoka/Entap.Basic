@@ -11,22 +11,22 @@ namespace Entap.Basic.Launch.Terms
         {
         }
 
-        public void ConfirmTerms()
+        public virtual void ConfirmTerms()
         {
             PushTermsPage();
         }
 
-        public void ConfirmPrivacyPolicy()
+        public virtual void ConfirmPrivacyPolicy()
         {
             PushTermsPage();
         }
 
-        public void ChangeChecked(bool isChecked)
+        public virtual void ChangeChecked(bool isChecked)
         {
             System.Diagnostics.Debug.WriteLine($"ConfirmTermsUseCase.ChangeChecked() : {isChecked}");
         }
 
-        public void AcceptTerms()
+        public virtual void AcceptTerms()
         {
             ProcessManager.Current.Invoke(async () =>
             {
@@ -41,5 +41,15 @@ namespace Entap.Basic.Launch.Terms
                 await PageManager.Navigation.PushModalAsync<TermsPage>(new TermsPageViewModel(new TermsUseCase()));
             });
         }
+
+        #region IPageLifeCycle
+        public virtual void OnCreate() { }
+
+        public virtual void OnDestroy() { }
+
+        public virtual void OnEntry() { }
+
+        public virtual void OnExit() { }
+        #endregion
     }
 }

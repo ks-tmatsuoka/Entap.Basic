@@ -1,7 +1,9 @@
 ﻿using System;
+using Entap.Basic.Forms;
+
 namespace Entap.Basic.Launch.Terms
 {
-    public interface IConfirmTermsUseCase
+    public interface IConfirmTermsUseCase : IPageLifeCycle
     {
         /// <summary>
         /// 利用規約の確認
