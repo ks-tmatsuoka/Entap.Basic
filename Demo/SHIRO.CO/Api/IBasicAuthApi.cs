@@ -6,7 +6,7 @@ using Refit;
 
 namespace SHIRO.CO
 {
-    public interface IBasicAuthApi : IAuthApi
+    public interface IBasicAuthApi : IRefitApi, IAuthApi
     {
         /// <summary>
         /// Firebase連携を登録する
