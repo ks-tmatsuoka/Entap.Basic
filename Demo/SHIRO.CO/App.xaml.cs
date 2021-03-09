@@ -1,4 +1,5 @@
 ﻿using System;
+using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Splash;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +40,7 @@ namespace SHIRO.CO
         {
             var serviceCollection = Entap.Basic.Startup.ServiceCollection;
             serviceCollection.AddTransient<ISplashUseCase, SplashUseCase>();
+            serviceCollection.AddTransient<IPasswordAuthService, PasswordAuthService>();
         }
     }
 }
