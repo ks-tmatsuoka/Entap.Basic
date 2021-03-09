@@ -7,7 +7,7 @@ using Entap.Basic.Launch.Splash;
 
 namespace SHIRO.CO
 {
-    public class SplashUseCase : Entap.Basic.Launch.Splash.SplashUseCase
+    public class SplashUseCase : BasicSplashUseCase
     {
         public SplashUseCase()
         {

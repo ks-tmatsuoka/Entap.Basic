@@ -11,7 +11,7 @@ namespace Entap.Basic.Launch.Splash
         readonly ISplashUseCase _splashUseCase;
         public SplashPageViewModel()
         {
-            _splashUseCase = Startup.ServiceProvider.GetService<ISplashUseCase>() ?? new SplashUseCase();
+            _splashUseCase = Startup.ServiceProvider.GetService<ISplashUseCase>() ?? new BasicSplashUseCase();
             SetPageLifeCycle(_splashUseCase);
 
             IsLoading = true;

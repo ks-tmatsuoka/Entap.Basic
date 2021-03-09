@@ -12,7 +12,7 @@ namespace Entap.Basic.Launch.Terms
         readonly ITermsUseCase _termsUseCase;
         public TermsPageViewModel()
         {
-            _termsUseCase = Startup.ServiceProvider.GetService<ITermsUseCase>() ?? new TermsUseCase();
+            _termsUseCase = Startup.ServiceProvider.GetService<ITermsUseCase>() ?? new BasicTermsUseCase();
             SetPageLifeCycle(_termsUseCase);
         }
 

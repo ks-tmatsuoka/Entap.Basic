@@ -6,9 +6,9 @@ using Entap.Basic.Launch.Guide;
 
 namespace Entap.Basic.Launch.Splash
 {
-    public class SplashUseCase : ISplashUseCase
+    public class BasicSplashUseCase : ISplashUseCase
     {
-        public SplashUseCase()
+        public BasicSplashUseCase()
         {
         }
 

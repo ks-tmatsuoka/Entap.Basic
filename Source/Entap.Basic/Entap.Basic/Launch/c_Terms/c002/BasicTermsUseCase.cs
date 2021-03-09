@@ -4,9 +4,9 @@ using Entap.Basic.Forms;
 
 namespace Entap.Basic.Launch.Terms
 {
-    public class TermsUseCase : ITermsUseCase
+    public class BasicTermsUseCase : ITermsUseCase
     {
-        public TermsUseCase()
+        public BasicTermsUseCase()
         {
         }
 

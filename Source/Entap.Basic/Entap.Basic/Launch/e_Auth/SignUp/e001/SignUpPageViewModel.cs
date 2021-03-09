@@ -11,7 +11,7 @@ namespace Entap.Basic.Launch.Auth
         readonly ISignUpUseCase _signUpUseCase;
         public SignUpPageViewModel()
         {
-            _signUpUseCase = Startup.ServiceProvider.GetService<ISignUpUseCase>() ?? new SignUpUseCase();
+            _signUpUseCase = Startup.ServiceProvider.GetService<ISignUpUseCase>() ?? new BasicSignUpUseCase();
             SetPageLifeCycle(_signUpUseCase);
 
             SignUpCommand = new Command(

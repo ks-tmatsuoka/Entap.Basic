@@ -1,9 +1,9 @@
 ﻿using System;
 namespace Entap.Basic.Launch.LoginPortal
 {
-    public class LoginPortalUseCase : ILoginPortalUseCase
+    public class BasicLoginPortalUseCase : ILoginPortalUseCase
     {
-        public LoginPortalUseCase()
+        public BasicLoginPortalUseCase()
         {
         }
 
