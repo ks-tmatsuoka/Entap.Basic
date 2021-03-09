@@ -96,7 +96,29 @@ namespace SHIRO.CO
 
         public void SignOut()
         {
-            _authService.SignOut();
+            try
+            {
+                _authService.SignOut();
+            }
+            catch (FirebaseAuthException ex)
+            {
+                // https://github.com/f-miyu/Plugin.FirebaseAuth/blob/master/Plugin.FirebaseAuth/iOS/ExceptionMapper.cs
+                switch (ex.ErrorType)
+                {
+                    case ErrorType.NetWork:
+                        OnError("ネットワークエラー");
+                        break;
+                    default:
+                        OnError("サインアウト失敗");
+                        break;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                OnError("サインアウト失敗");
+            }
         }
 
         Task OnError(string errorMessage)
