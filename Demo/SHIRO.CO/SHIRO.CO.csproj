@@ -34,5 +34,6 @@
     <Folder Include="Resources\" />
     <Folder Include="Resources\ResourceDictionaries\" />
     <Folder Include="Basic.Services\" />
+    <Folder Include="Api\" />
   </ItemGroup>
 </Project>
