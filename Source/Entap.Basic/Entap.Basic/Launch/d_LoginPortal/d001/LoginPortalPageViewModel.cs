@@ -15,6 +15,8 @@ namespace Entap.Basic.Launch.LoginPortal
             SetPageLifeCycle(_loginPortalUseCase);
         }
 
+        public Command SignUpCommand => new Command(() => _loginPortalUseCase.SignUp());
+
         public Command SkipCommand => new Command(() => _loginPortalUseCase.SkipAuth());
     }
 }

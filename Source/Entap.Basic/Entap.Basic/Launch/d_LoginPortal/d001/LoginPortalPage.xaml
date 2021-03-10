@@ -3,13 +3,31 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Entap.Basic.Launch.LoginPortal"
+    xmlns:bforms="clr-namespace:Entap.Basic.Forms;assembly=Entap.Basic.Forms"
     x:Class="Entap.Basic.Launch.LoginPortal.LoginPortalPage"
     x:DataType="local:LoginPortalPageViewModel"
     Style="{StaticResource PageStyle}"
+    NavigationPage.HasNavigationBar="False"
 >
-    <StackLayout>
+    <StackLayout
+        Padding="24, 0, 24, 24"
+        VerticalOptions="End"
+        Spacing="16"
+    >
         <Button
-            Text="あとで登録する"
+            Style="{StaticResource PositiveButtonStyle}"
+            Text="ログイン"
+        />
+
+        <Button
+            Style="{StaticResource NeutralButtonStyle}"
+            Text="新規登録"
+            Command="{Binding SignUpCommand}"
+        />
+
+        <Button
+            Style="{StaticResource LinkButtonStyle}"
+            Text="あとで登録する＞"
             Command="{Binding SkipCommand}"
         />
     </StackLayout>

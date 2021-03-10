@@ -1,4 +1,8 @@
 ﻿using System;
+using Entap.Basic.Core;
+using Entap.Basic.Forms;
+using Entap.Basic.Launch.Auth;
+
 namespace Entap.Basic.Launch.LoginPortal
 {
     public class BasicLoginPortalUseCase : ILoginPortalUseCase
@@ -9,7 +13,10 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignUp()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(() =>
+            {
+                PageManager.Navigation.PushAsync<SignUpPage>(new SignUpPageViewModel());
+            });
         }
 
         #region SignIn
