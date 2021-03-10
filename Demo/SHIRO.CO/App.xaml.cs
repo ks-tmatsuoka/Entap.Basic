@@ -38,6 +38,8 @@ namespace SHIRO.CO
 
         void ConfigureEntapBasicServices()
         {
+            Startup.ConfigurePageNavigator<PageNavigator>();
+
             Startup.ConfigureUseCase<ISplashUseCase, SplashUseCase>();
         }
     }
