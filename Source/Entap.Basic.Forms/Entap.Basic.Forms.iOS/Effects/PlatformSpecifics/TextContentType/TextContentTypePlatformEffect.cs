@@ -26,7 +26,6 @@ namespace Entap.Basic.Forms.iOS.PlatformSpecifics
 
         protected override void OnDetached()
         {
-            UpdateTextContentType(null);
         }
 
         void UpdateTextContentType(NSString textContentType)
