@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Guide
 {
-    public class GuideUseCase : IGuideUseCase
+    public class BasicGuideUseCase : IGuideUseCase
     {
-        public GuideUseCase()
+        public BasicGuideUseCase()
         {
         }
 
