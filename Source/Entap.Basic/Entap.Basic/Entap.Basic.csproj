@@ -38,5 +38,8 @@
     <Folder Include="Launch\e_Auth\SignUp\" />
     <Folder Include="Launch\e_Auth\SignUp\e001\" />
     <Folder Include="PageNavigator\" />
+    <Folder Include="Launch\e_Auth\SignIn\" />
+    <Folder Include="Launch\e_Auth\SignIn\PasswordAuth\" />
+    <Folder Include="Launch\e_Auth\SignIn\PasswordAuth\e010\" />
   </ItemGroup>
 </Project>
