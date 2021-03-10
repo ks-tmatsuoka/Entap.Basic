@@ -75,6 +75,10 @@ namespace Entap.Basic.Core
                 if (started)
                     await funcTask().ConfigureAwait(false);
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             finally
             {
                 if (started)
