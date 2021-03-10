@@ -1,8 +1,8 @@
 ﻿using System;
+using Entap.Basic;
 using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Splash;
-using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -38,9 +38,7 @@ namespace SHIRO.CO
 
         void ConfigureEntapBasicServices()
         {
-            var serviceCollection = Entap.Basic.Startup.ServiceCollection;
-            serviceCollection.AddTransient<ISplashUseCase, SplashUseCase>();
-            serviceCollection.AddTransient<IPasswordAuthService, PasswordAuthService>();
+            Startup.ConfigureUseCase<ISplashUseCase, SplashUseCase>();
         }
     }
 }
