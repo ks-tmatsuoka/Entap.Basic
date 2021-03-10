@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Net;
+using System.Threading.Tasks;
 using Refit;
 
-namespace SHIRO.CO.Modules
+namespace SHIRO.CO
 {
     public class BasicApiManager
     {
