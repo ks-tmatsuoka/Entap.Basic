@@ -2,6 +2,7 @@
 using Entap.Basic.Core;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Auth;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.LoginPortal
 {
@@ -22,7 +23,8 @@ namespace Entap.Basic.Launch.LoginPortal
         #region SignIn
         public virtual void SkipAuth()
         {
-            throw new NotImplementedException();
+            // ToDo 匿名ログイン
+            NavigateToHomePage();
         }
 
         public virtual void SignInWithEmailAndPassword()
@@ -80,5 +82,11 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void OnExit() { }
         #endregion
+
+        void NavigateToHomePage()
+        {
+            var pageNavigator = Startup.ServiceProvider.GetService<IPageNavigator>();
+            pageNavigator.SetHomePage();
+        }
     }
 }
