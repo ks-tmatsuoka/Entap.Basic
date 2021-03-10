@@ -37,5 +37,6 @@
     <Folder Include="Launch\e_Auth\" />
     <Folder Include="Launch\e_Auth\SignUp\" />
     <Folder Include="Launch\e_Auth\SignUp\e001\" />
+    <Folder Include="PageNavigator\" />
   </ItemGroup>
 </Project>
