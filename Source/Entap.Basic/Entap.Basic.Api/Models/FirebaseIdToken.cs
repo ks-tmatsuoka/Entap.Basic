@@ -8,6 +8,11 @@ namespace Entap.Basic.Api
     /// </summary>
     public class FirebaseIdToken
     {
+        public FirebaseIdToken(string idToken)
+        {
+            IdToken = idToken;
+        }
+
         /// <summary>
         /// FirebaseのIDトークン
         /// </summary>
