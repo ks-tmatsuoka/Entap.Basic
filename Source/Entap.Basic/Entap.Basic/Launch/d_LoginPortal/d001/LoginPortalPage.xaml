@@ -17,6 +17,7 @@
         <Button
             Style="{StaticResource PositiveButtonStyle}"
             Text="ログイン"
+            Command="{Binding PasswordSignInCommand}"
         />
 
         <Button

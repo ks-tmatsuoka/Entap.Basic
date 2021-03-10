@@ -29,7 +29,10 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignInWithEmailAndPassword()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await PageManager.Navigation.PushAsync<PasswordSignInPage>(new PasswordSignInPageViewModel());
+            });
         }
 
         public virtual void SignInWithEmailLink()
