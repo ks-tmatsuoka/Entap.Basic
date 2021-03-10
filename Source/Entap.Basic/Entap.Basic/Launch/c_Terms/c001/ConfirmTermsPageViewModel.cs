@@ -12,7 +12,7 @@ namespace Entap.Basic.Launch.Terms
         readonly IConfirmTermsUseCase _confirmTermsUseCase;
         public ConfirmTermsPageViewModel()
         {
-            _confirmTermsUseCase = Startup.ServiceProvider.GetService<IConfirmTermsUseCase>() ?? new BasicConfirmTermsUseCase();
+            _confirmTermsUseCase = Startup.ServiceProvider.GetService<IConfirmTermsUseCase>();
             SetPageLifeCycle(_confirmTermsUseCase);
 
             AcceptCommand = new Command(() =>

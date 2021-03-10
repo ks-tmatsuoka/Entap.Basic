@@ -15,7 +15,7 @@ namespace Entap.Basic.Launch.Guide
         readonly IEnumerable<GuideContent> _guideContents;
         public GuidePageViewModel(IEnumerable<GuideContent> contents)
         {
-            _guideUseCase = Startup.ServiceProvider.GetService<IGuideUseCase>() ?? new GuideUseCase();
+            _guideUseCase = Startup.ServiceProvider.GetService<IGuideUseCase>();
             SetPageLifeCycle(_guideUseCase);
 
             _guideContents = contents;

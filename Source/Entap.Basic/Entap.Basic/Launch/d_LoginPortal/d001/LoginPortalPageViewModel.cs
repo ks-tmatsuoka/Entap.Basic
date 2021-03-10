@@ -11,7 +11,7 @@ namespace Entap.Basic.Launch.LoginPortal
         readonly ILoginPortalUseCase _loginPortalUseCase;
         public LoginPortalPageViewModel()
         {
-            _loginPortalUseCase = Startup.ServiceProvider.GetService<ILoginPortalUseCase>() ?? new BasicLoginPortalUseCase();
+            _loginPortalUseCase = Startup.ServiceProvider.GetService<ILoginPortalUseCase>();
             SetPageLifeCycle(_loginPortalUseCase);
         }
 
