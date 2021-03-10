@@ -36,5 +36,7 @@
     <Folder Include="Basic.Services\" />
     <Folder Include="Api\" />
     <Folder Include="Modules\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Pages\" />
   </ItemGroup>
 </Project>
