@@ -21,4 +21,7 @@ https://github.com/reactiveui/refit</Description>
     </PackageReference>
     <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.24" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
 </Project>
