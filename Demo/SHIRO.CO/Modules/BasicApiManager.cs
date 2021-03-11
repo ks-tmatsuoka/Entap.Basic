@@ -10,8 +10,7 @@ namespace SHIRO.CO
         static readonly Lazy<BasicApiManager> _instance = new Lazy<BasicApiManager>(() => new BasicApiManager());
         public static BasicApiManager Current => _instance.Value;
 
-        // ToDo
-        const string HostUrl = "";
+        static string HostUrl => Urls.AppApi;
 
         public IBasicAuthApi AuthApi;
 
@@ -22,7 +21,12 @@ namespace SHIRO.CO
 
         static T GetInstance<T>(string hostUrl) where T : IBasicAuthApi
         {
-            var instance = RestService.For<T>(hostUrl);
+            var instance = RestService.For<T>(
+                hostUrl,
+                new RefitSettings
+                {
+                    ContentSerializer = RefitHelper.SnakeCaseSerializer
+                });
             instance.Client.DefaultRequestHeaders.Add("Accept", "application/json");
             return instance;
         }
