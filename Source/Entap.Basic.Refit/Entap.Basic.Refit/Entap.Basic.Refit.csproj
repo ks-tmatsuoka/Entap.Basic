@@ -23,5 +23,6 @@ https://github.com/reactiveui/refit</Description>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
+    <Folder Include="Modules\" />
   </ItemGroup>
 </Project>
