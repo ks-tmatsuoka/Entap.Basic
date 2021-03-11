@@ -32,7 +32,7 @@ namespace SHIRO.CO
         /// <param name="request">FirebaseIdToken</param>
         /// <returns>ServerAccessToken</returns>
         [Post("/auth/firebase/token")]
-        new Task<ServerAccessToken> PostAuthFirebaseToken(FirebaseIdToken request, CancellationToken token = default);
+        new Task<ServerAccessToken> PostAuthFirebaseToken([Body] FirebaseIdToken request, CancellationToken token = default);
 
         /// <summary>
         /// LINE連携を解除する
@@ -48,7 +48,7 @@ namespace SHIRO.CO
         /// </summary>
         /// <param name="request">CustomAuthToken</param>
         [Post("/auth/line/user")]
-        new Task PostAuthLineUser(CustomAuthToken request, CancellationToken token = default);
+        new Task PostAuthLineUser([Body] CustomAuthToken request, CancellationToken token = default);
 
         /// <summary>
         /// アクセストークンを発行する
@@ -58,7 +58,7 @@ namespace SHIRO.CO
         /// <param name="request"></param>
         /// <returns>ServerAccessToken</returns>
         [Post("/auth/line/token")]
-        new Task<ServerAccessToken> PostAuthLineToken(CustomAuthToken request, CancellationToken token = default);
+        new Task<ServerAccessToken> PostAuthLineToken([Body] CustomAuthToken request, CancellationToken token = default);
 
         /// <summary>
         /// [post]
