@@ -35,6 +35,48 @@ namespace SHIRO.CO
             instance.Client.DefaultRequestHeaders.Add("Accept", "application/json");
             return instance;
         }
+
+        /// <summary>
+        /// APIをコールする（APIレスポンスあり）
+        /// </summary>
+        /// <typeparam name="T">レスポンスの型</typeparam>
+        /// <param name="funcTask">API処理</param>
+        /// <param name="ignoreError">エラーを無視するか</param>
+        /// <returns>API実行結果：例外発生時はNull</returns>
+#nullable enable
+        public static async Task<ApiResponse<T>?> CallAsync<T>(Func<Task<ApiResponse<T>>> funcTask, bool ignoreError = false)
+#nullable disable
+        {
+            try
+            {
+                var result = await funcTask().ConfigureAwait(false);
+                if (result.IsSuccessStatusCode) return result;
+                if (ignoreError) return result;
+
+                await HandleApiErrorAsunc(result.Error);
+                return result;
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                await DisplayErrorDialogAsync();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// APIをコールする（APIレスポンスなし）
+        /// </summary>
+        /// <param name="funcTask">API処理</param>
+        /// <param name="ignoreError">エラーを無視するか</param>
+        /// <returns>API実行結果：例外発生時はNull</returns>
+#nullable enable
+        public static Task<ApiResponse<Task>?> CallAsync(Func<ApiResponse<Task>> funcTask, bool ignoreError = false)
+#nullable disable
+        {
+            return CallAsync(funcTask, ignoreError);
+        }
+
         /// <summary>
         /// エラーハンドリング処理
         /// </summary>
