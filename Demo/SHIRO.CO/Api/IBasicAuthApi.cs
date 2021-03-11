@@ -2,11 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Entap.Basic.Api;
+using Entap.Basic.Refit;
 using Refit;
 
 namespace SHIRO.CO
 {
-    public interface IBasicAuthApi : IRefitApi, IAuthApi
+    public interface IBasicAuthApi : IHttpClient, IAuthApi
     {
         /// <summary>
         /// Firebase連携を登録する

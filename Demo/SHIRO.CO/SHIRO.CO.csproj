@@ -28,6 +28,7 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic.Api\Entap.Basic.Api.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.Refit\Entap.Basic.Refit\Entap.Basic.Refit.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Basic.UseCases\" />
