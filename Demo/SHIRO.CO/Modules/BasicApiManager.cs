@@ -30,7 +30,7 @@ namespace SHIRO.CO
                 hostUrl,
                 new RefitSettings
                 {
-                    ContentSerializer = RefitHelper.SnakeCaseSerializer
+                    ContentSerializer = RefitSettingsService.SnakeCaseSerializer
                 });
             instance.Client.DefaultRequestHeaders.Add("Accept", "application/json");
             return instance;
