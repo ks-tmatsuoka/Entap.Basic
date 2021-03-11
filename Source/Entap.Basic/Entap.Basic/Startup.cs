@@ -51,7 +51,8 @@ namespace Entap.Basic
             ConfigureUseCase<IConfirmTermsUseCase, BasicConfirmTermsUseCase>();
             ConfigureUseCase<ITermsUseCase, BasicTermsUseCase>();
             ConfigureUseCase<ILoginPortalUseCase, BasicLoginPortalUseCase>();
-            ServiceCollection.AddTransient<ISignUpUseCase, BasicSignUpUseCase>();
+            ConfigureUseCase<ISignUpUseCase, BasicSignUpUseCase>();
+            ConfigureUseCase<IPasswordSignInUseCase, BasicPasswordSingnInUseCase>();
         }
     }
 }
