@@ -1,12 +1,37 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Refit;
 
 namespace SHIRO.CO
 {
     public class RefitHelper
     {
+        /// <summary>
+        /// SnakeCase用のシリアライザを取得する
+        /// </summary>
+        public static NewtonsoftJsonContentSerializer SnakeCaseSerializer
+            => new NewtonsoftJsonContentSerializer(
+                new JsonSerializerSettings
+                {
+                    ContractResolver = new DefaultContractResolver
+                    {
+                        NamingStrategy = new SnakeCaseNamingStrategy()
+                    }
+                });
+
+        /// <summary>
+        /// CamelCase用のシリアライザを取得する
+        /// </summary>
+        public static NewtonsoftJsonContentSerializer CamelCaseSerializer
+            => new NewtonsoftJsonContentSerializer(
+                new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver()
+                });
+
         /// <summary>
         /// APIをコールする
         /// </summary>
