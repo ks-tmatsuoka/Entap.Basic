@@ -25,4 +25,7 @@ https://github.com/reactiveui/refit</Description>
     <Folder Include="Interfaces\" />
     <Folder Include="Modules\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj" />
+  </ItemGroup>
 </Project>
