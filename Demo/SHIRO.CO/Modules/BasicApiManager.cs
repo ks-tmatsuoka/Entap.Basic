@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Entap.Basic.Core;
 using Entap.Basic.Api;
 using Entap.Basic.Refit;
 using Newtonsoft.Json;
@@ -9,85 +11,63 @@ using Xamarin.Forms;
 
 namespace SHIRO.CO
 {
-    public class BasicApiManager
+    public class BasicApiManager : ApiManager<IBasicClinet>
     {
         static readonly Lazy<BasicApiManager> _instance = new Lazy<BasicApiManager>(() => new BasicApiManager());
         public static BasicApiManager Current => _instance.Value;
 
         static string HostUrl => Urls.AppApi;
+
         const string DefaultErrorMessage = "インターネットに接続されていません。通信環境をご確認ください。";
+        const string TokenType = "Bearer";
 
-        public IBasicAuthApi AuthApi;
-
-        private BasicApiManager()
+        private BasicApiManager() : base(HostUrl)
         {
-            AuthApi = GetInstance<IBasicAuthApi>(HostUrl);
         }
 
-        static T GetInstance<T>(string hostUrl) where T : IBasicAuthApi
-        {
-            var instance = RestService.For<T>(
-                hostUrl,
-                new RefitSettings
-                {
-                    ContentSerializer = RefitSettingsService.SnakeCaseSerializer
-                });
-            instance.Client.DefaultRequestHeaders.Add("Accept", "application/json");
-            return instance;
-        }
-
-        /// <summary>
-        /// APIをコールする（APIレスポンスあり）
-        /// </summary>
-        /// <typeparam name="T">レスポンスの型</typeparam>
-        /// <param name="funcTask">API処理</param>
-        /// <param name="ignoreError">エラーを無視するか</param>
-        /// <returns>API実行結果：例外発生時はNull</returns>
 #nullable enable
-        public static async Task<ApiResponse<T>?> CallAsync<T>(Func<Task<ApiResponse<T>>> funcTask, bool ignoreError = false)
+        public override T GetRestService<T>(string hostUrl, RefitSettings? refitSettings = null)
 #nullable disable
         {
-            try
+            var settings =new RefitSettings
             {
-                var result = await funcTask().ConfigureAwait(false);
-                if (result.IsSuccessStatusCode) return result;
-                if (ignoreError) return result;
+                ContentSerializer = RefitSettingsService.SnakeCaseSerializer
+            };
+            var restService = base.GetRestService<T>(hostUrl, settings);
+            restService.Client.SetJsonAcceptHeader();
+            return restService;
+        }
 
-                await HandleApiErrorAsunc(result.Error);
-                return result;
-            }
-            catch(Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex);
-                await DisplayErrorDialogAsync();
-                return null;
-            }
+        public void SetAuthorization(string accessToken)
+        {
+            base.SetAuthorization(Api, TokenType, accessToken);
         }
 
         /// <summary>
-        /// APIをコールする（APIレスポンスなし）
+        /// ApiExceptionハンドリング処理
         /// </summary>
-        /// <param name="funcTask">API処理</param>
-        /// <param name="ignoreError">エラーを無視するか</param>
-        /// <returns>API実行結果：例外発生時はNull</returns>
-#nullable enable
-        public static Task<ApiResponse<Task>?> CallAsync(Func<ApiResponse<Task>> funcTask, bool ignoreError = false)
-#nullable disable
+        /// <param name="apiException">ApiException</param>
+        public override void HandleApiError(ApiException apiException, bool ignoreError)
         {
-            return CallAsync(funcTask, ignoreError);
-        }
+            System.Diagnostics.Debug.WriteLine(apiException.Message);
+            if (ignoreError) return;
 
-        /// <summary>
-        /// エラーハンドリング処理
-        /// </summary>
-        /// <param name="ex">ApiException</param>
-        /// <returns>Task</returns>
-        static async Task HandleApiErrorAsunc(ApiException ex)
-        {
             // ToDo エラー処理
+            var errorMessage = GetErrorMessage(apiException);
+            DisplayErrorDialog(errorMessage);
 
-            var message = GetErrorMessage(ex);
-            await DisplayErrorDialogAsync(message);
+        }
+
+        /// <summary>
+        /// 例外ハンドリング処理
+        /// </summary>
+        /// <param name="exception">Exception</param>
+        public override void HandleException(Exception exception, bool ignoreError)
+        {
+            System.Diagnostics.Debug.WriteLine(exception.Message);
+            if (ignoreError) return;
+
+            DisplayErrorDialog();
         }
 
         /// <summary>
@@ -96,7 +76,7 @@ namespace SHIRO.CO
         /// <param name="apiException">ApiException</param>
         /// <returns>エラーメッセージ</returns>
 #nullable enable
-        static string? GetErrorMessage(ApiException apiException)
+        string? GetErrorMessage(ApiException apiException)
 #nullable disable
         {
             if (apiException?.Content is null) return null;
@@ -120,12 +100,12 @@ namespace SHIRO.CO
         /// </summary>
         /// <param name="errorMessage">エラーメッセージ</param>
         /// <returns>Task</returns>
-        static async Task DisplayErrorDialogAsync(string errorMessage = DefaultErrorMessage)
+        void DisplayErrorDialog(string errorMessage = DefaultErrorMessage)
         {
-            await Device.InvokeOnMainThreadAsync(async () =>
+            Device.InvokeOnMainThreadAsync(async () =>
             {
                 await App.Current.MainPage.DisplayAlert("通信エラー", errorMessage, "OK");
-            });
+            }).ConfigureAwait(false);
         }
     }
 }

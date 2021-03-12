@@ -2,12 +2,11 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Entap.Basic.Api;
-using Entap.Basic.Refit;
 using Refit;
 
 namespace SHIRO.CO
 {
-    public interface IBasicAuthApi : IHttpClient, IAuthApi
+    public interface IBasicAuthApi
     {
         /// <summary>
         /// Firebase連携を登録する
@@ -15,7 +14,7 @@ namespace SHIRO.CO
         /// </summary>
         /// <param name="request">リクエストパラメータ</param>
         [Post("/auth/firebase/user")]
-        new Task PostAuthFirebaseUser(FirebaseIdToken request, CancellationToken token = default);
+        ApiResponse<Task> PostAuthFirebaseUser(FirebaseIdToken request, CancellationToken token = default);
 
         /// <summary>
         /// [Delete("/auth/firebase/user")]
@@ -23,7 +22,7 @@ namespace SHIRO.CO
         /// ログインしているユーザーに紐づいているFirebaseの情報を削除します。（サーバー上のみ）
         /// </summary>
         [Delete("/auth/firebase/user")]
-        new Task DeleteAuthFirebaseUser(CancellationToken token = default);
+        ApiResponse<Task> DeleteAuthFirebaseUser(CancellationToken token = default);
 
         /// <summary>
         /// アクセストークンを発行する
@@ -33,14 +32,14 @@ namespace SHIRO.CO
         /// <param name="request">FirebaseIdToken</param>
         /// <returns>ServerAccessToken</returns>
         [Post("/auth/firebase/token")]
-        new Task<ServerAccessToken> PostAuthFirebaseToken([Body] FirebaseIdToken request, CancellationToken token = default);
+        Task<ApiResponse<ServerAccessToken>> PostAuthFirebaseToken([Body] FirebaseIdToken request, CancellationToken token = default);
 
         /// <summary>
         /// LINE連携を解除する
         /// ログインしているユーザーに紐づいているLINEの情報を削除します。（サーバー上のみ）
         /// </summary>
         [Delete("/auth/line/user")]
-        new Task DeleteAuthLineUser(CancellationToken token = default);
+        ApiResponse<Task> DeleteAuthLineUser(CancellationToken token = default);
 
         /// <summary>
         /// LINE連携を登録する
@@ -49,7 +48,7 @@ namespace SHIRO.CO
         /// </summary>
         /// <param name="request">CustomAuthToken</param>
         [Post("/auth/line/user")]
-        new Task PostAuthLineUser([Body] CustomAuthToken request, CancellationToken token = default);
+        ApiResponse<Task> PostAuthLineUser([Body] CustomAuthToken request, CancellationToken token = default);
 
         /// <summary>
         /// アクセストークンを発行する
@@ -59,7 +58,7 @@ namespace SHIRO.CO
         /// <param name="request"></param>
         /// <returns>ServerAccessToken</returns>
         [Post("/auth/line/token")]
-        new Task<ServerAccessToken> PostAuthLineToken([Body] CustomAuthToken request, CancellationToken token = default);
+        Task<ApiResponse<ServerAccessToken>> PostAuthLineToken([Body] CustomAuthToken request, CancellationToken token = default);
 
         /// <summary>
         /// [post]
@@ -68,7 +67,7 @@ namespace SHIRO.CO
         /// </summary>
         /// <returns>FirebaseCustomToken</returns>
         [Post("/auth/firebase/custom-token")]
-        new Task<FirebaseCustomToken> PostAuthFirebaseCustomToken(CancellationToken token = default);
+        Task<ApiResponse<FirebaseCustomToken>> PostAuthFirebaseCustomToken(CancellationToken token = default);
 
         /// <summary>
         /// ユーザー情報を取得する
@@ -76,6 +75,6 @@ namespace SHIRO.CO
         /// </summary>
         /// <returns>User</returns>
         [Get("/user")]
-        new Task<User> GetUser(CancellationToken token = default);
+        Task<ApiResponse<User>> GetUser(CancellationToken token = default);
     }
 }

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Entap.Basic.Api;
 using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Core;
+using Newtonsoft.Json;
 using Plugin.FirebaseAuth;
+using Refit;
 using Xamarin.Forms;
 
 namespace SHIRO.CO
@@ -20,7 +23,15 @@ namespace SHIRO.CO
             try
             {
                 // https://firebase.google.com/docs/reference/js/firebase.auth.Auth#createuserwithemailandpassword
-                return await _authService.SignUpAsync(email, password);
+                var token = await _authService.SignUpAsync(email, password);
+                if (token == null) return token;
+
+                var response = await BasicApiManager.Current.CallAsync(() =>
+                {
+                    return BasicApiManager.Current.Api.PostAuthFirebaseUser(new FirebaseIdToken(token));
+                });
+                return (response?.IsSuccessStatusCode == true) ?
+                    token : null;
             }
             catch (FirebaseAuthException ex)
             {
@@ -57,14 +68,24 @@ namespace SHIRO.CO
             }
         }
 
-
         public async Task<string> SignInAsync(string email, string password)
         {
             try
             {
                 // https://firebase.google.com/docs/reference/js/firebase.auth.Auth#signinwithemailandpassword
-                return await _authService.SignInAsync(email, password);
+                var token = await _authService.SignInAsync(email, password);
+                var response = await BasicApiManager.Current.CallAsync(() =>
+                {
+                    return BasicApiManager.Current.Api.PostAuthFirebaseToken(new FirebaseIdToken(token));
+                });
+                if (response is null) return null;
+                if (!response.IsSuccessStatusCode) return null;
 
+                var accessToken = response.Content.AccessToken;
+                BasicApiManager.Current.SetAuthorization(accessToken);
+
+                return (response?.IsSuccessStatusCode == true) ?
+                    response.Content.AccessToken : null;
             }
             catch (FirebaseAuthException ex)
             {
