@@ -4,6 +4,9 @@ using System.Net.Http.Headers;
 
 namespace Entap.Basic.Core
 {
+    /// <summary>
+    /// HttpClient拡張機能
+    /// </summary>
     public static class HttpClientExtensions
     {
         /// <summary>
@@ -23,7 +26,7 @@ namespace Entap.Basic.Core
         public static void SetAcceptHeader(this HttpClient httpClient, string mediaType)
         {
             ;
-            httpClient.DefaultRequestHeaders.Add("Accept", System.Net.Mime.MediaTypeNames.Application.Json);
+            httpClient.DefaultRequestHeaders.Add("Accept", mediaType);
         }
 
         /// <summary>
