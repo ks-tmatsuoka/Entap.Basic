@@ -40,18 +40,6 @@ namespace Entap.Basic.Refit
         }
 
         /// <summary>
-        /// APIをコールする（APIレスポンスなし）
-        /// </summary>
-        /// <param name="funcTask">API処理</param>
-        /// <param name="ignoreError">エラーを無視するか</param>
-#nullable enable
-        public virtual Task<ApiResponse<Task>?> CallAsync(Func<ApiResponse<Task>> funcTask, bool ignoreError = false)
-#nullable disable
-        {
-            return CallAsync(funcTask, ignoreError);
-        }
-
-        /// <summary>
         /// ApiExceptionハンドリング処理
         /// </summary>
         /// <param name="apiException">ApiException</param>
