@@ -5,6 +5,12 @@
     xmlns:local="clr-namespace:SHIRO.CO"
     x:Class="SHIRO.CO.HomePage"
     x:DataType="local:HomePageViewModel">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="設定"
+            Command="{Binding SettingsCommand}"
+        />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
     </ContentPage.Content>
 </ContentPage>

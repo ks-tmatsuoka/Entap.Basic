@@ -2,11 +2,10 @@
 using Entap.Basic;
 using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Forms;
-using Entap.Basic.Launch.LoginPortal;
 using Entap.Basic.Launch.Splash;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Entap.Basic.Launch.Guide;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SHIRO.CO
 {
