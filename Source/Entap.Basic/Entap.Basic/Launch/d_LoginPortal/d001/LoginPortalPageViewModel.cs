@@ -8,17 +8,17 @@ namespace Entap.Basic.Launch.LoginPortal
 {
     public class LoginPortalPageViewModel : PageViewModelBase
     {
-        readonly ILoginPortalUseCase _loginPortalUseCase;
+        readonly ILoginPortalPageUseCase _useCase;
         public LoginPortalPageViewModel()
         {
-            _loginPortalUseCase = Startup.ServiceProvider.GetService<ILoginPortalUseCase>();
-            SetPageLifeCycle(_loginPortalUseCase);
+            _useCase = Startup.ServiceProvider.GetService<ILoginPortalPageUseCase>();
+            SetPageLifeCycle(_useCase);
         }
 
-        public Command PasswordSignInCommand => new Command(() => _loginPortalUseCase.SignInWithEmailAndPassword());
+        public Command PasswordSignInCommand => new Command(() => _useCase.SignInWithEmailAndPassword());
 
-        public Command SignUpCommand => new Command(() => _loginPortalUseCase.SignUp());
+        public Command SignUpCommand => new Command(() => _useCase.SignUp());
 
-        public Command SkipCommand => new Command(() => _loginPortalUseCase.SkipAuth());
+        public Command SkipCommand => new Command(() => _useCase.SkipAuth());
     }
 }

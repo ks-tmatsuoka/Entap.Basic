@@ -7,9 +7,9 @@ using Entap.Basic.Launch.Splash;
 
 namespace SHIRO.CO
 {
-    public class SplashUseCase : BasicSplashUseCase
+    public class SplashPageUseCase : BasicSplashPageUseCase
     {
-        public SplashUseCase()
+        public SplashPageUseCase()
         {
         }
 

@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.Auth
 {
-    public class BasicPasswordSingnInUseCase : IPasswordSignInUseCase
+    public class BasicPasswordSignInPageUseCase : IPasswordSignInPageUseCase
     {
         // ToDo : BasicSignUpUseCaseと共有化
         public static readonly string RegexMailAddress = @"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
@@ -14,7 +14,7 @@ namespace Entap.Basic.Launch.Auth
 
         readonly IPageNavigator _pageNavigator;
         readonly IPasswordAuthService _passwordAuthService;
-        public BasicPasswordSingnInUseCase()
+        public BasicPasswordSignInPageUseCase()
         {
             _pageNavigator = Startup.ServiceProvider.GetService<IPageNavigator>();
             _passwordAuthService = Startup.ServiceProvider.GetService<IPasswordAuthService>();

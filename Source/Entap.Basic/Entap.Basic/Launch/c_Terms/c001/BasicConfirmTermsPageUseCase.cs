@@ -5,9 +5,9 @@ using Entap.Basic.Launch.LoginPortal;
 
 namespace Entap.Basic.Launch.Terms
 {
-    public class BasicConfirmTermsUseCase : IConfirmTermsUseCase
+    public class BasicConfirmTermsPageUseCase : IConfirmTermsPageUseCase
     {
-        public BasicConfirmTermsUseCase()
+        public BasicConfirmTermsPageUseCase()
         {
         }
 

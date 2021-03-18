@@ -9,16 +9,16 @@ namespace Entap.Basic.Launch.Terms
 {
     public class TermsPageViewModel : PageViewModelBase
     {
-        readonly ITermsUseCase _termsUseCase;
+        readonly ITermsPageUseCase _useCase;
         public TermsPageViewModel()
         {
-            _termsUseCase = Startup.ServiceProvider.GetService<ITermsUseCase>();
-            SetPageLifeCycle(_termsUseCase);
+            _useCase = Startup.ServiceProvider.GetService<ITermsPageUseCase>();
+            SetPageLifeCycle(_useCase);
         }
 
         public Command CloseCommand => new Command(() =>
         {
-            _termsUseCase.Close();
+            _useCase.Close();
         });
     }
 }

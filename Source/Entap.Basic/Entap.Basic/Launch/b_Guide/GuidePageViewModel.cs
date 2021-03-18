@@ -11,12 +11,12 @@ namespace Entap.Basic.Launch.Guide
 {
     public class GuidePageViewModel : PageViewModelBase
     {
-        readonly IGuideUseCase _guideUseCase;
+        readonly IGuidePageUseCase _useCase;
         readonly IEnumerable<GuideContent> _guideContents;
         public GuidePageViewModel(IEnumerable<GuideContent> contents)
         {
-            _guideUseCase = Startup.ServiceProvider.GetService<IGuideUseCase>();
-            SetPageLifeCycle(_guideUseCase);
+            _useCase = Startup.ServiceProvider.GetService<IGuidePageUseCase>();
+            SetPageLifeCycle(_useCase);
 
             _guideContents = contents;
         }
@@ -32,9 +32,9 @@ namespace Entap.Basic.Launch.Guide
                 if (value >= Contents.Count()) return;
 
                 if (value > _position)
-                    _guideUseCase.OnNext(_position);
+                    _useCase.OnNext(_position);
                 else
-                    _guideUseCase.OnBack(_position);
+                    _useCase.OnBack(_position);
 
                 SetProperty(ref _position, value);
             }
@@ -44,7 +44,7 @@ namespace Entap.Basic.Launch.Guide
         public Command NextCommand => new Command(() =>
         {
             if (IsLastPosition)
-                _guideUseCase.OnComplete();
+                _useCase.OnComplete();
             else
                 Position++;
         });

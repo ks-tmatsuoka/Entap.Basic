@@ -3,7 +3,7 @@ using Entap.Basic.Forms;
 
 namespace Entap.Basic.Launch.Auth
 {
-    public interface ISignUpUseCase : IPageLifeCycle
+    public interface ISignUpPageUseCase : IPageLifeCycle
     {
         string ValidateMailAddress(string mailAddress);
         string ValidatePassword(string password);

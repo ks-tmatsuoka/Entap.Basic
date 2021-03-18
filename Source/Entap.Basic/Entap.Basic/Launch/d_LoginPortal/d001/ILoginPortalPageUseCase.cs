@@ -3,7 +3,7 @@ using Entap.Basic.Forms;
 
 namespace Entap.Basic.Launch.LoginPortal
 {
-    public interface ILoginPortalUseCase : IPageLifeCycle
+    public interface ILoginPortalPageUseCase : IPageLifeCycle
     {
         /// <summary>
         /// 認証スキップ

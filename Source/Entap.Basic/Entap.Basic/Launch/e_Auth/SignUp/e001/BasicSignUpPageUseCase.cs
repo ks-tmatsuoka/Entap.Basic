@@ -8,13 +8,13 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.Auth
 {
-    public class BasicSignUpUseCase : ISignUpUseCase
+    public class BasicSignUpPageUseCase : ISignUpPageUseCase
     {
         public static readonly string RegexMailAddress = @"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
         public static readonly string RegexPassword = @"^[!-~]*$";
 
         readonly IPasswordAuthService _passwordAuthService;
-        public BasicSignUpUseCase()
+        public BasicSignUpPageUseCase()
         {
             _passwordAuthService = Startup.ServiceProvider.GetService<IPasswordAuthService>();
         }

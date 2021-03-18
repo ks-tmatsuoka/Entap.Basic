@@ -8,16 +8,16 @@ namespace Entap.Basic.Launch.Splash
 {
     public class SplashPageViewModel : PageViewModelBase
     {
-        readonly ISplashUseCase _splashUseCase;
+        readonly ISplashPageUseCase _useCase;
         public SplashPageViewModel()
         {
-            _splashUseCase = Startup.ServiceProvider.GetService<ISplashUseCase>();
-            SetPageLifeCycle(_splashUseCase);
+            _useCase = Startup.ServiceProvider.GetService<ISplashPageUseCase>();
+            SetPageLifeCycle(_useCase);
 
             IsLoading = true;
             Task.Run(async () =>
             {
-                await _splashUseCase.LoadAsync();
+                await _useCase.LoadAsync();
                 IsLoading = false;
             });
         }

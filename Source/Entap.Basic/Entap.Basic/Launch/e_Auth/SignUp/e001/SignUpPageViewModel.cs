@@ -8,14 +8,14 @@ namespace Entap.Basic.Launch.Auth
 {
     public class SignUpPageViewModel : PageViewModelBase
     {
-        readonly ISignUpUseCase _signUpUseCase;
+        readonly ISignUpPageUseCase _useCase;
         public SignUpPageViewModel()
         {
-            _signUpUseCase = Startup.ServiceProvider.GetService<ISignUpUseCase>();
-            SetPageLifeCycle(_signUpUseCase);
+            _useCase = Startup.ServiceProvider.GetService<ISignUpPageUseCase>();
+            SetPageLifeCycle(_useCase);
 
             SignUpCommand = new Command(
-                () => _signUpUseCase.SignUp(MailAddress, Password),
+                () => _useCase.SignUp(MailAddress, Password),
                 () =>
                     !string.IsNullOrEmpty(MailAddress)&&
                     !IsMailAddressError &&
@@ -38,7 +38,7 @@ namespace Entap.Basic.Launch.Auth
         }
         string _mailAddress;
 
-        public string MailAddressErrorMessage => _signUpUseCase.ValidateMailAddress(MailAddress);
+        public string MailAddressErrorMessage => _useCase.ValidateMailAddress(MailAddress);
 
         public bool IsMailAddressError =>  !string.IsNullOrEmpty(MailAddressErrorMessage);
 
@@ -57,7 +57,7 @@ namespace Entap.Basic.Launch.Auth
         }
         string _password;
 
-        public string PasswordErrorMessage => _signUpUseCase.ValidatePassword(Password);
+        public string PasswordErrorMessage => _useCase.ValidatePassword(Password);
 
         public bool IsPasswordError => !string.IsNullOrEmpty(PasswordErrorMessage);
 

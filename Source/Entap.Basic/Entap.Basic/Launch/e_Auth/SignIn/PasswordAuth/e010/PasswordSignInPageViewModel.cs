@@ -8,14 +8,14 @@ namespace Entap.Basic.Launch.Auth
 {
     public class PasswordSignInPageViewModel : PageViewModelBase
     {
-        readonly IPasswordSignInUseCase _passwordSignInUseCase;
+        readonly IPasswordSignInPageUseCase _useCase;
         public PasswordSignInPageViewModel()
         {
-            _passwordSignInUseCase = Startup.ServiceProvider.GetService<IPasswordSignInUseCase>();
-            SetPageLifeCycle(_passwordSignInUseCase);
+            _useCase = Startup.ServiceProvider.GetService<IPasswordSignInPageUseCase>();
+            SetPageLifeCycle(_useCase);
 
             SignInCommand = new Command(
-                () => _passwordSignInUseCase.SignIn(MailAddress, Password),
+                () => _useCase.SignIn(MailAddress, Password),
                 () =>
                     !string.IsNullOrEmpty(MailAddress) &&
                     !IsMailAddressError &&
@@ -37,7 +37,7 @@ namespace Entap.Basic.Launch.Auth
         }
         string _mailAddress;
 
-        public string MailAddressErrorMessage => _passwordSignInUseCase.ValidateMailAddress(MailAddress);
+        public string MailAddressErrorMessage => _useCase.ValidateMailAddress(MailAddress);
 
         public bool IsMailAddressError => !string.IsNullOrEmpty(MailAddressErrorMessage);
 
@@ -56,12 +56,12 @@ namespace Entap.Basic.Launch.Auth
         }
         string _password;
 
-        public string PasswordErrorMessage => _passwordSignInUseCase.ValidatePassword(Password);
+        public string PasswordErrorMessage => _useCase.ValidatePassword(Password);
 
         public bool IsPasswordError => !string.IsNullOrEmpty(PasswordErrorMessage);
 
         public Command SignInCommand { get; set; }
 
-        public Command ResetPasswordCommand => new Command(() => _passwordSignInUseCase.ResetPassword());
+        public Command ResetPasswordCommand => new Command(() => _useCase.ResetPassword());
     }
 }

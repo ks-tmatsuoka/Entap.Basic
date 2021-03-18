@@ -45,14 +45,13 @@ namespace Entap.Basic
 
         static void AddDefaultService()
         {
-            ConfigureUseCase<ISplashUseCase, BasicSplashUseCase>();
-            ConfigureUseCase<IGuideUseCase, BasicGuideUseCase>();
-            ConfigureUseCase<IGuideUseCase, BasicGuideUseCase>();
-            ConfigureUseCase<IConfirmTermsUseCase, BasicConfirmTermsUseCase>();
-            ConfigureUseCase<ITermsUseCase, BasicTermsUseCase>();
-            ConfigureUseCase<ILoginPortalUseCase, BasicLoginPortalUseCase>();
-            ConfigureUseCase<ISignUpUseCase, BasicSignUpUseCase>();
-            ConfigureUseCase<IPasswordSignInUseCase, BasicPasswordSingnInUseCase>();
+            ConfigureUseCase<ISplashPageUseCase, BasicSplashPageUseCase>();
+            ConfigureUseCase<IGuidePageUseCase, BasicGuidePageUseCase>();
+            ConfigureUseCase<IConfirmTermsPageUseCase, BasicConfirmTermsPageUseCase>();
+            ConfigureUseCase<ITermsPageUseCase, BasicTermsPageUseCase>();
+            ConfigureUseCase<ILoginPortalPageUseCase, BasicLoginPortalPageUseCase>();
+            ConfigureUseCase<ISignUpPageUseCase, BasicSignUpPageUseCase>();
+            ConfigureUseCase<IPasswordSignInPageUseCase, BasicPasswordSignInPageUseCase>();
         }
     }
 }

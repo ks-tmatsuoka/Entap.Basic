@@ -4,7 +4,7 @@ using Entap.Basic.Forms;
 
 namespace Entap.Basic.Launch.Splash
 {
-    public interface ISplashUseCase : IPageLifeCycle
+    public interface ISplashPageUseCase : IPageLifeCycle
     {
         /// <summary>
         /// ロード処理

@@ -9,26 +9,26 @@ namespace Entap.Basic.Launch.Terms
 {
     public class ConfirmTermsPageViewModel : PageViewModelBase
     {
-        readonly IConfirmTermsUseCase _confirmTermsUseCase;
+        readonly IConfirmTermsPageUseCase _useCase;
         public ConfirmTermsPageViewModel()
         {
-            _confirmTermsUseCase = Startup.ServiceProvider.GetService<IConfirmTermsUseCase>();
-            SetPageLifeCycle(_confirmTermsUseCase);
+            _useCase = Startup.ServiceProvider.GetService<IConfirmTermsPageUseCase>();
+            SetPageLifeCycle(_useCase);
 
             AcceptCommand = new Command(() =>
             {
-                _confirmTermsUseCase.AcceptTerms();
+                _useCase.AcceptTerms();
             }, () => IsChecked);
         }
 
         public Command ConfirmTermsCommand => new Command(() =>
         {
-            _confirmTermsUseCase.ConfirmTerms();
+            _useCase.ConfirmTerms();
         });
 
         public Command ConfirmPrivacyPolicyCommand => new Command(() =>
         {
-            _confirmTermsUseCase.ConfirmPrivacyPolicy();
+            _useCase.ConfirmPrivacyPolicy();
         });
 
         public bool IsChecked
@@ -38,7 +38,7 @@ namespace Entap.Basic.Launch.Terms
             {
                 if (SetProperty(ref _isChecked, value))
                 {
-                    _confirmTermsUseCase.ChangeChecked(_isChecked);
+                    _useCase.ChangeChecked(_isChecked);
                     AcceptCommand?.ChangeCanExecute();
                 }
             }

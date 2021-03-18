@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.LoginPortal
 {
-    public class BasicLoginPortalUseCase : ILoginPortalUseCase
+    public class BasicLoginPortalPageUseCase : ILoginPortalPageUseCase
     {
-        public BasicLoginPortalUseCase()
+        public BasicLoginPortalPageUseCase()
         {
         }
 

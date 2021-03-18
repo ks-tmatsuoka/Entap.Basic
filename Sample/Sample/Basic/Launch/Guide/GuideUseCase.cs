@@ -5,7 +5,7 @@ using Entap.Basic.Launch.Guide;
 
 namespace Sample
 {
-    public class MyGuideUseCase : IGuideUseCase
+    public class MyGuideUseCase : IGuidePageUseCase
     {
         public MyGuideUseCase()
         {

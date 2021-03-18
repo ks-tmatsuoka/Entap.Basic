@@ -3,7 +3,7 @@ using Entap.Basic.Forms;
 
 namespace Entap.Basic.Launch.Terms
 {
-    public interface ITermsUseCase : IPageLifeCycle
+    public interface ITermsPageUseCase : IPageLifeCycle
     {
         /// <summary>
         /// 閉じる
