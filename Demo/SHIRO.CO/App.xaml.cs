@@ -2,9 +2,11 @@
 using Entap.Basic;
 using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Forms;
+using Entap.Basic.Launch.LoginPortal;
 using Entap.Basic.Launch.Splash;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Entap.Basic.Launch.Guide;
 
 namespace SHIRO.CO
 {
@@ -15,8 +17,13 @@ namespace SHIRO.CO
             InitializeComponent();
 
             Core.Init(this);
+            
             ConfigureServices();
-            PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel());
+            // ToDo
+            if (Plugin.FirebaseAuth.CrossFirebaseAuth.Current.Instance.CurrentUser is null)
+                PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel());
+            else
+                PageManager.Navigation.SetNavigationMainPage<HomePage>(new HomePageViewModel());
         }
 
         protected override void OnStart()
