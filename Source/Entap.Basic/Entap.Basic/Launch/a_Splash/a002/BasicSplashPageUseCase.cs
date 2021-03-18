@@ -1,28 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using Entap.Basic.Forms;
-using Entap.Basic.Launch.Guide;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.Splash
 {
     public class BasicSplashPageUseCase : ISplashPageUseCase
     {
+        readonly IPageNavigator _pageNavigator;
         public BasicSplashPageUseCase()
         {
+            _pageNavigator = Startup.ServiceProvider.GetService<IPageNavigator>();
         }
 
         public virtual async Task LoadAsync()
         {
             await Task.Delay(3000);
-            // ToDo
-            var contents = new List<GuideContent>()
-            {
-                new GuideContent { Title = "title 1", Description = "description 1", Next = "つぎへ" },
-                new GuideContent { Title = "title 2", Description = "description 2", Next = "つぎへ" },
-                new GuideContent { Title = "title 3", Description = "description 3", Next = "はじめる" }
-            };
-            await PageManager.Navigation.SetMainPage<GuidePage>(new GuidePageViewModel(contents));
+            await _pageNavigator.SetGuidePageAsync();
         }
 
         #region IPageLifeCycle
