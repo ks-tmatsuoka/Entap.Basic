@@ -41,5 +41,7 @@
     <Folder Include="Launch\e_Auth\SignIn\" />
     <Folder Include="Launch\e_Auth\SignIn\PasswordAuth\" />
     <Folder Include="Launch\e_Auth\SignIn\PasswordAuth\e010\" />
+    <Folder Include="Settings\" />
+    <Folder Include="Settings\g001\" />
   </ItemGroup>
 </Project>
