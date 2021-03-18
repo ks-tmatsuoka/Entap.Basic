@@ -6,6 +6,7 @@ using Entap.Basic.Launch.Guide;
 using Entap.Basic.Launch.LoginPortal;
 using Entap.Basic.Launch.Splash;
 using Entap.Basic.Launch.Terms;
+using Entap.Basic.Settings;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic
@@ -52,6 +53,8 @@ namespace Entap.Basic
             ConfigureUseCase<ILoginPortalPageUseCase, BasicLoginPortalPageUseCase>();
             ConfigureUseCase<ISignUpPageUseCase, BasicSignUpPageUseCase>();
             ConfigureUseCase<IPasswordSignInPageUseCase, BasicPasswordSignInPageUseCase>();
+
+            ConfigureUseCase<ISettingsPageUseCase, BasicSettingsPageUseCase>();
         }
     }
 }

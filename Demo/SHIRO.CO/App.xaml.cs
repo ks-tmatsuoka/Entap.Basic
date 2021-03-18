@@ -46,8 +46,6 @@ namespace SHIRO.CO
         {
             Startup.ConfigurePageNavigator<PageNavigator>();
             Startup.ServiceCollection.AddTransient<IPasswordAuthService, PasswordAuthService>();
-
-            Startup.ConfigureUseCase<ISplashPageUseCase, SplashPageUseCase>();
         }
     }
 }
