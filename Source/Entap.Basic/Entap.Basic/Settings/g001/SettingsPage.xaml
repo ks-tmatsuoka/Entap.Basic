@@ -5,6 +5,10 @@
     xmlns:local="clr-namespace:Entap.Basic.Settings"
     x:Class="Entap.Basic.Settings.SettingsPage"
     x:DataType="local:SettingsPageViewModel">
-    <ContentPage.Content>
-    </ContentPage.Content>
+    <StackLayout>
+        <Button
+            Text="ログアウト"
+            Command="{Binding SignOutCommand}"
+        />
+    </StackLayout>
 </ContentPage>

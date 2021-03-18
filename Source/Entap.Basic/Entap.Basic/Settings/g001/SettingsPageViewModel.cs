@@ -14,5 +14,7 @@ namespace Entap.Basic.Settings
             _useCase = Startup.ServiceProvider.GetService<ISettingsPageUseCase>();
             SetPageLifeCycle(_useCase);
         }
+
+        public Command SignOutCommand => new Command(() => _useCase.SignOut());
     }
 }

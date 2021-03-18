@@ -6,5 +6,6 @@ namespace Entap.Basic.Settings
 {
     public interface ISettingsPageUseCase : IPageLifeCycle
     {
+        public void SignOut();
     }
 }
