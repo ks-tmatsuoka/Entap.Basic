@@ -5,7 +5,7 @@ namespace Entap.Basic
 {
     public interface IPageNavigator
     {
-        void SetHomePage();
+        Task SetHomePageAsync();
 
         Task SetGuidePageAsync();
     }

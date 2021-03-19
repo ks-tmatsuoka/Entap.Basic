@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Entap.Basic.Core;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Auth;
@@ -8,8 +9,10 @@ namespace Entap.Basic.Launch.LoginPortal
 {
     public class BasicLoginPortalPageUseCase : ILoginPortalPageUseCase
     {
+        readonly IPageNavigator _pageNavigator;
         public BasicLoginPortalPageUseCase()
         {
+            _pageNavigator = Startup.ServiceProvider.GetService<IPageNavigator>();
         }
 
         public virtual void SignUp()
@@ -23,8 +26,11 @@ namespace Entap.Basic.Launch.LoginPortal
         #region SignIn
         public virtual void SkipAuth()
         {
-            // ToDo 匿名ログイン
-            NavigateToHomePage();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                // ToDo 匿名ログイン
+                await _pageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithEmailAndPassword()
@@ -85,11 +91,5 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void OnExit() { }
         #endregion
-
-        void NavigateToHomePage()
-        {
-            var pageNavigator = Startup.ServiceProvider.GetService<IPageNavigator>();
-            pageNavigator.SetHomePage();
-        }
     }
 }

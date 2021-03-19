@@ -42,7 +42,7 @@ namespace Entap.Basic.Launch.Auth
             {
                 var token = await _passwordAuthService.SignInAsync(mailAddress, password);
                 if (string.IsNullOrEmpty(token)) return;
-                _pageNavigator.SetHomePage();
+                await _pageNavigator.SetHomePageAsync();
             });
         }
 

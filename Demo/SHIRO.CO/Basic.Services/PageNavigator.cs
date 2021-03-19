@@ -9,9 +9,9 @@ namespace SHIRO.CO
 {
     public class PageNavigator : BasicPageNavigator
     {
-        public override void SetHomePage()
+        public override Task SetHomePageAsync()
         {
-            PageManager.Navigation.SetNavigationMainPage<HomePage>(new HomePageViewModel());
+            return PageManager.Navigation.SetNavigationMainPage<HomePage>(new HomePageViewModel());
         }
 
         public override Task SetGuidePageAsync()
