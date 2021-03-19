@@ -1,4 +1,5 @@
 ﻿using System;
+using Entap.Basic.Core;
 
 namespace Entap.Basic.Launch.Guide
 {
@@ -20,8 +21,12 @@ namespace Entap.Basic.Launch.Guide
 
         public virtual void OnComplete()
         {
+            
             System.Diagnostics.Debug.WriteLine("GuideUseCase.OnComplete");
-            BasicStartup.PageNavigator.SetTermsPageAsync();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.PageNavigator.SetTermsTopPageAsync();
+            });
         }
 
         #region IPageLifeCycle

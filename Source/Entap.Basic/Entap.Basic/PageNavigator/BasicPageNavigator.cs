@@ -32,7 +32,7 @@ namespace Entap.Basic
             return PageManager.Navigation.SetMainPage<GuidePage>(new GuidePageViewModel(contents));
         }
 
-        public virtual Task SetTermsPageAsync()
+        public virtual Task SetTermsTopPageAsync()
         {
             return PageManager.Navigation.SetMainPage<ConfirmTermsPage>(new ConfirmTermsPageViewModel());
         }
