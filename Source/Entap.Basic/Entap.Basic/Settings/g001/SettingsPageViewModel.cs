@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Entap.Basic.Forms;
-using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Settings
@@ -11,7 +9,7 @@ namespace Entap.Basic.Settings
         readonly ISettingsPageUseCase _useCase;
         public SettingsPageViewModel()
         {
-            _useCase = Startup.ServiceProvider.GetService<ISettingsPageUseCase>();
+            _useCase = BasicStartup.GetUseCase<ISettingsPageUseCase>();
             SetPageLifeCycle(_useCase);
         }
 

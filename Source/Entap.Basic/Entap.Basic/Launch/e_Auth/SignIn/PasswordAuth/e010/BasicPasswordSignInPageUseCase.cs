@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Core;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.Auth
 {
@@ -12,12 +10,8 @@ namespace Entap.Basic.Launch.Auth
         public static readonly string RegexMailAddress = @"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
         public static readonly string RegexPassword = @"^[!-~]*$";
 
-        readonly IPageNavigator _pageNavigator;
-        readonly IPasswordAuthService _passwordAuthService;
         public BasicPasswordSignInPageUseCase()
         {
-            _pageNavigator = Startup.ServiceProvider.GetService<IPageNavigator>();
-            _passwordAuthService = Startup.ServiceProvider.GetService<IPasswordAuthService>();
         }
 
         public string ValidateMailAddress(string mailAddress)
@@ -40,9 +34,9 @@ namespace Entap.Basic.Launch.Auth
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                var token = await _passwordAuthService.SignInAsync(mailAddress, password);
+                var token = await BasicStartup.AuthService.SignInAsync(mailAddress, password);
                 if (string.IsNullOrEmpty(token)) return;
-                await _pageNavigator.SetHomePageAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
             });
         }
 

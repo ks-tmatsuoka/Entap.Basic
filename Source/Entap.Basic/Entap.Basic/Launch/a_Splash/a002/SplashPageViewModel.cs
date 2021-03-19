@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Entap.Basic.Forms;
-using Microsoft.Extensions.DependencyInjection;
-using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Splash
 {
@@ -11,7 +9,7 @@ namespace Entap.Basic.Launch.Splash
         readonly ISplashPageUseCase _useCase;
         public SplashPageViewModel()
         {
-            _useCase = Startup.ServiceProvider.GetService<ISplashPageUseCase>();
+            _useCase = BasicStartup.GetUseCase<ISplashPageUseCase>();
             SetPageLifeCycle(_useCase);
 
             IsLoading = true;

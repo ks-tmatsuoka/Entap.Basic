@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Entap.Basic.Forms;
 using Xamarin.Forms;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.Auth
 {
@@ -11,7 +9,7 @@ namespace Entap.Basic.Launch.Auth
         readonly IPasswordSignInPageUseCase _useCase;
         public PasswordSignInPageViewModel()
         {
-            _useCase = Startup.ServiceProvider.GetService<IPasswordSignInPageUseCase>();
+            _useCase = BasicStartup.GetUseCase<IPasswordSignInPageUseCase>();
             SetPageLifeCycle(_useCase);
 
             SignInCommand = new Command(

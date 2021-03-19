@@ -1,11 +1,8 @@
 ﻿using System;
 using Entap.Basic;
-using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Forms;
-using Entap.Basic.Launch.Splash;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace SHIRO.CO
 {
@@ -20,9 +17,11 @@ namespace SHIRO.CO
             ConfigureServices();
             // ToDo
             if (Plugin.FirebaseAuth.CrossFirebaseAuth.Current.Instance.CurrentUser is null)
-                PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel());
+                BasicStartup.PageNavigator.SetSplashPageAsync();
             else
-                PageManager.Navigation.SetNavigationMainPage<HomePage>(new HomePageViewModel());
+                BasicStartup.PageNavigator.SetHomePageAsync();
+            //PageManager.Navigation.SetNavigationMainPage<LoginPortalPage>(new LoginPortalPageViewModel());
+
         }
 
         protected override void OnStart()
@@ -44,8 +43,8 @@ namespace SHIRO.CO
 
         void ConfigureEntapBasicServices()
         {
-            Startup.ConfigurePageNavigator<PageNavigator>();
-            Startup.ServiceCollection.AddTransient<IPasswordAuthService, PasswordAuthService>();
+            BasicStartup.ConfigurePageNavigator<PageNavigator>();
+            BasicStartup.ConfigureAuthService<PasswordAuthService>();
         }
     }
 }

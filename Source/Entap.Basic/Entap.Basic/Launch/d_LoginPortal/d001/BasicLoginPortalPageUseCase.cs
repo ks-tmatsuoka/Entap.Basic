@@ -9,10 +9,8 @@ namespace Entap.Basic.Launch.LoginPortal
 {
     public class BasicLoginPortalPageUseCase : ILoginPortalPageUseCase
     {
-        readonly IPageNavigator _pageNavigator;
         public BasicLoginPortalPageUseCase()
         {
-            _pageNavigator = Startup.ServiceProvider.GetService<IPageNavigator>();
         }
 
         public virtual void SignUp()
@@ -29,7 +27,7 @@ namespace Entap.Basic.Launch.LoginPortal
             ProcessManager.Current.Invoke(async () =>
             {
                 // ToDo 匿名ログイン
-                await _pageNavigator.SetHomePageAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
             });
         }
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Entap.Basic.Forms;
-using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Auth
@@ -11,7 +10,7 @@ namespace Entap.Basic.Launch.Auth
         readonly ISignUpPageUseCase _useCase;
         public SignUpPageViewModel()
         {
-            _useCase = Startup.ServiceProvider.GetService<ISignUpPageUseCase>();
+            _useCase = BasicStartup.GetUseCase<ISignUpPageUseCase>();
             SetPageLifeCycle(_useCase);
 
             SignUpCommand = new Command(

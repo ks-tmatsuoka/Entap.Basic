@@ -11,11 +11,18 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic
 {
-    public static class Startup
+    public static class BasicStartup
     {
-        public static ServiceCollection ServiceCollection { get; set; }
-        public static IServiceProvider ServiceProvider => ServiceCollection.BuildServiceProvider();
+        private static readonly ServiceCollection _serviceCollection;
+        static BasicStartup()
+        {
+            _serviceCollection = new ServiceCollection();
+            AddDefaultService();
+        }
 
+        static IServiceProvider ServiceProvider => _serviceCollection.BuildServiceProvider();
+
+        #region PageNavigator
         /// <summary>
         /// PageNavigatorの登録
         /// </summary>
@@ -23,9 +30,33 @@ namespace Entap.Basic
         public static void ConfigurePageNavigator<TImplementation>()
             where TImplementation : class, IPageNavigator
         {
-            ServiceCollection.AddSingleton<IPageNavigator, TImplementation>();
+            _serviceCollection.AddSingleton<IPageNavigator, TImplementation>();
         }
 
+        /// <summary>
+        /// PageNavigator
+        /// </summary>
+        public static IPageNavigator PageNavigator => ServiceProvider.GetService<IPageNavigator>();
+        #endregion
+
+        #region AuthService
+        /// <summary>
+        /// PageNavigatorの登録
+        /// </summary>
+        /// <typeparam name="TImplementation">PageNavigatorの実装タイプ</typeparam>
+        public static void ConfigureAuthService<TImplementation>()
+            where TImplementation : class, IPasswordAuthService
+        {
+            _serviceCollection.AddSingleton<IPasswordAuthService, TImplementation>();
+        }
+
+        /// <summary>
+        /// PageNavigator
+        /// </summary>
+        public static IPasswordAuthService AuthService => ServiceProvider.GetService<IPasswordAuthService>();
+        #endregion
+
+        #region UseCase
         /// <summary>
         /// UseCaseの登録
         /// </summary>
@@ -35,17 +66,19 @@ namespace Entap.Basic
             where TService : class, IPageLifeCycle
             where TImplementation : class, TService
         {
-            ServiceCollection.AddTransient<TService, TImplementation>();
+            _serviceCollection.AddTransient<TService, TImplementation>();
         }
 
-        static Startup()
+        public static T GetUseCase<T>() where T : IPageLifeCycle
         {
-            ServiceCollection = new ServiceCollection();
-            AddDefaultService();
-        }    
+            return ServiceProvider.GetService<T>();
+        }
+        #endregion
 
         static void AddDefaultService()
         {
+            ConfigurePageNavigator<BasicPageNavigator>();
+
             ConfigureUseCase<ISplashPageUseCase, BasicSplashPageUseCase>();
             ConfigureUseCase<IGuidePageUseCase, BasicGuidePageUseCase>();
             ConfigureUseCase<IConfirmTermsPageUseCase, BasicConfirmTermsPageUseCase>();

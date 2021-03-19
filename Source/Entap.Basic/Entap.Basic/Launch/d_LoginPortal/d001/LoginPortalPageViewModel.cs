@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Entap.Basic.Forms;
-using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.LoginPortal
@@ -11,7 +9,7 @@ namespace Entap.Basic.Launch.LoginPortal
         readonly ILoginPortalPageUseCase _useCase;
         public LoginPortalPageViewModel()
         {
-            _useCase = Startup.ServiceProvider.GetService<ILoginPortalPageUseCase>();
+            _useCase = BasicStartup.GetUseCase<ILoginPortalPageUseCase>();
             SetPageLifeCycle(_useCase);
         }
 

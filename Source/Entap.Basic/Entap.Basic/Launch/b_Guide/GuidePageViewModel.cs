@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Entap.Basic.Core;
 using Entap.Basic.Forms;
-using Microsoft.Extensions.DependencyInjection;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Guide
@@ -15,7 +12,7 @@ namespace Entap.Basic.Launch.Guide
         readonly IEnumerable<GuideContent> _guideContents;
         public GuidePageViewModel(IEnumerable<GuideContent> contents)
         {
-            _useCase = Startup.ServiceProvider.GetService<IGuidePageUseCase>();
+            _useCase = BasicStartup.GetUseCase<IGuidePageUseCase>();
             SetPageLifeCycle(_useCase);
 
             _guideContents = contents;
