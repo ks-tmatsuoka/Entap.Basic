@@ -9,5 +9,6 @@ namespace Entap.Basic
 
         Task SetSplashPageAsync();
         Task SetGuidePageAsync();
+        Task SetTermsPageAsync();
     }
 }

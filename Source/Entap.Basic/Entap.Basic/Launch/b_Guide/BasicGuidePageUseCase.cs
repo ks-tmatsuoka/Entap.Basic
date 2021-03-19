@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using Entap.Basic.Core;
-using Entap.Basic.Forms;
-using Entap.Basic.Launch.Terms;
-using Xamarin.Forms;
 
 namespace Entap.Basic.Launch.Guide
 {
@@ -26,8 +21,7 @@ namespace Entap.Basic.Launch.Guide
         public virtual void OnComplete()
         {
             System.Diagnostics.Debug.WriteLine("GuideUseCase.OnComplete");
-            // ToDo 遷移先ページ変更
-            ProcessManager.Current.Invoke(async () => await PageManager.Navigation.SetMainPage<ConfirmTermsPage>(new ConfirmTermsPageViewModel()));
+            BasicStartup.PageNavigator.SetTermsPageAsync();
         }
 
         #region IPageLifeCycle
