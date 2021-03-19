@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Guide;
+using Entap.Basic.Launch.Splash;
 
 namespace Entap.Basic
 {
@@ -11,6 +12,11 @@ namespace Entap.Basic
         public virtual Task SetHomePageAsync()
         {
             throw new NotImplementedException();
+        }
+
+        public virtual Task SetSplashPageAsync()
+        {
+            return PageManager.Navigation.SetMainPage<SplashPage>(new SplashPageViewModel());
         }
 
         public virtual Task SetGuidePageAsync()

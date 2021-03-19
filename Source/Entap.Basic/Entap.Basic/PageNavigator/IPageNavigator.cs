@@ -7,6 +7,7 @@ namespace Entap.Basic
     {
         Task SetHomePageAsync();
 
+        Task SetSplashPageAsync();
         Task SetGuidePageAsync();
     }
 }
