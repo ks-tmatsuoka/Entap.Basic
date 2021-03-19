@@ -9,6 +9,10 @@ namespace Entap.Basic
 
         Task SetSplashPageAsync();
         Task SetGuidePageAsync();
-        Task SetTermsPageAsync();
+        Task SetTermsTopPageAsync();
+        Task PushModalTermsPageAsync();
+        Task SetLoginPortalPage();
+
+        
     }
 }

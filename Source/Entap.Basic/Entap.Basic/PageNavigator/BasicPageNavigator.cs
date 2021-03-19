@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Guide;
+using Entap.Basic.Launch.LoginPortal;
 using Entap.Basic.Launch.Splash;
 using Entap.Basic.Launch.Terms;
 
@@ -35,6 +36,16 @@ namespace Entap.Basic
         public virtual Task SetTermsTopPageAsync()
         {
             return PageManager.Navigation.SetMainPage<ConfirmTermsPage>(new ConfirmTermsPageViewModel());
+        }
+
+        public virtual Task PushModalTermsPageAsync()
+        {
+            return PageManager.Navigation.SetMainPage<ConfirmTermsPage>(new ConfirmTermsPageViewModel());
+        }
+
+        public virtual Task SetLoginPortalPage()
+        {
+            return PageManager.Navigation.SetNavigationMainPage<LoginPortalPage>(new LoginPortalPageViewModel());
         }
     }
 }
