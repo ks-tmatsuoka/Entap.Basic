@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Entap.Basic.Forms;
+using Entap.Basic.Launch.Auth;
 using Entap.Basic.Launch.Guide;
 using Entap.Basic.Launch.LoginPortal;
 using Entap.Basic.Launch.Splash;
@@ -46,6 +47,16 @@ namespace Entap.Basic
         public virtual Task SetLoginPortalPage()
         {
             return PageManager.Navigation.SetNavigationMainPage<LoginPortalPage>(new LoginPortalPageViewModel());
+        }
+
+        public virtual Task PushPasswordSignInPageAsync()
+        {
+            return PageManager.Navigation.PushAsync<PasswordSignInPage>(new PasswordSignInPageViewModel());
+        }
+
+        public Task PushSignUpPageAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

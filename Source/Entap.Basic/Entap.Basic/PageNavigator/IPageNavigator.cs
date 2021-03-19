@@ -12,7 +12,7 @@ namespace Entap.Basic
         Task SetTermsTopPageAsync();
         Task PushModalTermsPageAsync();
         Task SetLoginPortalPage();
-
-        
+        Task PushPasswordSignInPageAsync();
+        Task PushSignUpPageAsync();
     }
 }

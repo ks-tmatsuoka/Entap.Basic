@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Entap.Basic.Core;
-using Entap.Basic.Forms;
-using Entap.Basic.Launch.Auth;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Entap.Basic.Launch.LoginPortal
 {
@@ -15,9 +11,9 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignUp()
         {
-            ProcessManager.Current.Invoke(() =>
+            ProcessManager.Current.Invoke(async() =>
             {
-                PageManager.Navigation.PushAsync<SignUpPage>(new SignUpPageViewModel());
+                await BasicStartup.PageNavigator.PushSignUpPageAsync();
             });
         }
 
@@ -35,7 +31,7 @@ namespace Entap.Basic.Launch.LoginPortal
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                await PageManager.Navigation.PushAsync<PasswordSignInPage>(new PasswordSignInPageViewModel());
+                await BasicStartup.PageNavigator.PushPasswordSignInPageAsync();
             });
         }
 
