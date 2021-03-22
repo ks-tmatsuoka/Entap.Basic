@@ -6,6 +6,7 @@
     <Authors>Entap</Authors>
     <Description>Refitのラッパーライブラリ
 https://github.com/reactiveui/refit</Description>
+    <PackageId>Entap.Basic.Refit</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
