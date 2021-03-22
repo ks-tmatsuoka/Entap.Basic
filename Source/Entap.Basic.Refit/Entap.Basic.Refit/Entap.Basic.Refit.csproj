@@ -20,12 +20,10 @@ https://github.com/reactiveui/refit</Description>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.24" />
+    <PackageReference Include="Entap.Basic.Core" Version="0.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Modules\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj" />
   </ItemGroup>
 </Project>
