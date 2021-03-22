@@ -16,6 +16,7 @@
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Entap.Basic.Core.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PackageReleaseNotes>Entap.Basic.Core.Androidをパッケージ化</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
