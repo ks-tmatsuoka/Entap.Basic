@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{625F73
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Core", "Entap.Basic.Core", "{D5CCB142-5A1C-432E-B807-33DE26AD08A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Core", "Source\Entap.Basic.Core\Entap.Basic.Core.csproj", "{C7D33057-ED52-4168-A347-BCC7D5785A44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Core", "Source\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj", "{C7D33057-ED52-4168-A347-BCC7D5785A44}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Forms", "Entap.Basic.Forms", "{9D500FA3-27AA-413F-B59E-E4053A51DB1E}"
 EndProject
