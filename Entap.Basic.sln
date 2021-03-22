@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Refit", "Source
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Core.Android", "Source\Entap.Basic.Core\Entap.Basic.Core.Android\Entap.Basic.Core.Android.csproj", "{A4E743B3-F22D-415D-9D98-2F3562B32208}"
 EndProject
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.Core.NuGet", "Source\Entap.Basic.Core\Entap.Basic.Core.NuGet\Entap.Basic.Core.NuGet.nuproj", "{C485120C-94F0-4AD5-8586-B971B489BA65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -355,6 +357,18 @@ Global
 		{A4E743B3-F22D-415D-9D98-2F3562B32208}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{A4E743B3-F22D-415D-9D98-2F3562B32208}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{A4E743B3-F22D-415D-9D98-2F3562B32208}.Release|iPhone.Build.0 = Release|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{C485120C-94F0-4AD5-8586-B971B489BA65}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -393,5 +407,6 @@ Global
 		{39A5978D-E1B7-41E3-8805-1BC758D95FF5} = {13B9C6C5-8037-422D-BF76-4080DF067731}
 		{F81FB014-A5F9-455E-8AFB-F7DCEC72809C} = {39A5978D-E1B7-41E3-8805-1BC758D95FF5}
 		{A4E743B3-F22D-415D-9D98-2F3562B32208} = {D5CCB142-5A1C-432E-B807-33DE26AD08A6}
+		{C485120C-94F0-4AD5-8586-B971B489BA65} = {D5CCB142-5A1C-432E-B807-33DE26AD08A6}
 	EndGlobalSection
 EndGlobal
