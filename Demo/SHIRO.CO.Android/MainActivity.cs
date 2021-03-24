@@ -21,6 +21,7 @@ namespace SHIRO.CO.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Entap.Basic.Android.Platform.Init(this);
             Entap.Basic.Firebase.Auth.Android.Platform.Init(Application.Context, this, savedInstanceState);
             LoadApplication(new App());
         }
