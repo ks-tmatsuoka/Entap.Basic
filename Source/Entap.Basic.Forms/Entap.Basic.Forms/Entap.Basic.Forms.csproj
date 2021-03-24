@@ -16,7 +16,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Entap.Basic.Core" Version="0.0.2" />
+    <PackageReference Include="Entap.Basic.Core" Version="0.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PageManager\" />
