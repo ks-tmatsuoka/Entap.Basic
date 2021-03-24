@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Platform.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -101,6 +102,10 @@
     <ProjectReference Include="..\..\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
       <Project>{E2028777-8C1B-489E-9EFD-477CD3082EA7}</Project>
       <Name>Entap.Basic.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entap.Basic.Forms\Entap.Basic.Forms.Android\Entap.Basic.Forms.Android.csproj">
+      <Project>{6E00B08A-0837-4785-BC64-B391197B02D9}</Project>
+      <Name>Entap.Basic.Forms.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
