@@ -12,7 +12,7 @@ namespace Sample.Droid
         {
         }
 
-        public async Task<string> PickPhotoAsync()
+        public static async Task<string> PickPhotoAsync()
         {
             var intent = new Intent(Intent.ActionGetContent);
             intent.SetType("image/*");
@@ -24,9 +24,13 @@ namespace Sample.Droid
                 var result = await StarterActivity.StartAsync(activity, pickerIntent, 1000);
                 return result.Data.ToString();
             }
-            catch (Exception ex)
+            catch (TaskCanceledException)
             {
                 return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
