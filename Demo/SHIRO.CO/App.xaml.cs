@@ -15,13 +15,7 @@ namespace SHIRO.CO
             Core.Init(this);
             
             ConfigureServices();
-            // ToDo
-            if (Plugin.FirebaseAuth.CrossFirebaseAuth.Current.Instance.CurrentUser is null)
-                BasicStartup.PageNavigator.SetSplashPageAsync();
-            else
-                BasicStartup.PageNavigator.SetHomePageAsync();
-            //PageManager.Navigation.SetNavigationMainPage<LoginPortalPage>(new LoginPortalPageViewModel());
-
+            BasicStartup.PageNavigator.SetStartUpPageAsync();
         }
 
         protected override void OnStart()

@@ -9,6 +9,14 @@ namespace SHIRO.CO
 {
     public class PageNavigator : BasicPageNavigator
     {
+        public override async Task SetStartUpPageAsync()
+        {
+            if (Plugin.FirebaseAuth.CrossFirebaseAuth.Current.Instance.CurrentUser is null)
+                await BasicStartup.PageNavigator.SetSplashPageAsync();
+            else
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+
+        }
         public override Task SetHomePageAsync()
         {
             return PageManager.Navigation.SetNavigationMainPage<HomePage>(new HomePageViewModel());
