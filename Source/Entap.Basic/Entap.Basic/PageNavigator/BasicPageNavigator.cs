@@ -12,6 +12,11 @@ namespace Entap.Basic
 {
     public class BasicPageNavigator : IPageNavigator
     {
+        public virtual Task SetStartUpPageAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual Task SetHomePageAsync()
         {
             throw new NotImplementedException();
