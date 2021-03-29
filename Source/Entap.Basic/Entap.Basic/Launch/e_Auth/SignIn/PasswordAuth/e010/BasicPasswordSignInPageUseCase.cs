@@ -42,7 +42,10 @@ namespace Entap.Basic.Launch.Auth
 
         public void ResetPassword()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.PageNavigator.PushResetPasswordPageAsync();
+            });
         }
 
         #region IPageLifeCycle

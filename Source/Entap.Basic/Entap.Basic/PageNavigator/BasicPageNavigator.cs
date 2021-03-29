@@ -59,6 +59,11 @@ namespace Entap.Basic
             return PageManager.Navigation.PushAsync<PasswordSignInPage>(new PasswordSignInPageViewModel());
         }
 
+        public virtual Task PushResetPasswordPageAsync()
+        {
+            return PageManager.Navigation.PushAsync<ResetPasswordPage>(new ResetPasswordPageViewModel());
+        }
+
         public Task PushSignUpPageAsync()
         {
             throw new NotImplementedException();
