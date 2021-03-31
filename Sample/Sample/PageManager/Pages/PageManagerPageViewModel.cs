@@ -15,6 +15,6 @@ namespace Sample
 
         public ProcessCommand PushModalCommand => PushModalCommand<PageManagerPage>(new PageManagerPageViewModel());
 
-        public ProcessCommand PushNavigationModalCommand => PushNavigatipnModalCommand<PageManagerPage>(new PageManagerPageViewModel(), hasNavigationCloseButton: true);
+        public ProcessCommand PushNavigationModalCommand => PushNavigationModalCommand<PageManagerPage>(new PageManagerPageViewModel(), hasNavigationCloseButton: true);
     }
 }

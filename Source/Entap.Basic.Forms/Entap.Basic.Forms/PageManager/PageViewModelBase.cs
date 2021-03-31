@@ -76,7 +76,7 @@ namespace Entap.Basic.Forms
             await PageManager.Navigation.PushModalAsync<T>(viewModel);
         });
 
-        public ProcessCommand PushNavigatipnModalCommand<T>(PageViewModelBase viewModel, bool hasNavigationCloseButton = true) where T : Page => new ProcessCommand(async () =>
+        public ProcessCommand PushNavigationModalCommand<T>(PageViewModelBase viewModel, bool hasNavigationCloseButton = true) where T : Page => new ProcessCommand(async () =>
         {
             await PageManager.Navigation.PushNavigationModalAsync<T>(viewModel, hasNavigationCloseButton);
         });
