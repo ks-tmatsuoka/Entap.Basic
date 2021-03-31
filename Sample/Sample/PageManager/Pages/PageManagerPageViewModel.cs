@@ -11,13 +11,10 @@ namespace Sample
         {
         }
 
-        public ProcessCommand PushCommand =>
-            new ProcessCommand(() => PageManager.Navigation.PushAsync<PageManagerPage>(new PageManagerPageViewModel()));
+        public ProcessCommand PushCommand => PushCommand<PageManagerPage>(new PageManagerPageViewModel());
 
-        public ProcessCommand PushModalCommand =>
-            new ProcessCommand(() => PageManager.Navigation.PushModalAsync<PageManagerPage>(new PageManagerPageViewModel()));
+        public ProcessCommand PushModalCommand => PushModalCommand<PageManagerPage>(new PageManagerPageViewModel());
 
-        public ProcessCommand PushNavigationModalCommand =>
-            new ProcessCommand(() => PageManager.Navigation.PushNavigationModalAsync<PageManagerPage>(new PageManagerPageViewModel(), hasNavigationCloseButton:true));
+        public ProcessCommand PushNavigationModalCommand => PushNavigatipnModalCommand<PageManagerPage>(new PageManagerPageViewModel(), hasNavigationCloseButton: true);
     }
 }

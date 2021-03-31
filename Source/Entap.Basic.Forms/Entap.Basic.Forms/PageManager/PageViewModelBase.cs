@@ -65,13 +65,30 @@ namespace Entap.Basic.Forms
         bool _hasDestryoed;
         #endregion
 
+        #region PushCommand
+        public ProcessCommand PushCommand<T>(PageViewModelBase viewModel) where T : Page => new ProcessCommand(async () =>
+        {
+            await PageManager.Navigation.PushAsync<T>(viewModel);
+        });
+
+        public ProcessCommand PushModalCommand<T>(PageViewModelBase viewModel) where T : Page => new ProcessCommand(async () =>
+        {
+            await PageManager.Navigation.PushModalAsync<T>(viewModel);
+        });
+
+        public ProcessCommand PushNavigatipnModalCommand<T>(PageViewModelBase viewModel, bool hasNavigationCloseButton = true) where T : Page => new ProcessCommand(async () =>
+        {
+            await PageManager.Navigation.PushNavigationModalAsync<T>(viewModel, hasNavigationCloseButton);
+        });
+        #endregion
+
         #region PopCommand
-        public ProcessCommand PopCommand => new ProcessCommand(async (obj) =>
+        public ProcessCommand PopCommand => new ProcessCommand(async () =>
         {
             await PageManager.Navigation.PopAsync(true);
         });
 
-        public ProcessCommand PopModalCommand => new ProcessCommand(async (obj) =>
+        public ProcessCommand PopModalCommand => new ProcessCommand(async () =>
         {
             await PageManager.Navigation.PopModalAsync(true);
         });
