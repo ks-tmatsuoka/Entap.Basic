@@ -16,8 +16,7 @@
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Entap.Basic.Forms.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <PackageReleaseNotes>・Entap.Basic.Coreのバージョンを0.0.5にアップデート
-・Entap.Basic.Core.Andrioidの追加</PackageReleaseNotes>
+    <PackageReleaseNotes>PageViewModelBaseにPushCommand追加</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
