@@ -12,9 +12,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Modules\" />
+    <Folder Include="EmailLink\" />
+    <Folder Include="EmailLink\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
