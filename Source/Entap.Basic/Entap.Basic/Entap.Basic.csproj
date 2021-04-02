@@ -47,5 +47,4 @@
     <Folder Include="Launch\e_Auth\ResetPassword\e011\" />
     <Folder Include="Launch\e_Auth\ResetPassword\e013\" />
   </ItemGroup>
-  </ItemGroup>
 </Project>
