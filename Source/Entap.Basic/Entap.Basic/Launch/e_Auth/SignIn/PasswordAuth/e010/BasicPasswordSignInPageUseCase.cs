@@ -44,7 +44,7 @@ namespace Entap.Basic.Launch.Auth
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                await BasicStartup.PageNavigator.PushResetPasswordPageAsync();
+                await BasicStartup.PageNavigator.PushSendPasswordResetEmailPageAsync();
             });
         }
 

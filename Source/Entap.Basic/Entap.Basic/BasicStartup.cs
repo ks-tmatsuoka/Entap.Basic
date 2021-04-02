@@ -86,6 +86,7 @@ namespace Entap.Basic
             ConfigureUseCase<ILoginPortalPageUseCase, BasicLoginPortalPageUseCase>();
             ConfigureUseCase<ISignUpPageUseCase, BasicSignUpPageUseCase>();
             ConfigureUseCase<IPasswordSignInPageUseCase, BasicPasswordSignInPageUseCase>();
+            ConfigureUseCase<ISendPasswordResetEmailPageUseCase, BasicSendPasswordResetEmailPageUseCase>();
             ConfigureUseCase<IResetPasswordPageUseCase, BasicResetPasswordPageUseCase>();
 
             ConfigureUseCase<ISettingsPageUseCase, BasicSettingsPageUseCase>();
