@@ -153,5 +153,71 @@ namespace SHIRO.CO
             });
         }
 
+        public async Task<string> VerifyPasswordResetCodeAsync(string actionCode)
+        {
+            try
+            {
+                return await _authService.VerifyPasswordResetCodeAsync(actionCode);
+            }
+            catch (FirebaseAuthException ex)
+            {
+                switch (ex.ErrorType)
+                {
+                    case ErrorType.NetWork:
+                        await OnError("ネットワークエラー");
+                        break;
+                    // expired-action-code, invalid-action-code(user-not-found)
+                    case ErrorType.ActionCode:
+                        await OnError("再度リセットメールを送信してください。");
+                        break;
+                    // user-not-found, user-disabled
+                    case ErrorType.InvalidUser when ex.ErrorCode == Entap.Basic.Firebase.Auth.ErrorCode.UserDisabled:
+                        // ToDo Plugin.FireBaseAuth 4.1.0ではこの条件のエラーは発生しない（ConfirmPasswordResetAsyncで発生）
+                        await OnError("該当のアカウントは無効化されています");
+                        break;
+                    default:
+                        await OnError("再度リセットメールを送信してください。");
+                        break;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public async Task ConfirmPasswordResetAsync(string actionCode, string newPassword)
+        {
+            try
+            {
+                await _authService.ConfirmPasswordResetAsync(actionCode, newPassword);
+            }
+            catch (FirebaseAuthException ex)
+            {
+                switch (ex.ErrorType)
+                {
+                    case ErrorType.NetWork:
+                        await OnError("ネットワークエラー");
+                        break;
+                    // expired-action-code, invalid-action-code(user-not-found)
+                    case ErrorType.ActionCode:
+                        await OnError("このURLは使用済みです。再度リセットメールを送信してください。");
+                        break;
+                    // user-disabled
+                    case ErrorType.InvalidUser when ex.ErrorCode == Entap.Basic.Firebase.Auth.ErrorCode.UserDisabled:
+                        await OnError("該当のアカウントは無効化されています");
+                        break;
+                    default:
+                        await OnError("認証エラー。再度リセットメールを送信してください。");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
+        }
     }
 }
