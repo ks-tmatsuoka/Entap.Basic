@@ -48,5 +48,20 @@ namespace Entap.Basic.Firebase.Auth
         {
             CrossFirebaseAuth.Current.Instance.SignOut();
         }
+        /// <summary>
+        /// パスワードリセットコード検証
+        /// </summary>
+        /// <param name="actionCode">パスワードリセットメールのURLに保有するアクションコード</param>
+        /// <returns>メールアドレス</returns>
+        public Task<string> VerifyPasswordResetCodeAsync(string actionCode)
+            => CrossFirebaseAuth.Current.Instance.VerifyPasswordResetCodeAsync(actionCode);
+
+        /// <summary>
+        /// パスワードリセット処理
+        /// </summary>
+        /// <param name="actionCode">パスワードリセットメールのURLに保有するアクションコード</param>
+        /// <param name="newPassword">パスワード</param>
+        public Task ConfirmPasswordResetAsync(string actionCode, string newPassword)
+            => CrossFirebaseAuth.Current.Instance.ConfirmPasswordResetAsync(actionCode, newPassword);
     }
 }
