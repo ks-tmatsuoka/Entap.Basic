@@ -71,7 +71,7 @@ namespace Entap.Basic
 
         public Task PushSignUpPageAsync()
         {
-            throw new NotImplementedException();
+            return PageManager.Navigation.PushAsync<SignUpPage>(new SignUpPageViewModel());
         }
     }
 }
