@@ -95,11 +95,14 @@ namespace SHIRO.CO
                     case ErrorType.NetWork:
                         await OnError("ネットワークエラー");
                         break;
-                    // user-not-found, FIXME:user-disabled
+                    // user-not-found, user-disabled
                     case ErrorType.InvalidUser:
                     // invalid-email, wrong-password
                     case ErrorType.InvalidCredentials:
-                        await OnError("メールアドレスまたはパスワードが違います");
+                        if (ex.ErrorCode == Entap.Basic.Firebase.Auth.ErrorCode.UserDisabled)
+                            await OnError("該当のアカウントは無効化されています");
+                        else
+                            await OnError("メールアドレスまたはパスワードが違います");
                         break;
                     default:
                         await OnError("認証に失敗しました");
