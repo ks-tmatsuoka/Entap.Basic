@@ -53,7 +53,7 @@ namespace SHIRO.CO.Droid
 
             try
             {
-                EmailLinkHandler.Current.HandleEmailAction(linkData.Link.ToString()).ConfigureAwait(false);
+                EmailLinkHandler.Current.HandleEmailAction(linkData.Link.ToString());
             }
             catch (Exception ex)
             {
