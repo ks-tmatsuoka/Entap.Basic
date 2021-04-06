@@ -39,21 +39,21 @@ namespace Entap.Basic
         public static IPageNavigator PageNavigator => ServiceProvider.GetService<IPageNavigator>();
         #endregion
 
-        #region AuthService
+        #region AuthManager
         /// <summary>
-        /// PageNavigatorの登録
+        /// AuthManagerの登録
         /// </summary>
-        /// <typeparam name="TImplementation">PageNavigatorの実装タイプ</typeparam>
-        public static void ConfigureAuthService<TImplementation>()
-            where TImplementation : class, IPasswordAuthService
+        /// <typeparam name="TImplementation">AuthManagerの実装タイプ</typeparam>
+        public static void ConfigureAuthManagr<TImplementation>()
+            where TImplementation : class, IAuthManager
         {
-            _serviceCollection.AddSingleton<IPasswordAuthService, TImplementation>();
+            _serviceCollection.AddSingleton<IAuthManager, TImplementation>();
         }
 
         /// <summary>
-        /// PageNavigator
+        /// AuthManager
         /// </summary>
-        public static IPasswordAuthService AuthService => ServiceProvider.GetService<IPasswordAuthService>();
+        public static IAuthManager AuthManager => ServiceProvider.GetService<IAuthManager>();
         #endregion
 
         #region UseCase

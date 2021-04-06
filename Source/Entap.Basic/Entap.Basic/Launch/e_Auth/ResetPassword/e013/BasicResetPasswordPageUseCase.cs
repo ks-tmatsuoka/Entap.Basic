@@ -26,7 +26,7 @@ namespace Entap.Basic.Launch.Auth
 
         public void ResetPassword(string actionCode, string password)
         {
-            BasicStartup.AuthService.ConfirmPasswordResetAsync(actionCode, password);
+            BasicStartup.AuthManager.PasswordAuthService.ConfirmPasswordResetAsync(actionCode, password);
         }
 
         #region IPageLifeCycle

@@ -34,7 +34,7 @@ namespace Entap.Basic.Launch.Auth
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                var token = await BasicStartup.AuthService.SignInAsync(mailAddress, password);
+                var token = await BasicStartup.AuthManager.PasswordAuthService.SignInAsync(mailAddress, password);
                 if (string.IsNullOrEmpty(token)) return;
                 await BasicStartup.PageNavigator.SetHomePageAsync();
             });

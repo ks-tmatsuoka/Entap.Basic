@@ -38,7 +38,6 @@ namespace SHIRO.CO
         void ConfigureEntapBasicServices()
         {
             BasicStartup.ConfigurePageNavigator<PageNavigator>();
-            BasicStartup.ConfigureAuthService<PasswordAuthService>();
         }
     }
 }

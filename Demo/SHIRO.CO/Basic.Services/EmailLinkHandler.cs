@@ -19,7 +19,7 @@ namespace SHIRO.CO
         public override async void OnResetPassword(EmailActionParameter parameter)
         {
             base.OnResetPassword(parameter);
-            var email = await BasicStartup.AuthService.VerifyPasswordResetCodeAsync(parameter.OobCode);
+            var email = await BasicStartup.AuthManager.PasswordAuthService.VerifyPasswordResetCodeAsync(parameter.OobCode);
             if (string.IsNullOrEmpty(email)) return;
 
             await PageManager.Navigation.PushNavigationModalAsync<ResetPasswordPage>(new ResetPasswordPageViewModel(parameter.OobCode));

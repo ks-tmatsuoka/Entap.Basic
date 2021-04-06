@@ -27,7 +27,7 @@ namespace Entap.Basic.Launch.Auth
             {
                 try
                 {
-                    await BasicStartup.AuthService.SendPasswordResetEmailAsync(mailAddress);
+                    await BasicStartup.AuthManager.PasswordAuthService.SendPasswordResetEmailAsync(mailAddress);
                 }
                 catch (Exception ex)
                 {

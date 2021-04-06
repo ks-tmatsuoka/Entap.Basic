@@ -33,7 +33,7 @@ namespace Entap.Basic.Launch.Auth
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                var token = await BasicStartup.AuthService.SignUpAsync(mailAddress, passwrod);
+                var token = await BasicStartup.AuthManager.PasswordAuthService.SignUpAsync(mailAddress, passwrod);
                 if (token is null) return;
 
                 // ToDo ページ遷移
