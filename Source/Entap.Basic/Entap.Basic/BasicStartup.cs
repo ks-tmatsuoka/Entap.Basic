@@ -36,7 +36,8 @@ namespace Entap.Basic
         /// <summary>
         /// PageNavigator
         /// </summary>
-        public static IPageNavigator PageNavigator => ServiceProvider.GetService<IPageNavigator>();
+        public static IPageNavigator PageNavigator => pageNavigator ??= ServiceProvider.GetService<IPageNavigator>();
+        static IPageNavigator pageNavigator;
         #endregion
 
         #region AuthService
