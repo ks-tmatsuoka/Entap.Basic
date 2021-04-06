@@ -22,7 +22,7 @@ namespace SHIRO.CO
             return PageManager.Navigation.SetNavigationMainPage<HomePage>(new HomePageViewModel());
         }
 
-        public override async Task SetGuidePageAsync()
+        public override Task SetGuidePageAsync()
         {
             var contents = new List<GuideContent>()
             {
@@ -30,13 +30,7 @@ namespace SHIRO.CO
                 new GuideContent { Title = "SHIRO.お得なクーポンをもらおう", Description = "会員登録をすると、さらにお得なクーポンが配信されます。", Next = "次へ", Source = "image_guide02.png" },
                 new GuideContent { Title = "ギャラリーに展示しよう", Description = "毎月、SHIROアプリ内で共有された写真の中からカフェギャラリーに展示される写真が選ばれます。", Next = "はじめる", Source = "image_guide03.png" },
             };
-            await PageManager.Navigation.SetMainPage<GuidePage>(new GuidePageViewModel(contents));
-        }
-
-        public Func<Task> PendingNavigation = null;
-        public void SetPendingNavigation(Func<Task> func)
-        {
-            PendingNavigation = func;
+            return PageManager.Navigation.SetMainPage<GuidePage>(new GuidePageViewModel(contents));
         }
     }
 }
