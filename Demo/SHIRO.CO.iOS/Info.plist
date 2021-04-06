@@ -34,5 +34,25 @@
 	<string>SHIRO.CO</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>jp.co.entap.SHIRO.CO</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>jp.co.entap.SHIRO.CO</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLIconFile</key>
+			<string>logo@3x</string>
+		</dict>
+	</array>
+	<key>FirebaseDynamicLinksCustomDomains</key>
+	<array>
+		<string>https://launchtestproject.firebaseapp.com</string>
+		<string>https://entapshiro.page.link</string>
+	</array>
 </dict>
 </plist>
