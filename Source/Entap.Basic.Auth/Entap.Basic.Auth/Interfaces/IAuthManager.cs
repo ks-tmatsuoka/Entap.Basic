@@ -7,5 +7,8 @@ namespace Entap.Basic.Auth.Abstractions
     {
         bool IsPasswordAuthSupported { get; }
         IPasswordAuthService PasswordAuthService { get; }
+
+        bool IsTwitterAuthSupported { get; }
+        ISnsAuthService TwitterAuthService { get; }
     }
 }

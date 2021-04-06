@@ -11,8 +11,18 @@ namespace SHIRO.CO
         {
         }
 
+        #region PasswordAuth
         public bool IsPasswordAuthSupported => PasswordAuthService is not null;
         public IPasswordAuthService PasswordAuthService => _passwordAuthService ??= new PasswordAuthService();
         IPasswordAuthService _passwordAuthService;
+        #endregion
+
+        #region TwitterAuth
+        public bool IsTwitterAuthSupported => TwitterAuthService is not null;
+        public ISnsAuthService TwitterAuthService => _twitterAuthService ??= new TwitterAuthService();
+        ISnsAuthService _twitterAuthService;
+        #endregion
+
+
     }
 }
