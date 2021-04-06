@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Firebase.DynamicLinks;
 using Foundation;
 using UIKit;
 
@@ -25,9 +25,28 @@ namespace SHIRO.CO.iOS
             global::Xamarin.Forms.Forms.Init();
             Entap.Basic.iOS.Platform.Init();
             Entap.Basic.Firebase.Auth.iOS.Platform.Init();
+
             LoadApplication(new App());
 
+#if DEBUG
+            DynamicLinks.PerformDiagnostics(null);
+#endif
             return base.FinishedLaunching(app, options);
+        }
+
+        public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
+        {
+            var handled = DynamicLinks.SharedInstance.HandleUniversalLink(userActivity.WebPageUrl, null);
+            return handled;
+        }
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            var dynamicLink = DynamicLinks.SharedInstance?.FromCustomSchemeUrl(url);
+            if (dynamicLink is null) return false;
+
+            EmailLinkHandler.Current.HandleEmailAction(dynamicLink.Url.ToString());
+            return true;
         }
     }
 }
