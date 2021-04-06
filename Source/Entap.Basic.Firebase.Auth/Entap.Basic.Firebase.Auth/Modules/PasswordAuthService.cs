@@ -48,8 +48,25 @@ namespace Entap.Basic.Firebase.Auth
         {
             CrossFirebaseAuth.Current.Instance.SignOut();
         }
+
         /// <summary>
-        /// パスワードリセットコード検証
+        /// パスワードリセットメール送信
+        /// </summary>
+        /// <param name="email">メールアドレス</param>
+        /// https://firebase.google.com/docs/reference/js/firebase.auth.Auth?hl=ja#sendpasswordresetemail
+        public Task SendPasswordResetEmailAsync(string email)
+            => CrossFirebaseAuth.Current.Instance.SendPasswordResetEmailAsync(email);
+
+        /// <summary>
+        /// パスワードリセットメール送信
+        /// </summary>
+        /// <param name="BasicSendPasswordResetEmailParameter">SendPasswordResetEmailParameter</param>
+        /// https://firebase.google.com/docs/reference/js/firebase.auth.Auth?hl=ja#sendpasswordresetemail
+        public Task SendPasswordResetEmailAsync(string email, ActionCodeSettings settings)
+            => CrossFirebaseAuth.Current.Instance.SendPasswordResetEmailAsync(email, settings);
+
+        /// <summary>
+        /// パスワードリセット時のアクションコード検証
         /// </summary>
         /// <param name="actionCode">パスワードリセットメールのURLに保有するアクションコード</param>
         /// <returns>メールアドレス</returns>
