@@ -34,5 +34,16 @@
 	<string>SHIRO.CO</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.716130417723-20qc2kr1i8glo00ljcuabhfr1918lld9</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
