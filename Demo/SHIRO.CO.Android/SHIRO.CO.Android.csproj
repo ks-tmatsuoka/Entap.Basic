@@ -85,6 +85,9 @@
     <PackageReference Include="Refit">
       <Version>6.0.24</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Dynamic.Links">
+      <Version>119.1.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
