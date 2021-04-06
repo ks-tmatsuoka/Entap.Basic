@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Entap.Basic.Api;
+using Entap.Basic.Auth;
 using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Core;
+using Entap.Basic.Firebase.Auth;
 using Newtonsoft.Json;
 using Plugin.FirebaseAuth;
 using Refit;
@@ -142,6 +144,44 @@ namespace SHIRO.CO
             {
                 System.Diagnostics.Debug.WriteLine(ex);
                 OnError("サインアウト失敗");
+            }
+        }
+
+
+        public async Task SendPasswordResetEmailAsync(string email)
+        {
+            try
+            {
+                var settings = new ActionCodeSettings();
+                settings.Url = "http://launchtestproject.firebaseapp.com/?email=" + email;
+                settings.SetAndroidPackageName("jp.co.entap.shiro.co", false, null);
+                settings.IosBundleId = "jp.co.entap.SHIRO.CO";
+                settings.HandleCodeInApp = true;
+                await _authService.SendPasswordResetEmailAsync(email, settings);
+            }
+            catch(FirebaseAuthException ex)
+            {
+                // https://github.com/f-miyu/Plugin.FirebaseAuth/blob/master/Plugin.FirebaseAuth/iOS/ExceptionMapper.cs
+                switch (ex.ErrorType)
+                {
+                    case ErrorType.NetWork:
+                        await　OnError("ネットワークエラー");
+                        break;
+                    case ErrorType.InvalidUser:
+                        await OnError("メールアドレスを正しく入力してください。");
+                        break;
+                    case ErrorType.InvalidCredentials:
+                        await OnError("このメールアドレスは登録されていません。");
+                        break;
+                    default:
+                        await OnError("メールの送信に失敗しました");
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                await OnError("メールの送信に失敗しました");
             }
         }
 
