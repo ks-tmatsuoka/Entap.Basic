@@ -64,9 +64,9 @@ namespace Entap.Basic
             return PageManager.Navigation.PushAsync<SendPasswordResetEmailPage>(new SendPasswordResetEmailPageViewModel());
         }
 
-        public virtual Task PushResetPasswordPageAsync()
+        public virtual Task PushModalResetPasswordPageAsync()
         {
-            return PageManager.Navigation.PushAsync<ResetPasswordPage>(new ResetPasswordPageViewModel());
+            return PageManager.Navigation.PushNavigationModalAsync<ResetPasswordPage>(new ResetPasswordPageViewModel());
         }
 
         public Task PushSignUpPageAsync()

@@ -16,7 +16,7 @@ namespace Entap.Basic
         Task SetLoginPortalPage();
         Task PushPasswordSignInPageAsync();
         Task PushSendPasswordResetEmailPageAsync();
-        Task PushResetPasswordPageAsync();
+        Task PushModalResetPasswordPageAsync();
 
         Task PushSignUpPageAsync();
     }
