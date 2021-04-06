@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace Entap.Basic.Firebase.Auth.EmailLink
@@ -11,12 +12,32 @@ namespace Entap.Basic.Firebase.Auth.EmailLink
     /// </summary>
     public class EmailLinkHandler
     {
+        public static EmailLinkHandler Current => LazyInitializer.Value;
+        static readonly Lazy<EmailLinkHandler> LazyInitializer = new Lazy<EmailLinkHandler>(() => new EmailLinkHandler());
+
+        PasswordAuthService _authService = new PasswordAuthService();
+
         public EmailLinkHandler()
         {
         }
 
+        public virtual void OnResetPassword(EmailActionParameter parameter)
+        {
+            System.Diagnostics.Debug.WriteLine($"{nameof(EmailLinkHandler)}.{nameof(OnResetPassword)}");
+        }
+
+        public virtual void OnRecoverEmail(EmailActionParameter parameter)
+        {
+            System.Diagnostics.Debug.WriteLine($"{nameof(EmailLinkHandler)}.{nameof(OnRecoverEmail)}");
+        }
+
+        public virtual void OnVerifyEmail(EmailActionParameter parameter)
+        {
+            System.Diagnostics.Debug.WriteLine($"{nameof(EmailLinkHandler)}.{nameof(OnRecoverEmail)}");
+        }
+
 #nullable enable
-        public static void HandleEmailAction(string? url)
+        public void HandleEmailAction(string? url)
 #nullable disable
         {
             if (string.IsNullOrEmpty(url)) return;
@@ -31,13 +52,13 @@ namespace Entap.Basic.Firebase.Auth.EmailLink
             switch (parameter.ActionMode)
             {
                 case EmailActionMode.ResetPassword:
-                    // ToDod
+                    OnResetPassword(parameter);
                     break;
                 case EmailActionMode.RecoverEmail:
-                    // ToDo
+                    OnRecoverEmail(parameter);
                     break;
                 case EmailActionMode.VerifyEmail:
-                    // ToDo
+                    OnVerifyEmail(parameter);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
