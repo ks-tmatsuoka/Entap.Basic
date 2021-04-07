@@ -8,7 +8,7 @@ namespace Entap.Basic.Firebase.Auth
     public class PasswordAuthService : IPasswordAuthService
     {
         readonly IPasswordAuthErrorCallback _errorCallback;
-        public PasswordAuthService(IPasswordAuthErrorCallback errorCallback)
+        public PasswordAuthService(IPasswordAuthErrorCallback errorCallback = null)
         {
             _errorCallback = errorCallback;
         }
@@ -32,7 +32,7 @@ namespace Entap.Basic.Firebase.Auth
             }
             catch (Exception ex)
             {
-                await _errorCallback.HandleSignUpErrorAsync(ex);
+                await _errorCallback?.HandleSignUpErrorAsync(ex);
                 throw ex;
             }
         }
@@ -54,7 +54,7 @@ namespace Entap.Basic.Firebase.Auth
             }
             catch (Exception ex)
             {
-                await _errorCallback.HandleSignInErrorAsync(ex);
+                await _errorCallback?.HandleSignInErrorAsync(ex);
                 throw ex;
             }
         }
@@ -88,7 +88,7 @@ namespace Entap.Basic.Firebase.Auth
             }
             catch (Exception ex)
             {
-                await _errorCallback.HandleSendPasswordResetEmailErrorAsync(ex);
+                await _errorCallback?.HandleSendPasswordResetEmailErrorAsync(ex);
                 throw ex;
             }
         }
@@ -106,7 +106,7 @@ namespace Entap.Basic.Firebase.Auth
             }
             catch (Exception ex)
             {
-                await _errorCallback.HandleVerifyPasswordResetCodeErrorAsync(ex);
+                await _errorCallback?.HandleVerifyPasswordResetCodeErrorAsync(ex);
                 throw ex;
             }
         }
@@ -124,7 +124,7 @@ namespace Entap.Basic.Firebase.Auth
             }
             catch (Exception ex)
             {
-                await _errorCallback.HandleConfirmPasswordResetErrorAsync(ex);
+                await _errorCallback?.HandleConfirmPasswordResetErrorAsync(ex);
                 throw ex;
             }
         }

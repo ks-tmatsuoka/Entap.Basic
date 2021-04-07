@@ -23,7 +23,7 @@ namespace Entap.Basic.Firebase.Auth
             }
             catch(Exception ex)
             {
-                await _errorCallback.HandleSignInErrorAsync(ex);
+                await _errorCallback?.HandleSignInErrorAsync(ex);
                 throw ex;
             }
         }
