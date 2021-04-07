@@ -172,7 +172,39 @@ namespace SHIRO.CO
 
         public virtual async Task HandleConfirmPasswordResetErrorAsync(Exception exception)
         {
-            throw new NotImplementedException();
+            // ToDo : 文言設定依頼中
+            switch (exception)
+            {
+                // https://github.com/f-miyu/Plugin.FirebaseAuth/blob/master/Plugin.FirebaseAuth/iOS/ExceptionMapper.cs
+                case FirebaseAuthException ex:
+                    switch (ex.ErrorType)
+                    {
+                        case ErrorType.NetWork:
+                            await OnNetWorkError();
+                            break;
+                        // user-disabled
+                        case ErrorType.InvalidUser when ex.ErrorCode == ErrorCode.UserDisabled:
+                            await OnConfirmPasswordResetError("該当のアカウントは無効化されています");
+                            break;
+                        // weak-password
+                        case ErrorType.WeakPassword:
+                            await OnConfirmPasswordResetError("半角英数字8文字以上で登録してください。");
+                            break;
+                        // expired-action-code, invalid-action-code(user-not-found)
+                        case ErrorType.ActionCode:
+                        default:
+                            await OnConfirmPasswordResetError();
+                            break;
+                    }
+                    break;
+                default:
+                    await OnConfirmPasswordResetError();
+                    break;
+            }
+            async Task OnConfirmPasswordResetError(string errorMessage = "パスワード再設定用のメールを再送し、再度お試しください。")
+            {
+                await OnError("パスワード変更エラー", errorMessage);
+            }
         }
 
         Task OnNetWorkError()
