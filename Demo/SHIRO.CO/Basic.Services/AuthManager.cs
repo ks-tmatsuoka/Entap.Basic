@@ -64,6 +64,26 @@ namespace SHIRO.CO
             }
         }
 
+        public virtual async Task HandleSignUpErrorAsync(Exception exception)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual async Task HandleSendPasswordResetEmailErrorAsync(Exception exception)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual async Task HandleVerifyPasswordResetCodeErrorAsync(Exception exception)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual async Task HandleConfirmPasswordResetErrorAsync(Exception exception)
+        {
+            throw new NotImplementedException();
+        }
+
         Task OnNetWorkError()
             => OnError("通信エラー", "インターネットに接続されていません。通信環境をご確認ください。");
 
