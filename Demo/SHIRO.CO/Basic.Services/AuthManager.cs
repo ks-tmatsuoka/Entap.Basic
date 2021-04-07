@@ -8,12 +8,8 @@ using Xamarin.Forms;
 
 namespace SHIRO.CO
 {
-    public class AuthManager : IAuthManager, IAuthErrorCallback
+    public class AuthManager : IAuthManager, IAuthErrorCallback, IPasswordAuthErrorCallback
     {
-        struct ErrorMessage
-        {
-            public const string NetWorkError = "インターネットに接続されていません。通信環境をご確認ください。";
-        }
         public AuthManager()
         {
         }
@@ -41,7 +37,7 @@ namespace SHIRO.CO
                             // ユーザによるキャンセルはスキップ
                             break;
                         case ErrorType.NetWork:
-                            await OnSignInError(ErrorMessage.NetWorkError);
+                            await OnNetWorkError();
                             break;
                         // user-not-found, user-disabled
                         case ErrorType.InvalidUser:
@@ -67,6 +63,9 @@ namespace SHIRO.CO
                 await OnError("ログインできません", errorMessage);
             }
         }
+
+        Task OnNetWorkError()
+            => OnError("通信エラー", "インターネットに接続されていません。通信環境をご確認ください。");
 
         Task OnError(string errorTitle, string errorMessage)
         {
