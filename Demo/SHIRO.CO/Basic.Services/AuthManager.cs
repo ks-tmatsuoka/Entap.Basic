@@ -138,7 +138,36 @@ namespace SHIRO.CO
 
         public virtual async Task HandleVerifyPasswordResetCodeErrorAsync(Exception exception)
         {
-            throw new NotImplementedException();
+            // ToDo : 文言設定依頼中
+            switch (exception)
+            {
+                // https://github.com/f-miyu/Plugin.FirebaseAuth/blob/master/Plugin.FirebaseAuth/iOS/ExceptionMapper.cs
+                case FirebaseAuthException ex:
+                    switch (ex.ErrorType)
+                    {
+                        case ErrorType.NetWork:
+                            await OnNetWorkError();
+                            break;
+                        // user-not-found, user-disabled
+                        case ErrorType.InvalidUser when ex.ErrorCode == Entap.Basic.Firebase.Auth.ErrorCode.UserDisabled:
+                            // ToDo Plugin.FireBaseAuth 4.1.0ではこの条件のエラーは発生しない（ConfirmPasswordResetAsyncで発生）
+                            await OnVerifyPasswordResetCodeError("該当のアカウントは無効化されています");
+                            break;
+                        // expired-action-code, invalid-action-code(user-not-found)
+                        case ErrorType.ActionCode:
+                        default:
+                            await OnVerifyPasswordResetCodeError("再度リセットメールを送信してください。");
+                            break;
+                    }
+                    break;
+                default:
+                    await　OnVerifyPasswordResetCodeError();
+                    break;
+            }
+            async Task OnVerifyPasswordResetCodeError(string errorMessage = "認証に失敗しました。。")
+            {
+                await OnError("認証できません", errorMessage);
+            }
         }
 
         public virtual async Task HandleConfirmPasswordResetErrorAsync(Exception exception)
