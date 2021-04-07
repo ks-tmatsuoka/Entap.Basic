@@ -47,7 +47,11 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignInWithTwitter()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.AuthManager.TwitterAuthService.SignInAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithGoogle()
