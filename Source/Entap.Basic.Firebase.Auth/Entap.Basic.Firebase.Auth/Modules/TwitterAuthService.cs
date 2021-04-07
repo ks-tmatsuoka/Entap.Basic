@@ -8,8 +8,8 @@ namespace Entap.Basic.Firebase.Auth
     public class TwitterAuthService : SnsAuthService, ISnsAuthService
     {
         const string ProviderId = "twitter.com";
-        readonly Action<Exception> _errorCallback;
-        public TwitterAuthService(Action<Exception> errorCallback = null)
+        readonly IAuthErrorCallback _errorCallback;
+        public TwitterAuthService(IAuthErrorCallback errorCallback = null)
         {
             _errorCallback = errorCallback;
         }
@@ -23,7 +23,7 @@ namespace Entap.Basic.Firebase.Auth
             }
             catch(Exception ex)
             {
-                _errorCallback.Invoke(ex);
+                await _errorCallback.HandleSignInErrorAsync(ex);
                 throw ex;
             }
         }
