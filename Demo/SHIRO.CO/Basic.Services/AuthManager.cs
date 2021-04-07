@@ -64,6 +64,32 @@ namespace SHIRO.CO
             }
         }
 
+        public virtual async Task HandleSignOutErrorAsync(Exception exception)
+        {
+            switch (exception)
+            {
+                case FirebaseAuthException ex:
+                    switch (ex.ErrorType)
+                    {
+                        case ErrorType.NetWork:
+                            await OnNetWorkError();
+                            break;
+                        default:
+                            await OnSignOutError();
+                            break;
+                    }
+                    break;
+                default:
+                    await OnSignOutError();
+                    break;
+            }
+
+            async Task OnSignOutError(string errorMessage = "エラーが発生したためログアウトできませんでした。")
+            {
+                await OnError("ログアウトできません", errorMessage);
+            }
+        }
+
         public virtual async Task HandleSignUpErrorAsync(Exception exception)
         {
             switch (exception)
