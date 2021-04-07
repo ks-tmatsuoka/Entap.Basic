@@ -66,7 +66,41 @@ namespace SHIRO.CO
 
         public virtual async Task HandleSignUpErrorAsync(Exception exception)
         {
-            throw new NotImplementedException();
+            switch (exception)
+            {
+                case FirebaseAuthException ex:
+                    // https://github.com/f-miyu/Plugin.FirebaseAuth/blob/master/Plugin.FirebaseAuth/iOS/ExceptionMapper.cs
+                    switch (ex.ErrorType)
+                    {
+                        case ErrorType.NetWork:
+                            await OnNetWorkError();
+                            break;
+                        // email-already-in-use
+                        case ErrorType.UserCollision:
+                            await OnSignUpError("このメールアドレスは既に登録されています。");
+                            break;
+                        // invalid-email
+                        case ErrorType.Email:
+                            await OnSignUpError("メールアドレスを正しく入力してください。");
+                            break;
+                        // weak-password
+                        case ErrorType.WeakPassword:
+                            await OnSignUpError("半角英数字8文字以上で登録してください。");
+                            break;
+                        default:
+                            await OnSignUpError("エラーが発生したため登録できませんでした。再度入力してください。");
+                            break;
+                    }
+                    break;
+                default:
+                    await OnSignUpError();
+                    break;
+            }
+
+            async Task OnSignUpError(string errorMessage = "エラーが発生したため登録できませんでした。再度入力してください。")
+            {
+                await OnError("登録できません", errorMessage);
+            }
         }
 
         public virtual async Task HandleSendPasswordResetEmailErrorAsync(Exception exception)
