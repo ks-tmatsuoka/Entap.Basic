@@ -10,4 +10,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Plugin.FacebookClient" Version="2.2.1" />
+  </ItemGroup>
 </Project>
