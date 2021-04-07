@@ -14,6 +14,7 @@
     <Folder Include="Modules\" />
     <Folder Include="EmailLink\" />
     <Folder Include="EmailLink\Queries\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
