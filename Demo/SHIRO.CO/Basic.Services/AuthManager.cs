@@ -105,7 +105,35 @@ namespace SHIRO.CO
 
         public virtual async Task HandleSendPasswordResetEmailErrorAsync(Exception exception)
         {
-            throw new NotImplementedException();
+            switch (exception)
+            {
+                // https://github.com/f-miyu/Plugin.FirebaseAuth/blob/master/Plugin.FirebaseAuth/iOS/ExceptionMapper.cs
+                case FirebaseAuthException ex:
+                    switch (ex.ErrorType)
+                    {
+                        case ErrorType.NetWork:
+                            await OnNetWorkError();
+                            break;
+                        case ErrorType.InvalidUser:
+                            await OnSendPasswordResetEmailError("メールアドレスを正しく入力してください。");
+                            break;
+                        case ErrorType.InvalidCredentials:
+                            await OnSendPasswordResetEmailError("このメールアドレスは登録されていません。");
+                            break;
+                        default:
+                            await OnSendPasswordResetEmailError();
+                            break;
+                    }
+                    break;
+                default:
+                    await OnSendPasswordResetEmailError();
+                    break;
+            }
+            // ToDo : 文言設定依頼中
+            async Task OnSendPasswordResetEmailError(string errorMessage = "メールの送信に失敗しました")
+            {
+                await OnError("ログインできません", errorMessage);
+            }
         }
 
         public virtual async Task HandleVerifyPasswordResetCodeErrorAsync(Exception exception)
