@@ -16,7 +16,7 @@ namespace SHIRO.CO
 
         #region PasswordAuth
         public bool IsPasswordAuthSupported => PasswordAuthService is not null;
-        public IPasswordAuthService PasswordAuthService => _passwordAuthService ??= new PasswordAuthService();
+        public IPasswordAuthService PasswordAuthService => _passwordAuthService ??= new PasswordAuthService(this);
         IPasswordAuthService _passwordAuthService;
         #endregion
 
