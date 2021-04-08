@@ -15,6 +15,8 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public Command TwitterCommand => new Command(() => _useCase.SignInWithTwitter());
 
+        public Command FacebookCommand => new Command(() => _useCase.SignInWithFacebook());
+
         public Command PasswordSignInCommand => new Command(() => _useCase.SignInWithEmailAndPassword());
 
         public Command SignUpCommand => new Command(() => _useCase.SignUp());
