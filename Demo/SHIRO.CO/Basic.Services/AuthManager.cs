@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Entap.Basic.Auth;
 using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Firebase.Auth;
+using Entap.Basic.Firebase.Auth.Facebook;
 using Plugin.FirebaseAuth;
 using Xamarin.Forms;
 
@@ -24,6 +25,12 @@ namespace SHIRO.CO
         public bool IsTwitterAuthSupported => TwitterAuthService is not null;
         public ISnsAuthService TwitterAuthService => _twitterAuthService ??= new TwitterAuthService(this);
         ISnsAuthService _twitterAuthService;
+        #endregion
+
+        #region FacebookAuth
+        public bool IsFacebookAuthSupported => FacebookAuthService is not null;
+        public ISnsAuthService FacebookAuthService => _facebookAuthService ??= new FacebookAuthService();
+        ISnsAuthService _facebookAuthService;
         #endregion
 
         public virtual async Task HandleSignInErrorAsync(Exception exception)
@@ -52,6 +59,9 @@ namespace SHIRO.CO
                             await OnSignInError();
                             break;
                     }
+                    break;
+                case OperationCanceledException:
+                    // ユーザによるキャンセルはスキップ
                     break;
                 default:
                     await OnSignInError();

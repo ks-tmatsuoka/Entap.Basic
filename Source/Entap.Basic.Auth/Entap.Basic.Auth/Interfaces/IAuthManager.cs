@@ -10,5 +10,8 @@ namespace Entap.Basic.Auth.Abstractions
 
         bool IsTwitterAuthSupported { get; }
         ISnsAuthService TwitterAuthService { get; }
+
+        bool IsFacebookAuthSupported { get; }
+        ISnsAuthService FacebookAuthService { get; }
     }
 }
