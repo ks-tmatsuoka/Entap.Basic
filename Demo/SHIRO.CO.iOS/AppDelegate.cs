@@ -25,9 +25,36 @@ namespace SHIRO.CO.iOS
             global::Xamarin.Forms.Forms.Init();
             Entap.Basic.iOS.Platform.Init();
             Entap.Basic.Firebase.Auth.iOS.Platform.Init();
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.Initialize(app, options);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        public override void OnActivated(UIApplication uiApplication)
+        {
+            base.OnActivated(uiApplication);
+
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.OnActivated();
+        }
+
+        // iOS 9~
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.OpenUrl(app, url, options);
+            return true;
+        }
+
+        // iOS ~8
+        public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
+        {
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.OpenUrl(application, url, sourceApplication, annotation);
+            return true;
         }
     }
 }

@@ -44,6 +44,25 @@
 				<string>com.googleusercontent.apps.716130417723-20qc2kr1i8glo00ljcuabhfr1918lld9</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb295133311760805</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>295133311760805</string>
+	<key>FacebookDisplayName</key>
+	<string>SHIRO.CO</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+		<string>lineauth2</string>
+		<string>msauth</string>
 	</array>
 </dict>
 </plist>
