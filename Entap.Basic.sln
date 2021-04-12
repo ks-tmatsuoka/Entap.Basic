@@ -75,6 +75,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Firebase.Auth.F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Firebase.Auth.Facebook", "Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj", "{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Firebase.Auth.Line", "Entap.Basic.Firebase.Auth.Line", "{199D2970-D956-4092-84E5-8428F141E010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Firebase.Auth.Line", "Source\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line.csproj", "{0885D713-3A59-4A59-86BE-2855E0B78026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -385,6 +389,18 @@ Global
 		{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770}.Release|iPhone.Build.0 = Release|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0885D713-3A59-4A59-86BE-2855E0B78026}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -426,5 +442,7 @@ Global
 		{C485120C-94F0-4AD5-8586-B971B489BA65} = {D5CCB142-5A1C-432E-B807-33DE26AD08A6}
 		{E4920AE1-4888-4DF9-A0D7-BF1D82C5A80E} = {13B9C6C5-8037-422D-BF76-4080DF067731}
 		{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770} = {E4920AE1-4888-4DF9-A0D7-BF1D82C5A80E}
+		{199D2970-D956-4092-84E5-8428F141E010} = {13B9C6C5-8037-422D-BF76-4080DF067731}
+		{0885D713-3A59-4A59-86BE-2855E0B78026} = {199D2970-D956-4092-84E5-8428F141E010}
 	EndGlobalSection
 EndGlobal
