@@ -57,7 +57,7 @@
       <Name>Entap.Basic.Core.NuGet</Name>
       <SkipGetTargetFrameworkProperties></SkipGetTargetFrameworkProperties>
       <AdditionalProperties></AdditionalProperties>
-      <ReferenceOutputAssembly></ReferenceOutputAssembly>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
