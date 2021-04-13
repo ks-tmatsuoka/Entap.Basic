@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+
 namespace Entap.Basic.Auth.OAuth2
 {
     /// <summary>
@@ -10,11 +12,13 @@ namespace Entap.Basic.Auth.OAuth2
         /// <summary>
         /// 認可コード
         /// </summary>
+        [JsonProperty("code")]
         public string Code { get; set; }
 
         /// <summary>
         /// リクエストとコールバックの間で状態を維持するために使用するランダムな値
         /// </summary>
+        [JsonProperty("state")]
         public string State { get; set; }
     }
 }
