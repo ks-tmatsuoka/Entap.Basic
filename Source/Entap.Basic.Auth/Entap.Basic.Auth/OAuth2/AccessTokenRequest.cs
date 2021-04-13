@@ -9,8 +9,12 @@ namespace Entap.Basic.Auth.OAuth2
     /// </summary>
     public class AccessTokenRequest
     {
-        public AccessTokenRequest()
+        public AccessTokenRequest(string grantType, string code, string redirectUri, string clientId)
         {
+            GrantType = grantType;
+            Code = code;
+            RedirectUri = redirectUri;
+            ClientId = clientId;
         }
 
         [JsonProperty("grant_type")]
