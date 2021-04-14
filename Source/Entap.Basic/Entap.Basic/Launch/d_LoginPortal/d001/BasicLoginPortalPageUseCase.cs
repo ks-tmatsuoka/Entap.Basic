@@ -75,7 +75,11 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignInWithLine()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.AuthManager.LineAuthService.SignInAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithSMS()
