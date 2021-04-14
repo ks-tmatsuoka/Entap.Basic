@@ -4,6 +4,7 @@ using Entap.Basic.Auth;
 using Entap.Basic.Auth.Abstractions;
 using Entap.Basic.Firebase.Auth;
 using Entap.Basic.Firebase.Auth.Facebook;
+using Entap.Basic.Firebase.Auth.Line;
 using Plugin.FirebaseAuth;
 using Xamarin.Forms;
 
@@ -15,22 +16,28 @@ namespace SHIRO.CO
         {
         }
 
-        #region PasswordAuth
+        #region Password Auth
         public bool IsPasswordAuthSupported => PasswordAuthService is not null;
         public IPasswordAuthService PasswordAuthService => _passwordAuthService ??= new PasswordAuthService(this);
         IPasswordAuthService _passwordAuthService;
         #endregion
 
-        #region TwitterAuth
+        #region Twitter Auth
         public bool IsTwitterAuthSupported => TwitterAuthService is not null;
         public ISnsAuthService TwitterAuthService => _twitterAuthService ??= new TwitterAuthService(this);
         ISnsAuthService _twitterAuthService;
         #endregion
 
-        #region FacebookAuth
+        #region Facebook Auth
         public bool IsFacebookAuthSupported => FacebookAuthService is not null;
         public ISnsAuthService FacebookAuthService => _facebookAuthService ??= new FacebookAuthService();
         ISnsAuthService _facebookAuthService;
+        #endregion
+
+        #region LINE Auth
+        public bool IsLineAuthSupported => LineAuthService is not null;
+        public ISnsAuthService LineAuthService => _lineAuthService ??= new LineAuthService(new LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://www.entap.co.jp/"), this);
+        ISnsAuthService _lineAuthService;
         #endregion
 
         public virtual async Task HandleSignInErrorAsync(Exception exception)
