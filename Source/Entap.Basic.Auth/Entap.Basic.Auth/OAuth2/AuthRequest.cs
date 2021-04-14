@@ -46,5 +46,10 @@ namespace Entap.Basic.Auth.OAuth2
         /// </summary>
         [JsonProperty("state")]
         public string State { get; set; }
+
+        public void UpdateState(string state = null)
+        {
+            State = state ?? Guid.NewGuid().ToString("N");
+        }
     }
 }
