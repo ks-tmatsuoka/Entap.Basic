@@ -59,6 +59,12 @@ namespace SHIRO.CO.Droid
             Plugin.FacebookClient.FacebookClientManager.OnActivityResult(requestCode, resultCode, data);
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Xamarin.Essentials.Platform.OnResume();
+        }
+
         public void OnSuccess(Java.Lang.Object result)
         {
             if (result is null) return;
