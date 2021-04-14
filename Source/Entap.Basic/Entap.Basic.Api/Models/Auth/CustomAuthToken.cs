@@ -13,6 +13,12 @@ namespace Entap.Basic.Api
         {
         }
 
+        public CustomAuthToken(string accessToken, string idToken)
+        {
+            AccessToken = accessToken;
+            IdToken = idToken;
+        }
+
         /// <summary>
         /// アクセストークン
         /// </summary>
