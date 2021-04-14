@@ -10,10 +10,13 @@ namespace Entap.Basic.Firebase.Auth
         {
         }
 
-        protected Task SignInWithProviderAsync(IFederatedAuthProvider provider)
+        protected Task<IAuthResult> SignInWithProviderAsync(IFederatedAuthProvider provider)
             => CrossFirebaseAuth.Current.Instance.SignInWithProviderAsync(provider);
 
-        protected Task SignInWithCredentialAsync(IAuthCredential credential)
+        protected Task<IAuthResult> SignInWithCredentialAsync(IAuthCredential credential)
             => CrossFirebaseAuth.Current.Instance.SignInWithCredentialAsync(credential);
+
+        protected Task<IAuthResult> SignInWithCustomTokenAsync(string token)
+            => CrossFirebaseAuth.Current.Instance.SignInWithCustomTokenAsync(token);
     }
 }
