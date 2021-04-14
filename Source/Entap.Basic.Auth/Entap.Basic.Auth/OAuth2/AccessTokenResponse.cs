@@ -23,9 +23,9 @@ namespace Entap.Basic.Auth.OAuth2
         public int ExpiresIn { get; set; }
 
         [JsonProperty("scope")]
-        public int Scope { get; set; }
+        public string Scope { get; set; }
 
         [JsonProperty("state")]
-        public int State { get; set; }
+        public string State { get; set; }
     }
 }
