@@ -30,7 +30,8 @@ namespace Entap.Basic.Firebase.Auth.Line
                 if (status != HttpStatusCode.OK)
                     throw new HttpListenerException((int)status);
 
-                await BasicAuthStartUp.AuthApi.PostAuthLineToken(new Api.CustomAuthToken(token.AccessToken, token.IdToken));
+                var serverToken = await BasicAuthStartUp.AuthApi.PostAuthLineToken(new Api.CustomAuthToken(token.AccessToken, token.IdToken));
+                await SignInWithCustomTokenAsync(serverToken.AccessToken);
             }
             catch (Exception ex)
             {
