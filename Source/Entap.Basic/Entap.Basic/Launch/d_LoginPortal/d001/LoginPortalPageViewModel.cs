@@ -13,6 +13,12 @@ namespace Entap.Basic.Launch.LoginPortal
             SetPageLifeCycle(_useCase);
         }
 
+        public Command TwitterCommand => new Command(() => _useCase.SignInWithTwitter());
+
+        public Command FacebookCommand => new Command(() => _useCase.SignInWithFacebook());
+
+        public Command LineCommand => new Command(() => _useCase.SignInWithLine());
+
         public Command PasswordSignInCommand => new Command(() => _useCase.SignInWithEmailAndPassword());
 
         public Command SignUpCommand => new Command(() => _useCase.SignUp());

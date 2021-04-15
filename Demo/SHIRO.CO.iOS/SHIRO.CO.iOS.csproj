@@ -181,6 +181,10 @@
       <Project>{2E5E913A-CE85-4147-A436-24B437BD2B8B}</Project>
       <Name>Entap.Basic.Firebase.Auth.iOS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj">
+      <Project>{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770}</Project>
+      <Name>Entap.Basic.Firebase.Auth.Facebook</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image_guide01.png" />

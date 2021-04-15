@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Gms.Tasks;
 using Firebase.DynamicLinks;
+using Android.Content;
 
 namespace SHIRO.CO.Droid
 {
@@ -37,6 +38,10 @@ namespace SHIRO.CO.Droid
 
             Firebase.DynamicLinks.FirebaseDynamicLinks.Instance.GetDynamicLink(this.Intent)
                 .AddOnSuccessListener(this, this);
+
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.Initialize(this);
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -44,6 +49,20 @@ namespace SHIRO.CO.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.OnActivityResult(requestCode, resultCode, data);
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Xamarin.Essentials.Platform.OnResume();
         }
 
         public void OnSuccess(Java.Lang.Object result)

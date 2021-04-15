@@ -26,6 +26,9 @@ namespace SHIRO.CO.iOS
             Entap.Basic.iOS.Platform.Init();
             Entap.Basic.Firebase.Auth.iOS.Platform.Init();
 
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.Initialize(app, options);
+
             LoadApplication(new App());
 
 #if DEBUG
@@ -40,13 +43,25 @@ namespace SHIRO.CO.iOS
             return handled;
         }
 
+        // iOS 9~
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.OpenUrl(app, url, options);
+
             var dynamicLink = DynamicLinks.SharedInstance?.FromCustomSchemeUrl(url);
             if (dynamicLink is null) return false;
 
             EmailLinkHandler.Current.HandleEmailAction(dynamicLink.Url.ToString());
             return true;
+        }
+
+        public override void OnActivated(UIApplication uiApplication)
+        {
+            base.OnActivated(uiApplication);
+
+            // Facebook
+            Plugin.FacebookClient.FacebookClientManager.OnActivated();
         }
     }
 }

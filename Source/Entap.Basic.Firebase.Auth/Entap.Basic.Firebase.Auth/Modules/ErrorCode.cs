@@ -10,5 +10,6 @@ namespace Entap.Basic.Firebase.Auth
     public struct ErrorCode
     {
         public const string UserDisabled = "ERROR_USER_DISABLED";
+        public const string WebContextCancelled = "ERROR_WEB_CONTEXT_CANCELLED";
     }
 }

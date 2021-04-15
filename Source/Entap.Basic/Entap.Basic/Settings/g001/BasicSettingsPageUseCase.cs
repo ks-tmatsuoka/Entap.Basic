@@ -16,7 +16,7 @@ namespace Entap.Basic.Settings
         {
             ProcessManager.Current.Invoke(async() =>
             {
-                BasicStartup.AuthService.SignOut();
+                BasicStartup.AuthManager.PasswordAuthService.SignOut();
                 await BasicStartup.PageNavigator.SetGuidePageAsync();
             });
         }

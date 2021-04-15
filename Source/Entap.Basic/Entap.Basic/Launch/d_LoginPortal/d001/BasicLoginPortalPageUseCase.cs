@@ -42,12 +42,20 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignInWithFacebook()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.AuthManager.FacebookAuthService.SignInAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithTwitter()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.AuthManager.TwitterAuthService.SignInAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithGoogle()
@@ -67,7 +75,11 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignInWithLine()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.AuthManager.LineAuthService.SignInAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithSMS()

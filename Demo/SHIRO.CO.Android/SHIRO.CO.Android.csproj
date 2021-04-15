@@ -93,6 +93,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebAuthenticationCallbackActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -159,6 +160,10 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\values\string.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -201,6 +206,10 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core.Android\Entap.Basic.Core.Android.csproj">
       <Project>{A4E743B3-F22D-415D-9D98-2F3562B32208}</Project>
       <Name>Entap.Basic.Core.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj">
+      <Project>{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770}</Project>
+      <Name>Entap.Basic.Firebase.Auth.Facebook</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

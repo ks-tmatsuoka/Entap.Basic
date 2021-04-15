@@ -14,12 +14,15 @@
     <Folder Include="Modules\" />
     <Folder Include="EmailLink\" />
     <Folder Include="EmailLink\Queries\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
     <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
+    <ProjectReference Include="..\..\Entap.Basic\Entap.Basic.Api\Entap.Basic.Api.csproj" />
   </ItemGroup>
 </Project>
