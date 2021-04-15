@@ -54,6 +54,8 @@ namespace SHIRO.CO
             {
                 return BasicApiManager.Current.Api.PostAuthLineToken(request, token);
             });
+            if (result.IsSuccessStatusCode)
+                BasicApiManager.Current.SetAuthorization(result.Content.AccessToken);
             return result?.Content;
         }
 
