@@ -6,9 +6,9 @@
     xmlns:basicForms="clr-namespace:Entap.Basic.Forms;assembly=Entap.Basic.Forms"
     x:Class="Sample.MyTabbedPage"
     x:DataType="local:MyTabbedPageViewModel">
-    <ContentPage.Behaviors>
+    <TabbedPage.Behaviors>
         <basicForms:TabbedPageNavigationBehavior/>
-    </ContentPage.Behaviors>
+    </TabbedPage.Behaviors>
 
     <local:PageManagerPage
         Title="PageManager"
