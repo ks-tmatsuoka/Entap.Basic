@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Platform.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj">
