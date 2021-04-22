@@ -50,7 +50,7 @@ namespace SHIRO.CO.iOS
             Plugin.FacebookClient.FacebookClientManager.OpenUrl(app, url, options);
 
             var dynamicLink = DynamicLinks.SharedInstance?.FromCustomSchemeUrl(url);
-            if (dynamicLink is null) return false;
+            if (dynamicLink?.Url is null) return false;
 
             EmailLinkHandler.Current.HandleEmailAction(dynamicLink.Url.ToString());
             return true;
