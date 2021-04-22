@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="DependencyService\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DependencyService\GoogleAuthService.cs" />
     <Compile Include="Platform.cs" />
   </ItemGroup>
   <ItemGroup>
