@@ -6,6 +6,7 @@
 	<array>
 		<string>applinks:https://launchtestproject.firebaseapp.com</string>
 		<string>applinks:https://entapshiro.page.link</string>
+		<string>applinks:https://entapshiro.page.link/auth_callback</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>

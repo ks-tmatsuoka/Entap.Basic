@@ -36,7 +36,7 @@ namespace SHIRO.CO
 
         #region LINE Auth
         public bool IsLineAuthSupported => LineAuthService is not null;
-        public ISnsAuthService LineAuthService => _lineAuthService ??= new LineAuthService(new LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://www.entap.co.jp/"), this);
+        public ISnsAuthService LineAuthService => _lineAuthService ??= new LineAuthService(new LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://entapshiro.page.link/auth_callback"), this);
         ISnsAuthService _lineAuthService;
         #endregion
 
