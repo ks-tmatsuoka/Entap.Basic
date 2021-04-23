@@ -10,14 +10,14 @@ namespace Entap.Basic.Auth.Google.iOS
     {
         public GoogleAuthService()
         {
+            if (!Platform.Initialized)
+                throw new InvalidOperationException("Please call Entap.Basic.Auth.Google.iOS.Platform.Init() method.");
+
+            SignIn.SharedInstance.ClientId = Platform.ClientId;
         }
 
         public Task<GoogleUser> SignInAsync()
         {
-            if (!Platform.Initialized)
-                throw new InvalidOperationException("Please call Entap.Basic.Auth.Google.iOS.Platform.Init() method.");
-            SignIn.SharedInstance.ClientId = Platform.ClientId;
-
             var viewController = Platform.GetViewController.Invoke();
             if (viewController is null)
                 throw new NullReferenceException();
