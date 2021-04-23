@@ -59,6 +59,7 @@
     <Compile Include="Platform.cs" />
     <Compile Include="Modules\PlatformHandler.cs" />
     <Compile Include="Modules\StarterActivity.cs" />
+    <Compile Include="Modules\ActivityResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
