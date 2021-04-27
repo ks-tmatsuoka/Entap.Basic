@@ -43,7 +43,7 @@ namespace SHIRO.CO.Droid
             Plugin.FacebookClient.FacebookClientManager.Initialize(this);
 
             // Google
-            Entap.Basic.Auth.Google.Android.Platform.Init(this, "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com", 2000);
+            Entap.Basic.Auth.Google.Android.Platform.Init(this, "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com", RequestCodes.GoogleAuth);
 
             LoadApplication(new App());
         }
