@@ -16,5 +16,8 @@ namespace Entap.Basic.Auth.Abstractions
 
         bool IsLineAuthSupported { get; }
         ISnsAuthService LineAuthService { get; }
+
+        bool IsGoogleAuthSupported { get; }
+        ISnsAuthService GoogleAuthService { get; }
     }
 }

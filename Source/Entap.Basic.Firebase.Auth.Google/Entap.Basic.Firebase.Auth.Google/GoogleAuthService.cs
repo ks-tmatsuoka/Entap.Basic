@@ -20,7 +20,7 @@ namespace Entap.Basic.Firebase.Auth.Google
             {
                 var authService = new AuthService();
                 var authentication = await authService.AuthAsync();
-                var credential = CrossFirebaseAuth.Current.GoogleAuthProvider.GetCredential(authentication.IdToken+"a", authentication.AccessToken);
+                var credential = CrossFirebaseAuth.Current.GoogleAuthProvider.GetCredential(authentication.IdToken, authentication.AccessToken);
                 await SignInWithCredentialAsync(credential);
             }
             catch (Exception ex)
