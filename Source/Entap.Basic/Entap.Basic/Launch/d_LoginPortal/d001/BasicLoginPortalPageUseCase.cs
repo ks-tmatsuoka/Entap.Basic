@@ -60,7 +60,11 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignInWithGoogle()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.AuthManager.GoogleAuthService.SignInAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithMicrosoft()
