@@ -4,10 +4,11 @@ using Android.App;
 using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Common.Apis;
 using Entap.Basic.Core.Android;
+using Platform = Entap.Basic.Auth.Google.Android.Platform;
 
-namespace Entap.Basic.Auth.Google.Android
+namespace Entap.Basic.Auth.Google
 {
-    public class GoogleAuthService
+    public class GoogleAuthService : IGoogleAuthService
     {
         public GoogleAuthService()
         {
@@ -28,6 +29,16 @@ namespace Entap.Basic.Auth.Google.Android
             return account as GoogleSignInAccount;
         }
 
+        #region IGoogleAuthService
+        public async Task<Authentication> AuthAsync()
+        {
+            var user = await SingInAsync();
+            return new Authentication
+            {
+                IdToken = user.IdToken,
+            };
+        }
+
         public Task SignOutAsync()
         {
             var gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
@@ -36,5 +47,6 @@ namespace Entap.Basic.Auth.Google.Android
 
             return client.SignOutAsync();
         }
+        #endregion
     }
 }

@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using Foundation;
 using Google.SignIn;
 using UIKit;
+using Platform = Entap.Basic.Auth.Google.iOS.Platform;
 
-namespace Entap.Basic.Auth.Google.iOS
+namespace Entap.Basic.Auth.Google
 {
-    public class GoogleAuthService
+    public class GoogleAuthService : IGoogleAuthService
     {
         public GoogleAuthService()
         {
@@ -51,5 +52,26 @@ namespace Entap.Basic.Auth.Google.iOS
         {
             SignIn.SharedInstance.SignOutUser();
         }
+
+        #region IGoogleAuthService
+        public async Task<Authentication> AuthAsync()
+        {
+            var user = await SignInAsync();
+            return new Authentication
+            {
+                AccessToken = user.Authentication.AccessToken,
+                AccessTokenExpirationDate = (DateTime)user.Authentication.AccessTokenExpirationDate,
+                IdToken = user.Authentication.IdToken,
+                IdTokenExpirationDate = (DateTime)user.Authentication.IdTokenExpirationDate,
+                RefreshToken = user.Authentication.RefreshToken
+            };
+        }
+
+        public Task SignOutAsync()
+        {
+            SignOut();
+            return Task.CompletedTask;
+        }
+        #endregion
     }
 }

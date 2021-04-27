@@ -78,6 +78,10 @@
       <Project>{A4E743B3-F22D-415D-9D98-2F3562B32208}</Project>
       <Name>Entap.Basic.Core.Android</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj">
+      <Project>{3DA1408C-19C3-4B09-9184-1269A462ACDB}</Project>
+      <Name>Entap.Basic.Auth.Google.Abstract</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
