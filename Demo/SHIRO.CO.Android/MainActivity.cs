@@ -42,6 +42,9 @@ namespace SHIRO.CO.Droid
             // Facebook
             Plugin.FacebookClient.FacebookClientManager.Initialize(this);
 
+            // Google
+            Entap.Basic.Auth.Google.Android.Platform.Init(this, "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com", 2000);
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

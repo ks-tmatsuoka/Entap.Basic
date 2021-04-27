@@ -140,6 +140,9 @@
     <PackageReference Include="Refit">
       <Version>6.0.24</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Google.iOS.SignIn">
+      <Version>5.0.2.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SHIRO.CO\SHIRO.CO.csproj">
@@ -175,8 +178,12 @@
       <Name>Entap.Basic.Firebase.Auth.iOS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj">
-      <Project>{C76FDA35-996E-43C7-8C8F-7F6C0BE6B770}</Project>
+      <Project>{3C8D6648-9F6D-4E97-AEE3-ED2199914D03}</Project>
       <Name>Entap.Basic.Firebase.Auth.Facebook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.iOS\Entap.Basic.Auth.Google.iOS.csproj">
+      <Project>{495C0FAD-D5DF-419A-9C7A-AA1BCB54F93A}</Project>
+      <Name>Entap.Basic.Auth.Google.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

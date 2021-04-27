@@ -31,6 +31,8 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Refit\Entap.Basic.Refit\Entap.Basic.Refit.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Basic.UseCases\" />

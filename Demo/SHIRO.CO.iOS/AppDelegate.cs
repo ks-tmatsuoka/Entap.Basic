@@ -28,6 +28,11 @@ namespace SHIRO.CO.iOS
             // Facebook
             Plugin.FacebookClient.FacebookClientManager.Initialize(app, options);
 
+            // Google
+            Entap.Basic.Auth.Google.iOS.Platform.Init(
+                Firebase.Core.Options.DefaultInstance.ClientId,
+                Xamarin.Essentials.Platform.GetCurrentUIViewController);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
@@ -46,6 +51,9 @@ namespace SHIRO.CO.iOS
         {
             // Facebook
             Plugin.FacebookClient.FacebookClientManager.OpenUrl(app, url, options);
+
+            // Google SignIn
+            Google.SignIn.SignIn.SharedInstance.HandleUrl(url);
             return true;
         }
 
@@ -54,6 +62,9 @@ namespace SHIRO.CO.iOS
         {
             // Facebook
             Plugin.FacebookClient.FacebookClientManager.OpenUrl(application, url, sourceApplication, annotation);
+
+            // Google SignIn
+            Google.SignIn.SignIn.SharedInstance.HandleUrl(url);
             return true;
         }
     }
