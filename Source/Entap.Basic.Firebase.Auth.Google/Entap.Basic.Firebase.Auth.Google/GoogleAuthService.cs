@@ -29,5 +29,11 @@ namespace Entap.Basic.Firebase.Auth.Google
                 throw ex;
             }
         }
+
+        public Task SignOutAsync()
+        {
+            var authService = new AuthService();
+            return authService.SignOutAsync();
+        }
     }
 }

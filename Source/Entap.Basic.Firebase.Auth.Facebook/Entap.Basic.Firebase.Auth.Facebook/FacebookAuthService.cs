@@ -37,6 +37,7 @@ namespace Entap.Basic.Firebase.Auth.Facebook
 
         public async Task FacebookLoginAsync()
         {
+            CrossFacebookClient.Current.Logout();
             var result = await CrossFacebookClient.Current.LoginAsync(new string[] { "email" });
             switch (result.Status)
             {
@@ -47,6 +48,12 @@ namespace Entap.Basic.Firebase.Auth.Facebook
                 case FacebookActionStatus.Error:
                     throw new Exception("Facebook SignIn Error");
             }
+        }
+
+        public Task SignOutAsync()
+        {
+            CrossFacebookClient.Current.Logout();
+            return Task.CompletedTask;
         }
     }
 }

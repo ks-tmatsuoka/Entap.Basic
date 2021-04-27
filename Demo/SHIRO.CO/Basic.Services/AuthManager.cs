@@ -257,6 +257,12 @@ namespace SHIRO.CO
             }
         }
 
+
+        public async Task SignOutAsync()
+        {
+            CrossFirebaseAuth.Current.Instance.SignOut();
+        }
+
         Task OnNetWorkError()
             => OnError("通信エラー", "インターネットに接続されていません。通信環境をご確認ください。");
 

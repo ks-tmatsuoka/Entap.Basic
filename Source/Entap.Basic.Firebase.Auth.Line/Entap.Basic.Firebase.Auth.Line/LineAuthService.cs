@@ -42,5 +42,10 @@ namespace Entap.Basic.Firebase.Auth.Line
                 throw ex;
             }
         }
+
+        public Task SignOutAsync()
+        {
+            return Task.CompletedTask;
+        }
     }
 }

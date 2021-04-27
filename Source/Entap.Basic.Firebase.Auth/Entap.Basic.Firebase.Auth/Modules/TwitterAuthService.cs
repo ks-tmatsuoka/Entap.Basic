@@ -27,5 +27,10 @@ namespace Entap.Basic.Firebase.Auth
                 throw ex;
             }
         }
+
+        public Task SignOutAsync()
+        {
+            return Task.CompletedTask;
+        }
     }
 }
