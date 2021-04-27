@@ -11,6 +11,7 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>
