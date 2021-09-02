@@ -7,7 +7,7 @@ namespace SHIRO.CO
         {
         }
 
-        public static readonly string AppHost = "https://grasshopper.entap.dev";
+        public static readonly string AppHost = "https://grasshopper.entap.works";
         public static readonly string AppApi = $"{AppHost}/api";
     }
 }
