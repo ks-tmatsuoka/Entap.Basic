@@ -61,6 +61,7 @@ namespace Entap.Basic.Firebase.Auth.Facebook
                 _errorCallback.HandleSignOutErrorAsync(ex);
                 throw ex;
             }
+            return Task.CompletedTask;
         }
     }
 }
