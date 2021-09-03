@@ -52,8 +52,15 @@ namespace Entap.Basic.Firebase.Auth.Facebook
 
         public Task SignOutAsync()
         {
-            CrossFacebookClient.Current.Logout();
-            return Task.CompletedTask;
+            try
+            {
+                CrossFacebookClient.Current.Logout();
+            }
+            catch(Exception ex)
+            {
+                _errorCallback.HandleSignOutErrorAsync(ex);
+                throw ex;
+            }
         }
     }
 }
