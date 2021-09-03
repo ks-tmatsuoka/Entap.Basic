@@ -260,6 +260,27 @@ namespace SHIRO.CO
 
         public async Task SignOutAsync()
         {
+            var user = CrossFirebaseAuth.Current.Instance.CurrentUser;
+            if (user is null)
+                throw new InvalidOperationException();
+
+            foreach (var provider in user.ProviderData)
+            {
+                if (provider.ProviderId == CrossFirebaseAuth.Current.FacebookAuthProvider.ProviderId)
+                {
+                    CrossFirebaseAuth.Current.Instance.SignOut();
+                    await FacebookAuthService.SignOutAsync();
+                    continue;
+                }
+
+                if (provider.ProviderId == CrossFirebaseAuth.Current.GoogleAuthProvider.ProviderId)
+                {
+                    await GoogleAuthService.SignOutAsync();
+                    continue;
+                }
+
+                // ToDo
+            }
             CrossFirebaseAuth.Current.Instance.SignOut();
         }
 
