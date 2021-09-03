@@ -2,7 +2,7 @@
 namespace Entap.Basic.SQLite
 {
     /// <summary>
-    /// テーブルの規定インターフェース
+    /// テーブルの基底インターフェース
     /// </summary>
     public interface ITableBase
     {

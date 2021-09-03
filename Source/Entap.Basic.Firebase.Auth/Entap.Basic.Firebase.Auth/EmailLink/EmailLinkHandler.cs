@@ -61,7 +61,7 @@ namespace Entap.Basic.Firebase.Auth.EmailLink
                     OnVerifyEmail(parameter);
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    break;
             }
         }
 

@@ -23,7 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
-    <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic.Api\Entap.Basic.Api.csproj" />
@@ -31,6 +31,8 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Refit\Entap.Basic.Refit\Entap.Basic.Refit.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Basic.UseCases\" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Entap.Basic.Auth.Abstractions;
 
 namespace Entap.Basic.Auth.Abstractions
@@ -16,5 +17,10 @@ namespace Entap.Basic.Auth.Abstractions
 
         bool IsLineAuthSupported { get; }
         ISnsAuthService LineAuthService { get; }
+
+        bool IsGoogleAuthSupported { get; }
+        ISnsAuthService GoogleAuthService { get; }
+
+        Task SignOutAsync();
     }
 }

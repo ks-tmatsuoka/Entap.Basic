@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
+    <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
+    <ProjectReference Include="..\..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj" />
+    <ProjectReference Include="..\..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj" />
+  </ItemGroup>
+</Project>

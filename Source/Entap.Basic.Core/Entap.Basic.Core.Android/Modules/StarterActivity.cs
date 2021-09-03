@@ -58,22 +58,7 @@ namespace Entap.Basic.Core.Android
 
             if (GetIntentTask(guid, true) is IntentTask task)
             {
-                if (resultCode == Result.Canceled)
-                {
-                    task.TaskCompletionSource.TrySetCanceled();
-                }
-                else
-                {
-                    try
-                    {
-                        data ??= new Intent();
-                        task.TaskCompletionSource.TrySetResult(data);
-                    }
-                    catch (System.Exception ex)
-                    {
-                        task.TaskCompletionSource.TrySetException(ex);
-                    }
-                }
+                task.TaskCompletionSource.TrySetResult(new ActivityResult(resultCode, data));
             }
 
             Finish();
@@ -81,9 +66,28 @@ namespace Entap.Basic.Core.Android
 
         /// <summary>
         /// 指定したIntentを起動し、結果を返す
+        /// キャンセル時はTaskCanceledExceptionとする
+        /// </summary>
+        /// <returns>Intent</returns>
+        public static async Task<Intent> StartAsync(Activity activity, Intent intent, int requestCode)
+        {
+            var result = await StartActivityForResult(activity, intent, requestCode);
+            if (result.ResultCode == Result.Canceled)
+                throw new TaskCanceledException();
+
+            return result.Data;
+        }
+
+        /// <summary>
+        /// 指定したIntentを起動し、結果を返す
         /// </summary>
         /// <returns>ActivityResult</returns>
-        public static Task<Intent> StartAsync(Activity activity, Intent intent, int requestCode)
+        public static Task<ActivityResult> StartForResultAsync(Activity activity, Intent intent, int requestCode)
+        {
+            return StartActivityForResult(activity, intent, requestCode);
+        }
+
+        static Task<ActivityResult> StartActivityForResult(Activity activity, Intent intent, int requestCode)
         {
             var data = new IntentTask();
             pendingTasks[data.Id] = data;
@@ -117,13 +121,16 @@ namespace Entap.Basic.Core.Android
         {
             public IntentTask()
             {
+
                 Id = Guid.NewGuid().ToString();
-                TaskCompletionSource = new TaskCompletionSource<Intent>();
+                TaskCompletionSource = new TaskCompletionSource<ActivityResult>();
             }
+
+            public Action<Intent> OnResult;
 
             public string Id { get; }
 
-            public TaskCompletionSource<Intent> TaskCompletionSource { get; }
+            public TaskCompletionSource<ActivityResult> TaskCompletionSource { get; }
         }
     }
 }

@@ -37,6 +37,13 @@
         />
 
         <Button
+            Style="{StaticResource NeutralButtonStyle}"
+            Text="Google"
+            Command="{Binding GoogleCommand}"
+            IsVisible="{Binding IsGoogleAuthSupported, Source={x:Static basic:BasicStartup.AuthManager}}"
+        />
+
+        <Button
             Style="{StaticResource PositiveButtonStyle}"
             Text="ログイン"
             Command="{Binding PasswordSignInCommand}"
