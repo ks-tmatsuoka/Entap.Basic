@@ -19,7 +19,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.csproj" />
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
     <ProjectReference Include="..\..\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
     <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
   </ItemGroup>
