@@ -71,10 +71,6 @@ namespace SHIRO.CO.iOS
 
             // Facebook
             Plugin.FacebookClient.FacebookClientManager.OnActivated();
-
-            // Google SignIn
-            Google.SignIn.SignIn.SharedInstance.HandleUrl(url);
-            return true;
         }
     }
 }
