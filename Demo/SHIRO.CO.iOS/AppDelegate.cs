@@ -43,7 +43,9 @@ namespace SHIRO.CO.iOS
 
         public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
         {
-            var handled = DynamicLinks.SharedInstance.HandleUniversalLink(userActivity.WebPageUrl, null);
+            var handled = DynamicLinks.SharedInstance.HandleUniversalLink(userActivity.WebPageUrl, (dynamicLink, error) =>
+            {
+            });
             return handled;
         }
 
