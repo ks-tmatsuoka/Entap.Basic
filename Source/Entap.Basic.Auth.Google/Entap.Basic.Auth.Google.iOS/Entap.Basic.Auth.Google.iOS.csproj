@@ -55,6 +55,7 @@
       <Name>Entap.Basic.Auth.Google.Abstract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj">
+      <Project>{2D1D3DCB-8F25-4819-B839-0930FFCC436F}</Project>
       <Name>Entap.Basic.Auth.Google</Name>
     </ProjectReference>
   </ItemGroup>
