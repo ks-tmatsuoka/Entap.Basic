@@ -12,7 +12,8 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
-    <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
-    <ProjectReference Include="..\..\Entap.Basic.Auth.Line\Entap.Basic.Auth.Line\Entap.Basic.Auth.Line.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Entap.Basic.Auth.Line" Version="0.0.1" />
   </ItemGroup>
 </Project>
