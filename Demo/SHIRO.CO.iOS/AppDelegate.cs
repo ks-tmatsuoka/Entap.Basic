@@ -4,6 +4,7 @@ using System.Linq;
 using Firebase.DynamicLinks;
 using Foundation;
 using UIKit;
+using Xamarin.Essentials;
 
 namespace SHIRO.CO.iOS
 {
@@ -43,6 +44,12 @@ namespace SHIRO.CO.iOS
 
         public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
         {
+            if (Entap.Basic.Auth.Line.iOS.WebAuthenticationService.ContinueUserActivity(application, userActivity, completionHandler))
+                return true;
+
+            if (Platform.ContinueUserActivity(application, userActivity, completionHandler))
+                return true;
+
             var handled = DynamicLinks.SharedInstance.HandleUniversalLink(userActivity.WebPageUrl, (dynamicLink, error) =>
             {
             });

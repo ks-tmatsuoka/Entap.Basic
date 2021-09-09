@@ -192,6 +192,9 @@
       <Project>{495C0FAD-D5DF-419A-9C7A-AA1BCB54F93A}</Project>
       <Name>Entap.Basic.Auth.Google.iOS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Line\Entap.Basic.Auth.Line.iOS\Entap.Basic.Auth.Line.iOS.csproj">
+      <Name>Entap.Basic.Auth.Line.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image_guide01.png" />
