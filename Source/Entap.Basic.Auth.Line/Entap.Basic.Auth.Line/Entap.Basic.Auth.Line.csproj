@@ -11,14 +11,12 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="WebAuthenticationService\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.0" />
   </ItemGroup>
 </Project>
