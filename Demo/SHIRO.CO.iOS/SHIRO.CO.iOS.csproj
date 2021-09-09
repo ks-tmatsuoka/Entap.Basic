@@ -28,7 +28,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <LangVersion>9.0</LangVersion>
-    <CodesignKey>Apple Development: Toshimasa Matsuoka (262T8835RC)</CodesignKey>
+    <CodesignKey>Apple Development: 伊賀 辰也 (DFEB9YR53Q)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: jp.co.entap.SHIRO.CO Development</CodesignProvision>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <LangVersion>9.0</LangVersion>
-    <CodesignKey>Apple Development: Toshimasa Matsuoka (262T8835RC)</CodesignKey>
+    <CodesignKey>Apple Development: 伊賀 辰也 (DFEB9YR53Q)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: jp.co.entap.SHIRO.CO Development</CodesignProvision>
   </PropertyGroup>
@@ -54,7 +54,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>Apple Development: Toshimasa Matsuoka (262T8835RC)</CodesignKey>
+    <CodesignKey>Apple Development: 伊賀 辰也 (DFEB9YR53Q)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
@@ -69,7 +69,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>Apple Development: Toshimasa Matsuoka (262T8835RC)</CodesignKey>
+    <CodesignKey>Apple Development: 伊賀 辰也 (DFEB9YR53Q)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <LangVersion>9.0</LangVersion>
