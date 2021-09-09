@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Entap.Basic.Auth.Line
 {
@@ -21,9 +22,18 @@ namespace Entap.Basic.Auth.Line
         #region Authorize
         public async Task<LineAuthResponse> AuthorizeAsync(LineAuthRequest request)
         {
-            var result = await WebAuthenticator.AuthenticateAsync(
-                UriService.GetUri(AuthBaseUri, request),
-                new Uri(request.RedirectUri));
+            var url = UriService.GetUri(AuthBaseUri, request);
+            var callbaclUrl = new Uri(request.RedirectUri);
+            WebAuthenticatorResult result = null;
+
+            if (DeviceInfo.Platform == DevicePlatform.iOS)
+            {
+                var webAuthenticationService = DependencyService.Get<IWebAuthenticationService>();
+                result = await webAuthenticationService.AuthenticateAsync(url, callbaclUrl);
+            }
+            else
+                result = await WebAuthenticator.AuthenticateAsync(url, callbaclUrl);
+
             return GetLineAuthResponse(result);
         }
 
