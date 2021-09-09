@@ -14,10 +14,6 @@
             />
 
             <Button
-                Text="SQLite"
-                Command="{Binding SQLiteCommand}"
-            />
-            <Button
                 Text="Guide"
                 Command="{Binding GuideCommand}"
             />

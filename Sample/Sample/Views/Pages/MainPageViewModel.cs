@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Entap.Basic.Forms;
 using Entap.Basic.Launch.Guide;
-using Entap.Basic.SQLite;
 using Xamarin.Forms;
 
 namespace Sample
@@ -15,10 +14,6 @@ namespace Sample
 
         public ProcessCommand PageManagerCommand =>
             new ProcessCommand(() => PageManager.Navigation.PushAsync<MyTabbedPage>(new MyTabbedPageViewModel()));
-
-        public ProcessCommand SQLiteCommand =>
-            //new ProcessCommand(() => PageManager.Navigation.PushAsync<SQLitePage>(new SQLitePageViewModel()));
-            new ProcessCommand(() => PageManager.Navigation.PushAsync<SQLitePage>(new SQLitePageViewModelAsync()));
 
         public ProcessCommand GuideCommand =>new ProcessCommand(async () =>
         {
