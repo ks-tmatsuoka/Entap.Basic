@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="3.0.4" />
+    <PackageReference Include="Entap.Basic.Core" Version="0.0.4" />
+    <PackageReference Include="Entap.Basic.Forms" Version="0.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.SQLite\Entap.Basic.SQLite.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Views\Pages\" />
+    <Folder Include="SQLite\" />
+    <Folder Include="PageManager\" />
+    <Folder Include="PageManager\Pages\" />
+    <Folder Include="SQLite\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Entap.Basic.Core" />
+    <None Remove="Entap.Basic.Forms" />
+  </ItemGroup>
+</Project>
