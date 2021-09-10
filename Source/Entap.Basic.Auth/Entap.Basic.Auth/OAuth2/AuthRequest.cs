@@ -15,6 +15,8 @@ namespace Entap.Basic.Auth.OAuth2
             RedirectUri = redirectUri;
             Scope = scope;
             State = state;
+            if (State is null)
+                UpdateState();
         }
 
         /// <summary>
