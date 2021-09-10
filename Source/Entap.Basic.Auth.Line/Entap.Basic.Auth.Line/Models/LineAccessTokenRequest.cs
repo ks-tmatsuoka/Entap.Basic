@@ -10,14 +10,14 @@ namespace Entap.Basic.Auth.Line
     /// </summary>
     public class LineAccessTokenRequest : AccessTokenRequest
     {
-        public LineAccessTokenRequest(string redirectUri, string clientId, string clientSecret, string codeVerifier = null)
+        public LineAccessTokenRequest(string redirectUri, string clientId, string clientSecret, string codeVerifier)
             : base("authorization_code", null, redirectUri, clientId)
         {
             ClientSecret = clientSecret;
             CodeVerifier = codeVerifier;
         }
 
-        public LineAccessTokenRequest(string code, string redirectUri, string clientId, string clientSecret, string codeVerifier = null)
+        public LineAccessTokenRequest(string code, string redirectUri, string clientId, string clientSecret, string codeVerifier)
             : base ("authorization_code", code, redirectUri, clientId)
         {
             ClientSecret = clientSecret;
