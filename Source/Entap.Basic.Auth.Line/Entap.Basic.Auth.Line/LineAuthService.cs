@@ -15,12 +15,35 @@ namespace Entap.Basic.Auth.Line
     {
         readonly string AuthBaseUri = "https://access.line.me/oauth2/v2.1/authorize";
         readonly string TokenBaseUri = "https://api.line.me/oauth2/v2.1/token";
-        public LineAuthService()
+
+        readonly LineAuthParameter _authParameter;
+        public LineAuthService(LineAuthParameter lineAuthParameter)
         {
+            _authParameter = lineAuthParameter;
+        }
+
+        public async Task<LineAccessTokenResponse> LoginAsync()
+        {
+            var authRequest = _authParameter.CreateAuthRequest();
+            var authorized = await AuthorizeAsync(authRequest);
+            if (authorized?.State != authRequest.State)
+                throw new InvalidOperationException();
+
+            var (status, token) = await GetAccessTokenAsync(_authParameter.CreateAccessTokenRequest(authorized.Code));
+            if (status != HttpStatusCode.OK)
+                throw new HttpListenerException((int)status);
+
+            return token;
         }
 
         #region Authorize
-        public async Task<LineAuthResponse> AuthorizeAsync(LineAuthRequest request)
+        /// <summary>
+        /// ユーザー認証・認可処理
+        /// https://developers.line.biz/ja/docs/line-login/integrate-line-login/#making-an-authorization-request
+        /// </summary>
+        /// <param name="request">LineAuthRequest</param>
+        /// <returns>LineAuthResponse</returns>
+        async Task<LineAuthResponse> AuthorizeAsync(LineAuthRequest request)
         {
             var url = UriService.GetUri(AuthBaseUri, request);
             var callbaclUrl = new Uri(request.RedirectUri);
@@ -54,7 +77,7 @@ namespace Entap.Basic.Auth.Line
         /// </summary>
         /// <param name="request">LineAccessTokenRequest</param>
         /// <returns>HttpStatusCode, LineAccessTokenResponse</returns>
-        public async Task<(HttpStatusCode, LineAccessTokenResponse?)> GetAccessTokenAsync(LineAccessTokenRequest request)
+        async Task<(HttpStatusCode, LineAccessTokenResponse?)> GetAccessTokenAsync(LineAccessTokenRequest request)
 #nullable disable
         {
             var message = new HttpRequestMessage(HttpMethod.Post, TokenBaseUri);
