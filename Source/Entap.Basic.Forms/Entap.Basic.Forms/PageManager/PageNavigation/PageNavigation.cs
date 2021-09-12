@@ -414,6 +414,9 @@ namespace Entap.Basic.Forms
                       .AsParallel()
                       .AsOrdered()
                       .ForEach((obj) => OnPagePopped(obj));
+
+            var currentPage = GetCurrentPage();
+            GetViewModelBase(currentPage)?.OnEntry();
         }
 
         /// <summary>
