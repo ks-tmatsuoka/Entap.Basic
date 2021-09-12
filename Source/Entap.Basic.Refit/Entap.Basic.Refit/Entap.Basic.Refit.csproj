@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>0.0.1</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Authors>Entap</Authors>
     <Description>Refitのラッパーライブラリ
 https://github.com/reactiveui/refit</Description>
     <PackageId>Entap.Basic.Refit</PackageId>
+    <PackageReleaseNotes>Refit.Newtonsoft.Jsonのアップデート（6.0.94）</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
