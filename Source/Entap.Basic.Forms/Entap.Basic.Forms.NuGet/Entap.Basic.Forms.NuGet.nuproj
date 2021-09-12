@@ -7,16 +7,17 @@
     <ProjectGuid>{97F0EBF4-69DF-4766-83A4-046160129880}</ProjectGuid>
     <Description>Entap.Basic.Forms</Description>
     <PackageId>Entap.Basic.Forms</PackageId>
-    <PackageVersion>0.0.5</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Authors>Entap</Authors>
-    <DevelopmentDependency>true</DevelopmentDependency>
+    <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <OutputType>Exe</OutputType>
     <RootNamespace>Entap.Basic.Forms.NuGet</RootNamespace>
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Entap.Basic.Forms.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <PackageReleaseNotes>PageViewModelBaseにPushCommand追加</PackageReleaseNotes>
+    <PackageReleaseNotes>・PopToRootAsync時にRootPageのOnEntryを実行
+・ InsertPageBeforeで、before（既存のページ。その前に page が挿入）を指定できるよう変更</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
