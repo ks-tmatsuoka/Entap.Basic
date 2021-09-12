@@ -20,7 +20,7 @@ namespace Entap.Basic.Forms
         Task PopModalAsync(bool animated = true);
         Task PopToRootAsync(bool animated = true);
 
-        void InsertPageBefore<T>(PageViewModelBase insertPageViewModel) where T : Page;
+        void InsertPageBefore<T>(PageViewModelBase insertPageViewModel, Page beforePage = null) where T : Page;
 
         void OnPagePopped(Page page, PageViewModelBase viewModelBase = null);
         void OnPopToRoot(INavigation navigation);

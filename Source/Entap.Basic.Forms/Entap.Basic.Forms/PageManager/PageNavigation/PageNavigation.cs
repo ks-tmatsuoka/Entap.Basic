@@ -424,9 +424,10 @@ namespace Entap.Basic.Forms
         /// </summary>
         /// <typeparam name="T">挿入するページ</typeparam>
         /// <param name="insertPageViewModel">挿入するページのViewModel</param>
-        public void InsertPageBefore<T>(PageViewModelBase insertPageViewModel) where T : Page
+        public void InsertPageBefore<T>(PageViewModelBase insertPageViewModel, Page beforePage = null) where T : Page
         {
-            currentNavigation.InsertPageBefore(CreatePage<T>(insertPageViewModel), GetCurrentPage());
+            var before = beforePage ?? GetCurrentPage();
+            currentNavigation.InsertPageBefore(CreatePage<T>(insertPageViewModel), before);
         }
         #endregion
 
