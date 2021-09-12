@@ -195,6 +195,9 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Line\Entap.Basic.Auth.Line.iOS\Entap.Basic.Auth.Line.iOS.csproj">
       <Name>Entap.Basic.Auth.Line.iOS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Line\Entap.Basic.Auth.Line\Entap.Basic.Auth.Line.csproj">
+      <Name>Entap.Basic.Auth.Line</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\image_guide01.png" />
