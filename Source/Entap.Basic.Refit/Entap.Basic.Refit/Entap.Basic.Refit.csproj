@@ -20,7 +20,7 @@ https://github.com/reactiveui/refit</Description>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.24" />
+    <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.94" />
     <PackageReference Include="Entap.Basic.Core" Version="0.0.2" />
   </ItemGroup>
   <ItemGroup>
