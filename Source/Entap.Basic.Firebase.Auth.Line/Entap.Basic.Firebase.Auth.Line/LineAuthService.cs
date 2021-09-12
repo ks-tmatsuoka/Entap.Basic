@@ -20,15 +20,9 @@ namespace Entap.Basic.Firebase.Auth.Line
         {
             try
             {
-                var authService = new Entap.Basic.Auth.Line.LineAuthService();
-                _authParameter.AuthRequest.UpdateState();
-                var result = await authService.AuthorizeAsync(_authParameter.AuthRequest);
-                if (result.State != _authParameter.AuthRequest.State)
-                    throw new InvalidOperationException();
-                _authParameter.AccessTokenRequest.Code = result.Code;
-                var (status, token) = await authService.GetAccessTokenAsync(_authParameter.AccessTokenRequest);
-                if (status != HttpStatusCode.OK)
-                    throw new HttpListenerException((int)status);
+                var parameter = new Entap.Basic.Auth.Line.LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://entapshiro.page.link/auth_callback");
+                var authService = new Entap.Basic.Auth.Line.LineAuthService(parameter);
+                var token = await authService.LoginAsync();
 
                 var customToken = new Api.CustomAuthToken(token.AccessToken, token.IdToken);
                 var serverToken = await BasicAuthStartUp.AuthApi.PostAuthLineToken(customToken);
