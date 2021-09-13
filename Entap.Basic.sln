@@ -99,7 +99,8 @@ Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.Auth.Line.NuGet
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Auth.Apple", "Entap.Basic.Auth.Apple", "{563E4CF6-9665-44D4-B207-9EBCBF09E724}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple.iOS", "Source\Entap.Basic.Auth.Apple.iOS\Entap.Basic.Auth.Apple.iOS.csproj", "{5395D7C5-33B2-4346-81D7-D22B63520CD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple.iOS", "Source\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.iOS\Entap.Basic.Auth.Apple.iOS.csproj", "{5395D7C5-33B2-4346-81D7-D22B63520CD2}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple", "Source\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.csproj", "{B691DE40-D93E-4036-AAF9-B785BD2D164C}"
 EndProject
 Global
