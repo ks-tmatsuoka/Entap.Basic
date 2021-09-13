@@ -100,6 +100,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Auth.Apple", "Entap.Basic.Auth.Apple", "{563E4CF6-9665-44D4-B207-9EBCBF09E724}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple.iOS", "Source\Entap.Basic.Auth.Apple.iOS\Entap.Basic.Auth.Apple.iOS.csproj", "{5395D7C5-33B2-4346-81D7-D22B63520CD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple", "Source\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.csproj", "{B691DE40-D93E-4036-AAF9-B785BD2D164C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -519,6 +520,18 @@ Global
 		{5395D7C5-33B2-4346-81D7-D22B63520CD2}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{5395D7C5-33B2-4346-81D7-D22B63520CD2}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{5395D7C5-33B2-4346-81D7-D22B63520CD2}.Release|iPhone.Build.0 = Release|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -573,5 +586,6 @@ Global
 		{898F9803-28CA-4F56-8632-01417C3A0BB8} = {1A2D4D78-F8A0-49E2-B9E7-0C4B3B577172}
 		{563E4CF6-9665-44D4-B207-9EBCBF09E724} = {13B9C6C5-8037-422D-BF76-4080DF067731}
 		{5395D7C5-33B2-4346-81D7-D22B63520CD2} = {563E4CF6-9665-44D4-B207-9EBCBF09E724}
+		{B691DE40-D93E-4036-AAF9-B785BD2D164C} = {563E4CF6-9665-44D4-B207-9EBCBF09E724}
 	EndGlobalSection
 EndGlobal
