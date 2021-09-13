@@ -12,9 +12,9 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.FacebookClient" Version="2.2.1" />
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
-    <ProjectReference Include="..\..\Entap.Basic.Auth\Entap.Basic.Auth\Entap.Basic.Auth.csproj" />
+    <ProjectReference Include="..\..\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />  
   </ItemGroup>
 </Project>
