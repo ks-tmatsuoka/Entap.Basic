@@ -1,14 +1,23 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AuthenticationServices;
+using Entap.Basic.Auth.Apple.Abstract;
 using Foundation;
 using UIKit;
 
 namespace Entap.Basic.Auth.Apple.iOS
 {
-    public class AppleSignInService : NSObject, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding
+    public class AppleSignInService : NSObject, IAppleSignInService, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding
     {
         TaskCompletionSource<ASAuthorizationAppleIdCredential> tcsCredential;
+
+        #region IAppleSignInService
+        public async Task<AppleIdCredential> SignInAsync()
+        {
+            var credential = await GetCredential();
+            return credential.ToAppleIdCredential();
+        }
+        #endregion
 
         public async Task<ASAuthorizationAppleIdCredential> GetCredential()
         {
