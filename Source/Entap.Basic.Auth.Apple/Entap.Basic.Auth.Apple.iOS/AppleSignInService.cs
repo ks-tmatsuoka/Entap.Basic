@@ -9,6 +9,17 @@ namespace Entap.Basic.Auth.Apple.iOS
 {
     public class AppleSignInService : NSObject, IAppleSignInService, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding
     {
+        readonly ASAuthorizationScope[] _scopes;
+        public AppleSignInService(params ASAuthorizationScope[] scopes)
+        {
+            _scopes = scopes;
+        }
+
+        public AppleSignInService(params AuthorizationScope[] scopes)
+        {
+            _scopes = scopes.ToASAuthorizationScopes();
+        }
+
         TaskCompletionSource<ASAuthorizationAppleIdCredential> tcsCredential;
 
         #region IAppleSignInService
@@ -26,7 +37,7 @@ namespace Entap.Basic.Auth.Apple.iOS
 
             var appleIdProvider = new ASAuthorizationAppleIdProvider();
             var request = appleIdProvider.CreateRequest();
-            request.RequestedScopes = new[] { ASAuthorizationScope.Email, ASAuthorizationScope.FullName };
+            request.RequestedScopes = _scopes;
 
             var authorizationController = new ASAuthorizationController(new[] { request })
             {
