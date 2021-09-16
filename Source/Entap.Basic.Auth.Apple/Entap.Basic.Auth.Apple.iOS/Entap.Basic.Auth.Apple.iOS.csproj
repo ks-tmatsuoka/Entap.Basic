@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{a52b8a63-bc84-4b47-910d-692533484892}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Entap.Basic.Auth.Apple.iOS</RootNamespace>
+    <RootNamespace>Entap.Basic.Auth.Apple</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Entap.Basic.Auth.Apple.iOS</AssemblyName>
+    <AssemblyName>Entap.Basic.Auth.Apple</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -50,6 +50,7 @@
     <Compile Include="Extensions\ASAuthorizationAppleIdCredentialExtensions.cs" />
     <Compile Include="Extensions\NSPersonNameComponentsExtensions.cs" />
     <Compile Include="Extensions\ASUserDetectionStatusExtensions.cs" />
+    <Compile Include="Extensions\AuthorizationScopeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Apple.Abstract\Entap.Basic.Auth.Apple.Abstract.csproj">

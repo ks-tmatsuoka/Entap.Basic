@@ -2,10 +2,11 @@
 using System.Threading.Tasks;
 using AuthenticationServices;
 using Entap.Basic.Auth.Apple.Abstract;
+using Entap.Basic.Auth.Apple.iOS;
 using Foundation;
 using UIKit;
 
-namespace Entap.Basic.Auth.Apple.iOS
+namespace Entap.Basic.Auth.Apple
 {
     public class AppleSignInService : NSObject, IAppleSignInService, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding
     {
