@@ -11,8 +11,9 @@ namespace Entap.Basic.Auth.Apple.iOS
         {
             return new AppleIdCredential()
             {
-                Email = credential.Email,
+                AuthorizationCode = new NSString(credential.AuthorizationCode, NSStringEncoding.UTF8).ToString(),
                 IdToken = new NSString(credential.IdentityToken, NSStringEncoding.UTF8).ToString(),
+                Email = credential.Email,
                 UserId = credential.User,
                 FullName = credential.FullName?.ToPersonName(),
                 RealUserStatus = credential.RealUserStatus.ToUserDetectionStatus(),

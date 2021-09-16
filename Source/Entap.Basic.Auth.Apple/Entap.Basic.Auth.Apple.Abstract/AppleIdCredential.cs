@@ -11,6 +11,8 @@ namespace Entap.Basic.Auth.Apple.Abstract
         {
         }
 
+        public string AuthorizationCode { get; set; }
+
         public string IdToken { get;set; }
 
         public string Email { get;set; }
