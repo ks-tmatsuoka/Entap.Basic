@@ -49,6 +49,7 @@
     <Compile Include="AppleSignInService.cs" />
     <Compile Include="Extensions\ASAuthorizationAppleIdCredentialExtensions.cs" />
     <Compile Include="Extensions\NSPersonNameComponentsExtensions.cs" />
+    <Compile Include="Extensions\ASUserDetectionStatusExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Apple.Abstract\Entap.Basic.Auth.Apple.Abstract.csproj">
