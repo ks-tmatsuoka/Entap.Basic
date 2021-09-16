@@ -12,6 +12,9 @@ namespace Entap.Basic.Auth.Apple.iOS
 
         public async Task<ASAuthorizationAppleIdCredential> GetCredential()
         {
+            if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                throw new NotSupportedException();
+
             var appleIdProvider = new ASAuthorizationAppleIdProvider();
             var request = appleIdProvider.CreateRequest();
             request.RequestedScopes = new[] { ASAuthorizationScope.Email, ASAuthorizationScope.FullName };
