@@ -18,5 +18,7 @@ namespace Entap.Basic.Auth.Apple.Abstract
         public string UserId { get; set; }
 
         public PersonName FullName { get; set; }
+
+        public UserDetectionStatus RealUserStatus { get; set; }
     }
 }

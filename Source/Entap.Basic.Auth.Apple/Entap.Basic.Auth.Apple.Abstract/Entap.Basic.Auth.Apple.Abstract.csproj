@@ -48,6 +48,7 @@
     <Compile Include="PersonName.cs" />
     <Compile Include="IAppleSignInService.cs" />
     <Compile Include="AppleIdCredential.cs" />
+    <Compile Include="UserDetectionStatus.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
