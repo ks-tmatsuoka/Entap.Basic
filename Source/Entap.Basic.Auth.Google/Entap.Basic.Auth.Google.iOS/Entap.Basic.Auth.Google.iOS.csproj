@@ -54,10 +54,6 @@
       <Project>{3DA1408C-19C3-4B09-9184-1269A462ACDB}</Project>
       <Name>Entap.Basic.Auth.Google.Abstract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj">
-      <Project>{2D1D3DCB-8F25-4819-B839-0930FFCC436F}</Project>
-      <Name>Entap.Basic.Auth.Google</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Google.iOS.SignIn">
