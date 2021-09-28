@@ -105,6 +105,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple.Abstract", "Source\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.Abstract\Entap.Basic.Auth.Apple.Abstract.csproj", "{612C1662-7936-4B9E-B643-51ECAD870626}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Auth.Apple.Forms", "Entap.Basic.Auth.Apple.Forms", "{FCBE1FD4-E283-48FE-BD56-42DAEA9CD485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple.Forms", "Source\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms.csproj", "{04E74916-7D67-4BCB-B130-7ADD79975561}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -547,6 +551,18 @@ Global
 		{612C1662-7936-4B9E-B643-51ECAD870626}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{612C1662-7936-4B9E-B643-51ECAD870626}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{612C1662-7936-4B9E-B643-51ECAD870626}.Release|iPhone.Build.0 = Release|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{04E74916-7D67-4BCB-B130-7ADD79975561}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -603,5 +619,7 @@ Global
 		{5395D7C5-33B2-4346-81D7-D22B63520CD2} = {563E4CF6-9665-44D4-B207-9EBCBF09E724}
 		{B691DE40-D93E-4036-AAF9-B785BD2D164C} = {563E4CF6-9665-44D4-B207-9EBCBF09E724}
 		{612C1662-7936-4B9E-B643-51ECAD870626} = {563E4CF6-9665-44D4-B207-9EBCBF09E724}
+		{FCBE1FD4-E283-48FE-BD56-42DAEA9CD485} = {13B9C6C5-8037-422D-BF76-4080DF067731}
+		{04E74916-7D67-4BCB-B130-7ADD79975561} = {FCBE1FD4-E283-48FE-BD56-42DAEA9CD485}
 	EndGlobalSection
 EndGlobal
