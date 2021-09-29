@@ -45,10 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppleSignInButtonRenderer.cs" />
+    <Compile Include="AuthorizationAppleIdButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms.csproj">
       <Name>Entap.Basic.Auth.Apple.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.iOS\Entap.Basic.Auth.Apple.iOS.csproj">
+      <Name>Entap.Basic.Auth.Apple.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
