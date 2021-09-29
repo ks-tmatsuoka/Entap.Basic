@@ -111,6 +111,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple.Form
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Auth.Apple.Forms.iOS", "Source\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms.iOS\Entap.Basic.Auth.Apple.Forms.iOS.csproj", "{5A45D1B6-04A1-4B2A-8F7D-509B1DC179D2}"
 EndProject
+Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.Auth.Apple.NuGet", "Source\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.NuGet\Entap.Basic.Auth.Apple.NuGet.nuproj", "{54AECCE6-16F1-483D-93A1-9C93B5C323D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -577,6 +579,18 @@ Global
 		{5A45D1B6-04A1-4B2A-8F7D-509B1DC179D2}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{5A45D1B6-04A1-4B2A-8F7D-509B1DC179D2}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{5A45D1B6-04A1-4B2A-8F7D-509B1DC179D2}.Release|iPhone.Build.0 = Release|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -636,5 +650,6 @@ Global
 		{FCBE1FD4-E283-48FE-BD56-42DAEA9CD485} = {13B9C6C5-8037-422D-BF76-4080DF067731}
 		{04E74916-7D67-4BCB-B130-7ADD79975561} = {FCBE1FD4-E283-48FE-BD56-42DAEA9CD485}
 		{5A45D1B6-04A1-4B2A-8F7D-509B1DC179D2} = {FCBE1FD4-E283-48FE-BD56-42DAEA9CD485}
+		{54AECCE6-16F1-483D-93A1-9C93B5C323D0} = {563E4CF6-9665-44D4-B207-9EBCBF09E724}
 	EndGlobalSection
 EndGlobal

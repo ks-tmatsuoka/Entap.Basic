@@ -13,4 +13,13 @@
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Apple.Abstract\Entap.Basic.Auth.Apple.Abstract.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="NuGet.Build.Packaging" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>
