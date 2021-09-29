@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using AuthenticationServices;
 using Entap.Basic.Auth.Apple.Forms;
-using Entap.Basic.Auth.Apple.iOS;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
