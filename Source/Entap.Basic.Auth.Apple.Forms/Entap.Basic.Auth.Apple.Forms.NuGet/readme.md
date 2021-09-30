@@ -68,4 +68,4 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 ```
 
 ## サンプル画像
-<img src="Images/AppleSignInButton.png" width="300" />
+<img src="../../../Images/AppleSignInButton.png" width="300" />
