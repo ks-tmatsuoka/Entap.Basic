@@ -19,6 +19,7 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
+    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -28,5 +29,10 @@
     <Folder Include="Basic\" />
     <Folder Include="Basic\Launch\" />
     <Folder Include="Basic\Launch\Guide\" />
+    <Folder Include="AppleSignIn\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AppleSignIn\" />
+    <None Remove="Entap.Basic.Auth.Apple.Forms" />
   </ItemGroup>
 </Project>
