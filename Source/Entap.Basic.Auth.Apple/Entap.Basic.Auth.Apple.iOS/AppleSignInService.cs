@@ -65,7 +65,10 @@ namespace Entap.Basic.Auth.Apple
         [Export("authorizationController:didCompleteWithError:")]
         public void DidComplete(ASAuthorizationController controller, NSError error)
         {
-            tcsCredential?.SetException(new NSErrorException(error));
+            if (error.Code == (int)ASAuthorizationError.Canceled)
+                tcsCredential?.SetException(new OperationCanceledException());
+            else
+                tcsCredential?.SetException(new NSErrorException(error));
         }
 
         #endregion
