@@ -1,1 +1,0 @@
-﻿# Entap.Basic.Auth.Apple
