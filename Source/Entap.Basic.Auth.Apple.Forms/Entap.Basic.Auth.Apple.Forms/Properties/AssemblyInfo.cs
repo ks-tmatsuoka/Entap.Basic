@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
-[assembly: XmlnsDefinition("http://entap.co.jp/schemas/2021/basic", "Entap.Basic.Auth.Apple.Forms")]
+[assembly: Preserve]
+[assembly: XmlnsDefinition("http://entap.co.jp/schemas/basic", "Entap.Basic.Auth.Apple.Forms")]
