@@ -5,9 +5,9 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{875AC3FC-F42E-44A7-BC4B-FFA3D3AC2213}</ProjectGuid>
-    <Description>Entap.Basic.Auth.Apple.Forms</Description>
+    <Description>Sign in with Appleで使用するASAuthorizationAppleIDButtonをXamarin.Formsで使用可能なようにラップしたライブラリ</Description>
     <PackageId>Entap.Basic.Auth.Apple.Forms</PackageId>
-    <PackageVersion>0.0.1</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
