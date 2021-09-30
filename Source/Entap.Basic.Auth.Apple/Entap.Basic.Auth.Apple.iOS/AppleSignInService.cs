@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Threading.Tasks;
+using System.Linq;
 using AuthenticationServices;
 using Entap.Basic.Auth.Apple.Abstract;
 using Entap.Basic.Auth.Apple.iOS;
@@ -59,6 +61,16 @@ namespace Entap.Basic.Auth.Apple
         public void DidComplete(ASAuthorizationController controller, ASAuthorization authorization)
         {
             var creds = authorization.GetCredential<ASAuthorizationAppleIdCredential>();
+
+            if (_scopes.Any((scope) => scope == ASAuthorizationScope.Email) &&
+                creds.Email is null)
+            {
+                var jwt = NSString.FromData(creds.IdentityToken, NSStringEncoding.UTF8);
+                var handler = new JwtSecurityTokenHandler();
+                var token = handler.ReadJwtToken(jwt);
+                if (token.Payload.TryGetValue("email", out var email))
+                    creds.SetValueForKey(new NSString(email.ToString()), new NSString(nameof(creds.Email)));
+            }
             tcsCredential?.TrySetResult(creds);
         }
 
