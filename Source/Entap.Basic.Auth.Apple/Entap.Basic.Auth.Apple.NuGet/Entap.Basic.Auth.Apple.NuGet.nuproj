@@ -28,7 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="readme.txt" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.csproj">
