@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6691C78A-8E57-42B7-BF64-C5216B255D92}</ProjectGuid>
+    <Description>Entap.Basic.Auth.Apple</Description>
+    <PackageId>Entap.Basic.Auth.Apple</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Entap</Authors>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Entap.Basic.Auth.Apple.NuGet</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>Entap.Basic.Auth.Apple.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="readme.txt">
+      <IncludeInPackage>true</IncludeInPackage>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.5-dev.8</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entap.Basic.Auth.Apple\Entap.Basic.Auth.Apple.csproj">
+      <Project>{B691DE40-D93E-4036-AAF9-B785BD2D164C}</Project>
+      <Name>Entap.Basic.Auth.Apple</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entap.Basic.Auth.Apple.Abstract\Entap.Basic.Auth.Apple.Abstract.csproj">
+      <Project>{612C1662-7936-4B9E-B643-51ECAD870626}</Project>
+      <Name>Entap.Basic.Auth.Apple.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entap.Basic.Auth.Apple.iOS\Entap.Basic.Auth.Apple.iOS.csproj">
+      <Project>{5395D7C5-33B2-4346-81D7-D22B63520CD2}</Project>
+      <Name>Entap.Basic.Auth.Apple.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />
+</Project>
