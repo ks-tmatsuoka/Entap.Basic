@@ -26,5 +26,10 @@ namespace Sample
             };
             await PageManager.Navigation.PushAsync<GuidePage>(new GuidePageViewModel(contents));
         });
+
+        public ProcessCommand AppleSignInCommand =>
+            new ProcessCommand(() => PageManager.Navigation.PushAsync<AppleSignInPage>(new AppleSignInPageViewModel()));
+
+        
     }
 }

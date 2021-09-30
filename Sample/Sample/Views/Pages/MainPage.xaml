@@ -17,7 +17,12 @@
                 Text="Guide"
                 Command="{Binding GuideCommand}"
             />
-            
+
+
+            <Button
+                Text="Apple Sign in"
+                Command="{Binding AppleSignInCommand}"
+            />
         </StackLayout>
     </ScrollView>
 </ContentPage>

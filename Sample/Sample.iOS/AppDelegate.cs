@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Entap.Basic.Auth.Apple.Forms.iOS;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
 using UIKit;
@@ -24,8 +24,14 @@ namespace Sample.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                Entap.Basic.Auth.Apple.Forms.iOS.Platform.Init();
+
             AnimationViewRenderer.Init();
+
+            LoadApplication(new App());
+
             return base.FinishedLaunching(app, options);
         }
     }

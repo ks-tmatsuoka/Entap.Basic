@@ -13,6 +13,7 @@ namespace Sample
             InitializeComponent();
 
             Core.Init(this);
+            Entap.Basic.Auth.Apple.Forms.Controls.Init();
             PageManager.Navigation.SetNavigationMainPage<MainPage>(new MainPageViewModel());
         }
 

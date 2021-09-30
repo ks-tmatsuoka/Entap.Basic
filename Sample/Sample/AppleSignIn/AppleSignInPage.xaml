@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Sample"
+    xmlns:basic="http://entap.co.jp/schemas/basic"
+    x:Class="Sample.AppleSignInPage"
+    x:DataType="local:AppleSignInPageViewModel"
+    BackgroundColor="LightGray"
+>
+    <ScrollView>
+        <StackLayout
+            Padding="16"
+        >
+            <Label
+                Text="ButtonType"
+            />
+            <basic:AppleSignInButton/>
+
+            <basic:AppleSignInButton>
+                <x:Arguments>
+                    <basic:ButtonType>Continue</basic:ButtonType>
+                    <basic:ButtonStyle>Black</basic:ButtonStyle>
+                </x:Arguments>
+            </basic:AppleSignInButton>
+
+            <basic:AppleSignInButton>
+                <x:Arguments>
+                    <basic:ButtonType>SignUp</basic:ButtonType>
+                    <basic:ButtonStyle>Black</basic:ButtonStyle>
+                </x:Arguments>
+            </basic:AppleSignInButton>
+
+
+            <Label
+                Margin="0,16,0,0"
+                Text="ButtonStyle"
+            />
+            <basic:AppleSignInButton/>
+
+
+            <basic:AppleSignInButton>
+                <x:Arguments>
+                    <basic:ButtonType>Default</basic:ButtonType>
+                    <basic:ButtonStyle>White</basic:ButtonStyle>
+                </x:Arguments>
+            </basic:AppleSignInButton>
+
+            <basic:AppleSignInButton>
+                <x:Arguments>
+                    <basic:ButtonType>Default</basic:ButtonType>
+                    <basic:ButtonStyle>WhiteOutline</basic:ButtonStyle>
+                </x:Arguments>
+            </basic:AppleSignInButton>
+
+            <Label
+                Margin="0,16,0,0"
+                Text="Size, CornerRadius"
+            />
+            <basic:AppleSignInButton
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                HeightRequest="30"
+                CornerRadius="15"
+                Command="{Binding ACommand}"
+            />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
