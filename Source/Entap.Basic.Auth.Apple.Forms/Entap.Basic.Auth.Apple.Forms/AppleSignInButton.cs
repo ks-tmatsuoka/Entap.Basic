@@ -15,6 +15,12 @@ namespace Entap.Basic.Auth.Apple.Forms
         {
             ButtonType = buttonType;
             ButtonStyle = buttonStyle;
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                IsVisible = false;
+                return;
+            }
         }
 
         public ButtonType ButtonType;
