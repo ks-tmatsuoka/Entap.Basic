@@ -91,5 +91,36 @@ namespace Entap.Basic.Auth.Apple
             return UIApplication.SharedApplication.KeyWindow;
         }
         #endregion
+
+        public static async Task<ASAuthorizationAppleIdProviderCredentialState> GetCredentialStateAsync(string userId)
+        {
+            var appleIdProvider = new ASAuthorizationAppleIdProvider();
+            var credentialState = await appleIdProvider.GetCredentialStateAsync(userId);
+            return credentialState;
+        }
+
+        /// <summary>
+        /// AppleID使用停止時の処理を登録
+        /// </summary>
+        public static async Task RegisterCredentialRevokedActionAsync(string userId, Action action)
+        {
+            var status = await GetCredentialStateAsync(userId);
+            if (status == ASAuthorizationAppleIdProviderCredentialState.Revoked)
+                action.Invoke();
+
+            AddCredentialRevokedObserver(action);
+        }
+
+        /// <summary>
+        /// アプリ起動中のAppleID使用停止時の処理を登録
+        /// </summary>
+        static void AddCredentialRevokedObserver(Action action)
+        {
+            var center = NSNotificationCenter.DefaultCenter;
+            center.AddObserver(ASAuthorizationAppleIdProvider.CredentialRevokedNotification, (_) =>
+            {
+                action.Invoke();
+            });
+        }
     }
 }
