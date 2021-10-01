@@ -46,6 +46,7 @@ catch (Exception ex)
 ### AppleId使用停止時処理  
 AppleId使用停止時にログアウト等が必要な場合には、  
 AppDelegate等でRegisterCredentialRevokedActionAsyncを実行してください。  
+[userId]は認証時に取得したAppleIdCredential.UserIdを指定してください。  
 この処理時の実行時点または実行後にAppleIdの使用が停止されるとactionに指定した処理を実行します。
 ```csharp
 AppleSignInService.RegisterCredentialRevokedActionAsync([userId], () =>
@@ -53,7 +54,6 @@ AppleSignInService.RegisterCredentialRevokedActionAsync([userId], () =>
     // ToDo : ログアウト等
 }).ContinueWith((arg) =>
 {
-
     if (arg.IsFaulted)
     {
         // ToDo :  エラー処理
