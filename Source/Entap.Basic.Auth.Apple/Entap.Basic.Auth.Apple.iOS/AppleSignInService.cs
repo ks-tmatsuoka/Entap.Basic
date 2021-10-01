@@ -13,14 +13,18 @@ namespace Entap.Basic.Auth.Apple
     public class AppleSignInService : NSObject, IAppleSignInService, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding
     {
         readonly ASAuthorizationScope[] _scopes;
-        public AppleSignInService(params ASAuthorizationScope[] scopes)
+#nullable enable
+        public AppleSignInService(params ASAuthorizationScope[]? scopes)
+#nullable disable
         {
             _scopes = scopes;
         }
 
-        public AppleSignInService(params AuthorizationScope[] scopes)
+#nullable enable
+        public AppleSignInService(params AuthorizationScope[]? scopes)
+#nullable disable
         {
-            _scopes = scopes.ToASAuthorizationScopes();
+            _scopes = scopes?.ToASAuthorizationScopes();
         }
 
         TaskCompletionSource<ASAuthorizationAppleIdCredential> tcsCredential;
@@ -62,7 +66,7 @@ namespace Entap.Basic.Auth.Apple
         {
             var creds = authorization.GetCredential<ASAuthorizationAppleIdCredential>();
 
-            if (_scopes.Any((scope) => scope == ASAuthorizationScope.Email) &&
+            if ((_scopes?.Any((scope) => scope == ASAuthorizationScope.Email) == true) &&
                 creds.Email is null)
             {
                 var jwt = NSString.FromData(creds.IdentityToken, NSStringEncoding.UTF8);

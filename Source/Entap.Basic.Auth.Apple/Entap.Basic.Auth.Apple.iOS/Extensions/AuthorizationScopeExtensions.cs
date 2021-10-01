@@ -7,8 +7,10 @@ namespace Entap.Basic.Auth.Apple.iOS
 {
     public static class AuthorizationScopeExtensions
     {
-        public static ASAuthorizationScope[] ToASAuthorizationScopes(this AuthorizationScope[] scopes)
-            => scopes
+#nullable enable
+        public static ASAuthorizationScope[] ToASAuthorizationScopes(this AuthorizationScope[]? scopes)
+#nullable disable
+            => scopes?
                 .Select((scope) => scope.ToASAuthorizationScope())
                 .ToArray();
 
