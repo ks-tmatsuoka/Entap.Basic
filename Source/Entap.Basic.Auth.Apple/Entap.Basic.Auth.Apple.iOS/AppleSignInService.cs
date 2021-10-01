@@ -102,12 +102,16 @@ namespace Entap.Basic.Auth.Apple
         /// <summary>
         /// AppleID使用停止時の処理を登録
         /// </summary>
-        public static async Task RegisterCredentialRevokedActionAsync(string userId, Action action)
+#nullable enable
+        public static async Task RegisterCredentialRevokedActionAsync(string? userId, Action action)
+#nullable disable
         {
-            var status = await GetCredentialStateAsync(userId);
-            if (status == ASAuthorizationAppleIdProviderCredentialState.Revoked)
-                action.Invoke();
-
+            if (!string.IsNullOrEmpty(userId))
+            {
+                var status = await GetCredentialStateAsync(userId);
+                if (status == ASAuthorizationAppleIdProviderCredentialState.Revoked)
+                    action.Invoke();
+            }
             AddCredentialRevokedObserver(action);
         }
 
