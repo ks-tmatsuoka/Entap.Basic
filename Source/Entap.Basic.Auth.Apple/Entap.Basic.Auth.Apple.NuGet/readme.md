@@ -1,9 +1,5 @@
 ﻿# Entap.Basic.Auth.Apple  
-[Sign in with Apple](https://developer.apple.com/jp/sign-in-wit
-Sign In with Apple（Appleでサインイン）」機能を有効h-a
-https://help.apple.com/developer-account/?lang=ja#/devde676e696
-Sign In with Apple（Appleでサインイン）」機能を有効pp
-https://help.apple.com/developer-account/?lang=ja#/devde676e696le/)を行うライブラリです。  
+[Sign in with Apple](https://developer.apple.com/jp/sign-in-with-apple/get-started/)を行うライブラリです。  
 ※Android、iOS13未満、カスタムスタイルはサポート対象外です。
 
 Apple提供のボタンを使用する場合は、別途[Entap.Basic.Auth.Apple.Forms](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Apple.Forms/Entap.Basic.Auth.Apple.Forms.NuGet)を使用してください。
