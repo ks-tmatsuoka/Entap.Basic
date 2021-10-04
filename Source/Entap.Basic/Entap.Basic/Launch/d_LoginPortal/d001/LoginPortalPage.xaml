@@ -5,6 +5,7 @@
     xmlns:basic="clr-namespace:Entap.Basic"
     xmlns:local="clr-namespace:Entap.Basic.Launch.LoginPortal"
     xmlns:bforms="clr-namespace:Entap.Basic.Forms;assembly=Entap.Basic.Forms"
+    xmlns:basics="http://entap.co.jp/schemas/basic"
     x:Class="Entap.Basic.Launch.LoginPortal.LoginPortalPage"
     x:DataType="local:LoginPortalPageViewModel"
     Style="{StaticResource PageStyle}"
@@ -41,6 +42,10 @@
             Text="Google"
             Command="{Binding GoogleCommand}"
             IsVisible="{Binding IsGoogleAuthSupported, Source={x:Static basic:BasicStartup.AuthManager}}"
+        />
+
+        <basics:AppleSignInButton
+            HeightRequest="44"
         />
 
         <Button
