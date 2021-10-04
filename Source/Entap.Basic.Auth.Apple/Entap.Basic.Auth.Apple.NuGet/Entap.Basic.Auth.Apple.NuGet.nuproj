@@ -7,7 +7,7 @@
     <ProjectGuid>{6691C78A-8E57-42B7-BF64-C5216B255D92}</ProjectGuid>
     <Description>Entap.Basic.Auth.Apple</Description>
     <PackageId>Entap.Basic.Auth.Apple</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -16,6 +16,9 @@
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Entap.Basic.Auth.Apple.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PackageReleaseNotes>・AppleSignInService : コンストラクタの引数scopesのNull許容
+・AppleID使用停止時処理定義
+・２回目以降に認証時のEmailの補完</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
