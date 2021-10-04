@@ -21,6 +21,9 @@ namespace Entap.Basic.Auth.Abstractions
         bool IsGoogleAuthSupported { get; }
         ISnsAuthService GoogleAuthService { get; }
 
+        bool IsAppleAuthSupported { get; }
+        ISnsAuthService AppleAuthService { get; }
+
         Task SignOutAsync();
     }
 }
