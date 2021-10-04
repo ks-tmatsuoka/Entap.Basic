@@ -17,7 +17,7 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
