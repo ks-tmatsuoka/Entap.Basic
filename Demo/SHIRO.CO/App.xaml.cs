@@ -17,6 +17,7 @@ namespace SHIRO.CO
             
             ConfigureServices();
             BasicStartup.PageNavigator.SetStartUpPageAsync();
+            Entap.Basic.Basic.Init();
         }
 
         protected override void OnStart()

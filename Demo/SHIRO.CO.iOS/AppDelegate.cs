@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Entap.Basic.Auth.Apple;
 using Firebase.DynamicLinks;
 using Foundation;
+using Plugin.FirebaseAuth;
 using UIKit;
 using Xamarin.Essentials;
 
@@ -34,8 +36,24 @@ namespace SHIRO.CO.iOS
             Firebase.Core.Options.DefaultInstance.ClientId,
             Xamarin.Essentials.Platform.GetCurrentUIViewController);
 
-            LoadApplication(new App());
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+                Entap.Basic.Auth.Apple.Forms.iOS.Platform.Init();
 
+            LoadApplication(new App());
+            AppleSignInService.RegisterCredentialRevokedActionAsync(null, async () =>
+            {
+                if (CrossFirebaseAuth.Current.Instance.CurrentUser is null)
+                    return;
+
+                await Entap.Basic.BasicStartup.AuthManager.SignOutAsync();
+            }).ContinueWith((arg) =>
+            {
+
+                if (arg.IsFaulted)
+                {
+                    // ToDo :  エラー処理
+                }
+            }).ConfigureAwait(false);
 #if DEBUG
             DynamicLinks.PerformDiagnostics(null);
 #endif

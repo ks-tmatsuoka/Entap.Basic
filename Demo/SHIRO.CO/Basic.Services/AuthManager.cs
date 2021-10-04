@@ -8,6 +8,7 @@ using Entap.Basic.Firebase.Auth.Line;
 using Entap.Basic.Firebase.Auth.Google;
 using Plugin.FirebaseAuth;
 using Xamarin.Forms;
+using Entap.Basic.Firebase.Auth.Apple;
 
 namespace SHIRO.CO
 {
@@ -45,6 +46,12 @@ namespace SHIRO.CO
         public bool IsGoogleAuthSupported => GoogleAuthService is not null;
         public ISnsAuthService GoogleAuthService => _googleAuthService ??= new GoogleAuthService(this);
         ISnsAuthService _googleAuthService;
+        #endregion
+
+        #region Apple Auth
+        public bool IsAppleAuthSupported => AppleAuthService is not null;
+        public ISnsAuthService AppleAuthService => _appleAuthService ??= new AppleAuthService(this, null);
+        ISnsAuthService _appleAuthService;
         #endregion
 
         public virtual async Task HandleSignInErrorAsync(Exception exception)
