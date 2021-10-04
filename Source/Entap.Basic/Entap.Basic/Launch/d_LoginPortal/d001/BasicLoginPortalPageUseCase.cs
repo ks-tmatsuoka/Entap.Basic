@@ -74,7 +74,11 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public virtual void SignInWithApple()
         {
-            throw new NotImplementedException();
+            ProcessManager.Current.Invoke(async () =>
+            {
+                await BasicStartup.AuthManager.AppleAuthService.SignInAsync();
+                await BasicStartup.PageNavigator.SetHomePageAsync();
+            });
         }
 
         public virtual void SignInWithLine()

@@ -46,6 +46,8 @@
 
         <basics:AppleSignInButton
             HeightRequest="44"
+            Command="{Binding AppleCommand}"
+            IsVisible="{Binding IsAppleAuthSupported, Source={x:Static basic:BasicStartup.AuthManager}}"
         />
 
         <Button

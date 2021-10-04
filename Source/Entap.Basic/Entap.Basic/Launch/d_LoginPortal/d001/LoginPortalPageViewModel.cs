@@ -21,6 +21,8 @@ namespace Entap.Basic.Launch.LoginPortal
 
         public Command GoogleCommand => new Command(() => _useCase.SignInWithGoogle());
 
+        public Command AppleCommand => new Command(() => _useCase.SignInWithApple());
+
         public Command PasswordSignInCommand => new Command(() => _useCase.SignInWithEmailAndPassword());
 
         public Command SignUpCommand => new Command(() => _useCase.SignUp());
