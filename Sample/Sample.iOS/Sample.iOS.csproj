@@ -143,12 +143,6 @@
       <Project>{429CC795-4485-41D2-8D56-04DAD63245AF}</Project>
       <Name>Entap.Basic.Forms.iOS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms.iOS\Entap.Basic.Auth.Apple.Forms.iOS.csproj">
-      <Name>Entap.Basic.Auth.Apple.Forms.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms\Entap.Basic.Auth.Apple.Forms.csproj">
-      <Name>Entap.Basic.Auth.Apple.Forms</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\splash.json" />
