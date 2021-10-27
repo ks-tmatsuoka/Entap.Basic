@@ -11,7 +11,7 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Plugin.FacebookClient" Version="2.2.1" />
+    <PackageReference Include="Plugin.FacebookClient" Version="4.0.1" />
     <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
