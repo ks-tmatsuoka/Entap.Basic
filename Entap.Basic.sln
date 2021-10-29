@@ -119,8 +119,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entap.Basic.Firebase.Auth.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entap.Basic.Firebase.Auth.Apple", "Source\Entap.Basic.Firebase.Auth.Apple\Entap.Basic.Firebase.Auth.Apple\Entap.Basic.Firebase.Auth.Apple.csproj", "{2D162413-63E2-4F08-9599-B35C8F8EC991}"
 EndProject
-Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Entap.Basic.Firebase.Auth.NuGet", "Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.NuGet\Entap.Basic.Firebase.Auth.NuGet.nuproj", "{F45FC4BB-DF18-4719-9B3A-55320BFC528B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -623,18 +621,6 @@ Global
 		{2D162413-63E2-4F08-9599-B35C8F8EC991}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{2D162413-63E2-4F08-9599-B35C8F8EC991}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{2D162413-63E2-4F08-9599-B35C8F8EC991}.Release|iPhone.Build.0 = Release|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -698,6 +684,5 @@ Global
 		{6691C78A-8E57-42B7-BF64-C5216B255D92} = {563E4CF6-9665-44D4-B207-9EBCBF09E724}
 		{2E9DFEFF-2D17-4EE8-947F-1C373F6C7284} = {13B9C6C5-8037-422D-BF76-4080DF067731}
 		{2D162413-63E2-4F08-9599-B35C8F8EC991} = {2E9DFEFF-2D17-4EE8-947F-1C373F6C7284}
-		{F45FC4BB-DF18-4719-9B3A-55320BFC528B} = {9219269E-C10E-495E-8722-82D9E767582D}
 	EndGlobalSection
 EndGlobal
