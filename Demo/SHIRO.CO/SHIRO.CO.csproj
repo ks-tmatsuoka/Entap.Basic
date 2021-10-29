@@ -20,13 +20,13 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
     <PackageReference Include="Entap.Basic.Auth.Apple" Version="1.0.1" />
+    <PackageReference Include="Entap.Basic.Api" Version="0.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
-    <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic.Api\Entap.Basic.Api.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Refit\Entap.Basic.Refit\Entap.Basic.Refit.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line.csproj" />
@@ -43,5 +43,8 @@
     <Folder Include="Modules\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Entap.Basic.Api" />
   </ItemGroup>
 </Project>
