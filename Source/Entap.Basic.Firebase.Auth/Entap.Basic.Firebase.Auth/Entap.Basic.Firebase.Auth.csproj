@@ -22,8 +22,13 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
     <PackageReference Include="Entap.Basic.Api" Version="0.0.1" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Entap.Basic.Api" />
+    <None Remove="NuGet.Build.Packaging" />
   </ItemGroup>
 </Project>
