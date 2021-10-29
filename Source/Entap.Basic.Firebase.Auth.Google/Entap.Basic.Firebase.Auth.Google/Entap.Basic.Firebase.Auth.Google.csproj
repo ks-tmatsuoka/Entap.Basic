@@ -11,11 +11,14 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
     <ProjectReference Include="..\..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj" />
     <ProjectReference Include="..\..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Entap.Basic.Firebase.Auth" />
   </ItemGroup>
 </Project>

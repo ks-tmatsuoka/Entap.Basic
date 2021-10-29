@@ -11,9 +11,10 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj" />
+    <PackageReference Include="Entap.Basic.Auth.Line" Version="0.0.2" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Entap.Basic.Auth.Line" Version="0.0.2" />
+    <None Remove="Entap.Basic.Firebase.Auth" />
   </ItemGroup>
 </Project>
