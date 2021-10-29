@@ -11,10 +11,10 @@ namespace Entap.Basic.Firebase.Auth.Android
     [Preserve(AllMembers = true)]
     public class Platform
     {
-        public static void Init(Context context, Activity activity, Bundle bundle)
+        public static void Init(Activity activity, Bundle bundle)
         {
             CrossCurrentActivity.Current.Init(activity, bundle);
-            FirebaseApp.InitializeApp(context);
+            FirebaseApp.InitializeApp(activity);
         }
     }
 }
