@@ -7,7 +7,7 @@
     <ProjectGuid>{F45FC4BB-DF18-4719-9B3A-55320BFC528B}</ProjectGuid>
     <Description>Entap.Basic.Firebase.Auth</Description>
     <PackageId>Entap.Basic.Firebase.Auth</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>0.0.1</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -28,7 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="readme.txt">
+    <None Include="readme.md">
       <IncludeInPackage>true</IncludeInPackage>
     </None>
   </ItemGroup>
