@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58B994BD-7B18-422C-8CC9-852BDA848F69}</ProjectGuid>
+    <Description>GoogleSignInを行うライブラリ</Description>
+    <PackageId>Entap.Basic.Auth.Google</PackageId>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>Entap</Authors>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Entap.Basic.Auth.Google.NuGet</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>Entap.Basic.Auth.Google.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="readme.txt">
+      <IncludeInPackage>true</IncludeInPackage>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.5-dev.8</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj">
+      <Project>{2D1D3DCB-8F25-4819-B839-0930FFCC436F}</Project>
+      <Name>Entap.Basic.Auth.Google</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj">
+      <Project>{3DA1408C-19C3-4B09-9184-1269A462ACDB}</Project>
+      <Name>Entap.Basic.Auth.Google.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entap.Basic.Auth.Google.Android\Entap.Basic.Auth.Google.Android.csproj">
+      <Project>{BBB98230-CF9E-48D4-B741-83DA8EA8F4D4}</Project>
+      <Name>Entap.Basic.Auth.Google.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entap.Basic.Auth.Google.iOS\Entap.Basic.Auth.Google.iOS.csproj">
+      <Project>{495C0FAD-D5DF-419A-9C7A-AA1BCB54F93A}</Project>
+      <Name>Entap.Basic.Auth.Google.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />
+</Project>
