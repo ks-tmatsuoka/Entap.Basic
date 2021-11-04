@@ -15,5 +15,7 @@
   * [LINEログイン](https://developers.line.biz/ja/reference/line-login/)(v2.1)のWeb認証で行うライブラリ  
 * [Entap.Basic.Auth.Apple](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Apple/Entap.Basic.Auth.Apple.NuGet)
   * [Sign in with Apple](https://developer.apple.com/jp/sign-in-with-apple/get-started/)を行うライブラリ
+* [Entap.Basic.Auth.Google](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Google/Entap.Basic.Auth.Google.NuGet)
+  * [Googleサインイン](https://developers.google.com/identity/sign-in/android/start)を行うライブラリ
 * [Entap.Basic.Auth.Apple.Forms](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Apple.Forms/Entap.Basic.Auth.Apple.Forms.NuGet)
   * [Sign in with Apple](https://developer.apple.com/jp/sign-in-with-apple/)で使用する[ASAuthorizationAppleIDButton](https://developer.apple.com/documentation/authenticationservices/asauthorizationappleidbutton)をXamarin.Formsで使用可能なようにラップしたライブラリ  
