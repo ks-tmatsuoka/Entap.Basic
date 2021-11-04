@@ -21,6 +21,7 @@
     <PackageReference Include="Entap.Basic.Auth.Apple" Version="1.0.1" />
     <PackageReference Include="Entap.Basic.Api" Version="0.0.1" />
     <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.2" />
+    <PackageReference Include="Entap.Basis.Firebase.Auth.Line" Version="0.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
@@ -28,7 +29,6 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Refit\Entap.Basic.Refit\Entap.Basic.Refit.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj" />
-    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line\Entap.Basic.Firebase.Auth.Line.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Apple\Entap.Basic.Firebase.Auth.Apple\Entap.Basic.Firebase.Auth.Apple.csproj" />
@@ -46,5 +46,6 @@
   <ItemGroup>
     <None Remove="Entap.Basic.Api" />
     <None Remove="Entap.Basic.Firebase.Auth" />
+    <None Remove="Entap.Basis.Firebase.Auth.Line" />
   </ItemGroup>
 </Project>
