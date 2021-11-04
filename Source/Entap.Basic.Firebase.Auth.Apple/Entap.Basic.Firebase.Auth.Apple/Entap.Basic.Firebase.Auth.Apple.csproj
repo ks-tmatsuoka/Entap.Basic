@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>Entap</Authors>
+    <Description>Firebase Authenticationを使用し、Sign in with Appleを行うライブラリ</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -14,10 +17,20 @@
     <None Remove="Entap.Basic.Auth" />
     <None Remove="Entap.Basic.Auth.Apple" />
     <None Remove="Entap.Basic.Firebase.Auth" />
+    <None Remove="NuGet.Build.Packaging" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
     <PackageReference Include="Entap.Basic.Auth.Apple" Version="1.0.0" />
     <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.2" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md">
+      <IncludeInPackage>true</IncludeInPackage>
+    </None>
   </ItemGroup>
 </Project>
