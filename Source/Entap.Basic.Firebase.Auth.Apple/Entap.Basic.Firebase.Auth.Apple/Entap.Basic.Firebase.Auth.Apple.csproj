@@ -5,6 +5,7 @@
     <PackageVersion>0.0.1</PackageVersion>
     <Authors>Entap</Authors>
     <Description>Firebase Authenticationを使用し、Sign in with Appleを行うライブラリ</Description>
+    <PackageId>Entap.Basic.Firebase.Auth.Apple</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
