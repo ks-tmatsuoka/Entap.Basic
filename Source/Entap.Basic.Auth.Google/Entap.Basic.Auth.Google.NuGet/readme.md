@@ -12,7 +12,7 @@ Firebaseプロジェクトを作成し、Googleサインインを有効にして
 ## 導入方法
 
 ### Android  
-* Xamarin.Firebase.Authをインストールしてください。
+* Entap.Basic.Auth.Google.Androidをインストールしてください。
 * AndroidManifest.xmlで「Internet」のパーミッションを指定してください。
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -35,7 +35,7 @@ protected override void OnCreate(Bundle savedInstanceState)
 
 
 ### iOS  
-* Xamarin.Firebase.iOS.Authをインストールしてください。  
+* Entap.Basic.Auth.Google.iOSをインストールしてください。  
 * AppDelegateのFinishedLaunchingで初期化処理を追加してください。
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -57,7 +57,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 {
     // Google SignIn
-    return Google.SignIn.SignIn.SharedInstance.HandleUrl(url);
+    return Entap.Basic.Auth.Google.GoogleAuthService.OnOpenUrl(app, url, options);
 }
 ```
 
