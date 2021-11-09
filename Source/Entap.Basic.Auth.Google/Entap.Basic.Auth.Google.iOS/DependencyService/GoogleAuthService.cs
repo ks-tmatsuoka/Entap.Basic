@@ -73,5 +73,10 @@ namespace Entap.Basic.Auth.Google
             return Task.CompletedTask;
         }
         #endregion
+
+        public static bool OnOpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            return SignIn.SharedInstance.HandleUrl(url);
+        }
     }
 }
