@@ -5,7 +5,8 @@
 Entap.Basicでは様々な認証方法をカバーするため、[Firebase Authentication](https://firebase.google.com/docs/auth?hl=ja)を使用します。
 
 ## 導入方法
-共通プロジェクトに、Entap.Basic.Firebase.Authを追加してください。
+・各プロジェクトにPlugin.FirebaseAuthを追加してください。
+・共通プロジェクトに、Entap.Basic.Firebase.Authを追加してください。
 
 ### iOS
 ・AppDelegateのFinishedLaunchingで初期化をしてください。
