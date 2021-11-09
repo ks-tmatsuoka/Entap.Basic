@@ -37,6 +37,12 @@
       <Version>0.2.5-dev.8</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Entap.Basic.Auth.Google.Android">
+      <Version>0.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Entap.Basic.Auth.Google.iOS">
+      <Version>0.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj">
@@ -46,14 +52,6 @@
     <ProjectReference Include="..\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj">
       <Project>{3DA1408C-19C3-4B09-9184-1269A462ACDB}</Project>
       <Name>Entap.Basic.Auth.Google.Abstract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entap.Basic.Auth.Google.Android\Entap.Basic.Auth.Google.Android.csproj">
-      <Project>{BBB98230-CF9E-48D4-B741-83DA8EA8F4D4}</Project>
-      <Name>Entap.Basic.Auth.Google.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Entap.Basic.Auth.Google.iOS\Entap.Basic.Auth.Google.iOS.csproj">
-      <Project>{495C0FAD-D5DF-419A-9C7A-AA1BCB54F93A}</Project>
-      <Name>Entap.Basic.Auth.Google.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
