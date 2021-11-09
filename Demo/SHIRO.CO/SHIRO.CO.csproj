@@ -25,12 +25,12 @@
     <PackageReference Include="Entap.Basic.Firebase.Auth.Apple" Version="0.0.1" />
     <PackageReference Include="Entap.Basic.Auth.Google" Version="0.0.2" />
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
+    <PackageReference Include="Entap.Basic.Refit" Version="0.0.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms\Entap.Basic.Forms.csproj" />
-    <ProjectReference Include="..\..\Source\Entap.Basic.Refit\Entap.Basic.Refit\Entap.Basic.Refit.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj" />
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google\Entap.Basic.Firebase.Auth.Google.csproj" />
   </ItemGroup>
@@ -50,6 +50,7 @@
     <None Remove="Entap.Basis.Firebase.Auth.Line" />
     <None Remove="Entap.Basic.Firebase.Auth.Apple" />
     <None Remove="Entap.Basic.Auth.Google" />
+    <None Remove="Entap.Basic.Refit" />
     <None Remove="Plugin.FirebaseAuth" />
   </ItemGroup>
 </Project>
