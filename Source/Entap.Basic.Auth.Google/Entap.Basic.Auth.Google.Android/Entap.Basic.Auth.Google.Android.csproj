@@ -18,6 +18,10 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidUseAapt2>true</AndroidUseAapt2>
+    <PackageId>Entap.Basic.Auth.Google.Android</PackageId>
+    <PackageVersion>0.0.2</PackageVersion>
+    <Authors>Entap</Authors>
+    <Description>GoogleサインインAndroidライブラリ</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
