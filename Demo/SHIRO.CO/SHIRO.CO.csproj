@@ -24,6 +24,7 @@
     <PackageReference Include="Entap.Basis.Firebase.Auth.Line" Version="0.0.1" />
     <PackageReference Include="Entap.Basic.Firebase.Auth.Apple" Version="0.0.1" />
     <PackageReference Include="Entap.Basic.Auth.Google" Version="0.0.2" />
+    <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
@@ -49,5 +50,6 @@
     <None Remove="Entap.Basis.Firebase.Auth.Line" />
     <None Remove="Entap.Basic.Firebase.Auth.Apple" />
     <None Remove="Entap.Basic.Auth.Google" />
+    <None Remove="Plugin.FirebaseAuth" />
   </ItemGroup>
 </Project>
