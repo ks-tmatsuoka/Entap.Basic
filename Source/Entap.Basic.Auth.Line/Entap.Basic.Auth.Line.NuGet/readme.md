@@ -15,7 +15,7 @@ LINE Login settingsを登録してください。
  ・[アプリをチャネルにリンクする](https://developers.line.biz/ja/docs/ios-sdk/swift/setting-up-project/#linking-app-to-channel)  
 　※ユニバーサルリンクの[アプリとサーバーを関連づけ](https://developers.line.biz/ja/docs/ios-sdk/swift/universal-links-support/#ul-s1)については 、[Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links?hl=ja)の使用も可能です。    
 ・[Info.plistファイルを設定する](https://developers.line.biz/ja/docs/ios-sdk/swift/setting-up-project/#config-infoplist-file)  
-・AppDelegateのContinueUserActivityをオーバーライドし、LINE認証後処理を実行してくださいください。
+・「Entap.Basic.Auth.Line.iOS」を追加し、AppDelegateのContinueUserActivityにLINE認証後処理を実行してくださいください。
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
 {
