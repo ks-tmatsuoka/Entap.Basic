@@ -85,8 +85,8 @@
     <PackageReference Include="Xamarin.Firebase.Dynamic.Links">
       <Version>119.1.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.GooglePlayServices.Auth">
-      <Version>119.0.0</Version>
+    <PackageReference Include="Entap.Basic.Auth.Google.Android">
+      <Version>0.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -211,14 +211,6 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj">
       <Project>{3C8D6648-9F6D-4E97-AEE3-ED2199914D03}</Project>
       <Name>Entap.Basic.Firebase.Auth.Facebook</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj">
-      <Project>{2D1D3DCB-8F25-4819-B839-0930FFCC436F}</Project>
-      <Name>Entap.Basic.Auth.Google</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.Android\Entap.Basic.Auth.Google.Android.csproj">
-      <Project>{BBB98230-CF9E-48D4-B741-83DA8EA8F4D4}</Project>
-      <Name>Entap.Basic.Auth.Google.Android</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

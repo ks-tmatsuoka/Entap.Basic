@@ -33,8 +33,8 @@ namespace SHIRO.CO.iOS
             Plugin.FacebookClient.FacebookClientManager.Initialize(app, options);
             // Google
             Entap.Basic.Auth.Google.iOS.Platform.Init(
-            Firebase.Core.Options.DefaultInstance.ClientId,
-            Xamarin.Essentials.Platform.GetCurrentUIViewController);
+                Firebase.Core.Options.DefaultInstance.ClientId,
+                Xamarin.Essentials.Platform.GetCurrentUIViewController);
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
                 Entap.Basic.Auth.Apple.Forms.iOS.Platform.Init();
@@ -81,7 +81,7 @@ namespace SHIRO.CO.iOS
             Plugin.FacebookClient.FacebookClientManager.OpenUrl(app, url, options);
 
             // Google SignIn
-            Google.SignIn.SignIn.SharedInstance.HandleUrl(url);
+            Entap.Basic.Auth.Google.GoogleAuthService.OnOpenUrl(app, url, options);
 
             var dynamicLink = DynamicLinks.SharedInstance?.FromCustomSchemeUrl(url);
             if (dynamicLink?.Url is null) return false;
