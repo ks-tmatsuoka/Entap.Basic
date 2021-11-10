@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>0.0.1</PackageVersion>
+    <PackageVersion>0.0.2</PackageVersion>
     <Authors>Entap</Authors>
     <Description>Firebase Authenticationを使用し、Sign in with Appleを行うライブラリ</Description>
     <PackageId>Entap.Basic.Firebase.Auth.Apple</PackageId>
+    <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Apple/Entap.Basic.Firebase.Auth.Apple</PackageProjectUrl>
+    <PackageReleaseNotes>[update]依存ライブラリ「Entap.Basic.Firebase.Auth」をVer0.0.3にアップデート</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
