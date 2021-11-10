@@ -156,6 +156,9 @@
     <PackageReference Include="Plugin.FirebaseAuth">
       <Version>4.1.0</Version>
     </PackageReference>
+    <PackageReference Include="Entap.Basic.Firebase.Auth">
+      <Version>0.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SHIRO.CO\SHIRO.CO.csproj">
@@ -181,10 +184,6 @@
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic.iOS\Entap.Basic.iOS.csproj">
       <Project>{9917E7A8-1BB8-4BE9-9376-9CB844E17E6F}</Project>
       <Name>Entap.Basic.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj">
-      <Project>{85670688-FB1F-4692-956D-1FDAAF85C72F}</Project>
-      <Name>Entap.Basic.Firebase.Auth</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.iOS\Entap.Basic.Firebase.Auth.iOS.csproj">
       <Project>{2E5E913A-CE85-4147-A436-24B437BD2B8B}</Project>

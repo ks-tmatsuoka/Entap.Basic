@@ -91,6 +91,9 @@
     <PackageReference Include="Plugin.FirebaseAuth">
       <Version>4.1.0</Version>
     </PackageReference>
+    <PackageReference Include="Entap.Basic.Firebase.Auth">
+      <Version>0.0.3</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -198,10 +201,6 @@
     <ProjectReference Include="..\..\Source\Entap.Basic.Forms\Entap.Basic.Forms.Android\Entap.Basic.Forms.Android.csproj">
       <Project>{6E00B08A-0837-4785-BC64-B391197B02D9}</Project>
       <Name>Entap.Basic.Forms.Android</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.csproj">
-      <Project>{85670688-FB1F-4692-956D-1FDAAF85C72F}</Project>
-      <Name>Entap.Basic.Firebase.Auth</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.Android\Entap.Basic.Firebase.Auth.Android.csproj">
       <Project>{3B0EA754-ED6D-42EC-8586-CBC1EE5180BC}</Project>
