@@ -185,10 +185,6 @@
       <Project>{9917E7A8-1BB8-4BE9-9376-9CB844E17E6F}</Project>
       <Name>Entap.Basic.iOS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.iOS\Entap.Basic.Firebase.Auth.iOS.csproj">
-      <Project>{2E5E913A-CE85-4147-A436-24B437BD2B8B}</Project>
-      <Name>Entap.Basic.Firebase.Auth.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook\Entap.Basic.Firebase.Auth.Facebook.csproj">
       <Project>{3C8D6648-9F6D-4E97-AEE3-ED2199914D03}</Project>
       <Name>Entap.Basic.Firebase.Auth.Facebook</Name>

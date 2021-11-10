@@ -202,10 +202,6 @@
       <Project>{6E00B08A-0837-4785-BC64-B391197B02D9}</Project>
       <Name>Entap.Basic.Forms.Android</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Source\Entap.Basic.Firebase.Auth\Entap.Basic.Firebase.Auth.Android\Entap.Basic.Firebase.Auth.Android.csproj">
-      <Project>{3B0EA754-ED6D-42EC-8586-CBC1EE5180BC}</Project>
-      <Name>Entap.Basic.Firebase.Auth.Android</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Source\Entap.Basic.Core\Entap.Basic.Core.Android\Entap.Basic.Core.Android.csproj">
       <Project>{A4E743B3-F22D-415D-9D98-2F3562B32208}</Project>
       <Name>Entap.Basic.Core.Android</Name>
