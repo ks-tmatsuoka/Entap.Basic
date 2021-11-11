@@ -1,12 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="MSBuild.Sdk.Extras/3.0.22">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
     <PackageVersion>0.0.1.3</PackageVersion>
     <Authors>Entap</Authors>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Google/Entap.Basic.Firebase.Auth.Google</PackageProjectUrl>
     <Description>Entap.Basic.Firebase.Authを使用し、Googleサインインを行うライブラリ</Description>
     <PackageId>Entap.Basic.Firebase.Auth.Google</PackageId>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -15,14 +16,27 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.csproj" />
-    <ProjectReference Include="..\..\Entap.Basic.Auth.Google\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj" />
-  </ItemGroup>
-  <ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
     <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
     <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.3" />
+    <PackageReference Include="Entap.Basic.Auth.Google" Version="0.0.2" />
+    <Compile Include="**\*.netstandard.cs" />
+    <Compile Include="**\*.netstandard.*.cs" />
   </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.3" />
+    <PackageReference Include="Entap.Basic.Auth.Google.Android" Version="0.0.2" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.3" />
+    <PackageReference Include="Entap.Basic.Auth.Google.iOS" Version="0.0.2" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Remove="Entap.Basic.Firebase.Auth" />
   </ItemGroup>
