@@ -31,6 +31,9 @@
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup>
+    <XFDisableFrameworkVersionValidation>True</XFDisableFrameworkVersionValidation>
+  </PropertyGroup>
   <ItemGroup>
     <None Include="readme.md">
       <IncludeInPackage>true</IncludeInPackage>
