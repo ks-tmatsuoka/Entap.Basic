@@ -7,7 +7,7 @@ namespace Entap.Basic.Firebase.Auth
 {
     public class TwitterAuthService : SnsAuthService, ISnsAuthService
     {
-        const string ProviderId = "twitter.com";
+        static readonly string ProviderId = CrossFirebaseAuth.Current.TwitterAuthProvider.ProviderId;
         readonly IAuthErrorCallback _errorCallback;
         public TwitterAuthService(IAuthErrorCallback errorCallback = null)
         {
