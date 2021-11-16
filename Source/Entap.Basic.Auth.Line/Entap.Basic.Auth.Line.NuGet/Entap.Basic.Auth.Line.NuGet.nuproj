@@ -17,7 +17,7 @@
     <AssemblyName>Entap.Basic.Auth.Line.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PackageReleaseNotes>[update]LineAuthService : 初期化処理追加（LineAuthParameterの設定方法変更）
-[update]Entap.Basic.Authのアップデート(Ver1.0.2)</PackageReleaseNotes>
+[update]Entap.Basic.Authのアップデート(Ver1.0.3)</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Line/Entap.Basic.Auth.Line.NuGet</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
