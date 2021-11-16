@@ -16,14 +16,21 @@ namespace Entap.Basic.Auth.Line
         readonly string AuthBaseUri = "https://access.line.me/oauth2/v2.1/authorize";
         readonly string TokenBaseUri = "https://api.line.me/oauth2/v2.1/token";
 
-        readonly LineAuthParameter _authParameter;
-        public LineAuthService(LineAuthParameter lineAuthParameter)
+        static LineAuthParameter _authParameter;
+        public LineAuthService()
+        {
+        }
+
+        public static void Init(LineAuthParameter lineAuthParameter)
         {
             _authParameter = lineAuthParameter;
         }
 
         public async Task<LineAccessTokenResponse> LoginAsync()
         {
+            if (_authParameter is null)
+                throw new InvalidOperationException($"Please call {nameof(LineAuthService.Init)} method.");
+
             var authRequest = _authParameter.CreateAuthRequest();
             var authorized = await AuthorizeAsync(authRequest);
             if (authorized?.State != authRequest.State)
