@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace Entap.Basic.Auth
 {
-    public interface ISnsAuthService
+    public interface IGoogleAuthService : ISnsAuthService
     {
-        Task SignInAsync();
+        Task SignOutAsync();
     }
 }

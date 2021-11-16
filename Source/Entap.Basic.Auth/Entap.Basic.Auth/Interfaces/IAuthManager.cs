@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Entap.Basic.Auth.Abstractions;
 
 namespace Entap.Basic.Auth.Abstractions
 {
@@ -10,19 +9,19 @@ namespace Entap.Basic.Auth.Abstractions
         IPasswordAuthService PasswordAuthService { get; }
 
         bool IsTwitterAuthSupported { get; }
-        ISnsAuthService TwitterAuthService { get; }
+        ITwitterAuthService TwitterAuthService { get; }
 
         bool IsFacebookAuthSupported { get; }
-        ISnsAuthService FacebookAuthService { get; }
+        IFacebookAuthService FacebookAuthService { get; }
 
         bool IsLineAuthSupported { get; }
-        ISnsAuthService LineAuthService { get; }
+        ILineAuthService LineAuthService { get; }
 
         bool IsGoogleAuthSupported { get; }
-        ISnsAuthService GoogleAuthService { get; }
+        IGoogleAuthService GoogleAuthService { get; }
 
         bool IsAppleAuthSupported { get; }
-        ISnsAuthService AppleAuthService { get; }
+        IAppleAuthService AppleAuthService { get; }
 
         Task SignOutAsync();
     }
