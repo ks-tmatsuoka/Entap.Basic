@@ -21,7 +21,7 @@
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
     <PackageReference Include="System.Text.Json" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.3" />
     <PackageReference Include="Entap.Basic.Api" Version="0.0.1" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
