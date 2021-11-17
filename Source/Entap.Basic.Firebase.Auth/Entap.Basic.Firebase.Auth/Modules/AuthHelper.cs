@@ -1,11 +1,13 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Entap.Basic.Api;
 using Plugin.FirebaseAuth;
 
 namespace Entap.Basic.Firebase.Auth
 {
-    internal static class AuthHelper
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public static class AuthHelper
     {
         public static bool IsSignedIn => CurrentUser is not null;
         public static IUser CurrentUser => CrossFirebaseAuth.Current?.Instance?.CurrentUser;
