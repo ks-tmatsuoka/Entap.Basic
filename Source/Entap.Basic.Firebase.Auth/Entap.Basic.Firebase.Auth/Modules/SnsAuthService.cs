@@ -4,10 +4,12 @@ using Plugin.FirebaseAuth;
 
 namespace Entap.Basic.Firebase.Auth
 {
-    public class SnsAuthService
+    public class SnsAuthService : AuthService
     {
-        public SnsAuthService()
+        readonly IAuthErrorCallback _errorCallback;
+        public SnsAuthService(IAuthErrorCallback errorCallback) : base(errorCallback)
         {
+            _errorCallback = errorCallback;
         }
 
         protected Task<IAuthResult> SignInWithProviderAsync(IFederatedAuthProvider provider)

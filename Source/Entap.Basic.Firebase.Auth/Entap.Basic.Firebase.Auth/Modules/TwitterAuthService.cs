@@ -9,7 +9,7 @@ namespace Entap.Basic.Firebase.Auth
     {
         static readonly string ProviderId = CrossFirebaseAuth.Current.TwitterAuthProvider.ProviderId;
         readonly IAuthErrorCallback _errorCallback;
-        public TwitterAuthService(IAuthErrorCallback errorCallback = null)
+        public TwitterAuthService(IAuthErrorCallback errorCallback = null) : base (errorCallback)
         {
             _errorCallback = errorCallback;
         }
@@ -20,6 +20,7 @@ namespace Entap.Basic.Firebase.Auth
             {
                 var provider = new OAuthProvider(ProviderId);
                 await SignInWithProviderAsync(provider);
+                await StoreServerAccessTokenAsync();
             }
             catch(Exception ex)
             {

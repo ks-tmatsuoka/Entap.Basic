@@ -106,5 +106,34 @@ namespace Entap.Basic.Firebase.Auth
             _serviceCollection.AddSingleton<IPasswordAuthErrorCallback, TImplementation>();
         }
         #endregion
+
+        #region IAccessTokenPreferencesService
+        /// <summary>
+        /// AuthApiの登録
+        /// </summary>
+        /// <typeparam name="TImplementation">AuthApiの実装タイプ</typeparam>
+        public static void ConfigureAccessTokenPreferencesService<TImplementation>()
+            where TImplementation : class, IAccessTokenPreferencesService
+        {
+            _serviceCollection.AddSingleton<IAccessTokenPreferencesService, TImplementation>();
+        }
+        #endregion
+
+        #region UserDataRepository
+        /// <summary>
+        /// UserDataRepositoryの登録
+        /// </summary>
+        /// <typeparam name="TImplementation">AuthApiの実装タイプ</typeparam>
+        public static void ConfigureUserDataRepository<TImplementation>()
+            where TImplementation : class, IUserDataRepository
+        {
+            _serviceCollection.AddSingleton<IUserDataRepository, TImplementation>();
+        }
+
+        /// <summary>
+        /// UserDataRepository
+        /// </summary>
+        public static IUserDataRepository UserDataRepository => ServiceProvider.GetService<IUserDataRepository>();
+        #endregion
     }
 }
