@@ -5,7 +5,7 @@ using Plugin.FirebaseAuth;
 
 namespace Entap.Basic.Firebase.Auth
 {
-    public class TwitterAuthService : SnsAuthService, ISnsAuthService
+    public class TwitterAuthService : SnsAuthService, ITwitterAuthService
     {
         static readonly string ProviderId = CrossFirebaseAuth.Current.TwitterAuthProvider.ProviderId;
         readonly IAuthErrorCallback _errorCallback;
@@ -26,11 +26,6 @@ namespace Entap.Basic.Firebase.Auth
                 await _errorCallback?.HandleSignInErrorAsync(ex);
                 throw ex;
             }
-        }
-
-        public Task SignOutAsync()
-        {
-            return Task.CompletedTask;
         }
     }
 }
