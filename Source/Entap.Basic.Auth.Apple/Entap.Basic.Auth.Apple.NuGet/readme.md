@@ -13,8 +13,17 @@ Apple提供のボタンを使用する場合は、別途[Entap.Basic.Auth.Apple.
 共通プロジェクトに「Entap.Basic.Auth.Apple」をインストールしてください。  
 
 ## 使用方法
+### 初期化処理
+* 初期化処理を実行してください、引数には必要に応じてスコープを指定してください。
+```csharp
+if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+    Entap.Basic.Auth.Apple.Forms.iOS.Platform.Init(
+        Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.Email,
+        Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.FullNam
+    );
+```
+
 ### 認証処理
-* AppleSignInServiceの引数には、必要なスコープを指定してください。
 * SignInAsyncのレスポンス([AppleIdCredential](../Entap.Basic.Auth.Apple.Abstract.AppleIdCredential))について  
 必要に応じてKeyChain等に保存するようにしてください。
   * 同一アカウントでの2回目の認証以降、Appleの使用上FullNameが取得できません。  
@@ -24,9 +33,8 @@ Apple提供のボタンを使用する場合は、別途[Entap.Basic.Auth.Apple.
 try
 {
     // ToDo : 必要なスコープを指定してください
-    var service = new Entap.Basic.Auth.Apple.AppleSignInService(
-        Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.Email,
-        Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.FullName);
+    var service = new Entap.Basic.Auth.Apple.AppleSignInService();
+);
     var result = await service.SignInAsync();
 }
 catch (OperationCanceledException)
