@@ -20,7 +20,7 @@ https://github.com/f-miyu/Plugin.FirebaseAuth</Description>
     <PackageReleaseNotes>[update]
 ・Entap.Basic.Authのアップデート（Ver1.0.3）
 ・サーバのアクセストークン制御機能実装
-・Firebase認証制御処理追加</PackageReleaseNotes>
+・Firebase認証制御処理（FirebaseAuthManager）追加</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth/Entap.Basic.Firebase.Auth.NuGet</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
