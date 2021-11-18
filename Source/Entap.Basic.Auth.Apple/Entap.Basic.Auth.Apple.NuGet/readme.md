@@ -17,7 +17,7 @@ Apple提供のボタンを使用する場合は、別途[Entap.Basic.Auth.Apple.
 * 初期化処理を実行してください、引数には必要に応じてスコープを指定してください。
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
-    Entap.Basic.Auth.Apple.Forms.iOS.Platform.Init(
+    Entap.Basic.Auth.Apple.AppleSignInService.Init(
         Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.Email,
         Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.FullNam
     );
