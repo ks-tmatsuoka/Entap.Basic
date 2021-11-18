@@ -7,7 +7,7 @@ using Plugin.FirebaseAuth;
 
 namespace Entap.Basic.Firebase.Auth.Facebook
 {
-    public class FacebookAuthService : SnsAuthService, ISnsAuthService
+    public class FacebookAuthService : SnsAuthService, IFacebookAuthService
     {
         readonly IAuthErrorCallback _errorCallback;
         public FacebookAuthService(IAuthErrorCallback errorCallback = null)
@@ -26,10 +26,12 @@ namespace Entap.Basic.Firebase.Auth.Facebook
                 var accessToken = CrossFacebookClient.Current.ActiveToken;
 
                 var credential = CrossFirebaseAuth.Current.FacebookAuthProvider.GetCredential(accessToken);
-                await CrossFirebaseAuth.Current.Instance.SignInWithCredentialAsync(credential);
+                await SignInWithCredentialAsync(credential);
+                await AuthHelper.StoreServerAccessTokenAsync();
             }
             catch (Exception ex)
             {
+                AuthHelper.TrySignOut();
                 await _errorCallback.HandleSignInErrorAsync(ex);
                 throw ex;
             }
