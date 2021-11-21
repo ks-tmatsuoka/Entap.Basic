@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>0.0.3</PackageVersion>
+    <PackageVersion>0.0.2</PackageVersion>
     <Authors>Entap</Authors>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Google/Entap.Basic.Firebase.Auth.Google</PackageProjectUrl>
     <Description>Entap.Basic.Firebase.Authを使用し、Googleサインインを行うライブラリ</Description>
