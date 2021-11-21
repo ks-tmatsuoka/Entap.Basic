@@ -12,6 +12,8 @@ LINEログインには[Entap.Basic.Auth.Line](https://github.com/entap/Entap.Bas
 
 ## 使用方法
 ```csharp
+Entap.Basic.Auth.Line.LineAuthService.Init(new LineAuthParameter([clientId], [clientSecret], [scope], [redirectUri]);
+
 var parameter = new LineAuthParameter([clientId], [clientSecret], [scope], [redirectUri]);
 var authService = new LineAuthService(parameter);
 await authService.SignInAsync();
