@@ -37,7 +37,10 @@ namespace SHIRO.CO.iOS
                 Xamarin.Essentials.Platform.GetCurrentUIViewController);
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+                Entap.Basic.Auth.Apple.AppleSignInService.Init();
                 Entap.Basic.Auth.Apple.Forms.iOS.Platform.Init();
+            }
 
             LoadApplication(new App());
             AppleSignInService.RegisterCredentialRevokedActionAsync(null, async () =>
