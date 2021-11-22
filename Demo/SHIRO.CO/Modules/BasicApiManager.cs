@@ -40,7 +40,7 @@ namespace SHIRO.CO
 
         public void SetAuthorization(string accessToken)
         {
-            base.SetAuthorization(Api, TokenType, accessToken);
+            base.SetAuthorization(TokenType, accessToken);
         }
 
         /// <summary>
