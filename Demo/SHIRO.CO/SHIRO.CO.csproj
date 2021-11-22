@@ -25,7 +25,7 @@
     <PackageReference Include="Entap.Basic.Firebase.Auth.Apple" Version="0.0.3" />
     <PackageReference Include="Entap.Basic.Auth.Google" Version="0.0.2" />
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
-    <PackageReference Include="Entap.Basic.Refit" Version="0.0.9" />
+    <PackageReference Include="Entap.Basic.Refit" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
