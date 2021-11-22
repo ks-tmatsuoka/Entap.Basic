@@ -1,6 +1,5 @@
 ﻿using System;
 using Entap.Basic;
-using Entap.Basic.Firebase.Auth;
 using Entap.Basic.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -34,20 +33,15 @@ namespace SHIRO.CO
 
         void ConfigureServices()
         {
+            AuthManager.ConfigureServices();
             ConfigureEntapBasicServices();
-            ConfigureEntapBasicFirebaseAuthServices();
-
+            
         }
 
         void ConfigureEntapBasicServices()
         {
             BasicStartup.ConfigurePageNavigator<PageNavigator>();
             BasicStartup.ConfigureAuthManagr<AuthManager>();
-        }
-
-        void ConfigureEntapBasicFirebaseAuthServices()
-        {
-            BasicAuthStartUp.ConfigureAuthApi<BasicAuthApiService>();
         }
     }
 }

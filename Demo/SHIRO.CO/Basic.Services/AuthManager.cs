@@ -12,47 +12,36 @@ using Entap.Basic.Firebase.Auth.Apple;
 
 namespace SHIRO.CO
 {
-    public class AuthManager : IAuthManager, IAuthErrorCallback, IPasswordAuthErrorCallback
+    public class AuthManager : FirebaseAuthManager, IAuthErrorCallback, IPasswordAuthErrorCallback
     {
         public AuthManager()
         {
+            //ConfigureServices();
+            InitAuthServices();
         }
 
-        #region Password Auth
-        public bool IsPasswordAuthSupported => PasswordAuthService is not null;
-        public IPasswordAuthService PasswordAuthService => _passwordAuthService ??= new PasswordAuthService(this);
-        IPasswordAuthService _passwordAuthService;
-        #endregion
+        public static void ConfigureServices()
+        {
+            BasicFirebaseAuthStartUp.ConfigureAuthApi<BasicAuthApiService>();
+            BasicFirebaseAuthStartUp.ConfigureAccessTokenPreferencesService<SecureStorageManager>();
+            BasicFirebaseAuthStartUp.ConfigureUserDataRepository<UserDataRepository>();
 
-        #region Twitter Auth
-        public bool IsTwitterAuthSupported => TwitterAuthService is not null;
-        public ISnsAuthService TwitterAuthService => _twitterAuthService ??= new TwitterAuthService(this);
-        ISnsAuthService _twitterAuthService;
-        #endregion
+            BasicFirebaseAuthStartUp.ConfigurePasswordAuthService<PasswordAuthService>();
+            BasicFirebaseAuthStartUp.ConfigureTwitterAuthService<TwitterAuthService>();
+            BasicFirebaseAuthStartUp.ConfigureFacebookAuthService<FacebookAuthService>();
+            BasicFirebaseAuthStartUp.ConfigureLineAuthService<LineAuthService>();
+            BasicFirebaseAuthStartUp.ConfigureGoogleAuthService<GoogleAuthService>();
+            BasicFirebaseAuthStartUp.ConfigureAppleAuthService<AppleAuthService>();
 
-        #region Facebook Auth
-        public bool IsFacebookAuthSupported => FacebookAuthService is not null;
-        public ISnsAuthService FacebookAuthService => _facebookAuthService ??= new FacebookAuthService(this);
-        ISnsAuthService _facebookAuthService;
-        #endregion
+            BasicFirebaseAuthStartUp.ConfigureAuthErrorCallback<AuthManager>();
+            BasicFirebaseAuthStartUp.ConfigurePasswordAuthErrorCallback<AuthManager>();
+        }
 
-        #region LINE Auth
-        public bool IsLineAuthSupported => LineAuthService is not null;
-        public ISnsAuthService LineAuthService => _lineAuthService ??= new LineAuthService(new Entap.Basic.Auth.Line.LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://entapshiro.page.link/auth_callback"), this);
-        ISnsAuthService _lineAuthService;
-        #endregion
-
-        #region Google Auth
-        public bool IsGoogleAuthSupported => GoogleAuthService is not null;
-        public ISnsAuthService GoogleAuthService => _googleAuthService ??= new GoogleAuthService(this);
-        ISnsAuthService _googleAuthService;
-        #endregion
-
-        #region Apple Auth
-        public bool IsAppleAuthSupported => AppleAuthService is not null;
-        public ISnsAuthService AppleAuthService => _appleAuthService ??= new AppleAuthService(this, null);
-        ISnsAuthService _appleAuthService;
-        #endregion
+        void InitAuthServices()
+        {
+            Entap.Basic.Auth.Line.LineAuthService.Init(new Entap.Basic.Auth.Line.LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://entapshiro.page.link/auth_callback"));
+            
+        }
 
         public virtual async Task HandleSignInErrorAsync(Exception exception)
         {
@@ -262,33 +251,6 @@ namespace SHIRO.CO
             {
                 await OnError("パスワード変更エラー", errorMessage);
             }
-        }
-
-
-        public async Task SignOutAsync()
-        {
-            var user = CrossFirebaseAuth.Current.Instance.CurrentUser;
-            if (user is null)
-                throw new InvalidOperationException();
-
-            foreach (var provider in user.ProviderData)
-            {
-                if (provider.ProviderId == CrossFirebaseAuth.Current.FacebookAuthProvider.ProviderId)
-                {
-                    CrossFirebaseAuth.Current.Instance.SignOut();
-                    await FacebookAuthService.SignOutAsync();
-                    continue;
-                }
-
-                if (provider.ProviderId == CrossFirebaseAuth.Current.GoogleAuthProvider.ProviderId)
-                {
-                    await GoogleAuthService.SignOutAsync();
-                    continue;
-                }
-
-                // ToDo
-            }
-            CrossFirebaseAuth.Current.Instance.SignOut();
         }
 
         Task OnNetWorkError()
