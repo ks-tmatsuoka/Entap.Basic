@@ -2,12 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Entap</Authors>
     <Description>Refitのラッパーライブラリ
 https://github.com/reactiveui/refit</Description>
     <PackageId>Entap.Basic.Refit</PackageId>
-    <PackageReleaseNotes>Refit.Newtonsoft.Jsonのアップデート（6.0.94）</PackageReleaseNotes>
+    <PackageReleaseNotes>[update]
+・Entap.Basic.Core : 0.0.5
+・ApiManager : 認証情報設定時の引数削除
+・ApiManager : 認証情報の削除処理追加
+</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Refit/Entap.Basic.Refit</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -22,7 +27,7 @@ https://github.com/reactiveui/refit</Description>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.94" />
-    <PackageReference Include="Entap.Basic.Core" Version="0.0.2" />
+    <PackageReference Include="Entap.Basic.Core" Version="0.0.5" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
