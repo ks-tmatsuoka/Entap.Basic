@@ -40,6 +40,11 @@ namespace Entap.Basic.Core
                 if (started)
                     action();
             }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[Warning]Exception occured.{Environment.NewLine}  ProcessName : {RunningProcessName}{Environment.NewLine} Exception : {ex.Message}");
+                throw ex;
+            }
             finally
             {
                 if (started)
@@ -73,10 +78,17 @@ namespace Entap.Basic.Core
             {
                 started = OnStart(processName);
                 if (started)
-                    await funcTask().ConfigureAwait(false);
+                    await funcTask()
+                        .ContinueWith((arg) =>
+                        {
+                            if (arg.IsFaulted)
+                                Debug.WriteLine($"[Warning]Exception occured.{Environment.NewLine}  ProcessName : {processName}{Environment.NewLine} Exception : {arg.Exception}");
+                        })
+                        .ConfigureAwait(false);
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"[Warning]Exception occured.{Environment.NewLine}  ProcessName : {RunningProcessName}{Environment.NewLine} Exception : {ex.Message}");
                 throw ex;
             }
             finally
