@@ -12,7 +12,7 @@ namespace Entap.Basic.Firebase.Auth
             _preferencesService = preferencesService;
         }
 
-        public virtual Task<string> GetAccessToken()
+        public virtual Task<ServerAccessToken> GetAccessToken()
             => _preferencesService.GetAccessTokenAsync();
 
         public async Task SetAccessTokenAsync(ServerAccessToken accessToken)

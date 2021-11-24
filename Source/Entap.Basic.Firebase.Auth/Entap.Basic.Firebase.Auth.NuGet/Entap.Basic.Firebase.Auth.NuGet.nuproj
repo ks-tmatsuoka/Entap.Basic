@@ -8,7 +8,7 @@
     <Description>Plugin.FirebaseAuthをラップしたライブラリ
 https://github.com/f-miyu/Plugin.FirebaseAuth</Description>
     <PackageId>Entap.Basic.Firebase.Auth</PackageId>
-    <PackageVersion>0.0.5</PackageVersion>
+    <PackageVersion>0.0.6</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -18,8 +18,7 @@ https://github.com/f-miyu/Plugin.FirebaseAuth</Description>
     <AssemblyName>Entap.Basic.Firebase.Auth.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <PackageReleaseNotes>[update]
-・Entap.Basic.Apiのアップデート（Ver0.0.2）
-・アクセストークン設定処理の引数をServerAccessTokenに変更（TokenTypeを設定可能にする）</PackageReleaseNotes>
+・アクセストークン取得処理の戻り値の型をServerAccessTokenに変更（TokenTypeを取得可能にする）</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth/Entap.Basic.Firebase.Auth.NuGet</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

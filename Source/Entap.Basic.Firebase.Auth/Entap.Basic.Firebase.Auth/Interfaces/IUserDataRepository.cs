@@ -5,7 +5,7 @@ namespace Entap.Basic.Firebase.Auth
 {
     public interface IUserDataRepository
     {
-        Task<string> GetAccessToken();
+        Task<ServerAccessToken> GetAccessToken();
         Task SetAccessTokenAsync(ServerAccessToken accessToken);
         void RemoveAccessToken();
     }

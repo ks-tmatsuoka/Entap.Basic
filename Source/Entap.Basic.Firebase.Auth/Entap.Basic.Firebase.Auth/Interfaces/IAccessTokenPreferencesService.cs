@@ -6,7 +6,7 @@ namespace Entap.Basic.Firebase.Auth
 {
     public interface IAccessTokenPreferencesService
     {
-        Task<string> GetAccessTokenAsync();
+        Task<ServerAccessToken> GetAccessTokenAsync();
         Task SetAccessTokenAsync(ServerAccessToken accessToken);
         void RemoveAccessToken();
     }
