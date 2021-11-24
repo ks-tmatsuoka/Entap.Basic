@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Entap.Basic.Api;
 using Entap.Basic.Firebase.Auth;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
@@ -19,10 +20,10 @@ namespace SHIRO.CO
             public const string AccessToken = "AccessToken";
         }
 
-        public Task<string> GetAccessTokenAsync()
-            => GetAsync<string>(Keys.AccessToken);
+        public Task<ServerAccessToken> GetAccessTokenAsync()
+            => GetAsync<ServerAccessToken>(Keys.AccessToken);
 
-        public Task SetAccessTokenAsync(string accessToken)
+        public Task SetAccessTokenAsync(ServerAccessToken accessToken)
             => SetAsync(Keys.AccessToken, accessToken);
 
         public void RemoveAccessToken()

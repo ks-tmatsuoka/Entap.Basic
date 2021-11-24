@@ -19,7 +19,6 @@ namespace SHIRO.CO
         static string HostUrl => Urls.AppApi;
 
         const string DefaultErrorMessage = "インターネットに接続されていません。通信環境をご確認ください。";
-        const string TokenType = "Bearer";
 
         private BasicApiManager() : base(HostUrl)
         {
@@ -38,9 +37,9 @@ namespace SHIRO.CO
             return restService;
         }
 
-        public void SetAuthorization(string accessToken)
+        public void SetAuthorization(ServerAccessToken accessToken)
         {
-            base.SetAuthorization(TokenType, accessToken);
+            base.SetAuthorization(accessToken.TokenType, accessToken.AccessToken);
         }
 
         /// <summary>

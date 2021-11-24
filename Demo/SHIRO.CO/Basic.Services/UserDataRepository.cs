@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Entap.Basic.Api;
 
 namespace SHIRO.CO
 {
@@ -10,7 +11,7 @@ namespace SHIRO.CO
 
         }
 
-        public override Task SetAccessTokenAsync(string accessToken)
+        public override Task SetAccessTokenAsync(ServerAccessToken accessToken)
         {
             BasicApiManager.Current.SetAuthorization(accessToken);
             return base.SetAccessTokenAsync(accessToken);
