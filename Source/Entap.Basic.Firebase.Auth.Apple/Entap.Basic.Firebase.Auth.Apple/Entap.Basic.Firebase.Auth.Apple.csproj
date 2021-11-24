@@ -2,16 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>0.0.3</PackageVersion>
+    <PackageVersion>0.0.4</PackageVersion>
     <Authors>Entap</Authors>
     <Description>Firebase Authenticationを使用し、Sign in with Appleを行うライブラリ</Description>
     <PackageId>Entap.Basic.Firebase.Auth.Apple</PackageId>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Apple/Entap.Basic.Firebase.Auth.Apple</PackageProjectUrl>
     <PackageReleaseNotes>[update]
-・Entap.Basic.Authのアップデート（Ver1.0.3）
-・Entap.Basic.Auth.Appleのアップデート（Ver1.0.2）
-・Entap.Basic.Firebase.Authのアップデート（Ver0.0.4）
-・サインイン時のサーバのアクセストークン取得処理追加</PackageReleaseNotes>
+・Entap.Basic.Firebase.Authのアップデート（Ver0.0.5）</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,7 +26,7 @@
   <ItemGroup>
     <PackageReference Include="Entap.Basic.Auth" Version="1.0.3" />
     <PackageReference Include="Entap.Basic.Auth.Apple" Version="1.0.2" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.4" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.5" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
