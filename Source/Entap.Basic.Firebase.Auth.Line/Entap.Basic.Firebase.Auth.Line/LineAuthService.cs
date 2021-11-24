@@ -23,6 +23,7 @@ namespace Entap.Basic.Firebase.Auth.Line
                 var token = await authService.LoginAsync();
                 var customToken = new Api.CustomAuthToken(token.AccessToken, token.IdToken);
                 var serverToken = await BasicFirebaseAuthStartUp.AuthApi.PostAuthLineToken(customToken);
+                await BasicFirebaseAuthStartUp.UserDataRepository.SetAccessTokenAsync(serverToken);
                 var firebaseCustomToken = await BasicFirebaseAuthStartUp.AuthApi.PostAuthFirebaseCustomToken();
                 await BasicFirebaseAuthStartUp.AuthApi.PostAuthLineUser(customToken);
                 await SignInWithCustomTokenAsync(firebaseCustomToken.CustomToken);
@@ -31,6 +32,7 @@ namespace Entap.Basic.Firebase.Auth.Line
             catch (Exception ex)
             {
                 AuthHelper.TrySignOut();
+                BasicFirebaseAuthStartUp.UserDataRepository.RemoveAccessToken();
                 await _callback.HandleSignInErrorAsync(ex);
                 throw ex;
             }
