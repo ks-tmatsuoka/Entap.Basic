@@ -20,7 +20,7 @@ namespace Entap.Basic.Firebase.Auth
 
             var idToken = await CurrentUser.GetIdTokenAsync(true);
             var serverToken = await BasicFirebaseAuthStartUp.AuthApi.PostAuthFirebaseToken(new FirebaseIdToken(idToken));
-            await _userDataRepository.SetAccessTokenAsync(serverToken.AccessToken);
+            await _userDataRepository.SetAccessTokenAsync(serverToken);
         }
 
         public static void TrySignOut()

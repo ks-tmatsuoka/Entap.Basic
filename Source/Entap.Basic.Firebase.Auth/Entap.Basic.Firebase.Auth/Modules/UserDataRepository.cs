@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Entap.Basic.Api;
 
 namespace Entap.Basic.Firebase.Auth
 {
@@ -14,10 +15,12 @@ namespace Entap.Basic.Firebase.Auth
         public virtual Task<string> GetAccessToken()
             => _preferencesService.GetAccessTokenAsync();
 
-        public virtual async Task SetAccessTokenAsync(string accessToken)
+        public async Task SetAccessTokenAsync(ServerAccessToken accessToken)
             => await _preferencesService.SetAccessTokenAsync(accessToken);
 
         public virtual void RemoveAccessToken()
             => _preferencesService.RemoveAccessToken();
+
+
     }
 }
