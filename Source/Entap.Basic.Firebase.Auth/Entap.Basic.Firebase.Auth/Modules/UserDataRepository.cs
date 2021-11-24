@@ -15,8 +15,8 @@ namespace Entap.Basic.Firebase.Auth
         public virtual Task<ServerAccessToken> GetAccessToken()
             => _preferencesService.GetAccessTokenAsync();
 
-        public async Task SetAccessTokenAsync(ServerAccessToken accessToken)
-            => await _preferencesService.SetAccessTokenAsync(accessToken);
+        public virtual Task SetAccessTokenAsync(ServerAccessToken accessToken)
+            => _preferencesService.SetAccessTokenAsync(accessToken);
 
         public virtual void RemoveAccessToken()
             => _preferencesService.RemoveAccessToken();
