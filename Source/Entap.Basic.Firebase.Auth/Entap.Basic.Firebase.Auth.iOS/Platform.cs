@@ -8,7 +8,8 @@ namespace Entap.Basic.Firebase.Auth.iOS
     {
         public static void Init()
         {
-            global::Firebase.Core.App.Configure();
+            if (global::Firebase.Core.App.DefaultInstance is null)
+                global::Firebase.Core.App.Configure();
         }
     }
 }
