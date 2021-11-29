@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>0.0.2</PackageVersion>
+    <PackageVersion>0.0.3</PackageVersion>
     <Authors>Entap</Authors>
     <Description>Entap.Basicの標準APIを定義したライブラリ</Description>
     <PackageId>Entap.Basic.Api</PackageId>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic/Entap.Basic.Api</PackageProjectUrl>
-    <PackageReleaseNotes>[update]ServerAccessTokenにTokenTypeプロパティ（未指定時は"Bearer"）を追加</PackageReleaseNotes>
+    <PackageReleaseNotes>[update]App Store Reviewガイドラインの改訂に伴い、ユーザ削除API定義
+https://developer.apple.com/jp/news/?id=mdkbobfo</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
