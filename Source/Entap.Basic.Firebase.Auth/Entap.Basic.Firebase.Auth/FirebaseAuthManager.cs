@@ -55,5 +55,19 @@ namespace Entap.Basic.Firebase.Auth
 
         public virtual async Task RefreshServerTokenAsync()
             => await AuthHelper.StoreServerAccessTokenAsync();
+
+        public virtual async Task DeleteUserAsync()
+        {
+            try
+            {
+                await BasicFirebaseAuthStartUp.AuthApi.DelerteUser();
+                BasicFirebaseAuthStartUp.UserDataRepository.RemoveAccessToken();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+                throw;
+            }
+        }
     }
 }
