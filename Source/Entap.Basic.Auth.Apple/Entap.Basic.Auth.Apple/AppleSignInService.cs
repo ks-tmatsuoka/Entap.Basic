@@ -6,9 +6,15 @@ namespace Entap.Basic.Auth.Apple
 {
     public class AppleSignInService : IAppleSignInService
     {
-        public AppleSignInService(params AuthorizationScope[] scopes)
+        public AppleSignInService()
         {
-            var _ = scopes;
+        }
+
+#nullable enable
+        public static void Init(params AuthorizationScope[]? scopes)
+#nullable disable
+        {
+            throw new NotImplementedException();
         }
 
         public Task<AppleIdCredential> SignInAsync()

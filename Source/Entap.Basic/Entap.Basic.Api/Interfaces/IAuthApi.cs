@@ -78,5 +78,12 @@ namespace Entap.Basic.Api
         /// <returns>User</returns>
         /// [Get("/user")]
         Task<User> GetUser(CancellationToken token = default);
+
+        /// <summary>
+        /// ユーザー情報を削除する
+        /// ログインしているユーザーの情報を削除します。
+        /// </summary>
+        /// [Delete("/user")]
+        Task DelerteUser(CancellationToken token = default);
     }
 }

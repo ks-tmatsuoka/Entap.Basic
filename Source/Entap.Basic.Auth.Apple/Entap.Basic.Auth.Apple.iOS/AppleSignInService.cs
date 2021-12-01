@@ -12,19 +12,26 @@ namespace Entap.Basic.Auth.Apple
 {
     public class AppleSignInService : NSObject, IAppleSignInService, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding
     {
-        readonly ASAuthorizationScope[] _scopes;
+        static ASAuthorizationScope[] _scopes;
+        static bool _isInitialized;
+
 #nullable enable
-        public AppleSignInService(params ASAuthorizationScope[]? scopes)
+        public static void Init(params AuthorizationScope[]? scopes)
 #nullable disable
         {
-            _scopes = scopes;
+            PlatformInit(scopes?.ToASAuthorizationScopes());
         }
 
 #nullable enable
-        public AppleSignInService(params AuthorizationScope[]? scopes)
+        public static void PlatformInit(params ASAuthorizationScope[]? scopes)
 #nullable disable
         {
-            _scopes = scopes?.ToASAuthorizationScopes();
+            _scopes = scopes;
+            _isInitialized = true;
+        }
+
+        public AppleSignInService()
+        {
         }
 
         TaskCompletionSource<ASAuthorizationAppleIdCredential> tcsCredential;
@@ -41,6 +48,9 @@ namespace Entap.Basic.Auth.Apple
         {
             if (!UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
                 throw new NotSupportedException();
+
+            if (!_isInitialized)
+                throw new InvalidOperationException($"Please call {nameof(AppleSignInService.Init)} method.");
 
             var appleIdProvider = new ASAuthorizationAppleIdProvider();
             var request = appleIdProvider.CreateRequest();

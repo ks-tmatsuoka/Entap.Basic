@@ -42,9 +42,18 @@ namespace Entap.Basic.Refit
         /// <param name="httpClient">RestService</param>
         /// <param name="type">認証方法</param>
         /// <param name="token">トークン</param>
-        public virtual void SetAuthorization(IHttpClient restService, string type, string token)
+        public virtual void SetAuthorization(string type, string token)
         {
-            restService.Client.SetAuthorization(type, token);
+            Api.Client.SetAuthorization(type, token);
+        }
+
+        /// <summary>
+        /// 認証情報を削除する
+        /// </summary>
+        /// <param name="httpClient">RestService</param>
+        public virtual void ClearAuthorization()
+        {
+            Api.Client.ClearAuthorization();
         }
     }
 }

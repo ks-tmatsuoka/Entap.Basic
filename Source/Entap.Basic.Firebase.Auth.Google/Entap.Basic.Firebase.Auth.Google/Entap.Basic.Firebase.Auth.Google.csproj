@@ -8,6 +8,10 @@
     <Description>Entap.Basic.Firebase.Authを使用し、Googleサインインを行うライブラリ</Description>
     <PackageId>Entap.Basic.Firebase.Auth.Google</PackageId>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <PackageReleaseNotes>[update]
+・Entap.Basic.Authのアップデート（Ver1.0.3）
+・Entap.Basic.Firebase.Authのアップデート（Ver0.0.4）
+・サインイン時のサーバのアクセストークン取得処理追加</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

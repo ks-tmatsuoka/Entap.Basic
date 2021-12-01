@@ -5,9 +5,9 @@ using Plugin.FirebaseAuth;
 
 namespace Entap.Basic.Firebase.Auth
 {
-    public class TwitterAuthService : SnsAuthService, ISnsAuthService
+    public class TwitterAuthService : SnsAuthService, ITwitterAuthService
     {
-        const string ProviderId = "twitter.com";
+        static readonly string ProviderId = CrossFirebaseAuth.Current.TwitterAuthProvider.ProviderId;
         readonly IAuthErrorCallback _errorCallback;
         public TwitterAuthService(IAuthErrorCallback errorCallback = null)
         {
@@ -20,17 +20,14 @@ namespace Entap.Basic.Firebase.Auth
             {
                 var provider = new OAuthProvider(ProviderId);
                 await SignInWithProviderAsync(provider);
+                await AuthHelper.StoreServerAccessTokenAsync();
             }
             catch(Exception ex)
             {
+                AuthHelper.TrySignOut();
                 await _errorCallback?.HandleSignInErrorAsync(ex);
                 throw ex;
             }
-        }
-
-        public Task SignOutAsync()
-        {
-            return Task.CompletedTask;
         }
     }
 }

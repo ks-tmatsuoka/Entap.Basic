@@ -7,7 +7,7 @@
     <ProjectGuid>{97F0EBF4-69DF-4766-83A4-046160129880}</ProjectGuid>
     <Description>Entap.Basic.Forms</Description>
     <PackageId>Entap.Basic.Forms</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -16,8 +16,8 @@
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Entap.Basic.Forms.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <PackageReleaseNotes>・PopToRootAsync時にRootPageのOnEntryを実行
-・ InsertPageBeforeで、before（既存のページ。その前に page が挿入）を指定できるよう変更</PackageReleaseNotes>
+    <PackageReleaseNotes>[update]Entap.Basic.Coreのアップデート(Ver0.0.5)</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Forms</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

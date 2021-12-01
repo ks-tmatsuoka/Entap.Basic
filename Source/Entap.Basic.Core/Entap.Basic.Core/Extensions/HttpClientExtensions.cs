@@ -39,5 +39,14 @@ namespace Entap.Basic.Core
         {
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(type, token);
         }
+
+        /// <summary>
+        /// 認証情報を削除する
+        /// </summary>
+        /// <param name="httpClient">HttpClient</param>
+        public static void ClearAuthorization(this HttpClient httpClient)
+        {
+            httpClient.DefaultRequestHeaders.Authorization = null;
+        }
     }
 }

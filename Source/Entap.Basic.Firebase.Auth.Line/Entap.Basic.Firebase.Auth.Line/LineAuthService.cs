@@ -6,13 +6,12 @@ using Entap.Basic.Auth.Line;
 
 namespace Entap.Basic.Firebase.Auth.Line
 {
-    public class LineAuthService : SnsAuthService, ISnsAuthService
+    public class LineAuthService : SnsAuthService, ILineAuthService
     {
-        readonly LineAuthParameter _authParameter;
         IAuthErrorCallback _callback;
-        public LineAuthService(LineAuthParameter authParameter, IAuthErrorCallback callback = null)
+
+        public LineAuthService(IAuthErrorCallback callback = null)
         {
-            _authParameter = authParameter;
             _callback = callback;
         }
 
@@ -20,26 +19,23 @@ namespace Entap.Basic.Firebase.Auth.Line
         {
             try
             {
-                var parameter = new Entap.Basic.Auth.Line.LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://entapshiro.page.link/auth_callback");
-                var authService = new Entap.Basic.Auth.Line.LineAuthService(parameter);
+                var authService = new Entap.Basic.Auth.Line.LineAuthService();
                 var token = await authService.LoginAsync();
-
                 var customToken = new Api.CustomAuthToken(token.AccessToken, token.IdToken);
-                var serverToken = await BasicAuthStartUp.AuthApi.PostAuthLineToken(customToken);
-                var firebaseCustomToken = await BasicAuthStartUp.AuthApi.PostAuthFirebaseCustomToken();
-                await BasicAuthStartUp.AuthApi.PostAuthLineUser(customToken);
+                var serverToken = await BasicFirebaseAuthStartUp.AuthApi.PostAuthLineToken(customToken);
+                await BasicFirebaseAuthStartUp.UserDataRepository.SetAccessTokenAsync(serverToken);
+                var firebaseCustomToken = await BasicFirebaseAuthStartUp.AuthApi.PostAuthFirebaseCustomToken();
+                await BasicFirebaseAuthStartUp.AuthApi.PostAuthLineUser(customToken);
                 await SignInWithCustomTokenAsync(firebaseCustomToken.CustomToken);
+                await AuthHelper.StoreServerAccessTokenAsync();
             }
             catch (Exception ex)
             {
+                AuthHelper.TrySignOut();
+                BasicFirebaseAuthStartUp.UserDataRepository.RemoveAccessToken();
                 await _callback.HandleSignInErrorAsync(ex);
                 throw ex;
             }
-        }
-
-        public Task SignOutAsync()
-        {
-            return Task.CompletedTask;
         }
     }
 }

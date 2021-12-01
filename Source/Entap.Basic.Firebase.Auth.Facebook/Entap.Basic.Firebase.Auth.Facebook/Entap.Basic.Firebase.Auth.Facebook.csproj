@@ -12,8 +12,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Plugin.FacebookClient" Version="4.0.1" />
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.3" />
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.3" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.6" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Entap.Basic.Firebase.Auth" />

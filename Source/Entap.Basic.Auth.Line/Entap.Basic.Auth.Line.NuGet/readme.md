@@ -58,7 +58,9 @@ AndoridManifestに以下の記載が必要になります。
 
 ## 使用方法
 ```csharp
-var parameter = new LineAuthParameter([clientId], [clientSecret], [scope], [redirectUri]);
-var authService = new LineAuthService(parameter);
+LineAuthService.Init(new LineAuthParameter([clientId], [clientSecret], [scope], [redirectUri]);
+...
+
+var authService = new LineAuthService();
 var token = await authService.LoginAsync();
 ```
