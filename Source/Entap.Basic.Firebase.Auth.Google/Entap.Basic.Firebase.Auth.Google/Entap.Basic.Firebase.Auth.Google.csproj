@@ -17,27 +17,26 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="**/*.shared.cs" />
+    <Compile Include="**/*.shared.*.cs" />    
+    <PackageReference Include="Entap.Basic.Auth" Version="1.0.3" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.7" />
+    <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
+  </ItemGroup>
+
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.3" />
     <PackageReference Include="Entap.Basic.Auth.Google" Version="0.0.2" />
     <Compile Include="**\*.netstandard.cs" />
     <Compile Include="**\*.netstandard.*.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.3" />
     <PackageReference Include="Entap.Basic.Auth.Google.Android" Version="0.0.2" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.1" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.3" />
     <PackageReference Include="Entap.Basic.Auth.Google.iOS" Version="0.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Entap.Basic.Firebase.Auth" />
-  </ItemGroup>
 </Project>
