@@ -10,6 +10,13 @@ namespace Sample
     {
         public MainPageViewModel()
         {
+            var nav = DisplaySizeManager.AndroidNavigationBarHeight;
+            var tiitel = DisplaySizeManager.AndroidTitleBarHeight;
+            var density = DisplaySizeManager.Density;
+            var statusbar = DisplaySizeManager.StatusBarHeight;
+            var sc = DisplaySizeManager.ScreenSize;
+            var pgsize = DisplaySizeManager.PageSize;
+            var iosnav = DisplaySizeManager.iOSNavigationBarHeight;
         }
 
         public ProcessCommand PageManagerCommand =>

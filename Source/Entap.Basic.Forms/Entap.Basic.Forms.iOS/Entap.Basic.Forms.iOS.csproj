@@ -44,11 +44,13 @@
     <Folder Include="Resources\" />
     <Folder Include="Effects\" />
     <Folder Include="Effects\PlatformSpecifics\" />
+    <Folder Include="DependencyService\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Effects\PlatformSpecifics\TextContentType\TextContentTypePlatformEffect.cs" />
     <Compile Include="Platform.cs" />
+    <Compile Include="DependencyService\GetDisplaySize_iOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
