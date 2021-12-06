@@ -18,13 +18,13 @@ namespace Entap.Basic.Forms.iOS
         {
             base.ViewWillAppear(animated);
 
-            if (NavigationController != null || NavigationController.NavigationBar != null)
+            if (NavigationController != null || NavigationController?.NavigationBar != null)
             {
                 var args = new iOSDisplaySizeRecivedEventArgs()
                 {
                     NavigationBarHeight = NavigationController.NavigationBar.Frame.Size.Height,
                     PageHeight = UIScreen.MainScreen.Bounds.Height - NavigationController.NavigationBar.Frame.Size.Height - DisplaySizeManager.StatusBarHeight
-            };
+                };
                 DisplaySizeManager.OniOSDisplaySizeReceiving(null, args);
                 NavigationControllerManager.NavigationController = NavigationController;
             }
