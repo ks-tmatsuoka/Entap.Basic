@@ -3,12 +3,6 @@ using Android.Graphics;
 using Android.Util;
 using Entap.Basic.Forms.Android;
 using Xamarin.Forms;
-using Android.App;
-using Android.Views;
-using Xamarin.Forms.Platform.Android.AppCompat;
-using System.Reflection;
-using Android.Content.Res;
-using Android.Widget;
 
 [assembly: Dependency(typeof(GetDisplaySize_Android))]
 namespace Entap.Basic.Forms.Android
@@ -17,7 +11,10 @@ namespace Entap.Basic.Forms.Android
     {
         public double GetAndroidNavigationBarHeight()
         {
-            return GetScreenHeight() - GetMetricsHeight();
+            var activity = Platform.GetActivity();
+            DisplayMetrics metrics = new DisplayMetrics();
+            activity.WindowManager.DefaultDisplay.GetRealMetrics(metrics);
+            return ((double)metrics.HeightPixels / (double)metrics.Density) - GetMetricsHeight();
         }
 
         public double GetAndroidTitleBarHeight()
@@ -25,22 +22,12 @@ namespace Entap.Basic.Forms.Android
             double defaultSize = 56;
             var activity = Platform.GetActivity();
 
-            //Xamarin.Forms.Application.Current.MainPage.
-
-            //var toolbar = activity.FindViewById(Resource.Id.action_bar);
-            //var aa = toolbar.Height;
-            //int layoutWidth = layout.getWidth();
-            //int layoutHeight = layout.getHeight();
-
-
             TypedValue tv = new TypedValue();
             if (activity.Theme.ResolveAttribute(Resource.Attribute.actionBarSize, tv, true))
             {
                 var actionBarHeight = TypedValue.ComplexToDimensionPixelSize(tv.Data, activity.ApplicationContext.Resources.DisplayMetrics);
                 return (double)actionBarHeight / GetDensity();
             }
-
-
             return defaultSize;
         }
 
@@ -67,15 +54,12 @@ namespace Entap.Basic.Forms.Android
 
         public double GetPageHeight()
         {
-            return GetMetricsHeight() - GetAndroidNavigationBarHeight() - GetAndroidTitleBarHeight();
+            return GetScreenHeight() - GetAndroidTitleBarHeight();
         }
 
         public double GetScreenHeight()
         {
-            var activity = Platform.GetActivity();
-            DisplayMetrics metrics = new DisplayMetrics();
-            activity.WindowManager.DefaultDisplay.GetRealMetrics(metrics);
-            return (double)metrics.HeightPixels / (double)metrics.Density;
+            return GetMetricsHeight() - GetStatusBarHeight();
         }
 
         public double GetStatusBarHeight()
@@ -97,9 +81,8 @@ namespace Entap.Basic.Forms.Android
                 }
                 catch(Exception e)
                 {
-
+                    System.Diagnostics.Debug.WriteLine("GetDisplaySize_Android GetStatusBarHeight: " + e);
                 }
-                
             }
             // onCreateで呼び出すとまだViewの計算が終わってないので0になってしまう
             Rect rect = new Rect();
