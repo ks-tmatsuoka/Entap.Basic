@@ -22,7 +22,7 @@ namespace Entap.Basic.Forms.iOS
                 NavigationBarHeight = DisplaySizeManager.TopNavigationHeight,
                 PageHeight = DisplaySizeManager.PageSize.Height
             };
-            DisplaySizeManager.OniOSDisplaySizeReceiving(null, args);
+            DisplaySizeManager.OniOSDisplaySizeChanging(null, args);
         }
     }
 }
