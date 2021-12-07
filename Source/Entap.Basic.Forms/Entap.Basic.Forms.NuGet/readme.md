@@ -42,15 +42,19 @@ protected override void OnCreate(Bundle savedInstanceState)
 
 ### DisplaySizeManaer  
 [ScreenSize]
+
 画面のサイズ(ナビゲーションバーやステータスバーの高さを含む)を取得できます。
 
 [PageSize]
+
 ページのサイズ(ナビゲーションバーやステータスバーの高さは含まない)を取得できます。
 
 [iOSのPageSizeおよびTopNavigationHeightについて]
+
 iOSでは各ページのコードビハインドやViewModelのコンストラクタ内で使用するとNavigationControllerが取得できないタイミングの関係で、正確な値を取得できません。その際はiOSDisplaySizeChangedを使用して値を取得してください。
 
 [ナビゲーションバーがない時のSizeの計算方法]
+
 ・iOSでナビゲーションバーない場合について
 TopNavigationHeightとPageSizeとiOSDisplaySizeRecivedのNavigationBarHeight、PageHeightは、HasNavigationBar="False"でナビゲーション使ってない場合でもナビゲーションバーがある際のサイズを返すので、ナビゲーションバーのないページでページのサイズ取得したい場合PageSizeのHeightにTopNavigationHeightを足した数値が正確なPageSizeとなります。
 MainPageにNavigationPageを使ってない場合はPageSizeのHeightにTopNavigationHeightを足す必要はないです。
