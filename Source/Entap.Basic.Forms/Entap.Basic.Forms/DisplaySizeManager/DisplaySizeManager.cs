@@ -48,15 +48,6 @@ namespace Entap.Basic.Forms
             }
         }
 
-        // 各ページのコードビハインドやViewModelのコンストラクタ内では使用せず、iOSDisplaySizeRecivedの方を使う
-        public static double iOSNavigationBarHeight
-        {
-            get
-            {
-                return getGetDisplaySizeInstanse.GetiOSNavigationBarHeight();
-            }
-        }
-
         // iOSの場合、各ページのコードビハインドやViewModelのコンストラクタ内でナビゲーションバーなどの高さが欲しければこれを使用する
         public static event EventHandler<iOSDisplaySizeRecivedEventArgs> iOSDisplaySizeRecived;
         public static void OniOSDisplaySizeReceiving(object obj, iOSDisplaySizeRecivedEventArgs args)
@@ -68,7 +59,7 @@ namespace Entap.Basic.Forms
             }
         }
 
-        public static double AndroidNavigationBarHeight
+        public static double AndroidBottomNavigationBarHeight
         {
             get
             {
@@ -76,11 +67,12 @@ namespace Entap.Basic.Forms
             }
         }
 
-        public static double AndroidTitleBarHeight
+        // iOSでは各ページのコードビハインドやViewModelのコンストラクタ内では使用せず、iOSDisplaySizeRecivedの方を使う
+        public static double TopNavigationHeight
         {
             get
             {
-                return getGetDisplaySizeInstanse.GetAndroidTitleBarHeight();
+                return getGetDisplaySizeInstanse.GetTopNavigationHeight();
             }
         }
     }

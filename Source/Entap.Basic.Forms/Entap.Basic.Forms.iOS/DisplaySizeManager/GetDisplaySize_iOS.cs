@@ -11,12 +11,7 @@ namespace Entap.Basic.Forms.iOS
     {
         public double GetAndroidNavigationBarHeight()
         {
-            return 0;
-        }
-
-        public double GetAndroidTitleBarHeight()
-        {
-            return 0;
+            return -1;
         }
 
         public double GetDensity()
@@ -24,20 +19,20 @@ namespace Entap.Basic.Forms.iOS
             return UIScreen.MainScreen.Scale;
         }
 
-        public double GetiOSNavigationBarHeight()
+        public double GetTopNavigationHeight()
         {
             if (
                 NavigationControllerManager.NavigationController is null ||
                 NavigationControllerManager.NavigationController.NavigationBar is null
             )
-                return 0;
+                return -1;
 
             return NavigationControllerManager.NavigationController.NavigationBar.Frame.Size.Height;
         }
 
         public double GetPageHeight()
         {
-            return UIScreen.MainScreen.Bounds.Height - GetiOSNavigationBarHeight() - GetStatusBarHeight();
+            return UIScreen.MainScreen.Bounds.Height - GetTopNavigationHeight() - GetStatusBarHeight();
         }
 
         public double GetScreenHeight()

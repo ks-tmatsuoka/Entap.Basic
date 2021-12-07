@@ -8,8 +8,7 @@ namespace Entap.Basic.Forms
         double GetPageHeight();
         double GetDensity();
         double GetStatusBarHeight();
-        double GetiOSNavigationBarHeight();
         double GetAndroidNavigationBarHeight();
-        double GetAndroidTitleBarHeight();
+        double GetTopNavigationHeight();
     }
 }

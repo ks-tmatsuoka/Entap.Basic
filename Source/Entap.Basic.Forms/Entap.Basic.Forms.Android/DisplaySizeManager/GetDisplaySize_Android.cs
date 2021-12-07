@@ -17,7 +17,7 @@ namespace Entap.Basic.Forms.Android
             return ((double)metrics.HeightPixels / (double)metrics.Density) - GetMetricsHeight();
         }
 
-        public double GetAndroidTitleBarHeight()
+        public double GetTopNavigationHeight()
         {
             double defaultSize = 56;
             var activity = Platform.GetActivity();
@@ -30,7 +30,7 @@ namespace Entap.Basic.Forms.Android
             }
             return defaultSize;
         }
-
+        
         public double GetDensity()
         {
             var activity = Platform.GetActivity();
@@ -47,14 +47,9 @@ namespace Entap.Basic.Forms.Android
             return (double)metrics.WidthPixels / (double)metrics.Density;
         }
 
-        public double GetiOSNavigationBarHeight()
-        {
-            return 0;
-        }
-
         public double GetPageHeight()
         {
-            return GetScreenHeight() - GetAndroidTitleBarHeight();
+            return GetScreenHeight() - GetTopNavigationHeight();
         }
 
         public double GetScreenHeight()
