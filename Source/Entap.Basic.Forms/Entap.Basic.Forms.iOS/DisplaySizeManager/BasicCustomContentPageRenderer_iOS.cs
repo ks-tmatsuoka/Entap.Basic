@@ -16,7 +16,7 @@ namespace Entap.Basic.Forms.iOS
         {
             base.ViewWillAppear(animated);
 
-            NavigationControllerManager.NavigationController = NavigationController;
+            NavigationControllerManager.CurrentNavigationController = NavigationController;
             var args = new iOSDisplaySizeRecivedEventArgs()
             {
                 NavigationBarHeight = DisplaySizeManager.TopNavigationHeight,

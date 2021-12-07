@@ -22,12 +22,12 @@ namespace Entap.Basic.Forms.iOS
         public double GetTopNavigationHeight()
         {
             if (
-                NavigationControllerManager.NavigationController is null ||
-                NavigationControllerManager.NavigationController.NavigationBar is null
+                NavigationControllerManager.CurrentNavigationController is null ||
+                NavigationControllerManager.CurrentNavigationController.NavigationBar is null
             )
                 return -1;
 
-            return NavigationControllerManager.NavigationController.NavigationBar.Frame.Size.Height;
+            return NavigationControllerManager.CurrentNavigationController.NavigationBar.Frame.Size.Height;
         }
 
         public double GetPageHeight()
