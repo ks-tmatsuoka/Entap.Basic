@@ -32,7 +32,8 @@ namespace Entap.Basic.Forms.iOS
 
         public double GetPageHeight()
         {
-            return UIScreen.MainScreen.Bounds.Height - GetTopNavigationHeight() - GetStatusBarHeight();
+            var navgationBarHeight = GetTopNavigationHeight() < 0 ? 0 : GetTopNavigationHeight();
+            return UIScreen.MainScreen.Bounds.Height - navgationBarHeight - GetStatusBarHeight();
         }
 
         public double GetScreenHeight()
