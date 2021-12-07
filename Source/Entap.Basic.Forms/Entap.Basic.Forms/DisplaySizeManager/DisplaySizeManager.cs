@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Entap.Basic.Forms
@@ -61,10 +62,11 @@ namespace Entap.Basic.Forms
         }
 
         // iOSの場合、各ページのコードビハインドやViewModelのコンストラクタ内でナビゲーションバーなどの高さが欲しければこれを使用する
-        public static event EventHandler<iOSDisplaySizeRecivedEventArgs> iOSDisplaySizeRecived;
-        public static void OniOSDisplaySizeReceiving(object obj, iOSDisplaySizeRecivedEventArgs args)
+        public static event EventHandler<iOSDisplaySizeRecivedEventArgs> iOSDisplaySizeChanged;
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public static void OniOSDisplaySizeChanging(object obj, iOSDisplaySizeRecivedEventArgs args)
         {
-            EventHandler<iOSDisplaySizeRecivedEventArgs> handler = iOSDisplaySizeRecived;
+            EventHandler<iOSDisplaySizeRecivedEventArgs> handler = iOSDisplaySizeChanged;
             if (handler != null)
             {
                 handler.Invoke(obj, args);
