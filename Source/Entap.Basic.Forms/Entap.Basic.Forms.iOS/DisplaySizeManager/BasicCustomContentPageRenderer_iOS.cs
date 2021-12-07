@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using Entap.Basic.Forms.iOS;
-using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -18,22 +16,13 @@ namespace Entap.Basic.Forms.iOS
         {
             base.ViewWillAppear(animated);
 
-            if (NavigationController != null || NavigationController?.NavigationBar != null)
+            NavigationControllerManager.NavigationController = NavigationController;
+            var args = new iOSDisplaySizeRecivedEventArgs()
             {
-                var args = new iOSDisplaySizeRecivedEventArgs()
-                {
-                    NavigationBarHeight = NavigationController.NavigationBar.Frame.Size.Height,
-                    PageHeight = UIScreen.MainScreen.Bounds.Height - NavigationController.NavigationBar.Frame.Size.Height - DisplaySizeManager.StatusBarHeight
-                };
-                DisplaySizeManager.OniOSDisplaySizeReceiving(null, args);
-                NavigationControllerManager.NavigationController = NavigationController;
-            }
-            else
-            {
-                var args = new iOSDisplaySizeRecivedEventArgs() { NavigationBarHeight = 0, PageHeight = UIScreen.MainScreen.Bounds.Height - DisplaySizeManager.StatusBarHeight};
-                DisplaySizeManager.OniOSDisplaySizeReceiving(null, args);
-                NavigationControllerManager.NavigationController = null;
-            }
+                NavigationBarHeight = DisplaySizeManager.TopNavigationHeight,
+                PageHeight = DisplaySizeManager.PageSize.Height
+            };
+            DisplaySizeManager.OniOSDisplaySizeReceiving(null, args);
         }
     }
 }
