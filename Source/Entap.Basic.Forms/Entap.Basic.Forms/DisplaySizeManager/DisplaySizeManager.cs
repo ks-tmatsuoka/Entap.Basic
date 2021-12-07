@@ -72,7 +72,7 @@ namespace Entap.Basic.Forms
         /// </summary>
         public static event EventHandler<iOSDisplaySizeRecivedEventArgs> iOSDisplaySizeChanged;
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public static void OniOSDisplaySizeChanging(object obj, iOSDisplaySizeRecivedEventArgs args)
+        internal static void OniOSDisplaySizeChanging(object obj, iOSDisplaySizeRecivedEventArgs args)
         {
             EventHandler<iOSDisplaySizeRecivedEventArgs> handler = iOSDisplaySizeChanged;
             if (handler != null)
