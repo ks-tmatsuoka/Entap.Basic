@@ -5,6 +5,18 @@ namespace Entap.Basic.Forms
 {
     public class DisplaySizeManager
     {
+        // 注意
+        // iOSでナビゲーションバーない場合について
+        // TopNavigationHeightとPageSizeとiOSDisplaySizeRecivedのNavigationBarHeight、PageHeightは、
+        // HasNavigationBar="False"でナビゲーション使ってない場合でもナビゲーションバーがある際のサイズを返すので、
+        // ナビゲーションバーのないページでページのサイズ取得したい場合PageSizeのHeightにTopNavigationHeightを足した数値が正確なPageSizeとなります。
+        //　PageManager.SetMainPageでナビゲーション使ってない場合はPageSizeのHeightにTopNavigationHeightを足す必要はないです。
+        //
+        // androidでナビゲーションバーない場合について
+        // TopNavigationHeightとPageSizeとiOSDisplaySizeRecivedのNavigationBarHeight、PageHeightは、
+        // HasNavigationBar="False"およびSetMainPageでナビゲーション使ってない場合でもナビゲーションバーがある際のサイズを返すので、
+        // ナビゲーションバーのないページでページのサイズ取得したい場合PageSizeのHeightにTopNavigationHeightを足した数値が正確なPageSizeとなります。
+
         static IGetDisplaySize getGetDisplaySize;
         static IGetDisplaySize getGetDisplaySizeInstanse
         {
