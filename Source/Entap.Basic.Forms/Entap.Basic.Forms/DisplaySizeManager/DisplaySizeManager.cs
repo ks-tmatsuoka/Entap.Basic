@@ -5,11 +5,21 @@ namespace Entap.Basic.Forms
 {
     public class DisplaySizeManager
     {
+        static IGetDisplaySize getGetDisplaySize;
+        static IGetDisplaySize getGetDisplaySizeInstanse
+        {
+            get
+            {
+                if (getGetDisplaySize is null)
+                    getGetDisplaySize = DependencyService.Get<IGetDisplaySize>();
+                return getGetDisplaySize;
+            }
+        }
         public static Size ScreenSize
         {
             get
             {
-                return new Size(DependencyService.Get<IGetDisplaySize>().GetWidth(), DependencyService.Get<IGetDisplaySize>().GetScreenHeight());
+                return new Size(getGetDisplaySizeInstanse.GetWidth(), getGetDisplaySizeInstanse.GetScreenHeight());
             }
         }
 
@@ -18,7 +28,7 @@ namespace Entap.Basic.Forms
         {
             get
             {
-                return new Size(DependencyService.Get<IGetDisplaySize>().GetWidth(), DependencyService.Get<IGetDisplaySize>().GetPageHeight());
+                return new Size(getGetDisplaySizeInstanse.GetWidth(), getGetDisplaySizeInstanse.GetPageHeight());
             }
         }
 
@@ -26,7 +36,7 @@ namespace Entap.Basic.Forms
         {
             get
             {
-                return DependencyService.Get<IGetDisplaySize>().GetStatusBarHeight();
+                return getGetDisplaySizeInstanse.GetStatusBarHeight();
             }
         }
 
@@ -34,7 +44,7 @@ namespace Entap.Basic.Forms
         {
             get
             {
-                return DependencyService.Get<IGetDisplaySize>().GetDensity();
+                return getGetDisplaySizeInstanse.GetDensity();
             }
         }
 
@@ -43,7 +53,7 @@ namespace Entap.Basic.Forms
         {
             get
             {
-                return DependencyService.Get<IGetDisplaySize>().GetiOSNavigationBarHeight();
+                return getGetDisplaySizeInstanse.GetiOSNavigationBarHeight();
             }
         }
 
@@ -62,7 +72,7 @@ namespace Entap.Basic.Forms
         {
             get
             {
-                return DependencyService.Get<IGetDisplaySize>().GetAndroidNavigationBarHeight();
+                return getGetDisplaySizeInstanse.GetAndroidNavigationBarHeight();
             }
         }
 
@@ -70,7 +80,7 @@ namespace Entap.Basic.Forms
         {
             get
             {
-                return DependencyService.Get<IGetDisplaySize>().GetAndroidTitleBarHeight();
+                return getGetDisplaySizeInstanse.GetAndroidTitleBarHeight();
             }
         }
     }
