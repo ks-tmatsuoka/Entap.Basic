@@ -37,7 +37,7 @@ namespace Entap.Basic.Auth.Line
         public bool? SwitchAmr { get; set; }
 
         [JsonProperty("disable_ios_auto_login")]
-        public bool? DisableiOSAutoLogin { get; set; }
+        public bool? DisableiOSAutoLogin { get; set; } = true;
 
         [JsonProperty("code_challenge")]
         public string CodeChallenge { get; set; }
