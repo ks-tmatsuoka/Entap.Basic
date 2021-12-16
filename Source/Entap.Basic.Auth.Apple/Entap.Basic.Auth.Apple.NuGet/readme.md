@@ -19,7 +19,7 @@ Apple提供のボタンを使用する場合は、別途[Entap.Basic.Auth.Apple.
 if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
     Entap.Basic.Auth.Apple.AppleSignInService.Init(
         Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.Email,
-        Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.FullNam
+        Entap.Basic.Auth.Apple.Abstract.AuthorizationScope.FullName
     );
 ```
 
