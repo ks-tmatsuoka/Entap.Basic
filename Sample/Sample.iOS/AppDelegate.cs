@@ -24,6 +24,7 @@ namespace Sample.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Entap.Basic.Forms.iOS.Platform.Init();
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
                 Entap.Basic.Auth.Apple.Forms.iOS.Platform.Init();

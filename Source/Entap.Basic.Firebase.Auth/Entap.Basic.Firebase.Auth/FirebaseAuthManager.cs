@@ -35,6 +35,9 @@ namespace Entap.Basic.Firebase.Auth
         public bool IsAppleAuthSupported => AppleAuthService is not null;
         public IAppleAuthService AppleAuthService => BasicFirebaseAuthStartUp.AppleAuthService;
 
+        public bool IsAnonymousAuthSupported => AnonymousAuthService is not null;
+        public IAnonymousAuthService AnonymousAuthService => BasicFirebaseAuthStartUp.AnonymousAuthService;
+
         public virtual Task SignOutAsync()
         {
             if (!IsSignedIn)
@@ -48,7 +51,7 @@ namespace Entap.Basic.Firebase.Auth
             catch (Exception ex)
             {
                 _authErrorCallback?.HandleSignOutErrorAsync(ex);
-                throw ex;
+                throw;
             }
             return Task.CompletedTask;
         }

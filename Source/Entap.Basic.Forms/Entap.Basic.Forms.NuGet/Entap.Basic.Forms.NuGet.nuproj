@@ -30,7 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="readme.txt">
+    <None Include="readme.md">
       <IncludeInPackage>true</IncludeInPackage>
     </None>
   </ItemGroup>

@@ -44,11 +44,15 @@
     <Folder Include="Resources\" />
     <Folder Include="Effects\" />
     <Folder Include="Effects\PlatformSpecifics\" />
+    <Folder Include="DisplaySizeManager\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Effects\PlatformSpecifics\TextContentType\TextContentTypePlatformEffect.cs" />
     <Compile Include="Platform.cs" />
+    <Compile Include="DisplaySizeManager\GetDisplaySize_iOS.cs" />
+    <Compile Include="DisplaySizeManager\BasicCustomContentPageRenderer_iOS.cs" />
+    <Compile Include="DisplaySizeManager\NavigationControllerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Forms\Entap.Basic.Forms.csproj">

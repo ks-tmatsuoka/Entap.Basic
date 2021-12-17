@@ -29,5 +29,9 @@
     <Folder Include="Effects\PlatformSpecifics\" />
     <Folder Include="Effects\PlatformSpecifics\iOS\" />
     <Folder Include="Effects\PlatformSpecifics\iOS\TextContentType\" />
+    <Folder Include="DisplaySizeManager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DisplaySizeManager\" />
   </ItemGroup>
 </Project>

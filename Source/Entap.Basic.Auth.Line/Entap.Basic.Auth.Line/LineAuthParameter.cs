@@ -15,7 +15,7 @@ namespace Entap.Basic.Auth.Line
             _redirectUri = redirectUri;
         }
 
-        public LineAuthRequest CreateAuthRequest()
+        public virtual LineAuthRequest CreateAuthRequest()
             => new(_clientId, _redirectUri, _scope);
 
         public LineAccessTokenRequest CreateAccessTokenRequest(string code)

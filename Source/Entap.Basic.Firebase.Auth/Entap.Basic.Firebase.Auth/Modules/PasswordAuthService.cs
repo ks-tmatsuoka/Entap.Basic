@@ -33,7 +33,7 @@ namespace Entap.Basic.Firebase.Auth
             catch (Exception ex)
             {
                 await _errorCallback?.HandleSignUpErrorAsync(ex);
-                throw ex;
+                throw;
             }
         }
 
@@ -55,7 +55,7 @@ namespace Entap.Basic.Firebase.Auth
             catch (Exception ex)
             {
                 await _errorCallback?.HandleSignInErrorAsync(ex);
-                throw ex;
+                throw;
             }
         }
 
@@ -89,7 +89,7 @@ namespace Entap.Basic.Firebase.Auth
             catch (Exception ex)
             {
                 await _errorCallback?.HandleSendPasswordResetEmailErrorAsync(ex);
-                throw ex;
+                throw;
             }
         }
 
@@ -107,7 +107,7 @@ namespace Entap.Basic.Firebase.Auth
             catch (Exception ex)
             {
                 await _errorCallback?.HandleVerifyPasswordResetCodeErrorAsync(ex);
-                throw ex;
+                throw;
             }
         }
 
@@ -125,7 +125,7 @@ namespace Entap.Basic.Firebase.Auth
             catch (Exception ex)
             {
                 await _errorCallback?.HandleConfirmPasswordResetErrorAsync(ex);
-                throw ex;
+                throw;
             }
         }
     }

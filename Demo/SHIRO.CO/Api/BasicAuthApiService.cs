@@ -74,5 +74,13 @@ namespace SHIRO.CO
             });
             return result?.Content;
         }
+
+        public async Task DelerteUser(CancellationToken token = default)
+        {
+            await BasicApiManager.Current.CallAsync(() =>
+            {
+                return BasicApiManager.Current.Api.DeleteAuthFirebaseUser(token);
+            });
+        }
     }
 }

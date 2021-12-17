@@ -9,7 +9,15 @@ namespace Entap.Basic.Forms.Android
     {
         public static void Init(Activity activity)
         {
+            _activity = activity;
             Entap.Basic.Core.Android.Platform.Init(activity);
         }
+
+        static Activity _activity;
+        public static Activity GetActivity()
+        {
+            return _activity;
+        }
+
     }
 }

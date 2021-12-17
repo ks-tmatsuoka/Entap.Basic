@@ -10,6 +10,7 @@ namespace Sample
     {
         public MainPageViewModel()
         {
+            
         }
 
         public ProcessCommand PageManagerCommand =>

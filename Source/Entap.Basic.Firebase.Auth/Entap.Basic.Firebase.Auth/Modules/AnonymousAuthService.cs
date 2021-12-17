@@ -5,11 +5,11 @@ using Plugin.FirebaseAuth;
 
 namespace Entap.Basic.Firebase.Auth
 {
-    public class TwitterAuthService : SnsAuthService, ITwitterAuthService
+    public class AnonymousAuthService : IAnonymousAuthService
     {
-        static readonly string ProviderId = CrossFirebaseAuth.Current.TwitterAuthProvider.ProviderId;
-        readonly IAuthErrorCallback _errorCallback;
-        public TwitterAuthService(IAuthErrorCallback errorCallback = null)
+        private readonly IAuthErrorCallback _errorCallback;
+
+        public AnonymousAuthService(IAuthErrorCallback errorCallback)
         {
             _errorCallback = errorCallback;
         }
@@ -18,11 +18,10 @@ namespace Entap.Basic.Firebase.Auth
         {
             try
             {
-                var provider = new OAuthProvider(ProviderId);
-                await SignInWithProviderAsync(provider);
+                var result = await CrossFirebaseAuth.Current.Instance.SignInAnonymouslyAsync();
                 await AuthHelper.StoreServerAccessTokenAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 AuthHelper.TrySignOut();
                 await _errorCallback?.HandleSignInErrorAsync(ex);

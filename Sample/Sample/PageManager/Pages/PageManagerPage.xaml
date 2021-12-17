@@ -2,36 +2,90 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:local="clr-namespace:Sample"
     x:Class="Sample.PageManagerPage"
     x:DataType="local:PageManagerPageViewModel"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
     ios:Page.UseSafeArea="true"
+    xmlns:bacicForms="clr-namespace:Entap.Basic.Forms;assembly=Entap.Basic.Forms" 
 >
     <ScrollView>
-        <StackLayout>
-            <Button
-                Text="Push"
-                Command="{Binding PushCommand}"
-            />
-            <Button
-                Text="PushModal"
-                Command="{Binding PushModalCommand}"
-            />
-            <Button
-                Text="PushNavigationModal"
-                Command="{Binding PushNavigationModalCommand}"
-            />
+        <StackLayout
+            Padding="8"
+        >
 
-            <Button
+            <Label
+                Text="ページ制御"
+                FontAttributes="Bold"
+            />
+            <Label
+                Text="Push"
+            />
+            <StackLayout
+                Orientation="Horizontal"
+            >
+                <Button
+                    Text="Push"
+                    Command="{Binding PushCommand}"
+                />
+                <Button
+                    Text="Modal"
+                    Command="{Binding PushModalCommand}"
+                />
+                <Button
+                    Text="NavigationModal"
+                    FontSize="Small"
+                    Command="{Binding PushNavigationModalCommand}"
+                />
+            </StackLayout>
+
+            <Label
                 Margin="0, 32, 0, 0"
                 Text="Pop"
-                Command="{Binding PopCommand}"
             />
-            <Button
-                Text="PopModal"
-                Command="{Binding PopModalCommand}"
-            />
+            <StackLayout
+                Orientation="Horizontal"
+            >
+                <Button
+                    Text="Pop"
+                    Command="{Binding PopCommand}"
+                />
+                <Button
+                    Text="Modal"
+                    Command="{Binding PopModalCommand}"
+                />
+            </StackLayout>
+
+
+            <Label
+                Margin="0,32,0,0"
+            >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="サイズ情報" FontAttributes="Bold"/>
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.ScreenSize}, Path=Width, StringFormat='ScreenWidth : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.ScreenSize}, Path=Height, StringFormat='ScreenHeight : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.PageSize}, Path=Width, StringFormat='PageWidth : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.PageSize}, Path=Height, StringFormat='PageHeight : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.StatusBarHeight}, StringFormat='StatusBarHeight : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.Density}, StringFormat='Density : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.TopNavigationHeight}, StringFormat='TopNavigationHeight : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                        <Span Text="{Binding Source={x:Static bacicForms:DisplaySizeManager.AndroidBottomNavigationBarHeight}, StringFormat='AndroidBottomNavigationBarHeight : {0}'}" />
+                        <Span Text="{x:Static sys:Environment.NewLine}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
         </StackLayout>
     </ScrollView>
 </ContentPage>
