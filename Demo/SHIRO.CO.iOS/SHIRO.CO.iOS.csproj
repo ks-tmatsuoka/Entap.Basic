@@ -147,9 +147,6 @@
     <PackageReference Include="Xamarin.Google.iOS.SignIn">
       <Version>5.0.2.1</Version>
     </PackageReference>
-    <PackageReference Include="Entap.Basic.Auth.Google.iOS">
-      <Version>0.0.2</Version>
-    </PackageReference>
     <PackageReference Include="Entap.Basic.Auth.Line.iOS">
       <Version>0.0.3</Version>
     </PackageReference>

@@ -85,9 +85,6 @@
     <PackageReference Include="Xamarin.Firebase.Dynamic.Links">
       <Version>119.1.1</Version>
     </PackageReference>
-    <PackageReference Include="Entap.Basic.Auth.Google.Android">
-      <Version>0.0.2</Version>
-    </PackageReference>
     <PackageReference Include="Plugin.FirebaseAuth">
       <Version>4.1.0</Version>
     </PackageReference>
