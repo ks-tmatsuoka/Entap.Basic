@@ -23,6 +23,9 @@ namespace Entap.Basic.Auth.Abstractions
         bool IsAppleAuthSupported { get; }
         IAppleAuthService AppleAuthService { get; }
 
+        bool IsAnonymousAuthSupported { get; }
+        IAnonymousAuthService AnonymousAuthService { get; }
+
         Task SignOutAsync();
     }
 }
