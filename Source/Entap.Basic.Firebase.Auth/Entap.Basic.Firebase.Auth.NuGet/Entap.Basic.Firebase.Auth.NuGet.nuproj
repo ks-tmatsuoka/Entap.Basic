@@ -8,7 +8,7 @@
     <Description>Plugin.FirebaseAuthをラップしたライブラリ
 https://github.com/f-miyu/Plugin.FirebaseAuth</Description>
     <PackageId>Entap.Basic.Firebase.Auth</PackageId>
-    <PackageVersion>0.0.7</PackageVersion>
+    <PackageVersion>0.0.8</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -17,8 +17,9 @@ https://github.com/f-miyu/Plugin.FirebaseAuth</Description>
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Entap.Basic.Firebase.Auth.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <PackageReleaseNotes>[fix]
-・Firebaseの初期化処理の多重実行を回避</PackageReleaseNotes>
+    <PackageReleaseNotes>[update]
+・匿名認証処理実装
+・例外処理でStackTraceが初期化されないよう修正</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth/Entap.Basic.Firebase.Auth.NuGet</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

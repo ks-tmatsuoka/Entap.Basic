@@ -94,6 +94,9 @@ authManager.PasswordAuthService.SignInAsync("email", "password");
 
 // Twitter認証
 authManager.TwitterAuthService.SignInAsync();
+
+// 匿名認証
+authManager.AnonymousAuthService.SignInAsync();
 ```
 
 
