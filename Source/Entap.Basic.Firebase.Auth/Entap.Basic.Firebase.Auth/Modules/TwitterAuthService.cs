@@ -26,7 +26,7 @@ namespace Entap.Basic.Firebase.Auth
             {
                 AuthHelper.TrySignOut();
                 await _errorCallback?.HandleSignInErrorAsync(ex);
-                throw ex;
+                throw;
             }
         }
     }

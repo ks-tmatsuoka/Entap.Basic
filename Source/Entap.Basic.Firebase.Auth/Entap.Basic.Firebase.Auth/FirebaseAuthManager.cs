@@ -51,7 +51,7 @@ namespace Entap.Basic.Firebase.Auth
             catch (Exception ex)
             {
                 _authErrorCallback?.HandleSignOutErrorAsync(ex);
-                throw ex;
+                throw;
             }
             return Task.CompletedTask;
         }
