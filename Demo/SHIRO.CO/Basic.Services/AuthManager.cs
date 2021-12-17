@@ -32,6 +32,7 @@ namespace SHIRO.CO
             BasicFirebaseAuthStartUp.ConfigureLineAuthService<LineAuthService>();
             BasicFirebaseAuthStartUp.ConfigureGoogleAuthService<GoogleAuthService>();
             BasicFirebaseAuthStartUp.ConfigureAppleAuthService<AppleAuthService>();
+            BasicFirebaseAuthStartUp.ConfigureAnonymousAuthService<AnonymousAuthService>();
 
             BasicFirebaseAuthStartUp.ConfigureAuthErrorCallback<AuthManager>();
             BasicFirebaseAuthStartUp.ConfigurePasswordAuthErrorCallback<AuthManager>();
