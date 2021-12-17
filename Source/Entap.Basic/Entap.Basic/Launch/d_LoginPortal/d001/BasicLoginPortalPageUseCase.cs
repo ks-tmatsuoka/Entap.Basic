@@ -22,7 +22,7 @@ namespace Entap.Basic.Launch.LoginPortal
         {
             ProcessManager.Current.Invoke(async () =>
             {
-                // ToDo 匿名ログイン
+                await BasicStartup.AuthManager.AnonymousAuthService.SignInAsync();
                 await BasicStartup.PageNavigator.SetHomePageAsync();
             });
         }
