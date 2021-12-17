@@ -91,6 +91,14 @@ namespace Entap.Basic.Firebase.Auth
             _serviceCollection.AddSingleton<IAppleAuthService, TImplementation>();
         }
         public static IAppleAuthService AppleAuthService => ServiceProvider.GetService<IAppleAuthService>();
+
+        // Anonymous
+        public static void ConfigureAnonymousAuthService<TImplementation>()
+            where TImplementation : class, IAnonymousAuthService
+        {
+            _serviceCollection.AddSingleton<IAnonymousAuthService, TImplementation>();
+        }
+        public static IAnonymousAuthService AnonymousAuthService => ServiceProvider.GetService<IAnonymousAuthService>();
         #endregion
 
         #region AuthErrorCallback
