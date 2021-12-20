@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="MSBuild.Sdk.Extras/3.0.22">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -13,13 +14,29 @@
   <ItemGroup>
     <ProjectReference Include="..\Entap.Basic.Auth.Google.Abstract\Entap.Basic.Auth.Google.Abstract.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Remove="NuGet.Build.Packaging" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="**/*.shared.cs" />
+    <Compile Include="**/*.shared.*.cs" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+    <Compile Include="**\*.netstandard.cs" />
+    <Compile Include="**\*.netstandard.*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="NuGet.Build.Packaging" />
+  </ItemGroup>
+
 </Project>
