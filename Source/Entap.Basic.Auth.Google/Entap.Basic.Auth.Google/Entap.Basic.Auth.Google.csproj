@@ -33,6 +33,7 @@
     <Compile Include="**\*.android.cs" />
     <Compile Include="**\*.android.*.cs" />
     <PackageReference Include="Xamarin.GooglePlayServices.Auth" Version="119.0.0" />
+    <PackageReference Include="Entap.Basic.Core.Android" Version="0.0.4" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
@@ -44,8 +45,8 @@
   <ItemGroup>
     <None Remove="NuGet.Build.Packaging" />
     <None Remove="Xamarin.Google.iOS.SignIn" />
-    <None Remove="Xamarin.GooglePlayServices.Auth
-            " />
+    <None Remove="Xamarin.GooglePlayServices.Auth" />
+    <None Remove="Entap.Basic.Core.Android" />
   </ItemGroup>
 
 </Project>
