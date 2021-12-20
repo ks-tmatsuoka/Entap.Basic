@@ -32,15 +32,20 @@
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
     <Compile Include="**\*.android.cs" />
     <Compile Include="**\*.android.*.cs" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Auth" Version="119.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
     <Compile Include="**\*.ios.cs" />
     <Compile Include="**\*.ios.*.cs" />
+    <PackageReference Include="Xamarin.Google.iOS.SignIn" Version="5.0.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="NuGet.Build.Packaging" />
+    <None Remove="Xamarin.Google.iOS.SignIn" />
+    <None Remove="Xamarin.GooglePlayServices.Auth
+            " />
   </ItemGroup>
 
 </Project>
