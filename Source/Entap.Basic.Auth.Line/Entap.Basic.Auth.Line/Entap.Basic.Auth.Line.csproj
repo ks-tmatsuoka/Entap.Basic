@@ -34,11 +34,13 @@
   <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
       <Compile Include="**\*.android.cs" />
       <Compile Include="**\*.android.*.cs" />
+      <PackageReference Include="Xamarin.LineSDK.Android" Version="0.0.1" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
       <Compile Include="**\*.ios.cs" />
       <Compile Include="**\*.ios.*.cs" />
+      <PackageReference Include="Xamarin.LineSDK.iOS" Version="0.0.1" />
   </ItemGroup>
 
 </Project>
