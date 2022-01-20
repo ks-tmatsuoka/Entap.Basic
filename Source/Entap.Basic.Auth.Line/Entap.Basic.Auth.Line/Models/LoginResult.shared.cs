@@ -7,6 +7,8 @@ namespace Entap.Basic.Auth.Line
         {
         }
 
+        public LineAccessTokenResponse LineAccessToken { get; internal set; }
+
 #nullable enable
         public UserProfile? UserProfile { get; internal set; }
 #nullable disable
