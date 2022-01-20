@@ -6,5 +6,9 @@ namespace Entap.Basic.Auth.Line
         public LoginResult()
         {
         }
+
+#nullable enable
+        public UserProfile? UserProfile { get; internal set; }
+#nullable disable
     }
 }
