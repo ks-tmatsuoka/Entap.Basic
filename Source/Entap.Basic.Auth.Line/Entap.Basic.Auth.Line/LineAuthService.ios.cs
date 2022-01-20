@@ -63,8 +63,10 @@ namespace Entap.Basic.Auth.Line
                 }
                 else
                 {
-                    // ToDo : キャンセル判定
-                    tcs.TrySetException(new NSErrorException(arg2));
+                    if (arg2.Code == LineSDKErrorCode.UserCancelled)
+                        tcs.TrySetCanceled();
+                    else
+                        tcs.TrySetException(new NSErrorException(arg2));
                 }
             });
             return tcs.Task;

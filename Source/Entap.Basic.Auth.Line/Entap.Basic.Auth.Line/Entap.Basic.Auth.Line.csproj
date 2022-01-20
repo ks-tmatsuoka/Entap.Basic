@@ -41,7 +41,7 @@
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
       <Compile Include="**\*.ios.cs" />
       <Compile Include="**\*.ios.*.cs" />
-      <PackageReference Include="Xamarin.LineSDK.iOS" Version="0.0.1" />
+      <PackageReference Include="Xamarin.LineSDK.iOS" Version="0.0.2" />
   </ItemGroup>
 
 </Project>
