@@ -36,6 +36,7 @@
       <Compile Include="**\*.android.cs" />
       <Compile Include="**\*.android.*.cs" />
       <PackageReference Include="Xamarin.LineSDK.Android" Version="0.0.1" />
+      <PackageReference Include="Entap.Basic.Core.Android" Version="0.0.4" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
