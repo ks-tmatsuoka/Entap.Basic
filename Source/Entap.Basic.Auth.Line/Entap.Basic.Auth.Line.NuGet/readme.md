@@ -1,9 +1,6 @@
-﻿# Entap.Basic.Auth.Line
-[LINEログイン](https://developers.line.biz/ja/reference/line-login/)(v2.1)のWeb認証で行います。  
-Web認証には[Xamarin.Essentials.Web Authenticator](https://docs.microsoft.com/ja-jp/xamarin/essentials/web-authenticator)を使用しています。  
-※iOSについては、
-https://github.com/xamarin/Essentials/issues/1242
-https://github.com/xamarin/Essentials/issues/1519
+﻿# Entap.Basic.Auth.Line [LINEログイン](https://developers.line.biz/ja/docs/line-login/)を行うライブラリです。
+iOS:[LINE SDK for iOS](https://developers.line.biz/ja/docs/ios-sdk/)をバインディングした[Xamarin.LineSDK.iOS](https://github.com/entap/Xamarin.LineSDK/tree/main/Xamarin.LineSDK/Xamarin.LineSDK.iOS)を利用します。  
+Android:[LINE SDK for Android](https://developers.line.biz/ja/docs/android-sdk/)をバインディングした[Xamarin.LineSDK.Android](https://github.com/entap/Xamarin.LineSDK/tree/main/Xamarin.LineSDK/Xamarin.LineSDK.Android)を利用します。
 
 ## 事前準備
 [LINE Developers](https://developers.line.biz/ja/)のアカウントを作成し、Provider・Channelを作成し  
@@ -12,55 +9,79 @@ LINE Login settingsを登録してください。
 ## 導入方法
 
 **iOS**  
- ・[アプリをチャネルにリンクする](https://developers.line.biz/ja/docs/ios-sdk/swift/setting-up-project/#linking-app-to-channel)  
-　※ユニバーサルリンクの[アプリとサーバーを関連づけ](https://developers.line.biz/ja/docs/ios-sdk/swift/universal-links-support/#ul-s1)については 、[Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links?hl=ja)の使用も可能です(シミュレータはサポート対象外)。    
+ ・[アプリをチャネルにリンクする](htt	ps://developers.line.biz/ja/docs/ios-sdk/swift/setting-up-project/#linking-app-to-channel)  
+　※ユニバーサルリンクの[アプリとサーバーを関連づけ](https://developers.line.biz/ja/docs/ios-sdk/swift/universal-links-support/#ul-s1)については 、[Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links?hl=ja)の使用も可能です  
+(シミュレータはサポート対象外)。    
 ・[Info.plistファイルを設定する](https://developers.line.biz/ja/docs/ios-sdk/swift/setting-up-project/#config-infoplist-file)  
-・「Entap.Basic.Auth.Line.iOS」を追加し、AppDelegateのContinueUserActivityにLINE認証後処理を実行してくださいください。
+・「Entap.Basic.Auth.Line」を追加してください。
+・[アプリデリゲートを変更する](https://developers.line.biz/ja/docs/ios-sdk/swift/integrate-line-login/#modify-app-delegate)
+```csharp
+public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+{
+    return Entap.Basic.Auth.Line.LineAuthService.OpenUrl(app, url, options);
+}
+```
+
+・[アプリデリゲートを変更する](https://developers.line.biz/ja/docs/ios-sdk/swift/universal-links-support/#modify-app-delegate)（ユニバーサルリンクを利用時）
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
 {
-    if (Entap.Basic.Auth.Line.iOS.WebAuthenticationService.ContinueUserActivity(application, userActivity, completionHandler))
+    if (Entap.Basic.Auth.Line.LineAuthService.ContinueUserActivity(application, userActivity, completionHandler))
         return true;
 
-    return base.ContinueUserActivity(application, userActivity, completionHandler);
+    return base.ContinueUserActivity(applicat	ion, userActivity, completionHandler);
 }
 ```
-**Android**  
-コールバックURIを処理するためにインテントフィルターの設定が必要です。  
-以下のようなクラスを定義してください。  
+
+・[シーンデリゲートを変更する](https://developers.line.biz/ja/docs/ios-sdk/swift/integrate-line-login/#modify-scene-delegates)（マルチウィンドウをサポートする場合）
 ```csharp
-[Activity(NoHistory = true, LaunchMode = LaunchMode.SingleTop)]
-[IntentFilter(new[] { Android.Content.Intent.ActionView },
-    Categories = new[] { Android.Content.Intent.CategoryDefault, Android.Content.Intent.CategoryBrowsable },
-    DataScheme = "[http/https]", DataHost = "[host]", DataPath = "[path]")]
-public class LineWebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
+public override void OpenUrlContexts(UIScene scene, NSSet<UIOpenUrlContext> urlContexts)
 {
+    Entap.Basic.Auth.Line.OpenUrlContexts.OpenUrl(scene, urlContexts);
 }
 ```
 
-プロジェクトのターゲットAndroidバージョンをAndroid 11 (R API 30)に設定する場合、
-AndoridManifestに以下の記載が必要になります。  
-　※[Android 11 でのパッケージへのアクセス](https://developer.android.com/about/versions/11/privacy/package-visibility)参照
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="jp.co.entap.shiro.co">
-	...
+・初期化処理
+```csharp
+[Register("AppDelegate")]
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        global::Xamarin.Forms.Forms.Init();troller);
 
-	<queries>
-	    <intent>
-	        <action android:name="android.support.customtabs.action.CustomTabsService" />
-	    </intent>
-	</queries>
+		// 初期化処理（universalLinkURL：Universal Linkを利用しない場合は省略可能）
+        Entap.Basic.Auth.Line.LineAuthService.Init([channelID], [universalLinkURL]);
+        return base.FinishedLaunching(app, options);
+    }
+}
+```
 
-	...
-</manifest>
+**Android**  
+・[Androidマニフェストファイルを設定する](https://developers.line.biz/ja/docs/android-sdk/integrate-line-login/#setting-android-manifest-file])
+
+・初期化処理
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IOnSuccessListener
+{
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        TabLayoutResource = Resource.Layout.Tabbar;
+        ToolbarResource = Resource.Layout.Toolbar;
+
+        base.OnCreate(savedInstanceState);
+
+        Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+        global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+        Entap.Basic.Auth.Line.LineAuthService.Init([channelID]);
+
+        LoadApplication(new App());
+    }
 ```
 
 ## 使用方法
 ```csharp
-LineAuthService.Init(new LineAuthParameter([clientId], [clientSecret], [scope], [redirectUri]);
-...
-
 var authService = new LineAuthService();
-var token = await authService.LoginAsync();
+var result = await authService.LoginAsync([LoginScope[]]);
 ```
