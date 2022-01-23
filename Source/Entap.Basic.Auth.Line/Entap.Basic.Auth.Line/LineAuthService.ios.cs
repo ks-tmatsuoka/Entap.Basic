@@ -57,17 +57,7 @@ namespace Entap.Basic.Auth.Line
             TaskCompletionSource<LoginResult> tcs = new TaskCompletionSource<LoginResult>();
             LineSDKLoginManager.SharedManager.LoginWithPermissions(permissions, viewController, (LineSDKLoginResult arg1, NSError arg2) =>
             {
-                if (arg2 is null)
-                {
-                    tcs.TrySetResult(GetLoginResult(arg1));
-                }
-                else
-                {
-                    if (arg2.Code == LineSDKErrorCode.UserCancelled)
-                        tcs.TrySetCanceled();
-                    else
-                        tcs.TrySetException(new NSErrorException(arg2));
-                }
+                tcs.TrySetResult(new LoginResult(arg1, arg2));
             });
             return tcs.Task;
         }
@@ -81,54 +71,6 @@ namespace Entap.Basic.Auth.Line
                 LoginScope.Email => LineSDKLoginPermission.Email,
                 _ => throw new ArgumentOutOfRangeException(nameof(LoginScope)),
             };
-        }
-
-        LoginResult GetLoginResult(LineSDKLoginResult arg1)
-        {
-            var accessToken = GetAccessToken(arg1.AccessToken);
-            var userProfile = GetUserProfile(arg1);
-            return new LoginResult
-            {
-                LineAccessToken = new LineAccessTokenResponse
-                {
-                    AccessToken = accessToken.AccessTokenAccessToken,
-                    TokenType = accessToken.TokenType,
-                    ExpiresIn = accessToken.ExpiresIn,
-                    Scope = accessToken.Scope,
-                    IdToken = accessToken.IdToken,
-                    RefreshToken = accessToken.RefreshToken,
-                },
-                UserProfile = userProfile
-            };
-        }
-
-#nullable enable
-        UserProfile? GetUserProfile(LineSDKLoginResult arg1)
-#nullable disable
-        {
-            var profile = arg1.GetUserProfile();
-            if (profile is null)
-                return null;
-
-            return new UserProfile
-            {
-                UserId = profile.UserID,
-                DisplayName = profile.DisplayName,
-                PictureURL = profile.PictureURL,
-                StatusMessage = profile.StatusMessage
-            };
-        }
-
-        /// <summary>
-        /// AccessToken取得処理
-        /// LineSDKObjC.LineSDKAccessTokenにでIDTokenRawが取得できないため
-        /// LineSDKAccessToken.Jsonから取得する
-        /// https://github.com/line/line-sdk-ios-swift/blob/master/LineSDK/LineSDK/Login/Model/AccessToken.swift
-        /// https://github.com/line/line-sdk-ios-swift/blob/master/LineSDK/LineSDKObjC/Login/Model/LineSDKAccessToken.swift
-        /// </summary>
-        AccessToken GetAccessToken(LineSDKAccessToken accessToken)
-        {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<AccessToken>(accessToken.Json);
         }
     }
 }

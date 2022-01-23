@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Entap.Basic.Auth.Line
 {
-    public class LoginResult
+    public partial class LoginResult
     {
         public LoginResult()
         {
