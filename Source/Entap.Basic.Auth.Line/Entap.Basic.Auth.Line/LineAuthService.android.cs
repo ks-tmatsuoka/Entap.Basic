@@ -31,12 +31,9 @@ namespace Entap.Basic.Auth.Line
         public async Task<LoginResult> PlatformLoginAsync(params LoginScope[] scopes)
         {
             var context = Xamarin.Essentials.Platform.AppContext;
-            var scope = scopes
-                 .Select((LoginScope scope) => GetScope(scope))
-                 .ToArray();
             var param = new LineAuthenticationParams
                 .Builder()
-                .Scopes(scope)
+                .Scopes(GetScopes(scopes))
                 .Build();
             var loginIntent = LineLoginApi.GetLoginIntent(context, ChannelId, param);
 
@@ -46,7 +43,14 @@ namespace Entap.Basic.Auth.Line
             return new LoginResult(result);
         }
 
-        Scope GetScope(LoginScope loginScope)
+        internal static Scope[] GetScopes(LoginScope[] scopes)
+        {
+            return scopes
+                 .Select((LoginScope scope) => GetScope(scope))
+                 .ToArray();
+        }
+
+        static Scope GetScope(LoginScope loginScope)
         {
             return loginScope switch
             {
