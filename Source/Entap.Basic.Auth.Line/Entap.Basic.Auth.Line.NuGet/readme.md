@@ -80,8 +80,29 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
     }
 ```
 
+・LineLoginButton使用時
+```csharp
+protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+{
+    base.OnActivityResult(requestCode, resultCode, data);
+
+    if (LineAuthService.OnActivityResult(requestCode, resultCode, data))
+        return;
+}
+```
+
 ## 使用方法
 ```csharp
 var authService = new LineAuthService();
 var result = await authService.LoginAsync([LoginScope[]]);
 ```
+
+## 補足説明
+### iOS
+・LineLoginButtonRendererでWeakLoginDelegateを設定してもDelegateが実行されない
+→既存のクリック時処理を無効化し、独自にログイン処理を実行して回避。
+
+### Android
+・LineLoginButtonRendererでLoginDelegate、LoginListenerを設定してもLoginListenerが実行されない。
+→MainActivity.OnActivityResult時に、LineAuthServiceを経由しログイン結果を取得するよう変更して回避。
+
