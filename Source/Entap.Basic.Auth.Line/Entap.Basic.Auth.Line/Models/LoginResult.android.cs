@@ -23,13 +23,14 @@ namespace Entap.Basic.Auth.Line
                 // https://developers.line.biz/ja/docs/android-sdk/handling-errors/
                 IsCanceled = (result.ResponseCode == LineApiResponseCode.Cancel ||
                     result.ResponseCode == LineApiResponseCode.AuthenticationAgentError);
-                throw new Exception(result.ErrorData?.ToString());
+                Exception = new Exception(result.ErrorData?.ToString());
             }
         }
 
         LineAccessTokenResponse GetLineAccessToken(LineLoginResult loginResult)
         {
             var lineCredential = loginResult.LineCredential;
+            if (lineCredential is null) return null;
             return new LineAccessTokenResponse
             {
                 AccessToken = lineCredential.AccessToken.TokenString,
