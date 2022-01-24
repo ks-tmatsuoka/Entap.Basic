@@ -41,18 +41,12 @@ namespace Entap.Basic.Auth.Line
             }
         }
 
-        public void OnClick(AView v)
-        {
-            System.Diagnostics.Debug.WriteLine("OnClick");
-        }
-
         void SetNativeControl()
         {
             _loginButton = new LoginButton(_context);
             // https://developers.line.biz/ja/docs/android-sdk/integrate-line-login/#use-button
             _loginButton.SetChannelId(LineAuthService.ChannelId);
             _loginButton.EnableLineAppAuthentication(true);
-            _loginButton.SetOnClickListener(null);
             _loginButton.SetAuthenticationParams(
                 new LineAuthenticationParams
                 .Builder()
