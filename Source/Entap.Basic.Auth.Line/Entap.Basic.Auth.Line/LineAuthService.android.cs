@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Android.App;
+using Android.Content;
 using Com.Linecorp.Linesdk;
 using Com.Linecorp.Linesdk.Auth;
 
@@ -22,6 +24,9 @@ namespace Entap.Basic.Auth.Line
         {
             _channelId = channelId;
         }
+
+        public static bool OnActivityResult(int requestCode, Result resultCode, Intent data)
+            => LineLoginButtonRenderer.OnActivityResult(requestCode, resultCode, data);
 
         /// <summary>
         /// ログイン処理
