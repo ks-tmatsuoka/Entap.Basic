@@ -48,10 +48,8 @@ namespace Entap.Basic.Auth.Line
         /// </summary>
         public Task<LoginResult> PlatformLoginAsync(params LoginScope[] scopes)
         {
-            var loginPermission = scopes
-                .Select((LoginScope scope) => GetLoginPermission(scope))
-                .ToArray();
-            var permissions = new NSSet<LineSDKLoginPermission>(loginPermission);
+            var loginPermissions = GetLoginPermissions(scopes);
+            var permissions = new NSSet<LineSDKLoginPermission>(loginPermissions);
             var viewController = Xamarin.Essentials.Platform.GetCurrentUIViewController();
 
             TaskCompletionSource<LoginResult> tcs = new TaskCompletionSource<LoginResult>();
@@ -62,7 +60,14 @@ namespace Entap.Basic.Auth.Line
             return tcs.Task;
         }
 
-        LineSDKLoginPermission GetLoginPermission(LoginScope scope)
+        internal static LineSDKLoginPermission[] GetLoginPermissions(LoginScope[] scopes)
+        {
+            return scopes
+                .Select((LoginScope scope) => GetLoginPermission(scope))
+                .ToArray();
+        }
+
+        static LineSDKLoginPermission GetLoginPermission(LoginScope scope)
         {
             return scope switch
             {
