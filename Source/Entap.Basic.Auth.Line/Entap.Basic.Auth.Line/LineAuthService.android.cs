@@ -43,18 +43,7 @@ namespace Entap.Basic.Auth.Line
             var activity = Xamarin.Essentials.Platform.CurrentActivity;
             var activityResult = await Core.Android.StarterActivity.StartAsync(activity, loginIntent, _requestCode);
             var result = LineLoginApi.GetLoginResultFromIntent(activityResult);
-            if (result.ResponseCode == LineApiResponseCode.Success)
-            {
-                return new LoginResult
-                {
-                    LineAccessToken = GetLineAccessToken(result),
-                    UserProfile = GetUserProfile(result.LineProfile)
-                };
-            }
-            else if (result.ResponseCode == LineApiResponseCode.Cancel)
-                throw new TaskCanceledException();
-            else
-                throw new Exception(result.ErrorData.ToString());
+            return new LoginResult(result);
         }
 
         Scope GetScope(LoginScope loginScope)
@@ -68,31 +57,5 @@ namespace Entap.Basic.Auth.Line
             };
         }
 
-        LineAccessTokenResponse GetLineAccessToken(LineLoginResult loginResult)
-        {
-            var lineCredential = loginResult.LineCredential;
-            return new LineAccessTokenResponse
-            {
-                AccessToken = lineCredential.AccessToken.TokenString,
-                ExpiresIn = (int)lineCredential.AccessToken.ExpiresInMillis,
-                IdToken = loginResult.LineIdToken.RawString
-            };
-        }
-
-#nullable enable
-        UserProfile? GetUserProfile(LineProfile? profile)
-#nullable disable
-        {
-            if (profile is null)
-                return null;
-
-            return new UserProfile
-            {
-                UserId = profile.UserId,
-                DisplayName = profile.DisplayName,
-                PictureURL = (profile.PictureUrl is null) ? null : new Uri(profile.PictureUrl.ToString()),
-                StatusMessage = profile.StatusMessage
-            };
-        }
     }
 }
