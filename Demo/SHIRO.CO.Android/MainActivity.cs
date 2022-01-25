@@ -9,19 +9,11 @@ using Android.OS;
 using Android.Gms.Tasks;
 using Firebase.DynamicLinks;
 using Android.Content;
+using Entap.Basic.Auth.Line;
 
 namespace SHIRO.CO.Droid
 {
     [Activity(Label = "SHIRO.CO", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
-    [IntentFilter(new[] { "android.intent.action.VIEW" },
-        Categories = new[]
-        {
-            "android.intent.category.DEFAULT",
-            "android.intent.category.BROWSABLE"
-        },
-        DataScheme = "http", DataHost = "entapshiro.page.link"
-        )
-    ]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IOnSuccessListener
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -42,8 +34,11 @@ namespace SHIRO.CO.Droid
             // Facebook
             Plugin.FacebookClient.FacebookClientManager.Initialize(this);
 
+            // LINE
+            Entap.Basic.Auth.Line.LineAuthService.Init("1655277852");
+
             // Google
-            Entap.Basic.Auth.Google.Android.Platform.Init(this, "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com", RequestCodes.GoogleAuth);
+            //Entap.Basic.Auth.Google.Android.Platform.Init(this, "716130417723-6gkc7ikv3vu0k5tne89t23jlosjb6dlj.apps.googleusercontent.com", RequestCodes.GoogleAuth);
 
             LoadApplication(new App());
         }
@@ -57,6 +52,9 @@ namespace SHIRO.CO.Droid
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
+
+            if (LineAuthService.OnActivityResult(requestCode, resultCode, data))
+                return;
 
             // Facebook
             Plugin.FacebookClient.FacebookClientManager.OnActivityResult(requestCode, resultCode, data);
