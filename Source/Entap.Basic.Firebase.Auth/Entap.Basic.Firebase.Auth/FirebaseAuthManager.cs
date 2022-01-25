@@ -61,7 +61,7 @@ namespace Entap.Basic.Firebase.Auth
 
         public virtual async Task DeleteUserAsync()
         {
-            await BasicFirebaseAuthStartUp.AuthApi.DelerteUser();
+            await BasicFirebaseAuthStartUp.AuthApi.DeleteUser();
             BasicFirebaseAuthStartUp.UserDataRepository.RemoveAccessToken();
         }
     }
