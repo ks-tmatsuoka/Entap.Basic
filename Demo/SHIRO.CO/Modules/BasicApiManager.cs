@@ -8,6 +8,7 @@ using Entap.Basic.Refit;
 using Newtonsoft.Json;
 using Refit;
 using Xamarin.Forms;
+using System.Net.Http;
 
 namespace SHIRO.CO
 {
@@ -32,7 +33,18 @@ namespace SHIRO.CO
             {
                 ContentSerializer = RefitSettingsService.SnakeCaseSerializer
             };
-            var restService = base.GetRestService<T>(hostUrl, settings);
+            // Androidでサーバー証明書の検証エラーが発生するため一時無効化
+            //var restService = base.GetRestService<T>(hostUrl, settings);
+            var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (message, cert, chain, sslErrors) => true
+            };
+            var httpClient = new HttpClient(handler)
+            {
+                BaseAddress = new Uri(hostUrl)
+            };
+
+            var restService = RestService.For<T>(httpClient, settings);
             restService.Client.SetJsonAcceptHeader();
             return restService;
         }
