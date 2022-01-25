@@ -10,9 +10,9 @@
 [Sign in with Apple](https://developer.apple.com/jp/sign-in-with-apple/get-started/)を行うライブラリ 
 * [Entap.Basic.Firebase.Auth.Line](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Line/Entap.Basic.Firebase.Auth.Line)
   * [Plugin.FirebaseAuth](https://github.com/f-miyu/Plugin.FirebaseAuth)を使用し、
-[LINEログイン](https://developers.line.biz/ja/reference/line-login/)を行うライブラリ
-* [Entap.Basic.Auth.Line](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Line/Entap.Basic.Auth.Line.NuGet)
-  * [LINEログイン](https://developers.line.biz/ja/reference/line-login/)(v2.1)のWeb認証で行うライブラリ  
+[LINEログイン](https://developers.line.biz/ja/docs/line-login/)を行うライブラリ
+* [Entap.Basic.Auth.Line](https://github.com/entap/Entap.Basic/tree/ad1c8ab3da743347e50f3d773601a1409c418181/Source/Entap.Basic.Auth.Line/Entap.Basic.Auth.Line)
+  * [LINEログイン](https://developers.line.biz/ja/docs/line-login/)を行うライブラリ  
 * [Entap.Basic.Auth.Apple](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Apple/Entap.Basic.Auth.Apple.NuGet)
   * [Sign in with Apple](https://developer.apple.com/jp/sign-in-with-apple/get-started/)を行うライブラリ
 * [Entap.Basic.Auth.Google](https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth.Google/Entap.Basic.Auth.Google.NuGet)
