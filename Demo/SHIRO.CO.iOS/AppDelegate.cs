@@ -36,6 +36,8 @@ namespace SHIRO.CO.iOS
                 Firebase.Core.Options.DefaultInstance.ClientId,
                 Xamarin.Essentials.Platform.GetCurrentUIViewController);
 
+            Entap.Basic.Auth.Line.LineAuthService.Init("1655277852");
+
             if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
             {
                 Entap.Basic.Auth.Apple.AppleSignInService.Init();
@@ -65,7 +67,7 @@ namespace SHIRO.CO.iOS
 
         public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
         {
-            if (Entap.Basic.Auth.Line.iOS.WebAuthenticationService.ContinueUserActivity(application, userActivity, completionHandler))
+            if (Entap.Basic.Auth.Line.LineAuthService.ContinueUserActivity(application, userActivity, completionHandler))
                 return true;
 
             if (Platform.ContinueUserActivity(application, userActivity, completionHandler))
@@ -85,6 +87,9 @@ namespace SHIRO.CO.iOS
 
             // Google SignIn
             Entap.Basic.Auth.Google.GoogleAuthService.OnOpenUrl(app, url, options);
+
+            if (Entap.Basic.Auth.Line.LineAuthService.OpenUrl(app, url, options))
+                return true;
 
             var dynamicLink = DynamicLinks.SharedInstance?.FromCustomSchemeUrl(url);
             if (dynamicLink?.Url is null) return false;
