@@ -6,9 +6,11 @@ using Entap.Basic.Firebase.Auth;
 using Entap.Basic.Firebase.Auth.Facebook;
 using Entap.Basic.Firebase.Auth.Line;
 using Entap.Basic.Firebase.Auth.Google;
+using FirebaseLineAuthService = Entap.Basic.Firebase.Auth.Line.LineAuthService;
 using Plugin.FirebaseAuth;
 using Xamarin.Forms;
 using Entap.Basic.Firebase.Auth.Apple;
+using Entap.Basic.Auth.Line;
 
 namespace SHIRO.CO
 {
@@ -29,8 +31,8 @@ namespace SHIRO.CO
             BasicFirebaseAuthStartUp.ConfigurePasswordAuthService<PasswordAuthService>();
             BasicFirebaseAuthStartUp.ConfigureTwitterAuthService<TwitterAuthService>();
             BasicFirebaseAuthStartUp.ConfigureFacebookAuthService<FacebookAuthService>();
-            BasicFirebaseAuthStartUp.ConfigureLineAuthService<LineAuthService>();
             BasicFirebaseAuthStartUp.ConfigureGoogleAuthService<GoogleAuthService>();
+            BasicFirebaseAuthStartUp.ConfigureLineAuthService<FirebaseLineAuthService>();
             BasicFirebaseAuthStartUp.ConfigureAppleAuthService<AppleAuthService>();
             BasicFirebaseAuthStartUp.ConfigureAnonymousAuthService<AnonymousAuthService>();
 
@@ -40,8 +42,7 @@ namespace SHIRO.CO
 
         void InitAuthServices()
         {
-            Entap.Basic.Auth.Line.LineAuthService.Init(new Entap.Basic.Auth.Line.LineAuthParameter("1655277852", "485bc2555ad821dd085d4ca5998cc242", "openid", "https://entapshiro.page.link/auth_callback"));
-            
+            FirebaseLineAuthService.SetLoginScopes(LoginScope.OpenID);
         }
 
         public virtual async Task HandleSignInErrorAsync(Exception exception)
