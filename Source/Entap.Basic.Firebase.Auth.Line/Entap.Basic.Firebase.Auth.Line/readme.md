@@ -11,10 +11,29 @@ LINEログインには[Entap.Basic.Auth.Line](https://github.com/entap/Entap.Bas
 
 
 ## 使用方法
-```csharp
-Entap.Basic.Auth.Line.LineAuthService.Init(new LineAuthParameter([clientId], [clientSecret], [scope], [redirectUri]);
+Firebase認証時IdTokenを使用するため、LoginScopesにOpenIDは必須です。
 
-var parameter = new LineAuthParameter([clientId], [clientSecret], [scope], [redirectUri]);
-var authService = new LineAuthService(parameter);
+### Entap.Basic.Auth.Line.LineLoginButton使用時
+xmlns:line="clr-namespace:Entap.Basic.Auth.Line;assembly=Entap.Basic.Auth.Line"
+```xml
+<line:LineLoginButton
+    LoginScopes="OpenID, Profile"
+    Command="{Binding LoginCommand}"
+/>
+```
+
+```csharp
+using FirebaseLineAuthService = Entap.Basic.Firebase.Auth.Line.LineAuthService;
+
+public ProcessCommand<LoginResult> LoginCommand => new ProcessCommand<LoginResult>(async (LoginResult arg) =>
+{
+    await (BasicStartup.AuthManager.LineAuthService as FirebaseLineAuthService).SignInAsync(arg);
+});
+```
+
+### Entap.Basic.Auth.Line.LineLoginButton不使用時
+```csharp
+LineAuthService.SetLoginScopes(LoginScope.OpenID, LoginScope.Profile);
+var authService = new LineAuthService([IAuthErrorCallback]);
 await authService.SignInAsync();
 ```
