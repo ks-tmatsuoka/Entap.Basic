@@ -7,7 +7,7 @@
     <ProjectGuid>{C485120C-94F0-4AD5-8586-B971B489BA65}</ProjectGuid>
     <Description>Entap.Basic.Core</Description>
     <PackageId>Entap.Basic.Core</PackageId>
-    <PackageVersion>0.0.6</PackageVersion>
+    <PackageVersion>0.0.7</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -17,7 +17,7 @@
     <AssemblyName>Entap.Basic.Core.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <PackageReleaseNotes>[update]
-・DIサービスの登録処理(BasicStartUp)追加</PackageReleaseNotes>
+・BasicStartUpに登録したDIサービスの取得処理追加</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Core</PackageProjectUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

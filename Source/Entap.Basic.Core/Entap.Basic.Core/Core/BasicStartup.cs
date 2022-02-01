@@ -15,6 +15,11 @@ namespace Entap.Basic.Core
         {
             ServiceCollection = new ServiceCollection();
         }
+
+        /// <summary>
+        /// DIサービスを取得する
+        /// </summary>
+        public T GetService<T>() => ServiceProvider.GetService<T>();
     }
 }
 
