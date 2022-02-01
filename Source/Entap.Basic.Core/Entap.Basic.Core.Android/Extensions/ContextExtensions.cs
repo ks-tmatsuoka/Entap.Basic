@@ -28,5 +28,14 @@ namespace Entap.Basic.Core.Android
                 context.StartService(intent);
             }
         }
+
+        /// <summary>
+        /// Serviceを停止する
+        /// </summary>
+        public static bool StopService<T>(this Context context) where T : Service
+        {
+            var intent = new Intent(context, typeof(T));
+            return context.StopService(intent);
+        }
     }
 }
