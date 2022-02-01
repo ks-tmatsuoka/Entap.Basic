@@ -2,10 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>0.0.1</PackageVersion>
-    <Authors>Entap</Authors>
-    <Description>Entap.Basic.Core</Description>
-    <PackageId>Entap.Basic.Core</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
