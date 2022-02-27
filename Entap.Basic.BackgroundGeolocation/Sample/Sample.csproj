@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Entap.Basic.Core" Version="0.0.8" />
+    <PackageReference Include="Entap.Basic.Forms" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="5.0.0-beta" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Entap.Basic.Core" />
+    <None Remove="Entap.Basic.Forms" />
+    <None Remove="Microsoft.Extensions.DependencyInjection" />
+    <None Remove="Modules\" />
+    <None Remove="Xam.Plugin.Geolocator" />
+    <None Remove="Views\" />
+    <None Remove="Views\Pages\" />
+    <None Remove="Modules\DependencyService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Pages\" />
+    <Folder Include="Modules\DependencyService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entap.Basic.BackgroundGeolocation\Entap.Basic.BackgroundGeolocation.csproj" />
+  </ItemGroup>
+</Project>

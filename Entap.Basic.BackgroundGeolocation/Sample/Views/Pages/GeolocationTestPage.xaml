@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LRMS"
+    x:Class="LRMS.GeolocationTestPage"
+    x:DataType="local:GeolocationTestPageViewModel"
+>
+    <StackLayout
+        Padding="16"
+    >
+        <Label>
+            <Label.Triggers>
+                <DataTrigger
+                    TargetType="Label"
+                    Binding="{Binding IsListening}"
+                    Value="false">
+                    <Setter Property="Text" Value="ステータス：停止中…" />
+                </DataTrigger>
+                <DataTrigger
+                    TargetType="Label"
+                    Binding="{Binding IsListening}"
+                    Value="true">
+                    <Setter Property="Text" Value="ステータス：取得中…" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+        <StackLayout
+            Orientation="Horizontal"
+        >
+            <Button
+                Command="{Binding SwitchCommand}"
+            >
+                <Button.Triggers>
+                    <DataTrigger
+                        TargetType="Button"
+                        Binding="{Binding IsListening}"
+                        Value="false">
+                        <Setter Property="Text" Value="開始" />
+                    </DataTrigger>
+                    <DataTrigger
+                        TargetType="Button"
+                        Binding="{Binding IsListening}"
+                        Value="true">
+                        <Setter Property="Text" Value="停止" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <Button
+                Text="ステータス更新"
+                Command="{Binding RefreshCommand}"
+            />
+        </StackLayout>
+
+        <StackLayout
+            Margin="0,16,0,0"
+            Orientation="Horizontal"
+        >
+            <Button
+                Text="ログ読み込み"
+                Command="{Binding ReadLogCommand}"
+            />
+            <Button
+                Text="ログクリア"
+                Command="{Binding ClearLogCommand}"
+            />
+            <Button
+                Text="ログ共有"
+                Command="{Binding ShareLogCommand}"
+            />
+        </StackLayout>
+        <Editor
+            VerticalOptions="FillAndExpand"
+            Text="{Binding Log}"
+            IsReadOnly="True"
+        />
+    </StackLayout>
+</ContentPage>
