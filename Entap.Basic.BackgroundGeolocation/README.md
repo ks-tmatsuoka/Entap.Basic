@@ -17,18 +17,17 @@ Androidでは位置情報の取得方法が複数あるので、要件に応じ�
 
 ### iOS
 iOSでの位置情報は以下の処理でモニタリングできます。
-■CLLocationManager.startUpdatingLocation
-https://developer.apple.com/documentation/corelocation/cllocationmanager/1423750-startupdatinglocation
-・Backgroundでも位置情報の取得が可能
-・消費電力は大きいが、細かく位置情報の取得が可能
+■CLLocationManager.startUpdatingLocation  
+https://developer.apple.com/documentation/corelocation/cllocationmanager/1423750-startupdatinglocation  
+・Backgroundでも位置情報の取得が可能  
+・消費電力は大きいが、細かく位置情報の取得が可能  
 
-■CLLocationManager.startMonitoringSignificantLocationChanges
-https://developer.apple.com/documentation/corelocation/cllocationmanager/1423531-startmonitoringsignificantlocati
-・ユーザーの場所の大幅な変更が検出された場合にのみ更新イベントを生成
-・アプリが非起動でも位置情報の取得が可能
+■CLLocationManager.startMonitoringSignificantLocationChanges  
+https://developer.apple.com/documentation/corelocation/cllocationmanager/1423531-startmonitoringsignificantlocati  
+・ユーザーの場所の大幅な変更が検出された場合にのみ更新イベントを生成  
+・アプリが非起動でも位置情報の取得が可能  
 
 このライブラリではアプリのライフサイクルに応じたメソッドを用意し、バックグラウンドおよび非起動中に位置情報を取得できるよう制御します。  
-
 
 ## 導入方法
 * 各プロジェクトでIGeolocationServiceを継承した位置情報取得処理を実装します。
@@ -49,7 +48,7 @@ await GeolocationListener.Current.StopListeningAsync();
 ```                
 ### Android
 * フォアグラウンドサービスを利用するた、通知チャネルを作成やIntentの起動を行うGeolocationNotificationProvider実装します。  
-[サンプル参照](/Sample.Android/Modules/GeolocationNotificationProvider.cs)  
+[サンプル参照](./Sample.Android/Modules/GeolocationNotificationProvider.cs)  
 * GeolocationNotificationProviderを登録する  
 ```csharp
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
