@@ -7,7 +7,7 @@
     <ProjectGuid>{875AC3FC-F42E-44A7-BC4B-FFA3D3AC2213}</ProjectGuid>
     <Description>Sign in with Appleで使用するASAuthorizationAppleIDButtonをXamarin.Formsで使用可能なようにラップしたライブラリ</Description>
     <PackageId>Entap.Basic.Auth.Apple.Forms</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Entap</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -16,6 +16,7 @@
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Entap.Basic.Auth.Apple.Forms.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PackageReleaseNotes>[fix]AuthorizationAppleIdButtonのNullReferenceException回避</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
