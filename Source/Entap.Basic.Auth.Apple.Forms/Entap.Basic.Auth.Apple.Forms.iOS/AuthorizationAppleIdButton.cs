@@ -32,7 +32,9 @@ namespace Entap.Basic.Auth.Apple.Forms.iOS
 
         protected override void Dispose(bool disposing)
         {
-            Button.TouchUpInside -= OnTouchUpInside;
+            if (Button is not null)
+                Button.TouchUpInside -= OnTouchUpInside;
+
             base.Dispose(disposing);
         }
     }
