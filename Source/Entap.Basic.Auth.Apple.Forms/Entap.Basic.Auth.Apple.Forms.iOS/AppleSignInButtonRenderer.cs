@@ -12,9 +12,14 @@ namespace Entap.Basic.Auth.Apple.Forms.iOS
     public class AppleSignInButtonRenderer : ViewRenderer<AppleSignInButton, UIView>
     {
         AuthorizationAppleIdButton _button;
+
+        bool IsAppleSignInSupported => UIDevice.CurrentDevice.CheckSystemVersion(13, 0);
         protected override void OnElementChanged(ElementChangedEventArgs<AppleSignInButton> e)
         {
             base.OnElementChanged(e);
+
+            if (!IsAppleSignInSupported)
+                return;
 
             if (e.NewElement is not null)
             {
@@ -51,6 +56,9 @@ namespace Entap.Basic.Auth.Apple.Forms.iOS
 
         void UpdateCornerRadius()
         {
+            if (!IsAppleSignInSupported)
+                return;
+
             if (Element.CornerRadius < 0) return;
 
             _button.Button.CornerRadius = (float)Element.CornerRadius;
