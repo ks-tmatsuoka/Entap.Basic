@@ -45,4 +45,10 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Entap.Basic.Core" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Entap.Basic.Core" Version="0.0.8" />
+	</ItemGroup>
 </Project>
