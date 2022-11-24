@@ -71,8 +71,11 @@ namespace Entap.Basic.Firebase.Auth.Facebook
         {
             try
             {
-                var provider = new OAuthProvider(ProviderId);
-                await LinkWithProviderAsync(provider);
+                await FacebookLoginAsync();
+                var accessToken = CrossFacebookClient.Current.ActiveToken;
+
+                var credential = CrossFirebaseAuth.Current.FacebookAuthProvider.GetCredential(accessToken);
+                await LinkWithCredentialAsync(credential);
             }
             catch (Exception ex)
             {
