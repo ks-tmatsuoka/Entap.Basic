@@ -21,7 +21,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Entap.Basic.Auth.Line" Version="0.0.6" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.8" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.1.0" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
