@@ -7,5 +7,8 @@ namespace Entap.Basic.Firebase.Auth
     {
         Task HandleSignInErrorAsync(Exception exception);
         Task HandleSignOutErrorAsync(Exception exception);
+
+        Task HandleLinkErrorAsync(Exception exception);
+        Task HandleUnlinkErrorAsync(Exception exception);
     }
 }
