@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
-    <PackageVersion>0.0.2</PackageVersion>
+    <PackageVersion>0.0.2.1</PackageVersion>
     <Authors>Entap</Authors>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Google/Entap.Basic.Firebase.Auth.Google</PackageProjectUrl>
     <Description>Entap.Basic.Firebase.Authを使用し、Googleサインインを行うライブラリ</Description>
@@ -25,8 +25,8 @@
   <ItemGroup>
     <Compile Include="**/*.shared.cs" />
     <Compile Include="**/*.shared.*.cs" />    
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.4" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.8" />
+    <PackageReference Include="Entap.Basic.Auth" Version="1.1.0" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.1.0" />
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
   </ItemGroup>
 
