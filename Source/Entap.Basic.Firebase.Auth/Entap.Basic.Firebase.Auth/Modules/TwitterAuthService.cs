@@ -29,5 +29,33 @@ namespace Entap.Basic.Firebase.Auth
                 throw;
             }
         }
+
+        public async Task LinkAsync()
+        {
+            try
+            {
+                var provider = new OAuthProvider(ProviderId);
+                await LinkWithProviderAsync(provider);
+            }
+            catch (Exception ex)
+            {
+                await _errorCallback?.HandleLinkErrorAsync(ex);
+                throw;
+            }
+
+        }
+
+        public async Task UnlinkAsync()
+        {
+            try
+            {
+                await UnlinkAsync(ProviderId);
+            }
+            catch (Exception ex)
+            {
+                await _errorCallback?.HandleUnlinkErrorAsync(ex);
+                throw;
+            }
+        }
     }
 }
