@@ -9,6 +9,7 @@ namespace Entap.Basic.Firebase.Auth.Facebook
 {
     public class FacebookAuthService : SnsAuthService, IFacebookAuthService
     {
+        static readonly string ProviderId = CrossFirebaseAuth.Current.FacebookAuthProvider.ProviderId;
         readonly IAuthErrorCallback _errorCallback;
         public FacebookAuthService(IAuthErrorCallback errorCallback = null)
         {
@@ -33,7 +34,7 @@ namespace Entap.Basic.Firebase.Auth.Facebook
             {
                 AuthHelper.TrySignOut();
                 await _errorCallback.HandleSignInErrorAsync(ex);
-                throw ex;
+                throw;
             }
         }
 
@@ -61,9 +62,37 @@ namespace Entap.Basic.Firebase.Auth.Facebook
             catch(Exception ex)
             {
                 _errorCallback.HandleSignOutErrorAsync(ex);
-                throw ex;
+                throw;
             }
             return Task.CompletedTask;
+        }
+
+        public async Task LinkAsync()
+        {
+            try
+            {
+                var provider = new OAuthProvider(ProviderId);
+                await LinkWithProviderAsync(provider);
+            }
+            catch (Exception ex)
+            {
+                await _errorCallback?.HandleLinkErrorAsync(ex);
+                throw;
+            }
+
+        }
+
+        public async Task UnlinkAsync()
+        {
+            try
+            {
+                await UnlinkAsync(ProviderId);
+            }
+            catch (Exception ex)
+            {
+                await _errorCallback?.HandleUnlinkErrorAsync(ex);
+                throw;
+            }
         }
     }
 }
