@@ -6,5 +6,9 @@ namespace Entap.Basic.Auth
     public interface ISnsAuthService
     {
         Task SignInAsync();
+
+        Task LinkAsync();
+
+        Task UnlinkAsync();
     }
 }

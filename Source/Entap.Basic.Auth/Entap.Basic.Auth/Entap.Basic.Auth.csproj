@@ -3,10 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Entap.Basic.Auth</PackageId>
-    <PackageVersion>1.0.4</PackageVersion>
+    <PackageVersion>1.1.0</PackageVersion>
     <Authors>Entap</Authors>
     <Description>Entap.Basic.Auth</Description>
-    <PackageReleaseNotes>[update]IAnonymousAuthServiceを定義</PackageReleaseNotes>
+    <PackageReleaseNotes>[update]複数の認証プロバイダーによるアカウントリンクをサポート</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Auth</PackageProjectUrl>
   </PropertyGroup>
 
