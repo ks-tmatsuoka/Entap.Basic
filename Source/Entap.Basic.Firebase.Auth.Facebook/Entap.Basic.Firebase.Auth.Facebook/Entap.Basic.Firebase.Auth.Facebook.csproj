@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageVersion>0.0.1</PackageVersion>
+    <Authors>Entap</Authors>
+    <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Facebook/Entap.Basic.Firebase.Auth.Facebook</PackageProjectUrl>
+    <PackageReleaseNotes>[add]複数の認証プロバイダーによるアカウントリンクをサポート</PackageReleaseNotes>
+    <Description>Firebase Authenticationを使用し、Facebook認証を行うライブラリ</Description>
+    <PackageId>Entap.Basic.Firebase.Auth.Facebook</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -14,8 +20,13 @@
     <PackageReference Include="Plugin.FacebookClient" Version="4.0.1" />
     <PackageReference Include="Entap.Basic.Auth" Version="1.1.0" />
     <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.1.0" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Entap.Basic.Firebase.Auth" />
+    <None Remove="NuGet.Build.Packaging" />
   </ItemGroup>
 </Project>
