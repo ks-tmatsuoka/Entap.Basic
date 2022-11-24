@@ -68,5 +68,41 @@ namespace Entap.Basic.Firebase.Auth.Line
                 throw;
             }
         }
+
+        public async Task LinkAsync()
+        {
+            if (_loginScopes?.Any() != true)
+                throw new InvalidOperationException($"Please call {nameof(LineAuthService.SetLoginScopes)} method.");
+
+            try
+            {
+                var authService = new Entap.Basic.Auth.Line.LineAuthService();
+                var result = await authService.LoginAsync(_loginScopes);
+                var customToken = new Api.CustomAuthToken(result.LineAccessToken.AccessToken, result.LineAccessToken.IdToken);
+                await BasicFirebaseAuthStartUp.AuthApi.PostAuthLineUser(customToken);
+
+                var firebaseCustomToken = await BasicFirebaseAuthStartUp.AuthApi.PostAuthFirebaseCustomToken();
+                await SignInWithCustomTokenAsync(firebaseCustomToken.CustomToken);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.InnerException.Message);
+                await _callback.HandleLinkErrorAsync(ex);
+                throw;
+            }
+        }
+
+        public async Task UnlinkAsync()
+        {
+            try
+            {
+                await BasicFirebaseAuthStartUp.AuthApi.DeleteAuthLineUser();
+            }
+            catch (Exception ex)
+            {
+                await _callback.HandleLinkErrorAsync(ex);
+                throw;
+            }
+        }
     }
 }
