@@ -20,9 +20,7 @@ namespace Entap.Basic.Firebase.Auth.Apple
         {
             try
             {
-                var service = new AppleSignInService();
-                var id = await service.SignInAsync();
-                var credential = CrossFirebaseAuth.Current.OAuthProvider.GetCredential(ProviderId, id.IdToken);
+                var credential = await GetCredentialAsync();
 
                 await SignInWithCredentialAsync(credential);
                 await AuthHelper.StoreServerAccessTokenAsync();
@@ -31,7 +29,41 @@ namespace Entap.Basic.Firebase.Auth.Apple
             {
                 AuthHelper.TrySignOut();
                 await _errorCallback?.HandleSignInErrorAsync(ex);
-                throw ex;
+                throw;
+            }
+        }
+
+        private async Task<IAuthCredential> GetCredentialAsync()
+        {
+            var service = new AppleSignInService();
+            var id = await service.SignInAsync();
+            return CrossFirebaseAuth.Current.OAuthProvider.GetCredential(ProviderId, id.IdToken);
+        }
+
+        public async Task LinkAsync()
+        {
+            try
+            {
+                var credential = await GetCredentialAsync();
+                await LinkWithCredentialAsync(credential);
+            }
+            catch (Exception ex)
+            {
+                await _errorCallback?.HandleLinkErrorAsync(ex);
+                throw;
+            }
+        }
+
+        public async Task UnlinkAsync()
+        {
+            try
+            {
+                await UnlinkAsync(ProviderId);
+            }
+            catch (Exception ex)
+            {
+                await _errorCallback?.HandleUnlinkErrorAsync(ex);
+                throw;
             }
         }
     }
