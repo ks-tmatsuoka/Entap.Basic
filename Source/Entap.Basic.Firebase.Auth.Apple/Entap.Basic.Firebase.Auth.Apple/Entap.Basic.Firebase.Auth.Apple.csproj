@@ -24,9 +24,9 @@
     <None Remove="NuGet.Build.Packaging" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Entap.Basic.Auth" Version="1.0.3" />
+    <PackageReference Include="Entap.Basic.Auth" Version="1.1.0" />
     <PackageReference Include="Entap.Basic.Auth.Apple" Version="1.0.2" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.5" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.1.0" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
