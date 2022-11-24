@@ -2,17 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
-    <PackageVersion>0.0.2.1</PackageVersion>
+    <PackageVersion>0.1.0</PackageVersion>
     <Authors>Entap</Authors>
     <PackageProjectUrl>https://github.com/entap/Entap.Basic/tree/main/Source/Entap.Basic.Firebase.Auth.Google/Entap.Basic.Firebase.Auth.Google</PackageProjectUrl>
     <Description>Entap.Basic.Firebase.Authを使用し、Googleサインインを行うライブラリ</Description>
     <PackageId>Entap.Basic.Firebase.Auth.Google</PackageId>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <PackageReleaseNotes>[update]
-・マルチターゲットプロジェクトに変更
-・Entap.Basic.Authのアップデート（Ver1.0.4）
-・Entap.Basic.Firebase.Authのアップデート（Ver0.0.8）
-・サインイン時のサーバのアクセストークン取得処理追加</PackageReleaseNotes>
+    <PackageReleaseNotes>[update]複数の認証プロバイダーによるアカウントリンクをサポート</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
