@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Entap.Basic;
 using Entap.Basic.Forms;
 using Xamarin.Forms;
@@ -17,6 +18,7 @@ namespace SHIRO.CO
             ConfigureServices();
             BasicStartup.PageNavigator.SetStartUpPageAsync();
             Entap.Basic.Basic.Init();
+            SetAccessTokenAsync().ConfigureAwait(false);
         }
 
         protected override void OnStart()
@@ -42,6 +44,13 @@ namespace SHIRO.CO
         {
             BasicStartup.ConfigurePageNavigator<PageNavigator>();
             BasicStartup.ConfigureAuthManagr<AuthManager>();
+        }
+
+        async Task SetAccessTokenAsync()
+        {
+            if (Plugin.FirebaseAuth.CrossFirebaseAuth.Current.Instance.CurrentUser is null) return;
+            var token = await SecureStorageManager.Current.GetAccessTokenAsync();
+            BasicApiManager.Current.SetAuthorization(token);
         }
     }
 }

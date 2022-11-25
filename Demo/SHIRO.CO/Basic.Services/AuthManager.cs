@@ -18,7 +18,7 @@ namespace SHIRO.CO
     {
         public AuthManager()
         {
-            //ConfigureServices();
+            ConfigureServices();
             InitAuthServices();
         }
 
@@ -252,6 +252,89 @@ namespace SHIRO.CO
             async Task OnConfirmPasswordResetError(string errorMessage = "パスワード再設定用のメールを再送し、再度お試しください。")
             {
                 await OnError("パスワード変更エラー", errorMessage);
+            }
+        }
+
+        public virtual async Task HandleLinkErrorAsync(Exception exception)
+        {
+            switch (exception)
+            {
+                case FirebaseAuthException ex:
+                    switch (ex.ErrorType)
+                    {
+                        case ErrorType.Web when ex.ErrorCode == ErrorCode.WebContextCancelled:
+                            // ユーザによるキャンセルはスキップ
+                            break;
+                        case ErrorType.NetWork:
+                            await OnNetWorkError();
+                            break;
+                        // user-not-found, user-disabled
+                        case ErrorType.InvalidUser:
+                        // invalid-email, wrong-password
+                        case ErrorType.InvalidCredentials:
+                            if (ex.ErrorCode == Entap.Basic.Firebase.Auth.ErrorCode.UserDisabled)
+                                await OnLinkError("このアカウントは利用規約に違反しているため停止となりました。ご質問等がある場合はHPからお問い合わせください。");
+                            else
+                                await OnLinkError();
+                                break;
+                        case ErrorType.UserCollision:
+                            await OnLinkError("使用済みのアカウントです");
+                            break;
+                        default:
+                            //await OnSignInError();
+                            break;
+                    }
+                    break;
+                case OperationCanceledException:
+                    // ユーザによるキャンセルはスキップ
+                    break;
+                default:
+                    await OnLinkError();
+                    break;
+            }
+            async Task OnLinkError(string errorMessage = "エラーが発生したため連携できませんでした。")
+            {
+                await OnError("連携できません", errorMessage);
+            }
+        }
+
+        public virtual async Task HandleUnlinkErrorAsync(Exception exception)
+        {
+            switch (exception)
+            {
+                case FirebaseAuthException ex:
+                    switch (ex.ErrorType)
+                    {
+                        case ErrorType.Web when ex.ErrorCode == ErrorCode.WebContextCancelled:
+                            // ユーザによるキャンセルはスキップ
+                            break;
+                        case ErrorType.NetWork:
+                            await OnNetWorkError();
+                            break;
+                        // user-not-found, user-disabled
+                        case ErrorType.InvalidUser:
+                        // invalid-email, wrong-password
+                        case ErrorType.InvalidCredentials:
+                            if (ex.ErrorCode == Entap.Basic.Firebase.Auth.ErrorCode.UserDisabled)
+                                await OnUnlinkError("このアカウントは利用規約に違反しているため停止となりました。ご質問等がある場合はHPからお問い合わせください。");
+                            else
+                                await OnUnlinkError();
+                            break;
+                        default:
+                            await OnUnlinkError();
+                            break;
+                    }
+                    break;
+                case OperationCanceledException:
+                    // ユーザによるキャンセルはスキップ
+                    break;
+                default:
+                    await OnUnlinkError();
+                    break;
+            }
+            async Task OnUnlinkError(string errorMessage = "エラーが発生したため連携解除できませんでした。")
+            {
+                await OnError("連携解除できません", errorMessage);
             }
         }
 

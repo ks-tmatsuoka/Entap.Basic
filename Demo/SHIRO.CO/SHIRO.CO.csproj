@@ -19,14 +19,14 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Entap.Basic.Auth.Apple" Version="1.0.2" />
-    <PackageReference Include="Entap.Basis.Firebase.Auth.Line" Version="0.0.8" />
-    <PackageReference Include="Entap.Basic.Api" Version="0.0.3" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.0.9" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth.Apple" Version="0.0.4" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth" Version="0.1.0" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth.Apple" Version="0.1.0" />
     <PackageReference Include="Entap.Basic.Auth.Google" Version="0.0.2" />
     <PackageReference Include="Plugin.FirebaseAuth" Version="4.1.0" />
     <PackageReference Include="Entap.Basic.Refit" Version="1.0.1" />
-    <PackageReference Include="Entap.Basic.Firebase.Auth.Google" Version="0.0.2" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth.Google" Version="0.1.0" />
+    <PackageReference Include="Entap.Basic.Api" Version="0.0.4" />
+    <PackageReference Include="Entap.Basic.Firebase.Auth.Line" Version="0.1.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\Entap.Basic\Entap.Basic\Entap.Basic.csproj" />
@@ -53,5 +53,6 @@
     <None Remove="Entap.Basic.Refit" />
     <None Remove="Plugin.FirebaseAuth" />
     <None Remove="Entap.Basic.Firebase.Auth.Google" />
+    <None Remove="Entap.Basic.Firebase.Auth.Line" />
   </ItemGroup>
 </Project>
