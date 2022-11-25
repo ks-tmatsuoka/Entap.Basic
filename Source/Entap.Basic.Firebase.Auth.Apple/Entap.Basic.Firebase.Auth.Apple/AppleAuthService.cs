@@ -9,7 +9,7 @@ namespace Entap.Basic.Firebase.Auth.Apple
 {
     public class AppleAuthService : SnsAuthService, IAppleAuthService
     {
-        const string ProviderId = "apple.com";
+        public const string ProviderId = "apple.com";
         readonly IAuthErrorCallback _errorCallback;
         public AppleAuthService(IAuthErrorCallback errorCallback = null)
         {
