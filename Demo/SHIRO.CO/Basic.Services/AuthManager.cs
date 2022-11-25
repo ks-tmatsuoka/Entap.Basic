@@ -281,7 +281,7 @@ namespace SHIRO.CO
                             await OnLinkError("使用済みのアカウントです");
                             break;
                         default:
-                            //await OnSignInError();
+                            await OnLinkError();
                             break;
                     }
                     break;
