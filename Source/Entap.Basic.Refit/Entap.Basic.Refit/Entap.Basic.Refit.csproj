@@ -22,15 +22,13 @@ https://github.com/reactiveui/refit</Description>
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Refit.Newtonsoft.Json" Version="6.0.94" />
-    <PackageReference Include="Entap.Basic.Core" Version="0.0.5" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Modules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
   </ItemGroup>
 </Project>

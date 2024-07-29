@@ -12,11 +12,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.8">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Entap.Basic.Core" Version="0.0.5" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PageManager\" />
@@ -33,5 +28,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="DisplaySizeManager\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj" />
   </ItemGroup>
 </Project>

@@ -42,9 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Effects\" />
-    <Folder Include="Effects\PlatformSpecifics\" />
-    <Folder Include="DisplaySizeManager\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,23 +52,18 @@
     <Compile Include="DisplaySizeManager\NavigationControllerManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
-      <Project>{E2028777-8C1B-489E-9EFD-477CD3082EA7}</Project>
-      <Name>Entap.Basic.Forms</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Xamarin.Forms">
       <Version>4.5.0.356</Version>
-    </PackageReference>
-    <PackageReference Include="NuGet.Build.Packaging">
-      <Version>0.2.5-dev.8</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Entap.Basic.Core">
       <Version>0.0.5</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
+      <Project>{f2aaf7fe-2ef4-4d4f-9c16-a39c86aff71a}</Project>
+      <Name>Entap.Basic.Forms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -16,7 +16,7 @@
     <Deterministic>True</Deterministic>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v13.0</TargetFrameworkVersion>
     <AndroidUseAapt2>true</AndroidUseAapt2>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -60,11 +60,6 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>4.5.0.356</Version>
     </PackageReference>
-    <PackageReference Include="NuGet.Build.Packaging">
-      <Version>0.2.5-dev.8</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="Entap.Basic.Core">
       <Version>0.0.5</Version>
     </PackageReference>
@@ -79,8 +74,16 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core.Android\Entap.Basic.Core.Android.csproj">
+      <Project>{a4e743b3-f22d-415d-9d98-2f3562b32208}</Project>
+      <Name>Entap.Basic.Core.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entap.Basic.Core\Entap.Basic.Core\Entap.Basic.Core.csproj">
+      <Project>{e0162f8d-97f2-4933-974c-0f0ec902e3d4}</Project>
+      <Name>Entap.Basic.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entap.Basic.Forms\Entap.Basic.Forms.csproj">
-      <Project>{E2028777-8C1B-489E-9EFD-477CD3082EA7}</Project>
+      <Project>{f2aaf7fe-2ef4-4d4f-9c16-a39c86aff71a}</Project>
       <Name>Entap.Basic.Forms</Name>
     </ProjectReference>
   </ItemGroup>
